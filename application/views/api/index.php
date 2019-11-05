@@ -39,11 +39,12 @@
                 
                 <!-- Customer Registration -->
                 <li class="method post ">
-                    <div class="title"><span class="http-method">POST</span><span class="name"> Customer Registration </span><span class="uri">/mobiapp/customers/Register</span></div>
+                    <div class="title"><span class="http-method">POST</span><span class="name"> Customer Registration </span><span class="uri">/customer/account/register</span></div>
                     <form style="display: none;" id="register_tab" class="hidden">
                     <input type="hidden" value="POST" name="httpMethod">
                     <input type="hidden" value="" name="oauth">
-                    <input type="hidden" value="/mobiapp/customers/register" name="methodUri" ><span class="description"> Customer Registration </span><br><br>
+                    <input type="hidden" value="/customer/account/register" name="methodUri" >
+                    <span class="description"> Customer Registration </span><br><br>
                         <div id="param1"></div>
                         <table class="parameters">
                             <thead>
@@ -104,19 +105,32 @@
                                 </tr>
 
                                 <tr class="required">
-                                    <td class="name">Telephone</td>
-                                    <td class="para">telephone</td>
+                                    <td class="name">PhoneNo</td>
+                                    <td class="para">phone_no</td>
                                     <td class="parameter"><input placeholder="optional" value="" name="telephone"><input type="hidden" value="query" name="locations[telephone]"></td>
                                     <td class="type">text</td>
-                                    <td class="description"><p>( Eg : Telephone No)</p></td>
+                                    <td class="description"><p>( Eg : Phone No)</p></td>
                                 </tr>
-
                                 <tr class="required">
-                                    <td class="name">Is Subscribe</td>
-                                    <td class="para">is_subscribe</td>
-                                    <td class="parameter"><input placeholder="optional" value="1" name="is_subscribe"><input type="hidden" value="query" name="locations[is_subscribe]"></td>
+                                    <td class="name">Gender</td>
+                                    <td class="para">gender</td>
+                                    <td class="parameter"><input placeholder="optional" value="1" name="gender"><input type="hidden" value="query" name="locations[gender]"></td>
                                     <td class="type">text</td>
-                                    <td class="description"><p>(value = 0 or value = 1)</p></td>
+                                    <td class="description"><p>(0 => Female or 1 => Male)</p></td>
+                                </tr> 
+                                <tr class="required">
+                                    <td class="name">Status</td>
+                                    <td class="para">status</td>
+                                    <td class="parameter"><input placeholder="optional" value="10" name="status"><input type="hidden" value="query" name="locations[status]"></td>
+                                    <td class="type">text</td>
+                                    <td class="description"><p>(10 => Active 20 => Hold, 30=>Blocked , 40=> Inactive)</p></td>
+                                </tr>  
+                                <tr class="required">
+                                    <td class="name">Country Code</td>
+                                    <td class="para">country_code</td>
+                                    <td class="parameter"><input placeholder="optional" value="IN" name="country_code"><input type="hidden" value="query" name="locations[country_code]"></td>
+                                    <td class="type">text</td>
+                                    <td class="description"><p>(IN => India)</p></td>
                                 </tr>                               
                             </tbody>
                         </table>
@@ -794,9 +808,10 @@
 <script type="text/javascript">
     function myReturnFunc(arg){
         $('#achievement_image').val(arg);
-    }         
+    }   
     $(document).ready(function() {                
         $('form').on('submit', function() {
+            alert("ues");
             var $form = $(this),
             url = $form.attr('id');      
             var methodtype = $(this).children('input[name=httpMethod]').val();

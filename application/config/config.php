@@ -325,7 +325,6 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Session Variables
