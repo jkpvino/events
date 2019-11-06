@@ -27,10 +27,10 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 ) ENGINE = InnoDB;
 
 
-INSERT INTO `users` (`email`, `phone_no`, `password`, `facebook`, `google`, `country_code`, `status`, `created_at`, `updated_at`) VALUES 'vinothkumar@gmail.com',  '8220466675',  MD5('admin123'), NULL, NULL, '', '10', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');
+INSERT INTO `users` (`email`, `phone_no`, `password`, `facebook`, `google`, `country_code`, `status`, `created_at`, `updated_at`) VALUES ('vinothkumar@gmail.com',  '8220466675',  MD5('admin123'), NULL, NULL, '', '10', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');
 
-INSERT INTO `users` (`email`, `phone_no`, `password`, `facebook`, `google`, `country_code`, `status`, `created_at`, `updated_at`) VALUES 'mani@gmail.com',  '9600255694',  MD5('admin123'), NULL, NULL, '', '10', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');
+INSERT INTO `users` (`email`, `phone_no`, `password`, `facebook`, `google`, `country_code`, `status`, `created_at`, `updated_at`) VALUES ('mani@gmail.com',  '9600255694',  MD5('admin123'), NULL, NULL, '', '10', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');
 
-INSERT INTO `users` (`email`, `phone_no`, `password`, `facebook`, `google`, `country_code`, `status`, `created_at`, `updated_at`) VALUES 'gopi@gmail.com',  '9566646773',  MD5('admin123'), NULL, NULL, '', '10', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');
+INSERT INTO `users` (`email`, `phone_no`, `password`, `facebook`, `google`, `country_code`, `status`, `created_at`, `updated_at`) VALUES ('gopi@gmail.com',  '9566646773',  MD5('admin123'), NULL, NULL, '', '10', CURRENT_TIMESTAMP, '0000-00-00 00:00:00.000000');
 
 create or replace view userview as select id,email,password,status from users UNION select id, phone_no, password,status from users;
