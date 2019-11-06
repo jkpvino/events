@@ -10,6 +10,7 @@
 <?php 
     $user_name = 'jkprovab';
     $api_key = 'provab@123@';    
+    $baseurl = 'http://localhost/events/';
 ?>
                                  
 
@@ -498,7 +499,7 @@
             var methodtype = $(this).children('input[name=httpMethod]').val();
             var methoduri = $(this).children('input[name=methodUri]').val();
             $("#message").html("&lt;span class='error'&gt;API Request...&lt;/span&gt;");
-            var siteurl = "<?php echo Mage::getBaseUrl(); ?>";
+            var siteurl = "<?php echo $baseurl; ?>";
             var realpath = siteurl + methoduri + '/';
             if (methodtype == 'DELETE') {
                 realpath = realpath + '?' + $(this).serialize();

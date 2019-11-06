@@ -29,4 +29,8 @@ class Account extends CI_Controller {
         // REST_Controller provide this method to send responses
         //$this->response($response, $status);
     }
+
+    public function register(){
+        echo "vinoth";
+    }
 }
