@@ -1,36 +1,35 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+require APPPATH . '/libraries/API_Controller.php';
 
-class Account extends CI_Controller {
+class Account extends API_Controller {
 	
+    public function __construct() {
+        parent::__construct();
+    }
+    
 	public function index()
 	{
 		$this->load->view('api/index');
 	}
 
-	public function __construct() {
-        parent::__construct();
-        $this->load->helper(['jwt', 'authorization']); 
-    }
+    public function create(){
+        header("Access-Control-Allow-Origin: *");
 
-	public function gettoken()
-    {
-        $tokenData = 'Hello World!';
-        
-        // Create a token
-        $token = AUTHORIZATION::generateToken($tokenData);
-        // Set HTTP status code
-        $status = 'success';
-        // Prepare the response
-        $response = ['status' => $status, 'token' => $token];
-        print_r($response);
-        $data = AUTHORIZATION::validateToken($token);
-        print_r($data);
-        // REST_Controller provide this method to send responses
-        //$this->response($response, $status);
-    }
+        // API Configuration [Return Array: User Token Data]
+        $user_data = $this->_apiConfig([
+            'methods' => ['POST'],
+            'requireAuthorization' => false,
+        ]);
 
-    public function register(){
-        echo "vinoth";
+        // return data
+        $this->api_return(
+            [
+                'status' => true,
+                "result" => [
+                    'user_data' => $this->input->post()
+                ],
+            ],
+        200);
     }
 }

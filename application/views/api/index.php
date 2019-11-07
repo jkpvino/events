@@ -8,9 +8,8 @@
 </head>   
 <body>
 <?php 
-    $user_name = 'jkprovab';
+    $oauth = 'jkprovab';
     $api_key = 'provab@123@';    
-    $baseurl = 'http://localhost/events/';
 ?>
                                  
 
@@ -40,11 +39,11 @@
                 
                 <!-- Customer Registration -->
                 <li class="method post ">
-                    <div class="title"><span class="http-method">POST</span><span class="name"> Customer Registration </span><span class="uri">/customer/account/register</span></div>
+                    <div class="title"><span class="http-method">POST</span><span class="name"> Customer Registration </span><span class="uri">customer/account/create</span></div>
                     <form style="display: none;" id="register_tab" class="hidden">
                     <input type="hidden" value="POST" name="httpMethod">
                     <input type="hidden" value="" name="oauth">
-                    <input type="hidden" value="/customer/account/register" name="methodUri" >
+                    <input type="hidden" value="customer/account/create" name="methodUri" >
                     <span class="description"> Customer Registration </span><br><br>
                         <div id="param1"></div>
                         <table class="parameters">
@@ -58,25 +57,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                
                                 <tr class="required">
-                                    <td class="name">Api user</td>
-                                    <td class="para">user_name</td>
-                                    <td class="parameter"><input placeholder="required" value="<?= $user_name ?>" name="user_name"><input type="hidden" value="query" name="locations[user_name]"></td>
+                                    <td class="name">Oauth Token</td>
+                                    <td class="para">oauth</td>
+                                    <td class="parameter"><input placeholder="required" value="" name="oauth"><input type="hidden" value="query" name="locations[oauth]"></td>
                                     <td class="type">Numeric</td>
-                                    <td class="description"><p>Api user</p></td>
-                                </tr>
-                                <tr class="required">
-                                    <td class="name">Api Key</td>
-                                    <td class="para">api_key</td>
-                                    <td class="parameter"><input placeholder="required" type="password" value="<?= $api_key ?>" name="api_key"><input type="hidden" value="query" name="locations[api_key]"></td>
-                                    <td class="type">text</td>
-                                    <td class="description"><p>Api key</p></td>
+                                    <td class="description"><p>Token</p></td>
                                 </tr>
 
                                 <tr class="required">
                                     <td class="name">First Name</td>
                                     <td class="para">firstname</td>
-                                    <td class="parameter"><input placeholder="required" value="" name="firstname"><input type="hidden" value="query" name="locations[firstname]"></td>
+                                    <td class="parameter"><input placeholder="required" value="vinoth" name="firstname"><input type="hidden" value="vinoth" name="locations[firstname]"></td>
                                     <td class="type">text</td>
                                     <td class="description"><p>( Eg : First Name)</p></td>
                                 </tr>
@@ -92,7 +85,7 @@
                                 <tr class="required">
                                     <td class="name">Email</td>
                                     <td class="para">email</td>
-                                    <td class="parameter"><input placeholder="required" value="" name="email"><input type="hidden" value="query" name="locations[email]"></td>
+                                    <td class="parameter"><input placeholder="required" type="text" name="email"><input type="hidden"  name="locations[email]"></td>
                                     <td class="type">text</td>
                                     <td class="description"><p>( Eg : test@gmail.com )</p></td>
                                 </tr>
@@ -100,7 +93,7 @@
                                 <tr class="required">
                                     <td class="name">Password</td>
                                     <td class="para">password</td>
-                                    <td class="parameter"><input placeholder="required" type="password" value="" name="password"><input type="hidden" value="query" name="locations[password]"></td>
+                                    <td class="parameter"><input placeholder="required" type="password" value="" name="password"><input type="hidden" name="locations[password]"></td>
                                     <td class="type">text</td>
                                     <td class="description"><p>( Eg : ******* )</p></td>
                                 </tr>
@@ -163,8 +156,8 @@
                             <tbody>
                                 <tr class="required">
                                     <td class="name">Api user</td>
-                                    <td class="para">user_name</td>
-                                    <td class="parameter"><input placeholder="required" value="<?= $user_name ?>" name="user_name"><input type="hidden" value="query" name="locations[user_name]"></td>
+                                    <td class="para">oauth</td>
+                                    <td class="parameter"><input placeholder="required" value="" name="oauth"><input type="hidden" value="query" name="locations[oauth]"></td>
                                     <td class="type">Numeric</td>
                                     <td class="description"><p>Api user</p></td>
                                 </tr>
@@ -225,8 +218,8 @@
                             <tbody>
                                 <tr class="required">
                                     <td class="name">Api user</td>
-                                    <td class="para">user_name</td>
-                                    <td class="parameter"><input placeholder="required" value="<?= $user_name ?>" name="user_name"><input type="hidden" value="query" name="locations[user_name]"></td>
+                                    <td class="para">oauth</td>
+                                    <td class="parameter"><input placeholder="required" value="" name="oauth"><input type="hidden" value="query" name="locations[oauth]"></td>
                                     <td class="type">Numeric</td>
                                     <td class="description"><p>Api user</p></td>
                                 </tr>
@@ -278,8 +271,8 @@
                             <tbody>
                                 <tr class="required">
                                     <td class="name">Api user</td>
-                                    <td class="para">user_name</td>
-                                    <td class="parameter"><input placeholder="required" value="<?= $user_name ?>" name="user_name"><input type="hidden" value="query" name="locations[user_name]"></td>
+                                    <td class="para">oauth</td>
+                                    <td class="parameter"><input placeholder="required" value="" name="oauth"><input type="hidden" value="query" name="locations[oauth]"></td>
                                     <td class="type">Numeric</td>
                                     <td class="description"><p>Api user</p></td>
                                 </tr>
@@ -336,8 +329,8 @@
                             <tbody>
                                 <tr class="required">
                                     <td class="name">Api user</td>
-                                    <td class="para">user_name</td>
-                                    <td class="parameter"><input placeholder="required" value="<?= $user_name ?>" name="user_name"><input type="hidden" value="query" name="locations[user_name]"></td>
+                                    <td class="para">oauth</td>
+                                    <td class="parameter"><input placeholder="required" value="" name="oauth"><input type="hidden" value="query" name="locations[oauth]"></td>
                                     <td class="type">Numeric</td>
                                     <td class="description"><p>Api user</p></td>
                                 </tr>
@@ -419,8 +412,8 @@
                             <tbody>
                                 <tr class="required">
                                     <td class="name">Api user</td>
-                                    <td class="para">user_name</td>
-                                    <td class="parameter"><input placeholder="required" value="<?= $user_name ?>" name="user_name"><input type="hidden" value="query" name="locations[user_name]"></td>
+                                    <td class="para">oauth</td>
+                                    <td class="parameter"><input placeholder="required" value="" name="oauth"><input type="hidden" value="query" name="locations[oauth]"></td>
                                     <td class="type">Numeric</td>
                                     <td class="description"><p>Api user</p></td>
                                 </tr>
@@ -499,7 +492,7 @@
             var methodtype = $(this).children('input[name=httpMethod]').val();
             var methoduri = $(this).children('input[name=methodUri]').val();
             $("#message").html("&lt;span class='error'&gt;API Request...&lt;/span&gt;");
-            var siteurl = "<?php echo $baseurl; ?>";
+            var siteurl = "<?php echo base_url(); ?>";
             var realpath = siteurl + methoduri + '/';
             if (methodtype == 'DELETE') {
                 realpath = realpath + '?' + $(this).serialize();
