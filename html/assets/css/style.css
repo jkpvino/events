@@ -382,7 +382,7 @@ ul.list-links a:hover {
 }
 .calendar .fc-button:hover {
   background-color: rgba(0, 0, 0, 0.05);
-  color: #ea6645;
+  color: #f40084;
 }
 .calendar .fc-button.fc-corner-left {
   border-right: transparent;
@@ -422,7 +422,7 @@ ul.list-links a:hover {
   padding: 0px 5px;
 }
 .calendar .fc-content .fc-view .fc-event-container .fc-event:hover {
-  color: #ea6645 !important;
+  color: #f40084 !important;
 }
 .calendar .fc-content .fc-day-number {
   background-color: rgba(0, 0, 0, 0.01);
@@ -443,11 +443,11 @@ ul.list-links a:hover {
   border-color: rgba(0, 0, 0, 0.05);
 }
 .calendar .fc-content .fc-state-highlight {
-  border: 2px solid #ea6645;
+  border: 2px solid #f40084;
   background-color: transparent;
 }
 .calendar .fc-content .fc-state-highlight .fc-day-number {
-  color: #ea6645;
+  color: #f40084;
 }
 .calendar .fc-content .fc-event-inner {
   margin-bottom: 20px;
@@ -471,7 +471,7 @@ ul.list-links a:hover {
   -o-transition: 0.4s;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #ea6645;
+  color: #f40084;
   content: "\f073";
   display: inline-block;
   font-size: 16px;
@@ -481,7 +481,7 @@ ul.list-links a:hover {
 }
 
 .connect-block .nav-pills li.active a {
-  background-color: #ea6645;
+  background-color: #f40084;
   color: #fff;
   position: relative;
 }
@@ -490,7 +490,7 @@ ul.list-links a:hover {
   opacity: 1;
 }
 .connect-block .nav-pills li.active a:hover {
-  background-color: #ea6645;
+  background-color: #f40084;
 }
 .connect-block .nav-pills li a {
   -moz-border-radius: 0px;
@@ -512,7 +512,7 @@ ul.list-links a:hover {
   height: 0px;
   border-style: solid;
   border-width: 4px 0 4px 5px;
-  border-color: transparent transparent transparent #ea6645;
+  border-color: transparent transparent transparent #f40084;
   content: "";
   position: absolute;
   top: 0;
@@ -549,7 +549,7 @@ ul.list-links a:hover {
   position: relative;
 }
 .course-count-down .count-down-wrapper .count-divider {
-  color: #ea6645;
+  color: #f40084;
   margin: 0 15px;
   bottom: 4px;
 }
@@ -703,7 +703,7 @@ ul.list-links a:hover {
   font-size: 18px;
 }
 .course-joined i {
-  color: #ea6645;
+  color: #f40084;
   margin-right: 5px;
 }
 
@@ -720,7 +720,7 @@ ul.list-links a:hover {
   width: 20%;
 }
 .course-list-table thead tr th {
-  border-color: #ea6645;
+  border-color: #f40084;
   color: #252525;
   font-size: 14px;
   font-weight: normal;
@@ -733,7 +733,7 @@ ul.list-links a:hover {
   opacity: 0.5;
 }
 .course-list-table tbody tr.status-in-progress .status {
-  color: #ea6645;
+  color: #f40084;
 }
 .course-list-table tbody tr th {
   -moz-transition: 0.4s;
@@ -765,7 +765,7 @@ ul.list-links a:hover {
   opacity: 0.4;
 }
 .course-schedule-block .course-completed-tag {
-  color: #ea6645;
+  color: #f40084;
   position: absolute;
   right: 0;
   top: 0;
@@ -789,7 +789,7 @@ ul.list-links a:hover {
   line-height: 1;
   text-transform: none;
   bottom: 3px;
-  color: #ea6645;
+  color: #f40084;
   content: "\f133";
   display: inline-block;
   font-size: 12px;
@@ -823,7 +823,7 @@ ul.list-links a:hover {
   display: none;
 }
 .search-box header .fa {
-  color: #ea6645;
+  color: #f40084;
   font-size: 24px;
   margin-right: 10px;
 }
@@ -930,7 +930,7 @@ ul.list-links a:hover {
 }
 .course-thumbnail.small .description .btn:hover {
   background-color: transparent;
-  color: #ea6645;
+  color: #f40084;
 }
 
 /****
@@ -1090,7 +1090,7 @@ ul.list-links a:hover {
   background-color: #012951;
 }
 .events.small .event.nearest-second .date {
-  background-color: #ea6645;
+  background-color: #f40084;
 }
 
 /****
@@ -1100,7 +1100,7 @@ ul.list-links a:hover {
   padding-bottom: 40px;
 }
 .featured-course .image {
-  border-bottom: 5px solid #ea6645;
+  border-bottom: 5px solid #f40084;
   width: 100%;
   overflow: hidden;
   height: 263px;
@@ -1357,7 +1357,7 @@ ul.list-links a:hover {
   -o-transition: 0.3s;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  background-color: #ea6645;
+  background-color: #f40084;
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -1637,7 +1637,7 @@ ul.list-links a:hover {
   line-height: 1;
   text-transform: none;
   bottom: 3px;
-  color: #ea6645;
+  color: #f40084;
   content: "\f059";
   display: inline-block;
   font-size: 12px;
@@ -1707,10 +1707,10 @@ ul.list-links a:hover {
   top: 15px;
 }
 .details-accordion:hover {
-  color: #ea6645;
+  color: #f40084;
 }
 .details-accordion .fa {
-  color: #ea6645;
+  color: #f40084;
   margin-left: 5px;
   position: relative;
   top: 1px;
@@ -1781,7 +1781,7 @@ ul.list-links a:hover {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background-color: #ea6645;
+  background-color: #f40084;
 }
 
 .price-box {
@@ -1820,7 +1820,7 @@ ul.list-links a:hover {
   font-size: 18px;
 }
 .price-box .features li .fa.available {
-  color: #ea6645;
+  color: #f40084;
 }
 .price-box.recommended {
   border: 4px solid #012951;
@@ -1866,7 +1866,7 @@ ul.list-links a:hover {
   -o-transition: 0.4s;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #ea6645;
+  color: #f40084;
   content: "\f18e";
   display: inline-block;
   font-size: 16px;
@@ -2033,7 +2033,7 @@ th.header:before {
 }
 .universal-button figure {
   display: table-cell;
-  background-color: #ea6645;
+  background-color: #f40084;
   height: 30px;
   margin-left: 20px;
   padding: 6px 10px;
@@ -2089,7 +2089,7 @@ th.header:before {
 }
 
 .background-color-secondary {
-  background-color: #ea6645;
+  background-color: #f40084;
 }
 
 .background-color-grey-dark {
@@ -2146,7 +2146,7 @@ th.header:before {
 }
 
 .font-color-secondary {
-  color: #ea6645 !important;
+  color: #f40084 !important;
 }
 
 .font-color-grey-medium {
@@ -2164,7 +2164,7 @@ th.header:before {
   color: #fff;
 }
 .has-dark-background a:hover {
-  color: #ea6645;
+  color: #f40084;
 }
 .has-dark-background h2:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
@@ -2196,7 +2196,7 @@ th.header:before {
   color: #012951;
 }
 .link-icon .fa {
-  color: #ea6645;
+  color: #f40084;
   margin: 0 5px;
   font-size: 18px;
   position: relative;
@@ -2351,7 +2351,7 @@ th.header:before {
   color: #fff;
 }
 .navigation-wrapper a:hover {
-  color: #ea6645;
+  color: #f40084;
 }
 .navigation-wrapper .background {
   background-color: #012951;
@@ -2377,7 +2377,7 @@ th.header:before {
   padding: inherit;
 }
 .navigation-wrapper .secondary-navigation-wrapper ul li i {
-  color: #ea6645;
+  color: #f40084;
   margin-right: 5px;
 }
 .navigation-wrapper .secondary-navigation-wrapper .search {
@@ -2459,7 +2459,7 @@ th.header:before {
   z-index: 0;
 }
 .navigation-wrapper .primary-navigation-wrapper header .navbar-brand:after {
-  background-color: #ea6645;
+  background-color: #f40084;
   background-image: url("../img/background-city.png");
   background-position: 0;
   content: "";
@@ -2510,7 +2510,7 @@ th.header:before {
   top: 0px;
 }
 .navigation-wrapper .primary-navigation-wrapper header nav .navbar-nav li.active a {
-  color: #ea6645;
+  color: #f40084;
 }
 .navigation-wrapper .primary-navigation-wrapper header nav .navbar-nav li:hover .child-navigation {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -2547,7 +2547,7 @@ th.header:before {
   white-space: nowrap;
 }
 .navigation-wrapper .primary-navigation-wrapper header nav .navbar-nav li .child-navigation li a:hover {
-  background-color: #ea6645;
+  background-color: #f40084;
   color: #fff;
 }
 .navigation-wrapper .primary-navigation-wrapper header nav .navbar-nav li .child-navigation li:first-child a:after {
@@ -2574,7 +2574,7 @@ th.header:before {
   top: -7px;
 }
 .navigation-wrapper .primary-navigation-wrapper header nav .navbar-nav li .child-navigation li:first-child a:hover:after {
-  border-color: transparent transparent #ea6645 transparent;
+  border-color: transparent transparent #f40084 transparent;
 }
 .navigation-wrapper .primary-navigation-wrapper header nav .navbar-nav li .child-navigation li:last-child {
   border: none;
@@ -2588,7 +2588,7 @@ th.header:before {
   -o-transition: 0.3s;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  background-color: #ea6645;
+  background-color: #f40084;
   border: 2px solid transparent;
   color: #fff;
   font-weight: bold;
@@ -2629,11 +2629,11 @@ th.header:before {
 }
 .btn.btn-framed {
   background-color: transparent;
-  border-color: #ea6645;
-  color: #ea6645;
+  border-color: #f40084;
+  color: #f40084;
 }
 .btn.btn-framed:hover {
-  background-color: #ea6645;
+  background-color: #f40084;
   color: #fff;
 }
 .btn.btn-framed.btn-color-primary {
@@ -3036,7 +3036,7 @@ label.error:before {
   color: #fff !important;
 }
 #page-footer a:hover {
-  color: #ea6645 !important;
+  color: #f40084 !important;
 }
 #page-footer abbr {
   color: #fff;
@@ -3550,7 +3550,7 @@ label.error:before {
   color: #fff;
 }
 .page-microsite #slider a:hover {
-  color: #ea6645;
+  color: #f40084;
 }
 .page-microsite #slider .slider-wrapper:after {
   background-color: transparent;
@@ -4030,11 +4030,11 @@ label.error:before {
     transition: 0.4s;
   }
   .navigation-wrapper .primary-navigation-wrapper header .navbar-nav li a:hover {
-    background-color: #ea6645 !important;
+    background-color: #f40084 !important;
     color: #fff !important;
   }
   .navigation-wrapper .primary-navigation-wrapper header .navbar-nav li.active a {
-    color: #ea6645;
+    color: #f40084;
   }
   .navigation-wrapper .primary-navigation-wrapper header .navbar-nav li:last-child {
     border: none;
