@@ -13,7 +13,7 @@
                         </div>
                     </div>
                     <div class="row">
-                    	<?php foreach ($sympos as $key => $value) { print_r($value); ?>
+                    	<?php foreach ($sympos as $key => $value) { ?>
                     		<div class="col-xs-12 col-sm-6 col-md-4">
                     			<div class="lgx-single-news">
                     				<figure>
