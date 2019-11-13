@@ -9,7 +9,9 @@ class Index extends CI_Controller{
     
 	public function index()
 	{
-        $vars['test'] = 'we';
+        $this->load->model('event_model');
+        $vars['sympos'] = $this->event_model->get_symposium();
+        //$vars['test'] = 'we';print_r($vars);exit;
         $this->load->template('home',$vars);
 	}
 
