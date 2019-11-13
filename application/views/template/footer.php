@@ -1,140 +1,113 @@
 
 
-<!--FOOTER-->
-<footer>
-    <div id="lgx-footer" class="lgx-footer"> <!--lgx-footer-white-->
-        <div class="lgx-inner-footer">
-            <div class="lgx-subscriber-area ">
-                <div class="container">
-                    <div class="lgx-subscriber-inner">  <!--lgx-subscriber-inner-indiv-->
-                        <h3 class="subscriber-title">Join Newsletter</h3>
-                        <form class="lgx-subscribe-form" >
-                            <div class="form-group form-group-email">
-                                <input type="email" id="subscribe" placeholder="Enter your email Address  ..." class="form-control lgx-input-form form-control"  />
-                            </div>
-                            <div class="form-group form-group-submit">
-                                <button type="submit" name="lgx-submit" id="lgx-submit" class="lgx-btn lgx-submit"><span>Subscribe</span></button>
-                            </div>
-                        </form> <!--//.SUBSCRIBE-->
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="lgx-footer-area">
-                    <div class="lgx-footer-single">
-                        <a class="logo" href="index.html"><img src="assets/img/footer-logo.png" alt="Logo"></a>
-                    </div> <!--//footer-area-->
-                    <div class="lgx-footer-single">
-                        <h3 class="footer-title">Venue Location </h3>
-                        <h4 class="date">
-                            18 - 21 December, 2019
-                        </h4>
+
+<!-- Footer -->
+<footer id="page-footer">
+    <section id="footer-top">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-social">
+                    <figure>Follow us:</figure>
+                    <div class="icons">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-pinterest"></i></a>
+                        <a href=""><i class="fa fa-youtube-play"></i></a>
+                    </div><!-- /.icons -->
+                </div><!-- /.social -->
+                <div class="search pull-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                    </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.pull-right -->
+            </div><!-- /.footer-inner -->
+        </div><!-- /.container -->
+    </section><!-- /#footer-top -->
+
+    <section id="footer-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <aside class="logo">
+                        <img src="assets/img/logo-white.png" class="vertical-center">
+                    </aside>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-4">
+                    <aside>
+                        <header><h4>Contact Us</h4></header>
                         <address>
-                            85 Golden Street, Darlinghurst <br>
-                            ERP 2019, United States
+                            <strong>University of Universo</strong>
+                            <br>
+                            <span>4877 Spruce Drive</span>
+                            <br><br>
+                            <span>West Newton, PA 15089</span>
+                            <br>
+                            <abbr title="Telephone">Telephone:</abbr> +1 (734) 123-4567
+                            <br>
+                            <abbr title="Email">Email:</abbr> <a href="#">questions@youruniversity.com</a>
                         </address>
-                        <a id="myModalLabel2" data-toggle="modal" data-target="#lgx-modal-map" class="map-link" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> View Map location</a>
-                    </div>
-                    <div class="lgx-footer-single">
-                        <h3 class="footer-title">Social Connection</h3>
-                        <p class="text">
-                            You should connect social area <br> for Any update
-                        </p>
-                        <ul class="list-inline lgx-social-footer">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    </aside>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-4">
+                    <aside>
+                        <header><h4>Important Links</h4></header>
+                        <ul class="list-links">
+                            <li><a href="#">Future Students</a></li>
+                            <li><a href="#">Alumni</a></li>
+                            <li><a href="#">Give a Donation</a></li>
+                            <li><a href="#">Professors</a></li>
+                            <li><a href="#">Libary & Health</a></li>
+                            <li><a href="#">Research</a></li>
                         </ul>
-                    </div>
-                    <!--<div class="lgx-footer-single">
-                        <h2 class="footer-title">Instagram Feed</h2>
-                        <div id="instafeed">
+                    </aside>
+                </div><!-- /.col-md-3 -->
+                <div class="col-md-3 col-sm-4">
+                    <aside>
+                        <header><h4>About Universo</h4></header>
+                        <p>Aliquam feugiat turpis quis felis adipiscing, non pulvinar odio lacinia.
+                            Aliquam elementum pharetra fringilla. Duis blandit, sapien in semper vehicula,
+                            tellus elit gravida odio, ac tincidunt nisl mi at ante. Vivamus tincidunt nunc nibh.
+                        </p>
+                        <div>
+                            <a href="" class="read-more">All News</a>
                         </div>
-                    </div>-->
-                </div>
-                <!-- Modal-->
-                <div id="lgx-modal-map" class="modal fade lgx-modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="lgxmapcanvas map-canvas-default" id="map_canvas"> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- //.Modal-->
+                    </aside>
+                </div><!-- /.col-md-3 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        <div class="background"><img src="assets/img/background-city.png" class="" alt=""></div>
+    </section><!-- /#footer-content -->
 
-                <div class="lgx-footer-bottom">
-                    <div class="lgx-copyright">
-                        <p> <span>©</span> 2018 EventHunt is powered by <a href="http://www.themearth.com/">themearth.</a> The property of their owners.</p>
-                    </div>
-                </div>
+    <section id="footer-bottom">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="copyright">© Theme Starz, All rights reserved</div><!-- /.copyright -->
+            </div><!-- /.footer-inner -->
+        </div><!-- /.container -->
+    </section><!-- /#footer-bottom -->
 
-            </div>
-            <!-- //.CONTAINER -->
-        </div>
-        <!-- //.footer Middle -->
-    </div>
 </footer>
-<!--FOOTER END-->
-
+<!-- end Footer -->
 
 </div>
-<!--//.LGX SITE CONTAINER-->
-<!-- *** ADD YOUR SITE SCRIPT HERE *** -->
-<!-- JQUERY  -->
-<script src="<?php echo base_url(); ?>assets/js/vendor/jquery-1.12.4.min.js"></script>
+<!-- end Wrapper -->
 
-<!-- BOOTSTRAP JS  -->
-<script src="<?php echo base_url(); ?>assets/libs/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/selectize.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQuery.equalHeights.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/icheck.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.vanillabox-0.1.5.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/retina-1.1.0.min.js"></script>
 
-<!-- Smooth Scroll  -->
-<script src="<?php echo base_url(); ?>assets/libs/jquery.smooth-scroll.js"></script>
-
-<!-- SKILLS SCRIPT  -->
-<script src="<?php echo base_url(); ?>assets/libs/jquery.validate.js"></script>
-
-<!-- if load google maps then load this api, change api key as it may expire for limit cross as this is provided with any theme -->
-<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvRGGtL6OrpP5xVMxq_0NgiMiRhm3ycI"></script> -->
-
-<!-- CUSTOM GOOGLE MAP -->
-<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/libs/gmap/jquery.googlemap.js"></script> -->
-
-<!-- adding magnific popup js library -->
-<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/libs/maginificpopup/jquery.magnific-popup.min.js"></script> -->
-
-<!-- Owl Carousel  -->
-<script src="<?php echo base_url(); ?>assets/libs/owlcarousel/owl.carousel.min.js"></script>
-
-<!-- COUNTDOWN   -->
-<!-- <script src="<?php echo base_url(); ?>assets/libs/countdown.js"></script>
-<script src="<?php echo base_url(); ?>assets/libs/timer/TimeCircles.js"></script> -->
-
-<!-- Counter JS -->
-<!-- <script src="<?php echo base_url(); ?>assets/libs/waypoints.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/libs/counterup/jquery.counterup.min.js"></script> -->
-
-<!-- SMOTH SCROLL -->
-<!-- <script src="<?php echo base_url(); ?>assets/libs/jquery.smooth-scroll.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/libs/jquery.easing.min.js"></script> -->
-
-<!-- type js -->
-<!-- <script src="<?php echo base_url(); ?>assets/libs/typed/typed.min.js"></script> -->
-
-<!-- header parallax js -->
-<!-- <script src="<?php echo base_url(); ?>assets/libs/header-parallax.js"></script> -->
-
-<!-- instafeed js -->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>-->
-<!-- <script src="<?php echo base_url(); ?>assets/libs/instafeed.min.js"></script>
- -->
-<!-- CUSTOM SCRIPT  -->
- <script src="<?php echo base_url(); ?>assets/js/custom.script.js"></script> 
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 
 </body>
 </html>
