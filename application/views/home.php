@@ -1,111 +1,4 @@
 
-  
-
-
-<body class="page-homepage-carousel">
-<!-- Wrapper -->
-<div class="wrapper">
-<!-- Header -->
-<div class="navigation-wrapper">
-    <div class="secondary-navigation-wrapper">
-        <div class="container">
-            <div class="navigation-contact pull-left">Call Us:  <span class="opacity-70">000-123-456-789</span></div>
-            <div class="search">
-                <div class="input-group">
-                    <input type="search" class="form-control" name="search" placeholder="Search">
-                    <span class="input-group-btn"><button type="submit" id="search-submit" class="btn"><i class="fa fa-search"></i></button></span>
-                </div><!-- /.input-group -->
-            </div>
-            <ul class="secondary-navigation list-unstyled">
-                <li><a href="#">Prospective Students</a></li>
-                <li><a href="#">Current Students</a></li>
-                <li><a href="#">Faculty & Staff</a></li>
-                <li><a href="#">Alumni</a></li>
-            </ul>
-        </div>
-    </div><!-- /.secondary-navigation -->
-    <div class="primary-navigation-wrapper">
-        <header class="navbar" id="top" role="banner">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="assets/img/logo.png" alt="brand"></a>
-                    </div>
-                </div>
-                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="#" class="has-child no-link">Home</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="index.html">Homepage Education</a></li>
-                                <li><a href="homepage-courses.html">Homepage Courses</a></li>
-                                <li><a href="homepage-events.html">Homepage Events</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class=" has-child no-link">Courses</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="course-landing-page.html">Course Landing Page</a></li>
-                                <li><a href="course-listing.html">Course Listing</a></li>
-                                <li><a href="course-listing-images.html">Course Listing with Images</a></li>
-                                <li><a href="course-detail-v1.html">Course Detail v1</a></li>
-                                <li><a href="course-detail-v2.html">Course Detail v2</a></li>
-                                <li><a href="course-detail-v3.html">Course Detail v3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="has-child no-link">Events</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="event-listing-images.html">Events Listing with images</a></li>
-                                <li><a href="event-listing.html">Events Listing</a></li>
-                                <li><a href="event-grid.html">Events Grid</a></li>
-                                <li><a href="event-detail.html">Event Detail</a></li>
-                                <li><a href="event-calendar.html">Events Calendar</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="about-us.html">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#" class="has-child no-link">Blog</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="blog-listing.html">Blog listing</a></li>
-                                <li><a href="blog-detail.html">Blog Detail</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="has-child no-link">Pages</a>
-                            <ul class="list-unstyled child-navigation">
-                                <li><a href="full-width.html">Fullwidth</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="microsite.html">Microsite</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="members.html">Members</a></li>
-                                <li><a href="member-detail.html">Member Detail</a></li>
-                                <li><a href="register-sign-in.html">Register & Sign In</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact-us.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </nav><!-- /.navbar collapse-->
-            </div><!-- /.container -->
-        </header><!-- /.navbar -->
-    </div><!-- /.primary-navigation -->
-    <div class="background">
-        <img src="assets/img/background-city.png"  alt="background">
-    </div>
-</div>
-<!-- end Header -->
 
 <!-- Page Content -->
 <div id="page-content">
@@ -116,9 +9,9 @@
             <div class="row">
                 <div class="col-md-6 col-sm-7">
                     <div class="image-carousel">
-                        <div class="image-carousel-slide"><img src="assets/img/slide-1.jpg" alt=""></div>
-                        <div class="image-carousel-slide"><img src="assets/img/slide-2.jpg" alt=""></div>
-                        <div class="image-carousel-slide"><img src="assets/img/slide-3.jpg" alt=""></div>
+                        <div class="image-carousel-slide"><img src="<?php echo base_url() ?>assets/img/slide-1.jpg" alt=""></div>
+                        <div class="image-carousel-slide"><img src="<?php echo base_url() ?>assets/img/slide-2.jpg" alt=""></div>
+                        <div class="image-carousel-slide"><img src="<?php echo base_url() ?>assets/img/slide-3.jpg" alt=""></div>
                     </div><!-- /.slider-image -->
                 </div><!-- /.col-md-6 -->
                 <div class="col-md-6 col-sm-5">
@@ -235,7 +128,7 @@
                         <h2>About Universo</h2>
                     </header>
                     <div class="section-content">
-                        <img src="assets/img/students.jpg" alt="" class="add-margin">
+                        <img src="<?php echo base_url() ?>assets/img/students.jpg" alt="" class="add-margin">
                         <p><strong>Welcome o Universo.</strong> Premium HTML Template for schools, universieties and other educational institutes.
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet semper tincidunt.
                             Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
@@ -255,7 +148,7 @@
             <div class="author-carousel">
                 <div class="author">
                     <blockquote>
-                        <figure class="author-picture"><img src="assets/img/student-testimonial.jpg" alt=""></figure>
+                        <figure class="author-picture"><img src="<?php echo base_url() ?>assets/img/student-testimonial.jpg" alt=""></figure>
                         <article class="paragraph-wrapper">
                             <div class="inner">
                                 <header>Morbi nec nisi ante. Quisque lacus ligula, iaculis in elit et, interdum semper quam. Fusce in interdum tortor.
@@ -267,7 +160,7 @@
                 </div><!-- /.author -->
                 <div class="author">
                     <blockquote>
-                        <figure class="author-picture"><img src="assets/img/student-testimonial.jpg" alt=""></figure>
+                        <figure class="author-picture"><img src="<?php echo base_url() ?>assets/img/student-testimonial.jpg" alt=""></figure>
                         <article class="paragraph-wrapper">
                             <div class="inner">
                                 <header>Morbi nec nisi ante. Quisque lacus ligula, iaculis in elit et, interdum semper quam. Fusce in interdum tortor.
@@ -362,7 +255,7 @@
                     <div class="section-content">
                         <div class="professors">
                             <article class="professor-thumbnail">
-                                <figure class="professor-image"><a href="member-detail.html"><img src="assets/img/professor.jpg" alt=""></a></figure>
+                                <figure class="professor-image"><a href="member-detail.html"><img src="<?php echo base_url() ?>assets/img/professor.jpg" alt=""></a></figure>
                                 <aside>
                                     <header>
                                         <a href="member-detail.html">Prof. Mathew Davis</a>
@@ -373,7 +266,7 @@
                                 </aside>
                             </article><!-- /.professor-thumbnail -->
                             <article class="professor-thumbnail">
-                                <figure class="professor-image"><a href="member-detail.html"><img src="assets/img/professor-02.jpg" alt=""></a></figure>
+                                <figure class="professor-image"><a href="member-detail.html"><img src="<?php echo base_url() ?>assets/img/professor-02.jpg" alt=""></a></figure>
                                 <aside>
                                     <header>
                                         <a href="member-detail.html">Prof. Jane Stairway</a>
@@ -396,20 +289,20 @@
                     </header>
                     <div class="section-content">
                         <ul class="gallery-list">
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-01.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-02.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-03.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-04.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-05.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-06.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-07.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-08.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-09.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-10.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-11.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-12.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-13.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="assets/img/image-14.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-01.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-02.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-03.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-04.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-05.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-06.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-07.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-08.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-09.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-10.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-11.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-12.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-13.jpg" alt=""></a></li>
+                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-14.jpg" alt=""></a></li>
                         </ul>
                         <a href="" class="read-more">Go to Gallery</a>
                     </div><!-- /.section-content -->
@@ -432,11 +325,11 @@
                     </header>
                     <div class="section-content">
                         <div class="logos">
-                            <div class="logo"><a href=""><img src="assets/img/logo-partner-01.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="assets/img/logo-partner-02.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="assets/img/logo-partner-03.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="assets/img/logo-partner-04.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="assets/img/logo-partner-05.png" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-01.png" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-02.png" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-03.png" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-04.png" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-05.png" alt=""></a></div>
                         </div>
                     </div>
                 </section>

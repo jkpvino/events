@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-12">
                     <aside class="logo">
-                        <img src="assets/img/logo-white.png" class="vertical-center">
+                        <img src="<?php echo base_url() ?>assets/img/logo-white.png" class="vertical-center">
                     </aside>
                 </div><!-- /.col-md-3 -->
                 <div class="col-md-3 col-sm-4">
@@ -78,7 +78,7 @@
                 </div><!-- /.col-md-3 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
-        <div class="background"><img src="assets/img/background-city.png" class="" alt=""></div>
+        <div class="background"><img src="<?php echo base_url() ?>assets/img/background-city.png" class="" alt=""></div>
     </section><!-- /#footer-content -->
 
     <section id="footer-bottom">
