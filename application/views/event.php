@@ -81,18 +81,23 @@
                                 </div>
                                 <aside>
                                     <header>
-                                        <a href="event-detail.html">Conservatory Exhibit: The garden of india a country and culture revealed</a>
+                                        <a href="event-detail.html">PAPER PRESENTATION</a>
                                     </header>
                                     <div class="additional-info"><span class="fa fa-map-marker"></span> Matthaei Botanical Gardens</div>
                                     <div class="description">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et urna fringilla
-                                            volutpat elit non, tristique lectus. Nam blandit odio nisl, ac malesuada lacus fermentum sit amet.
-                                            Vestibulum vitae aliquet felis, ornare feugiat elit. Nulla varius condimentum elit,
-                                            sed pulvinar leo sollicitudin vel.
+                                        <p>Tel Aviv University, Israel (TAU), Agricultural Research Organization, Volcani Center, Israel (ARO), PSG College of Technology(PSGCT), India and Kumaraguru College of Technology(KCT), India have come together to hold a two day Bi-National Conference on Sustainable Cities. The conference is scheduled during 20-22 November, 2019. The conference will host scholars/experts from India and Israel who have done significant research on sustainable cities.
+                                        </p>
+                                        <p>
+                                        	Disruptive technologies such as IOT, Big Data, Blockchain, AI, VR/ AR are changing our lives in inordinate ways. These technologies will transform the way we consume, travel, exercise, relax, feed, house and clothe ourselves. This two day Bi-National Conference will explore how disruptive technologies will impact the infrastructure, commutation of resources and services, economic transactions and overall functioning of the cities.
                                         </p>
                                     </div>
                                     <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
-
+                                    <div class="icons">
+	                                    <a href=""><i class="fa fa-twitter"></i></a>
+	                                    <a href=""><i class="fa fa-facebook"></i></a>
+	                                    <a href=""><i class="fa fa-pinterest"></i></a>
+	                                    <a href=""><i class="fa fa-youtube-play"></i></a>
+	                                </div><!-- /.icons -->
 
 
                                         <section id="contact" style="display: block;">
@@ -107,13 +112,12 @@
 					                                    <abbr title="Telephone">Telephone:</abbr> +1 (734) 123-4567
 					                                    <br>
 					                                    <abbr title="Email">Email:</abbr> <a href="#">questions@youruniversity.com</a>
+														<br>
+					                                    <abbr title="Email">Event Timing:</abbr> <span class="course-summary" id="course-course-time"> <i class="fa fa-clock-o"></i> 6:00pm – 8:00pm</span>
+
+					                                    
 					                                </address>
-					                                <div class="icons">
-					                                    <a href=""><i class="fa fa-twitter"></i></a>
-					                                    <a href=""><i class="fa fa-facebook"></i></a>
-					                                    <a href=""><i class="fa fa-pinterest"></i></a>
-					                                    <a href=""><i class="fa fa-youtube-play"></i></a>
-					                                </div><!-- /.icons -->
+					                                
 					                                <hr>
 					                                <p>
 					                                    Morbi rutrum massa eget mi gravida, sit amet mollis magna gravida. Morbi sodales,
