@@ -7,6 +7,7 @@
                 <figure class="event-image">
                     <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/img/course-detail-img.jpg"></div>
                 </figure>
+                <div class="row" style="margin: 0 auto"> <a href="event-detail.html" class="btn btn-large" style="width: 100%">Book Now</a> </div>
             </div>
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
@@ -90,7 +91,7 @@
                                             sed pulvinar leo sollicitudin vel.
                                         </p>
                                     </div>
-                                    <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+                                    <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
 
 
 
@@ -145,7 +146,7 @@
                                             sed pulvinar leo sollicitudin vel.
                                         </p>
                                     </div>
-                                    <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+                                    <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
                                 </aside>
                             </article><!-- /.event -->
                             <article class="event">
@@ -170,7 +171,7 @@
                                             sed pulvinar leo sollicitudin vel.
                                         </p>
                                     </div>
-                                    <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+                                    <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
                                 </aside>
                             </article><!-- /.event -->
                         </div><!-- /.section-content -->
@@ -213,7 +214,7 @@
 	                                    sed pulvinar leo sollicitudin vel.
 	                                </p>
 	                            </div>
-	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
 	                        </aside>
 	                    </article><!-- /article -->
 	                    <article class="event">
@@ -233,7 +234,7 @@
 	                                    sed pulvinar leo sollicitudin vel.
 	                                </p>
 	                            </div>
-	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
 	                        </aside>
 	                    </article><!-- /article -->
 	                    <article class="event">
@@ -253,7 +254,7 @@
 	                                    sed pulvinar leo sollicitudin vel.
 	                                </p>
 	                            </div>
-	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
 	                        </aside>
 	                    </article><!-- /article -->
 	                    <article class="event">
@@ -273,7 +274,7 @@
 	                                    sed pulvinar leo sollicitudin vel.
 	                                </p>
 	                            </div>
-	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
 	                        </aside>
 	                    </article><!-- /article -->
 	                    <article class="event">
@@ -293,7 +294,7 @@
 	                                    sed pulvinar leo sollicitudin vel.
 	                                </p>
 	                            </div>
-	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
+	                            <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">Book Now</a>
 	                        </aside>
 	                    </article><!-- /article -->
 	                </div>
