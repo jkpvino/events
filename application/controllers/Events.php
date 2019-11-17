@@ -10,6 +10,7 @@ class Events extends CI_Controller{
 	public function index()
 	{
         $this->load->model('event_model');
+        $vars['class'] = '';
         $vars['sympos'] = $this->event_model->get_symposium();
         $this->load->template('events',$vars);
 	}
