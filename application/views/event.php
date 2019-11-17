@@ -7,7 +7,7 @@
                 <figure class="event-image">
                     <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/img/course-detail-img.jpg"></div>
                 </figure>
-                <div class="row" style="margin: 0 auto"> <a href="event-detail.html" class="btn btn-large" style="width: 100%">Book Now</a> </div>
+                <div class="row" style="margin: 0 auto"> <a href="event-detail.html" data-toggle="modal" data-target="#modalSubscriptionForm" class="btn btn-large" style="width: 100%">Register</a> </div>
             </div>
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
@@ -17,6 +17,7 @@
 		                    <section id="event-header">
 		                        <header>
 		                            <h2 class="event-date">Saturday March 27, 2015</h2>
+		                            <div class="course-category">College:<a href="#">Symposium</a></div>
 		                        </header>
 		                        <hr>
 		                        <div class="course-count-down" id="course-count-down">
@@ -116,7 +117,6 @@ margin-top: 0px;
 font-style: normal;
 font-weight: bold;
 }
-
 .eventli .user ul {
 padding-top: 10px;
 border-top: 1px solid #edf5ff;
@@ -127,7 +127,6 @@ margin-top: 10px;
 .eventli .user ul li i {
 margin-right: 5px;
 }
-
 .eventli .btn.btn-framed {
 border-radius: 25px;
 }
@@ -148,149 +147,9 @@ margin: 40px auto;
 
 
 
-
-/*--- tabs ---*/
-.event .title {
-  margin: 0px 0 0; }
-  .event .nav-content {
-    float: right;
-	width: 70%;
-  }
-  .event .btn {
-    background: #ff007a;
-  }
-
-  .event .nav-content strong {
-    display: block;
-    font-family: Montserrat;
-    font-size: 20px;
-    color: #002691;
-}
-.event nav > div a.nav-item.nav-link.active 
-.event .spicel-features {
-  background: #fafaff; }
-.event .nav-fill .nav-item {
-  text-align: left;
-  text-transform: uppercase;
-  margin: 0 5px;
-  font-size: 12px; margin-right: 16px;
-  float: left;
-}
-  .event .nav-fill .nav-item text-t
-  i {
-    margin-right: 10px; }
-  .event .nav-fill .nav-item i::before {
-    font-size: 26px;
-    margin-right: 13px;
-    position: relative;
-    top: 4px; }
-.event nav > .nav.nav-tabs {
-  border: none;
-  color: #fff;
-  border-radius: 0;
-  flex-wrap: inherit;
-  padding: 0 30px; }
-.event .nav-item {
-  margin: 0 0; }
-.event a.nav-item.nav-link.active {
-  background: #ff007a !important;
-  color: #fff !important; }
-  .event a.nav-item.nav-link.active strong{
-	  color:#fff;
-  }
-.event nav > div a.nav-item.nav-link,
-.event nav > div a.nav-item.nav-link.active {
-  border: none;
-padding: 18px 25px;
-color: #47759d;
-border-radius: 0;
-background: #fff;
-position: relative;
-background: #f5faff; }
-.event nav > div a.nav-item.nav-link.active:after {
- width: 0;
-height: 0;
-border-style: solid;
-border-width: 0 15px 15px 0;
-border-color: transparent #e7015e transparent transparent;
-position: absolute;
-left: 0;
-bottom: -15px;
-content: '';
--o-transition: all 0.4s ease;
-transition: all 0.4s ease;
--webkit-transition: all 0.4s ease;
--moz-transition: all 0.4s ease;
--ms-transition: all 0.4s ease;
-border-color: transparent #ff007a transparent transparent;
-}
-.event .tab-content {
-  padding: 50px 25px 0 !important; }
-
-.event .nav-tabs{
-	border: 0px solid;
-}
-
-
-.event nav > div a.nav-item.nav-link .lgt-icon{
-	display: none;
-}
-
-
-
-
-
-
-
-
 </style>
 
 
-<div class="event fix pt-120 pb-120">
-			 <div class="section-t team-t paroller" data-paroller-factor="0.15" data-paroller-factor-lg="0.15" data-paroller-factor-md="0.15" data-paroller-factor-sm="0.15" data-paroller-type="foreground" data-paroller-direction="horizontal" style="transform: translateX(-25px); transition: transform 0s linear 0s; will-change: transform;"><h2>Event</h2></div>
-			 
-				<div class="">
-				   <div class="col-lg-12 ">				
-	                  <nav class="wow fadeInDown  animated" data-animation="fadeInDown animated" data-delay=".2s" style="visibility: visible; animation-name: fadeInDown;">
-	                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-	                        <a class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab" href="#one" role="tab" aria-selected="true">
-							<img src="img/t-icon.png" alt="img" class="drk-icon">		
-							<img src="img/t-w-icon1.png" alt="img" class="lgt-icon">  
-							<div class="nav-content">
-								<strong>First Day</strong>
-								<span>10th January 2019</span>
-							</div>
-							</a>
-	                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#two" role="tab" aria-selected="false"><img src="img/t-icon.png" alt="img" class="drk-icon">		
-							<img src="img/t-w-icon1.png" alt="img" class="lgt-icon"> 
-							<div class="nav-content">
-								<strong>Second Day</strong>
-								<span>10th January 2019</span>
-							</div>
-							</a>
-	                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#three" role="tab" aria-selected="false"><img src="img/t-icon.png" alt="img" class="drk-icon">		
-							<img src="img/t-w-icon1.png" alt="img" class="lgt-icon"> 
-							<div class="nav-content">
-								<strong>Third Day</strong>
-								<span>10th January 2019</span>
-							</div>
-							</a>
-							<a class="nav-item nav-link" id="nav-contact-tab2" data-toggle="tab" href="#four" role="tab" aria-selected="false"><img src="img/t-icon.png" alt="img" class="drk-icon">		
-							<img src="img/t-w-icon1.png" alt="img" class="lgt-icon"> 
-							<div class="nav-content">
-								<strong>Fourth Day</strong>
-								<span>10th January 2019</span>
-							</div>
-							</a>
-	                     </div>
-	                  </nav>                  
-	               </div>
-				   <div class="col-lg-12 justify-content-center text-center">
-					<a href="#" class="btn mt-20 mr-10">More Program  +</a>
-				   </div>
-			   </div>
-            
-            </div>
 
 
 
@@ -311,56 +170,14 @@ border-color: transparent #ff007a transparent transparent;
 
 
 
+		
 
 
 
 
 
 
-
-
-        <section class="eventli">
-        <div class="row event"> 
-        	<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active show" id="nav-home-tab" data-toggle="tab" href="#one" role="tab" aria-selected="true">
-				<img src="<?php echo base_url() ?>assets/img/t-icon.png" alt="img" class="drk-icon">		
-				<img src="<?php echo base_url() ?>assets/img/t-w-icon1.png" alt="img" class="lgt-icon">  
-				<div class="nav-content">
-					<strong>First Day</strong>
-					<span>10th January 2019</span>
-				</div>
-				</a>
-                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#two" role="tab" aria-selected="false"><img src="<?php echo base_url() ?>assets/img/t-icon.png" alt="img" class="drk-icon">		
-				<img src="<?php echo base_url() ?>assets/img/t-w-icon1.png" alt="img" class="lgt-icon"> 
-				<div class="nav-content">
-					<strong>Second Day</strong>
-					<span>10th January 2019</span>
-				</div>
-				</a>
-                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#three" role="tab" aria-selected="false"><img src="<?php echo base_url() ?>assets/img/t-icon.png" alt="img" class="drk-icon">		
-				<img src="<?php echo base_url() ?>assets/img/t-w-icon1.png" alt="img" class="lgt-icon"> 
-				<div class="nav-content">
-					<strong>Third Day</strong>
-					<span>10th January 2019</span>
-				</div>
-				</a>
-				<a class="nav-item nav-link" id="nav-contact-tab2" data-toggle="tab" href="#four" role="tab" aria-selected="false"><img src="<?php echo base_url() ?>assets/img/t-icon.png" alt="img" class="drk-icon">		
-				<img src="<?php echo base_url() ?>assets/img/t-w-icon1.png" alt="img" class="lgt-icon"> 
-				<div class="nav-content">
-					<strong>Fourth Day</strong>
-					<span>10th January 2019</span>
-				</div>
-				</a>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
+        <section class="eventli">       
         	<?php for ($i=0; $i < 3; $i++) { ?>
             <div class="row">
                <div class="col-lg-2">
@@ -370,10 +187,10 @@ border-color: transparent #ff007a transparent transparent;
 						 <h5>Rosalina William</h5>
 						 <p>UX Deisgn</p>
 					  </div>
-					  <ul>
-                     <li><i class="fa fa-mobile"></i>+91 8220466675</li>
-                     <li><i class="fa fa-clock-o"></i>6:00pm – 8:00pm</li>
-                  </ul>
+					  <ul class="list-unstyled">
+	                     <li><i class="fa fa-mobile"></i>+91 8220466675</li>
+	                     <li><i class="fa fa-clock-o"></i>6:00pm – 8:00pm</li>
+	                  </ul>
 				  </div>
                </div>
                <div class="col-lg-10">
@@ -381,8 +198,19 @@ border-color: transparent #ff007a transparent transparent;
                     
 					 <h2>UX Design Trend Party 2019</h2>
 					 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-					 <a href="#" class="btn btn-framed"><i class="far fa-ticket-alt"></i> Buy Ticket</a>
-					 <a href="#" class="btn btn-framed">Read More</a>
+					 <ul> 
+						<li>Participants should bring their college identity cards along with bonafide certificates duly signed by the Head of the Institution/Department. </li>
+						<li>Participants should come in full formals. </li>
+						<li>A single candidate can participate only in maximum 3 events. </li>
+						<li>Registration fee- Rs150/- </li>
+						<li>DD should be taken in favor of “THE PRINCIPAL, SACS MAVMM ENGINEERING COLLEGE, ALAGAR KOVIL” payable at Madurai. </li>
+						<li>DD should be sent to our college within 15-9-2011. </li>
+						<li>Registration fee will be collected only once even if the candidate will participate in one (or) more events. </li>
+						<li>There would be overlapping of events during the day of the symposium. Hence, the participants should make internal arrangements for participation accordingly.(refer agenda) </li>
+						<li>The candidate who want to participate in gaming, can register their name in the spot by giving registration fee-Rs50/- </li>
+					</ul>
+					 <a href="#" class="btn btn-framed"><i class="fa fa-thumbs-up"></i> Subscribe </a>
+					 <!-- <a href="#" class="btn btn-framed">Register</a> -->
 					 <div class="crical"><i class="fal fa-video"></i> </div>
                   </div>
                </div>
@@ -391,48 +219,159 @@ border-color: transparent #ff007a transparent transparent;
         	<?php } ?>
         </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
             <!-- /#course-info -->
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div><!-- /.container -->
 </div>
 <!-- end Page Content -->
+
+
+<!-- Registration Popup -->
+<style type="text/css">
+	.modal-content{
+		background: #011C38;
+	}
+	.modal-header h6 {
+	    color: #fff;
+	    text-align: left;
+	    display: inline-block;
+	}
+	.modal-header{
+		border-bottom: 0px solid:
+	}
+</style>
+<div class="modal fade"  id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h6>Join the comunity of modern thinking students</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span> 
+        </button>
+      </div>
+      <div class="modal-body homepage-carousel-wrapper">
+
+
+
+      	<div class="slider-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="slider-form" role="form" action="" method="post">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input class="form-control has-dark-background" name="fullname" id="slider-name" placeholder="Full Name" type="text" required>
+                                            </div>
+                                        </div><!-- /.col-md-6 -->
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input class="form-control has-dark-background" name="email" id="slider-email" placeholder="Email" type="email" required>
+                                            </div>
+                                        </div><!-- /.col-md-6 -->
+                                    </div><!-- /.row -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input class="form-control has-dark-background" name="phone_no" id="slider-name" placeholder="Phone No" type="text" required>
+                                            </div>
+                                        </div><!-- /.col-md-6 -->
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                 <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                                    <option value="">Gender</option>
+                                                    <option value="1">Male</option>
+                                                    <option value="0">Female</option>
+                                                </select>
+                                            </div>
+                                        </div><!-- /.col-md-6 -->
+                                    </div><!-- /.row -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                                    <option value="">You Are From</option>
+                                                    <option value="school">School</option>
+                                                    <option value="cpllege">College</option>
+                                                </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-6 -->
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <select name="slider-course" id="slider-course" class="has-dark-background">
+                                                    <option value="- Not selected -">Institution</option>
+                                                    <option value="Art and Design">SACS M.A.V.M.M ENGG COLLEGE</option>
+                                                    <option value="Marketing">LATHA MATHAVAN ENGG COLLEGE</option>
+                                                    <option value="Science">American Arts & Science college </option>
+                                                    <option value="History and Psychology"> Yadhava Girls College</option>
+                                                </select>
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-md-6 -->
+                                    </div><!-- /.row -->
+                                    <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Submit</button>
+                                    <div id="form-status"></div>
+                                </form>
+                            </div><!-- /.col-md-12 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.slider-content -->
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<style>
+#mySidenav {
+    position: fixed;
+    top: 25%;
+    right: 0;
+}
+#mySidenav a {
+    /* left: -80px; */
+    transition: 0.3s;
+    padding: 15px;
+    /* width: 90px; */
+    text-decoration: none;
+    /* font-size: 20px; */
+    color: white;
+    border-radius: 5px 0px 0px 5px;
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#about {
+  top: 20px;
+  background-color: #4CAF50;
+}
+
+#blog {
+  top: 80px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 140px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 200px;
+  background-color: #555
+}
+</style>
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="about"> Available <br> 250 </a>
+  <a href="#" id="blog"> Total <br> 350 </a>
+  <a href="#" id="projects">Events <br> 12 </a>
+  <a href="#" id="contact">Registred <br> 100 </a>
+</div>
