@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/selectize.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/vanillabox/vanillabox.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/vanillabox/vanillabox.css" type="text/css">
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css">
 

@@ -107,6 +107,9 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.vanillabox-0.1.5.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/retina-1.1.0.min.js"></script>
 
+<!-- Data Table -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.min.js"></script>
+
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 
 <!—- ShareThis BEGIN -—>

@@ -39,5 +39,11 @@ public function index()
         $this->load->template('forgotpass',$vars);
     }
 
+    public function myaccount()
+    {
+        $vars['class'] = '';
+        $this->load->template('my-account',$vars);
+    }
+
   
 }
