@@ -95,6 +95,14 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
+                                                    <td class="title bio">Bio</td>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <textarea id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.In sollicitudin mi id urna pulvinar, in ornare dui scelerisque. Nunc nec odio eros. Integer placerat tempor nunc eget semper. Nulla vitae dictum est, et convallis mauris. Integer</textarea>
+                                                        </div><!-- /input-group -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
                                                     <td class="title">Website</td>
                                                     <td>
                                                         <div class="input-group">
