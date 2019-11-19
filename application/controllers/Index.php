@@ -45,5 +45,10 @@ public function index()
         $this->load->template('my-account',$vars);
     }
 
+    public function newevent(){        
+        $vars['class'] = '';
+        $this->load->template('create_account',$vars);
+    }
+
   
 }

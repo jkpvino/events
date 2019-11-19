@@ -98,6 +98,8 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/moment-with-locales.js"></script> -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/selectize.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js"></script>
@@ -112,9 +114,17 @@
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 
-<!—- ShareThis BEGIN -—>
+<script src="<?php echo base_url(); ?>assets/js/editor.js"></script>
+
+<!--  ShareThis BEGIN -->
 <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5dd0d63912574600123b54c5&product=sticky-share-buttons"></script>
-<!—- ShareThis END -—>
+<!--  ShareThis END -->
+
+
+
+        <script type="text/javascript">
+            
+        </script>
 
 </body>
 </html>
