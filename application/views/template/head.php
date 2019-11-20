@@ -9,11 +9,13 @@
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/selectize.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/vanillabox/vanillabox.css" type="text/css">
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/editor.css" type="text/css">
 
     <title>Universo - Educational, Course and University Template</title>
 
