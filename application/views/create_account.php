@@ -98,6 +98,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group">
+                                <div><label class="control-label"> Events For  </label></div>
                                 <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
                                     <option value="">You Are In </option>
                                     <option value="Beginner">School</option>
@@ -109,21 +110,39 @@
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">
+                                <div><label class="control-label"> Event Type  </label></div>
                                 <select name="slider-course" id="slider-course" class="has-dark-background">
-                                    <option value="">Institution</option>
-                                    <option value="Art and Design">Art and Design</option>
-                                    <option value="Marketing">Marketing</option>
-                                    <option value="Science">Science</option>
+                                    <option value="">Event Type</option>
+                                    <option value="Art and Design">Symposium</option>
+                                    <option value="Marketing">Conference</option>
+                                    <option value="Science">Workshop</option>
                                     <option value="History and Psychology"></option>
                                 </select>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
 
-                        <div class="checkbox">
+                        <!-- <div class="checkbox">
                             <label>
                                 <input type="checkbox">I Understand <a href="#">Terms & Conditions</a>
                             </label>
-                        </div>
+                        </div> -->
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div><label class="control-label"> Event Logo  </label></div>
+                            <div class="input-group">
+                                <input type="file" class="form-control has-dark-background" name="logo">
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div><label class="control-label"> Event Banner  </label></div>
+                                <div class="input-group">
+                                    <input type="file" class="form-control has-dark-background" name="banner">
+                                </div>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+
                     </div><!-- /.row -->
                     <button type="button" id="slider-submit" class="btn nextBtn btn-framed pull-right">Continue</button>
                     <div id="form-status"></div>
