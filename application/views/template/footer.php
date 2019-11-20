@@ -121,10 +121,47 @@
 <!--  ShareThis END -->
 
 
-
-        <script type="text/javascript">
-            
-        </script>
+<script type="text/javascript">
+    $(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("form[name='registration']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      firstname: "required",
+      lastname: "required",
+      phone_no: {
+                required: true,
+                 minlength:10,
+                  maxlength:11,
+                  number: true
+            },
+      email: {
+        required: true,
+        // Specify that email should be validated
+        // by the built-in "email" rule
+        email: true
+      }
+    },
+    // Specify validation error messages
+    messages: {
+      firstname: "Please enter your firstname",
+      lastname: "Please enter your lastname",
+      
+      email: "Please enter a valid email address",
+      phone_no:"Please enter a valid phone number"
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
+</script>
 
 </body>
 </html>

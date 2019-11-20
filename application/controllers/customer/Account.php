@@ -36,6 +36,7 @@ class Account extends API_Controller {
     public function register(){
         $this->load->helper('form');
        $this->load->library('form_validation');
+       
 
        $this->load->model('user_model'); 
         $vars['class'] = '';
@@ -75,7 +76,9 @@ class Account extends API_Controller {
         $this->user_model->insert('user_info',$users_info);
 
          $vars['validation_msg'] = 'Your account has been created';
-         $this->load->template('register',$vars); 
+        // $this->load->template('register',$vars); 
+          $this->session->set_flashdata('msg', 'Account created successfully');
+         redirect('/index');
       }
      }
     }
@@ -100,5 +103,17 @@ class Account extends API_Controller {
        return false;
       }
       
+    }
+    public function login(){
+           $this->load->helper('form');
+       $this->load->library('form_validation');
+
+       $this->load->model('user_model'); 
+        $vars['class'] = '';
+       if(count($_POST) == 0){
+         $this->load->template('login',$vars); 
+       }else{
+
+       }
     }
 }

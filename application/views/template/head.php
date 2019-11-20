@@ -100,7 +100,7 @@ else
                             <a href="#" class="has-child no-link"> My Account </a>
                             <ul class="list-unstyled child-navigation">
                                 <li><a href="<?php echo base_url() ?>customer/account/index">My Account</a></li>
-                                <li><a href="<?php echo base_url() ?>customer/account/create">Signup</a></li>
+                                <li><a href="<?php echo base_url() ?>customer/account/register">Signup</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/login">Login</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/forgot">Forgot Password </a></li>
                             </ul>
@@ -113,5 +113,9 @@ else
     <div class="background">
         <img src="<?php echo base_url() ?>assets/img/background-city.png"  alt="background">
     </div>
+    <?php if($this->session->flashdata('msg')): ?>
+    <p><?php echo $this->session->flashdata('msg'); ?></p>
+<?php endif; ?>
 </div>
 <!-- end Header -->
+

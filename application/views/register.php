@@ -1,4 +1,5 @@
 
+
 <!-- Page Content -->
 <div id="page-content">
 <!-- Slider -->
@@ -30,7 +31,7 @@
                                 }
 
                                  ?>
-                                <form id="register" role="form" action="<?php echo base_url(); ?>customer/account/register" method="post">
+                                <form id="register" role="form" name="registration" action="<?php echo base_url(); ?>customer/account/register" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="input-group">
