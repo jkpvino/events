@@ -18,28 +18,41 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h1>Join our community</h1>
-                                <form id="slider-form" role="form" action="" method="post">
+                                <?php 
+                                if(validation_errors() != false) 
+                                { 
+                                    echo '<div class="form-group alert alert-danger alert-box has-error">';
+                                    echo'<ul>';
+                                    echo validation_errors('<li class="control-label">', '</li>');
+                                    echo'</ul>';
+                                    echo '</div>'; 
+                                    echo $validation_msg;  
+                                }
+
+                                 ?>
+                                <form id="register" role="form" action="<?php echo base_url(); ?>customer/account/register" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Full Name" type="text" >
+                                                <input class="form-control has-dark-background" name="firstname" id="firstname" placeholder="First Name" type="text" value="<?php echo set_value('firstname'); ?>" >
                                             </div>
                                         </div><!-- /.col-md-6 -->
-                                        <div class="col-md-6">
+                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <input class="form-control has-dark-background" name="slider-email" id="slider-email" placeholder="Email" type="email">
+                                                <input class="form-control has-dark-background" name="lastname" id="lastname" placeholder="Last Name" type="text" value="<?php echo set_value('lastname'); ?>">
                                             </div>
                                         </div><!-- /.col-md-6 -->
+                                       
                                     </div><!-- /.row -->
                                     <div class="row">
-                                        <div class="col-md-6">
+                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <input class="form-control has-dark-background" name="phone_no" id="slider-name" placeholder="Phone No" type="text">
+                                                <input class="form-control has-dark-background" name="email" id="email" placeholder="Email" type="email" value="<?php echo set_value('email'); ?>">
                                             </div>
                                         </div><!-- /.col-md-6 -->
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                                <select name="gender" id="gender" class="has-dark-background">
                                                     <option value="">Gender</option>
                                                     <option value="1">Male</option>
                                                     <option value="0">Female</option>
@@ -50,30 +63,14 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                                    <option value="">You Are In </option>
-                                                    <option value="Beginner">School</option>
-                                                    <option value="Advanced">College</option>
-                                                    <option value="Intermediate">Office</option>
-                                                    <option value="Professional">Business</option>
-                                                </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-6 -->
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                <select name="slider-course" id="slider-course" class="has-dark-background">
-                                                    <option value="">Institution</option>
-                                                    <option value="Art and Design">Art and Design</option>
-                                                    <option value="Marketing">Marketing</option>
-                                                    <option value="Science">Science</option>
-                                                    <option value="History and Psychology"></option>
-                                                </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-6 -->
+                                                <input class="form-control has-dark-background" name="phone_no" id="phone_no" placeholder="Phone No" type="text" value="<?php echo set_value('phone_no'); ?>">
+                                            </div>
+                                        </div><!-- /.col-md-6 -->                                    
+                                       
 
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox">I Understand <a href="#">Terms & Conditions</a>
+                                                <input type="checkbox" name="terms" id="terms">I Understand <a href="#">Terms & Conditions</a>
                                             </label>
                                         </div>
                                     </div><!-- /.row -->

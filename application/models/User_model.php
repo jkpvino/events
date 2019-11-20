@@ -12,8 +12,10 @@ class User_model extends CI_Model {
                 return $query->result();
         }
 
-        public function insert($data){
-                $this->db->insert('users', $data);
+        public function insert($table,$data){
+                $this->db->insert($table, $data);
+                $insert_id = $this->db->insert_id();
+                 return  $insert_id; 
         }
 
         public function update_entry()
@@ -24,5 +26,29 @@ class User_model extends CI_Model {
 
                 $this->db->update('users', $this, array('id' => $_POST['id']));
         }
+        public function mail_exists($key)
+        {
+            $this->db->where('email',$key);
+            $query = $this->db->get('users');
+            //echo $this->db->last_query();exit;
+                if ($query->num_rows() > 0){
+                     return false;
+                }
+                else{
+                        return true;
+                }
+        }
+        public function phone_exists($key){
+                $this->db->where('phone_no',$key);
+            $query = $this->db->get('users');
+            //echo $this->db->last_query();exit;
+                if ($query->num_rows() > 0){
+                     return false;
+                }
+                else{
+                        return true;
+                }
+        }
+        
 
 }
