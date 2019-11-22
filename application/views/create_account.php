@@ -120,12 +120,6 @@
                                 </select>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
-
-                        <!-- <div class="checkbox">
-                            <label>
-                                <input type="checkbox">I Understand <a href="#">Terms & Conditions</a>
-                            </label>
-                        </div> -->
                     </div><!-- /.row -->
                     <div class="row">
                         <div class="col-md-6">
@@ -144,6 +138,56 @@
                         </div><!-- /.col-md-6 -->
 
                     </div><!-- /.row -->
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="" ss="input-group">
+                                <div><label class="control-label"> Gmap URL  </label></div>                                
+                                <div class="input-group" id=''>
+                                    <input type='text' class="form-control datepicker  has-dark-background" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-map-marker"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div><label class="control-label"> Embelem   </label></div>                                
+                                <input type="file" class="form-control has-dark-background" name="logo">
+                            </div>
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="" ss="input-group">
+                                <div><label class="control-label"> Online Booking  </label></div>                                
+                                <select name="slider-course" id="slider-course" class="has-dark-background">
+                                    <option value="">Online Booking</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div><label class="control-label"> How many slots ?  </label></div> 
+                                <div class="input-group date datetimepicker" id='datetimepicker1'>
+                                    <input type='text' class="form-control has-dark-background" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </span>
+                                </div>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+
+
+
+                            
                     <button type="button" id="slider-submit" class="btn nextBtn btn-framed pull-right">Continue</button>
                     <div id="form-status"></div>
                 </form>
@@ -205,7 +249,54 @@
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div><label class="control-label"> Zipcode  </label></div>                                
+                            <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Website" type="text" >
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div><label class="control-label"> Country   </label></div>
+                            <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                <option value="">You Are In </option>
+                                <option value="Beginner">India</option>
+                                <option value="Advanced">College</option>
+                                <option value="Intermediate">Office</option>
+                                <option value="Professional">Business</option>
+                            </select>    
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div><label class="control-label"> State  </label></div>                                
+                            <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                <option value="">You Are In </option>
+                                <option value="Beginner">India</option>
+                                <option value="Advanced">College</option>
+                                <option value="Intermediate">Office</option>
+                                <option value="Professional">Business</option>
+                            </select>  
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div><label class="control-label"> City   </label></div>
+                            <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                <option value="">You Are In </option>
+                                <option value="Beginner">India</option>
+                                <option value="Advanced">College</option>
+                                <option value="Intermediate">Office</option>
+                                <option value="Professional">Business</option>
+                            </select>    
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
 
+                <h3>Socialinfo</h3>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
@@ -243,9 +334,14 @@
         <div class="col-xs-12">
             <div class="col-md-12">
                 <h3> Step 3</h3>
-                <div class="pull-right" > <a href="" style="color: #fff"> <span class="btn btn-circle btn-default"> <i class="fa fa-plus"> </i> </span> <label class="control-label">  Add Event </label> </a> </div>
-
+                <div class="row">
+                        <div class="pull-right" > <a href="" style="color: #fff"> <span class="btn btn-circle btn-default"> <i class="fa fa-plus"> </i> </span> <label class="control-label">  Add Event </label> </a> </div>
+                </div>
                 <div class="event_container">
+
+
+
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="input-group">
@@ -268,9 +364,34 @@
                             </div>
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
+
+
                     <div class="row">
                         <div class="col-md-6">
+                            <div class="" ss="input-group">
+                                <div><label class="control-label"> Online Booking for subevents  </label></div>                                
+                                <select name="slider-course" id="slider-course" class="has-dark-background">
+                                    <option value="">Booking Events</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6">
                             <div class="input-group">
+                                <div><label class="control-label"> How many slots ?  </label></div> 
+                                <div class="input-group date datetimepicker" id='datetimepicker1'>
+                                    <input type='number' class="form-control has-dark-background" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </span>
+                                </div>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="" ss="input-group">
                                 <div><label class="control-label"> Event Start  </label></div>                                
                                 <div class="input-group date datetimepicker" id='datetimepicker1'>
                                     <input type='text' class="form-control datepicker  has-dark-background" />

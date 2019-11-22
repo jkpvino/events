@@ -41,6 +41,10 @@ CREATE TABLE `institution` (
 	`address` TEXT NOT NULL , 
 	`gmap_location` TEXT NOT NULL , 
 	`website_url` TEXT NOT NULL , 
+	`country` INT NULL,
+	`state` INT NULL,
+	`city` INT  NULL,
+	`postal_code` VARCHAR(255) NULL,
 	`facebook` TEXT NOT NULL , 
 	`linkedin` TEXT NOT NULL , 
 	`twitter` TEXT NOT NULL , 
@@ -48,6 +52,9 @@ CREATE TABLE `institution` (
 	`status` ENUM('10','20','30','40') NOT NULL COMMENT '10 => Active, 20 => Hold, 30 => Blocked 40=> Closed', 
 	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
 	`modified_at` DATETIME on update CURRENT_TIMESTAMP NULL , 
+	FOREIGN KEY (country) REFERENCES countries(id),
+	FOREIGN KEY (state) REFERENCES states(id),
+	FOREIGN KEY (city) REFERENCES cities(id),
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 

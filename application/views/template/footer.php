@@ -116,6 +116,9 @@
 
 <script src="<?php echo base_url(); ?>assets/js/editor.js"></script>
 
+<!-- Geolocation -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/json/geodata.json"></script>
+
 <!--  ShareThis BEGIN -->
 <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5dd0d63912574600123b54c5&product=sticky-share-buttons"></script>
 <!--  ShareThis END -->
