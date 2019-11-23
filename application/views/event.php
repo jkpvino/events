@@ -1,3 +1,6 @@
+<?php 
+//echo '<pre>';print_r($event);
+?>
 <!-- Page Content -->
 <div id="page-content" style="">
     <div class="container">
@@ -12,33 +15,43 @@
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
                 <div id="page-main">
+                    <?php foreach ($event as $key => $value) { 
+                        $institution = $this->event_model->getInstitution($value->institution_id);
+                        ?>
+                       
+                    
 		        	<section id="event-detail">
 		                <article class="event-detail">
 		                    <section id="event-header">
 		                        <header>
-		                            <h2 class="event-date">Saturday March 27, 2015</h2>
-		                            <div class="course-category">College:<a href="#">Symposium</a></div>
+		                            <h2 class="event-date">
+                                        <?php $date =date('F',strtotime($value->event_from)); 
+                                        echo $date .','.date('d,Y',strtotime($value->event_from)); ?>
+                                    </h2>
+		                            <div class="course-category"><?php echo $value->ecatg; ?>:<a href="#"><?php echo $value->ename; ?></a></div>
 		                        </header>
 		                        <hr>
 		                        <div class="course-count-down" id="course-count-down">
 		                            <!-- /.course-start -->
 		                            <div class="count-down-wrapper">
-		                            	<div class="count-down-wrapper">AARON 2K11 SYMPOSIUM </div>
-		                            	<p> SACS MAVMM ENGG COLLEGE MADURAI </p>
+		                            	<div class="count-down-wrapper"><?php echo $value->name; ?></div>
+		                            	<p> <?php echo $institution->name; ?> </p>
 		                                <script type="text/javascript">var _date = 'Jun 27, 2015 23:28';</script>
 		                            </div><!-- /.count-down-wrapper -->
 
 		                        </div><!-- /.course-count-down -->
 		                        <hr>
 		                        <figure>
-		                            <span class="course-summary" id="course-length"><i class="fa fa-mobile"></i>+91 8220466675</span>
-		                            <span class="course-summary" id="course-time-amount"><i class="fa fa-envelope"></i>vinothkumarjeyaraman@gmail.com</span>
-		                            <span class="course-summary" id="course-time-amount"><i class="fa fa-map-marker"></i><a href=""> Direction </a> </span>
-		                            <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i>6:00pm – 8:00pm</span>
+		                            <span class="course-summary" id="course-length"><i class="fa fa-mobile"></i><?php echo $value->contact_info; ?></span>
+		                          <!--   <span class="course-summary" id="course-time-amount"><i class="fa fa-envelope"></i>vinothkumarjeyaraman@gmail.com</span>
+		                            <span class="course-summary" id="course-time-amount"><i class="fa fa-map-marker"></i><a href=""> Direction </a> </span> -->
+		                            <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i><?php echo $value->event_from; ?> - <?php echo $value->event_to; ?></span>
 		                        </figure>
 		                    </section><!-- /#course-header -->
 		                </article>
 		            </section>
+
+                <?php } ?>
 		        </div>
 		    </div>            
         </div><!-- /.row -->
@@ -46,27 +59,7 @@
             <section class="col-md-12">
             	<div>
 	                <header><h2>Event Info</h2></header>
-	                <p>
-	                    International Conference on Recent Advances in Medical, Medicine and Health Sciences (ICRAMMHS)  will be held on 14th November, 2019 at  Chennai, India.  ICRAMMHS  is to bring together innovative academics and industrial experts in the field of Medical, Medicine and Health Sciences to a common forum. All the registered papers will be published by the World Research Library and will be submitted for review for indexing by Google Scholar etc.
-	                </p>
-	                <p>
-	                    This Conference is sponsored by  many International institutes. The conference would offer a large number of invited lectures from renowned speakers all over the country. The Best paper awards will be given for the papers judged to make the most significant contribution to the conference.
-	                </p>
-	                <p>
-	                    All submissions to the conference will be reviewed by at least two independent peers for technical merit and content. It is anticipated that a broad range of research and applied topics will be covered during the conference.
-	                </p>
-
-	                <ul> 
-						<li>Participants should bring their college identity cards along with bonafide certificates duly signed by the Head of the Institution/Department. </li>
-						<li>Participants should come in full formals. </li>
-						<li>A single candidate can participate only in maximum 3 events. </li>
-						<li>Registration fee- Rs150/- </li>
-						<li>DD should be taken in favor of “THE PRINCIPAL, SACS MAVMM ENGINEERING COLLEGE, ALAGAR KOVIL” payable at Madurai. </li>
-						<li>DD should be sent to our college within 15-9-2011. </li>
-						<li>Registration fee will be collected only once even if the candidate will participate in one (or) more events. </li>
-						<li>There would be overlapping of events during the day of the symposium. Hence, the participants should make internal arrangements for participation accordingly.(refer agenda) </li>
-						<li>The candidate who want to participate in gaming, can register their name in the spot by giving registration fee-Rs50/- </li>
-					</ul>
+	                <p><?php echo $value->description;?></p>
                 </div>
 
             

@@ -152,6 +152,8 @@ background-size: 128px 128px;
 
 
                             <?php foreach ($sympos as $key => $value) { 
+                                $eventCatg = $this->event_model->getEventType($value->event_type);
+                                $url = $eventCatg->category.'-'.$eventCatg->name.'/'.$value->url_key;
                                 $i=1;
                                 if($i%3 != 0){
                                 ?>
@@ -165,7 +167,7 @@ background-size: 128px 128px;
                                     </figure>
                                     <aside>
                                         <header>
-                                            <a href="event-detail.html"><?php echo $value->name; ?></a>
+                                            <a href="<?php echo base_url().$url; ?>"><?php echo $value->name; ?></a>
                                         </header>
                                         <div class="additional-info"><span class="fa fa-map-marker"></span> <?php echo $value->address; ?></div>
                                         <div class="description">

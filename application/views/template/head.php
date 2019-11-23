@@ -80,7 +80,7 @@ else
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="has-child no-link">Events</a>
+                            <a href="<?php echo base_url() ?>events/" class="has-child no-link">Events</a>
                             <ul class="list-unstyled child-navigation">
                                 <li><a href="<?php echo base_url() ?>events/upcoming">Symposium</a></li>
                                 <li><a href="<?php echo base_url() ?>events/upcoming">Workshop</a></li>

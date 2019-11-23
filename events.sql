@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 
 CREATE TABLE IF NOT EXISTS `user_info` ( 
-	`id` INT NOT NULL , 
+	`id` INT NOT NULL AUTO_INCREMENT, 
 	`firstname` VARCHAR(255) NULL , 
 	`lastname` VARCHAR(255) NULL , 
 	`website` VARCHAR(500) NULL , 
@@ -77,6 +77,7 @@ CREATE TABLE `symposium` (
 	`mobile_description` TEXT NULL , 
 	`logo` VARCHAR(255) NULL , 
 	`banner` VARCHAR(255) NULL , 
+	`url_key` VARCHAR(255) NULL , 
 	`contact_info` TEXT NULL , 
 	`event_from` DATETIME NULL , 
 	`event_to` DATETIME NULL , 
