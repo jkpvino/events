@@ -99,10 +99,16 @@ else
                         <li>
                             <a href="#" class="has-child no-link"> My Account </a>
                             <ul class="list-unstyled child-navigation">
-                                <li><a href="<?php echo base_url() ?>customer/account/index">My Account</a></li>
+                                <?php
+                                if (isset($this->session->userdata['logged_in'])) { ?>
+                                     <li><a href="<?php echo base_url() ?>customer/account/index">My Account</a></li>
+                                      <li><a href="<?php echo base_url() ?>customer/account/logout">Logout</a></li>
+                                <?php }else{ ?>
+                               
                                 <li><a href="<?php echo base_url() ?>customer/account/register">Signup</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/login">Login</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/forgot">Forgot Password </a></li>
+                            <?php } ?>
                             </ul>
                         </li>
                     </ul>

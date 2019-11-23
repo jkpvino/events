@@ -39,7 +39,7 @@ class User_model extends CI_Model {
                 }
         }
         public function phone_exists($key){
-                $this->db->where('phone_no',$key);
+            $this->db->where('phone_no',$key);
             $query = $this->db->get('users');
             //echo $this->db->last_query();exit;
                 if ($query->num_rows() > 0){
@@ -49,6 +49,17 @@ class User_model extends CI_Model {
                         return true;
                 }
         }
-        
+        public function login_verify($user){
+           $this->db->where('email',$user['email']);
+           $this->db->where('password',$user['password']);
+            $query = $this->db->get('userview');
+            //echo $this->db->last_query();exit;
+                if ($query->num_rows() == 1){
+                     return true;
+                }
+                else{
+                        return false;
+                }
+        }
 
 }

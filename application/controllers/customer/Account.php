@@ -36,7 +36,7 @@ class Account extends API_Controller {
     public function register(){
         $this->load->helper('form');
        $this->load->library('form_validation');
-       
+
 
        $this->load->model('user_model'); 
         $vars['class'] = '';
@@ -110,10 +110,56 @@ class Account extends API_Controller {
 
        $this->load->model('user_model'); 
         $vars['class'] = '';
+        $vars['validation_msg'] ='';
        if(count($_POST) == 0){
          $this->load->template('login',$vars); 
        }else{
+         $this->form_validation->set_rules('email', 'Email', 'trim|required');
+         $this->form_validation->set_rules('password', 'Password', 'trim|required');
+          if ($this->form_validation->run() == FALSE){
+             $this->load->template('login',$vars); 
+          }else{
+            $password = $this->input->post('password');
+            $email = $this->input->post('email');
+              $user = array(
+                'email' => $email,
+                'password' => md5($password)
+            );
+             $result  = $this->user_model->login_verify($user);
+
+             if ($result != false) {
+                $session_data = array(                    
+                    'email' => $email,
+                );
+
+                $this->session->set_userdata('logged_in', $session_data);
+                $this->session->set_flashdata('msg', 'Loggedin successfully');
+                redirect('/index');
+            } else {
+                $vars['validation_msg'] ='Invalid Username or Password';
+                
+                $this->load->template('login', $vars);
+            }
+
+             //$this->session->set_flashdata('msg', 'Loggedin successfully');
+             //redirect('/index');
+          }
+
 
        }
     }
+
+            // Logout from admin page
+        public function logout() {
+
+            // Removing session data
+            $sess_array = array(
+            'email' => ''
+            );
+            $this->session->unset_userdata('logged_in', $sess_array);
+            $this->session->set_flashdata('msg', 'Loggedout successfully');
+                redirect('/index');
+        }
+
+
 }
