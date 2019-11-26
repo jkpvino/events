@@ -47,6 +47,12 @@ class Event_model extends CI_Model {
                $query = $this->db->get_where('institution', array('id' => $id));                
                 return $query->row();
         }
+	
+	public function setSymposium($table ='symposium',$data){
+	 $this->db->insert($table, $data);
+	 $insert_id = $this->db->insert_id();
+	 return  $insert_id; 
+	}
 
         
 }

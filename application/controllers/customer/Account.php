@@ -8,6 +8,17 @@ class Account extends API_Controller {
 
         parent::__construct();
     }
+
+    public function getRandomPassword() {
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&$@';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 8; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
+    }
     
     public function index()
     {
@@ -63,7 +74,7 @@ class Account extends API_Controller {
         $user = array(
             'email' => $this->input->post('email'),
             'phone_no' => $this->input->post('phone_no'),
-            'password' => md5('123456')
+            'password' => md5($this->getRandomPassword())
         );
         $userid  = $this->user_model->insert('users',$user);
         $users_info =  array(
@@ -76,8 +87,7 @@ class Account extends API_Controller {
         $this->user_model->insert('user_info',$users_info);
 
          $vars['validation_msg'] = 'Your account has been created';
-        // $this->load->template('register',$vars); 
-          $this->session->set_flashdata('msg', 'Account created successfully');
+        $this->session->set_flashdata('msg', 'Account created successfully');
          redirect('/index');
       }
      }
@@ -129,6 +139,7 @@ class Account extends API_Controller {
 
              if ($result != false) {
                 $session_data = array(                    
+                    'logid' => $result,
                     'email' => $email,
                 );
 

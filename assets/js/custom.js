@@ -338,12 +338,14 @@ $(document).ready(function () {
 
 
 jQuery(document).ready(function() {
-    jQuery("#txtEditor").Editor();
-    //jQuery("#addressEditor").Editor();
+    jQuery("#program_description").Editor();
+    jQuery("#institution_description").Editor();
     //jQuery("#contactEditor").Editor();
 });
 
 
 jQuery(function () {
-    jQuery('.datepicker').datepicker();
+    jQuery('.datepicker').datepicker({ 
+        dateFormat: 'yy-mm-dd' 
+    });
 });

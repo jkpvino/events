@@ -166,5 +166,34 @@
 });
 </script>
 
+<!-- Event Creation -->
+<script type="text/javascript">
+    /*$(function() {
+      $("form[name='program_save']").validate({
+        rules: {
+            program_name: "required",
+            program_start: {
+                required: true,
+                date : true
+            },
+            program_end: {
+                required: true,
+                date : true
+            },
+            program_description: "required",
+            address: "required",
+            contact_info: "required",
+            program_category: "required",
+            program_type: "required",
+            gmap_location: "required",
+            program_website: "required",
+            online_booking: "required",
+        },
+        submitHandler: function(form) {
+          form.submit();
+        }
+      });
+    });*/
+</script>
 </body>
 </html>

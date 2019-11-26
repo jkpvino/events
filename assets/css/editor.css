@@ -142,6 +142,8 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   border:1px solid #EEE;
   border-radius:0;
     word-wrap: break-word;
+    color: #000;
+    background: #fff;
   }
 #paletteCntr ul
 {    
