@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'index';
 
 $route['events/createEvent'] = 'events/createEvent';
-$route['(:any)/(:any)'] = 'events/event/$1/$2';
+$route['event/(:any)/(:any)'] = 'events/event/$1/$2';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

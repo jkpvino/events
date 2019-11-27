@@ -153,7 +153,7 @@ background-size: 128px 128px;
 
                             <?php foreach ($sympos as $key => $value) { 
                                 $eventCatg = $this->event_model->getEventType($value->event_type);
-                                $url = $eventCatg->category.'-'.$eventCatg->name.'/'.$value->url_key;
+                                $url = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$value->url_key;
                                 $i=1;
                                 if($i%3 != 0){
                                 ?>
