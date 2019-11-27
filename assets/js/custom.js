@@ -172,6 +172,7 @@ $(document).ready(function($) {
         $("#slider-form").validate({
             submitHandler: function() {
                 $.post("save", $("#slider-form").serialize(),  function(response) {
+                    alert(response);
                     if(response){                        
                         $('#event_id').val(response);
                     }

@@ -30,14 +30,10 @@ class Events extends CI_Controller{
                 'user_id' => $userInfo['logged_in']['logid']
             );
             if($this->input->post('event_id')){
-                $eventInsertId = $this->event_model->updateSymposium($eventArray, $eventId);
+                $eventId = $this->input->post('event_id');
+                echo $eventInsertId = $this->event_model->updateSymposium($eventArray, $eventId);
             }else{                
-                $eventInsertId = $this->event_model->setSymposium($eventArray);                
-            }
-            if ($eventInsertId) {
-                return $eventInsertId;
-            }else{
-                return false;
+                echo $eventInsertId = $this->event_model->setSymposium($eventArray);                
             }
         }
         

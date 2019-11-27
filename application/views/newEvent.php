@@ -29,8 +29,8 @@
             <div class="col-md-12">
                 <h1>Create New Event</h1>
                 <form id="slider-form" name="program_save" enctype="multipart/form-data" role="form" action="<?php echo base_url(); ?>events/createEvent" method="post" >
-                    <input type="hidden" name="program_tab" value="1">
-                    <input type="hidden" name="event_id" value="">
+                    <input type="hidden" id="program_tab" name="program_tab" value="1">
+                    <input type="hidden" id="event_id" name="event_id" value="">
                     <div class="row"> 
                         <div class="col-md-12">
                             <div class="input-group">
