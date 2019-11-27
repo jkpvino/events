@@ -171,7 +171,10 @@ $(document).ready(function($) {
     $("#slider-submit").bind("click", function(event){
         $("#slider-form").validate({
             submitHandler: function() {
-                $.post("slider-form.php", $("#slider-form").serialize(),  function(response) {
+                $.post("save", $("#slider-form").serialize(),  function(response) {
+                    if(response){                        
+                        $('#event_id').val(response);
+                    }
                     $('#form-status').html(response);
                     $('#submit').attr('disabled','true');
                 });
@@ -338,9 +341,30 @@ $(document).ready(function () {
 
 
 jQuery(document).ready(function() {
-    jQuery("#program_description").Editor();
-    jQuery("#institution_description").Editor();
-    //jQuery("#contactEditor").Editor();
+    jQuery("#program_description").richText();
+    jQuery("#institution_description").richText();
+    jQuery("#address").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
+    jQuery("#contact_info").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
 });
 
 

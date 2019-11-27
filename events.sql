@@ -62,12 +62,21 @@ CREATE TABLE `institution` (
 CREATE TABLE `event_type` ( 
 	`id` INT NOT NULL AUTO_INCREMENT , 
 	`name` VARCHAR(500) NOT NULL , 
+	`name_code` VARCHAR(500) NOT NULL , 
 	`category` VARCHAR(500) NOT NULL , 
+	`category_code` VARCHAR(500) NOT NULL , 
 	`status` ENUM('10','40') NOT NULL , 
 	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
 	`updated_at` DATETIME on update CURRENT_TIMESTAMP NULL , 
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+INSERT INTO `event_type` (`name`, `category`, `name_code`, `category_code`, `status`) VALUES ('workshop', 'school', 'workshop', 'school', '10');
+INSERT INTO `event_type` (`name`, `category`, `name_code`, `category_code`, `status`) VALUES ('conference', 'school', 'conference', 'school', '10');
+INSERT INTO `event_type` (`name`, `category`, `name_code`, `category_code`, `status`) VALUES ('exhibition', 'school', 'exhibition', 'school', '10');
+INSERT INTO `event_type` (`name`, `category`, `name_code`, `category_code`, `status`) VALUES ('Annual Day', 'school','annual_day', 'school', '10');
+INSERT INTO `event_type` (`name`, `category`, `name_code`, `category_code`, `status`) VALUES ('symposium', 'college','symposium', 'college', '10');
+
 
 
 CREATE TABLE `symposium` ( 
@@ -86,8 +95,8 @@ CREATE TABLE `symposium` (
 	`gmap_location` TEXT NULL , 
 	`status` ENUM('10','20','30','40') NOT NULL COMMENT '10 => Active, 20 => Hold, 30 => Blocked 40=> Completed', 
 	`user_id` INT NOT NULL, 
-	`institution_id` INT NOT NULL, 
-	`event_type` INT NOT NULL, 
+	`institution_id` INT NULL, 
+	`event_type` INT NULL, 
 	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
 	`updated_at` DATETIME on update CURRENT_TIMESTAMP NULL , 
 	PRIMARY KEY (`id`),

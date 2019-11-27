@@ -30,6 +30,7 @@
                 <h1>Create New Event</h1>
                 <form id="slider-form" name="program_save" enctype="multipart/form-data" role="form" action="<?php echo base_url(); ?>events/createEvent" method="post" >
                     <input type="hidden" name="program_tab" value="1">
+                    <input type="hidden" name="event_id" value="">
                     <div class="row"> 
                         <div class="col-md-12">
                             <div class="input-group">
@@ -74,7 +75,7 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <div><label class="control-label"> Address (Event Venue)  </label></div>  
-                                <textarea rows="5" id="address" name="address" placeholder ="Write Event Venue Address Info..."> <?php echo set_value('address'); ?> </textarea>
+                                <textarea rows="5" id="address" class="richText" name="address" placeholder ="Write Event Venue Address Info..."> <?php echo set_value('address'); ?> </textarea>
                             </div>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
@@ -125,7 +126,6 @@
                                 </div>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
-
                     </div><!-- /.row -->
                     <div class="row">
                         <div class="col-md-6">

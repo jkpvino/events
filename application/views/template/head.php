@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/editor.css" type="text/css">
 
-    <title>Universo - Educational, Course and University Template</title>
+    <title>Meetup</title>
 
 </head>
 
@@ -45,7 +45,7 @@ else
                 </div><!-- /.input-group -->
             </div>
             <ul class="secondary-navigation list-unstyled">
-                <li><a href="#">Create Event</a></li>
+                <li><a href="<?php echo base_url().'events/createevent' ?>">Create Event</a></li>
                 <li><a href="#">Current Students</a></li>
                 <li><a href="#">Faculty & Staff</a></li>
                 <li><a href="#">Alumni</a></li>

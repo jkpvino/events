@@ -10,6 +10,38 @@ class Events extends CI_Controller{
         $this->load->model('event_model');
         $this->data = $this->session->get_userdata();
     }
+
+    public function save(){
+        $userInfo = $this->data;
+        $eventTypeId = 1;
+        if($this->input->post('program_tab')){
+            $eventArray = array(
+                'name' => $this->input->post('program_name'), 
+                'event_from' => $this->input->post('program_start'), 
+                'event_to' => $this->input->post('program_end'), 
+                'description' => $this->input->post('program_description'), 
+                'address' => $this->input->post('address'), 
+                'contact_info' => $this->input->post('contact_info'), 
+                //'program_category' => $this->input->post('program_category'), 
+                'event_type' => $eventTypeId, 
+                'gmap_location' => $this->input->post('gmap_location'), 
+                'allowed_users' => $this->input->post('allowed_users'), 
+                'status' =>20,
+                'user_id' => $userInfo['logged_in']['logid']
+            );
+            if($this->input->post('event_id')){
+                $eventInsertId = $this->event_model->updateSymposium($eventArray, $eventId);
+            }else{                
+                $eventInsertId = $this->event_model->setSymposium($eventArray);                
+            }
+            if ($eventInsertId) {
+                return $eventInsertId;
+            }else{
+                return false;
+            }
+        }
+        
+    }
     
 	public function index()
 	{
@@ -18,7 +50,7 @@ class Events extends CI_Controller{
         $this->load->template('events',$vars);
 	}
     public function event($event_type,$url_key){
-         $this->load->model('event_model');
+         //$this->load->model('event_model');
          $event_type_id = $this->event_model->getEventId($event_type);
          if($event_type_id){
              $event = $this->event_model->get_event_details($event_type_id,$url_key);             
