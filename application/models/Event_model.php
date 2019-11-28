@@ -10,6 +10,13 @@ class Event_model extends CI_Model {
                 //echo $this->db->last_query();exit;
                 return $query->result();
         }
+        public function getSymposiumById($user_id,$limit=1,$offset=0)
+        {
+               // $limit = 1;$offset = 0;
+                $query = $this->db->get_where('symposium', array('status' => '10','user_id'=>$user_id), $limit, $offset);
+                //echo $this->db->last_query();exit;
+                return $query->result();
+        }
         public function get_event_details($event_type,$url_key){
         	
         	$this->db->select('symposium.*,event_type.name as ename,event_type.category as ecatg');

@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 
 create or replace view userview as select id,email,password,status from users UNION select id, phone_no, password,status from users;
 
+INSERT INTO `user_info` (`id`, `firstname`, `lastname`, `website`, `profileimg`, `bio`, `gender`, `user_id`, `created_at`, `updated_at`) VALUES
+(1,	'Mani',	'v',	NULL,	NULL,	NULL,	1,	2,	'2019-11-28 02:47:45',	'2019-11-28 08:19:09');
 
 CREATE TABLE `institution` ( 
 	`id` INT NOT NULL AUTO_INCREMENT , 
@@ -52,9 +54,6 @@ CREATE TABLE `institution` (
 	`status` ENUM('10','20','30','40') NOT NULL COMMENT '10 => Active, 20 => Hold, 30 => Blocked 40=> Closed', 
 	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
 	`modified_at` DATETIME on update CURRENT_TIMESTAMP NULL , 
-	FOREIGN KEY (country) REFERENCES countries(id),
-	FOREIGN KEY (state) REFERENCES states(id),
-	FOREIGN KEY (city) REFERENCES cities(id),
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
@@ -141,11 +140,6 @@ FOREIGN KEY (institution_id) REFERENCES institution(id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 
-
-/* INSERT EVENT TYPE */
-
-INSERT INTO `event_type` (`id`, `name`,  `category`, `status`, `created_at`, `updated_at`) VALUES (NULL,'symposium', 'college', '10', current_timestamp(), '2019-11-06 00:00:00');
-INSERT INTO `event_type` (`id`, `name`, `category`, `status`, `created_at`, `updated_at`) VALUES (NULL,'symposium', 'school', '10', current_timestamp(), '2019-11-06 00:00:00');
 
 
 /* INSERT Users */

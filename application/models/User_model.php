@@ -61,5 +61,20 @@ class User_model extends CI_Model {
                         return false;
                 }
         }
+        public function getUserByEmail($email){
+            $this->db->where('email',$email);
+            $query = $this->db->get('users');
+
+
+            $this->db->select('users.*,user_info.firstname,user_info.lastname,user_info.gender,user_info.website');
+            $this->db->from('users');
+            $this->db->join('user_info','users.id= user_info.user_id','left');        
+            $this->db->where('users.email', $email);
+            
+            $query = $this->db->get();
+           //  echo $this->db->last_query();exit;
+             return $query->result();
+
+        }
 
 }

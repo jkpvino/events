@@ -101,7 +101,7 @@ else
                             <ul class="list-unstyled child-navigation">
                                 <?php
                                 if (isset($this->session->userdata['logged_in'])) { ?>
-                                     <li><a href="<?php echo base_url() ?>customer/account/index">My Account</a></li>
+                                     <li><a href="<?php echo base_url() ?>customer/account/myaccount">My Account</a></li>
                                       <li><a href="<?php echo base_url() ?>customer/account/logout">Logout</a></li>
                                 <?php }else{ ?>
                                

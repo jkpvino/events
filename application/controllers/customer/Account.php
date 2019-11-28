@@ -20,9 +20,32 @@ class Account extends API_Controller {
         return implode($pass); //turn the array into a string
     }
     
-    public function index()
-    {
+  public function index()
+  {
       $this->load->view('api/index');
+  }
+  public function myaccount()
+  {
+    if (!isset($this->session->userdata['logged_in'])) { 
+      redirect('/index');
+    }
+    $this->load->model('user_model');
+    $this->load->model('event_model'); 
+    $logged_info = $this->session->userdata['logged_in'];
+    $email = $logged_info['email'];
+    
+    $userInfo = $this->user_model->getUserByEmail($email);
+    $logid = $userInfo[0]->id;
+    $myEvents = $this->event_model->getSymposiumById($logid);
+      $vars['class'] = '';
+      $vars['user'] = $userInfo;
+      $vars['events'] = $myEvents;
+      $this->load->template('my-account',$vars);
+  }
+  public function forgot()
+  {
+    $vars['class'] = '';
+    $this->load->template('forgotpass',$vars);
   }
 
   public function create(){
