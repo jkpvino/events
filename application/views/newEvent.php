@@ -90,12 +90,11 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Events Category  </label></div>
                                 <select name="program_category" id="program_category"  class="has-dark-background">
+
                                     <option value="">Event Category </option>
-                                    <option value="school">School</option>
-                                    <option value="college">College</option>
-                                    <option value="office">Office</option>
-                                    <option value="business">Business</option>
-                                    <option value="sports">Sports</option>
+                                    <?php foreach ($event_category as $eventkey => $ecategory) { ?>
+                                        <option value="<?php echo $ecategory->category_code ?>"><?php echo $ecategory->category ?></option>
+                                    <?php } ?>
                                 </select>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
