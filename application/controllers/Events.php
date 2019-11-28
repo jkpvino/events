@@ -66,12 +66,13 @@ class Events extends CI_Controller{
     }
 
     public function createEvent(){
+
         $userInfo = $this->data;
         if($userInfo['logged_in']['logid']){
             $vars['class'] = '';
             $vars['event_category'] = $this->event_model->getAllEventCategory();
-            $vars['event_type'] = $this->event_model->getAllEventType();
-        
+            $vars['etype'] = $this->event_model->getEventTypes();
+            
             /*if(isset($_REQUEST['program_tab'])){
                 $this->form_validation->set_rules('program_name', 'Event Title', 'required');
                 $this->form_validation->set_rules('program_start', 'Event Start Date', 'required');
@@ -104,7 +105,7 @@ class Events extends CI_Controller{
                 }
             }*/
             $this->load->template('newEvent',$vars);
-            print_r($_FILES);
+            //print_r($_FILES);
         }else{
             redirect('/index');
         }

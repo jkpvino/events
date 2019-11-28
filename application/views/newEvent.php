@@ -103,9 +103,9 @@
                                 <div><label class="control-label"> Event Type  </label></div>
                                 <select name="program_type" id="program_type"  class="has-dark-background">
                                     <option value="">Event Type</option>
-                                    <option value="symposium">Symposium</option>
-                                    <option value="conference">Conference</option>
-                                    <option value="workshop">Workshop</option>
+                                    <?php foreach ($etype as $eventTypekey => $etype) { ?>
+                                        <option value="<?php echo $etype->name_code ?>"><?php echo $etype->name ?></option>
+                                    <?php } ?>
                                 </select>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
@@ -115,7 +115,9 @@
                             <div><label class="control-label"> Event Logo  </label></div>
                             <div class="input-group">
                                 <input type="file" class="form-control has-dark-background"  id="logo" name="logo">
-                            </div><!-- /.form-group -->
+                            </div>
+                            <img id="logo_preview" width="165" height="165" src="#" alt="your image" />
+                            <!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">

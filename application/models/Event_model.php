@@ -38,11 +38,8 @@ class Event_model extends CI_Model {
 			return $ret->id;
         }
 
-        public function getAllEventType(){
-            $this->db->select('name, name_code','category, category_code');
-            //$this->db->group_by('name_code','category_code');
+        public function getEventTypes(){
             $query = $this->db->get('event_type');
-            $this->db->where('status', 10);
             return $query->result();
         }
 
