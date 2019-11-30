@@ -72,7 +72,7 @@ class Events extends CI_Controller{
             $vars['class'] = '';
             $vars['event_category'] = $this->event_model->getAllEventCategory();
             $vars['etype'] = $this->event_model->getEventTypes();
-            
+           // print_r($vars);exit;
             /*if(isset($_REQUEST['program_tab'])){
                 $this->form_validation->set_rules('program_name', 'Event Title', 'required');
                 $this->form_validation->set_rules('program_start', 'Event Start Date', 'required');

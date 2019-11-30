@@ -53,8 +53,9 @@ class Event_model extends CI_Model {
         public function getAllEventCategory(){
             $this->db->select('category, category_code');
             $this->db->group_by('category_code');
-            $query = $this->db->get('event_type');
-            $this->db->where('status', 10);
+            $query = $this->db->get_where('event_type',array('status'=>'10'));
+           // $this->db->where('status', 10);
+          //  echo $this->db->last_query();exit;
             return $query->result();
         }
         public function getEventType($sym_id)
