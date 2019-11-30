@@ -107,7 +107,7 @@ class Events extends CI_Controller{
             $this->load->template('newEvent',$vars);
             //print_r($_FILES);
         }else{
-            redirect('/index');
+            redirect('/customer/account/login');
         }
         
     }

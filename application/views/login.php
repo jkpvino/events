@@ -48,7 +48,13 @@
                                     </div><!-- /.row -->
                                    
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-5">    
+                                            <a href="<?php echo base_url().'customer/account/forgot' ?>" class="colorwhite"> Forgot Password ? </a>    
+                                        </div>
+                                        <div class="col-md-4">                                           
+                                            <a href="<?php echo base_url().'customer/account/register' ?>" class="btn btn-framed pull-left"> Signup </a>
+                                        </div>
+                                        <div class="col-md-3">
                                             <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Submit</button>
                                         </div><!-- /.col-md-6 -->
                                     </div><!-- /.row -->

@@ -14,7 +14,9 @@ a:hover, a:active, a a:visited {
 address {
   line-height: 20px;
 }
-
+.colorwhite{
+  color: #fff;
+}
 abbr {
   border-bottom: 1px dotted;
   color: #767676;
