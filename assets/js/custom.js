@@ -210,6 +210,51 @@ $(document).ready(function($) {
         });
     });
 
+    //INSTITUTION FORM
+    $("#slider-submit").bind("click", function(event){
+        $("#inistitution-form").validate({
+            rules: {
+                program_name: "required",
+                program_start: {
+                    required: true,
+                    date : true
+                },
+                program_end: {
+                    required: true,
+                    date : true
+                },
+                program_description: "required",
+                address: "required",
+                contact_info: "required",
+                program_category: "required",
+                program_type: "required",
+                gmap_location: {
+                    required : true,
+                    url: true
+                },
+                program_website: {
+                    required : true,
+                    url: true
+                },
+                online_booking: {
+                    required : true,
+                }
+            },
+            submitHandler: function() {
+                $.post("save", $("#program-form").serialize(),  function(response) {
+                    alert(response);
+                    if(response){                        
+                        $('#event_id').val(response);
+                        $('#form-status').html(response);
+                        $('#slider-submit').attr('disabled','true');
+                        $("#slider-next").trigger("click");
+                        return true;
+                    }
+                });
+                return false;
+            }
+        });
+    });
 //  Contact Form with validation
 
     $("#submit").bind("click", function(event){

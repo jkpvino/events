@@ -42,7 +42,8 @@ CREATE TABLE `institution` (
 	`description` TEXT NOT NULL , 
 	`address` TEXT NOT NULL , 
 	`gmap_location` TEXT NOT NULL , 
-	`website_url` TEXT NOT NULL , 
+	`website_url` TEXT NOT NULL ,
+	`institution_category` VARCHAR(255) NULL ,  
 	`country` INT NULL,
 	`state` INT NULL,
 	`city` INT  NULL,
@@ -56,6 +57,7 @@ CREATE TABLE `institution` (
 	`modified_at` DATETIME on update CURRENT_TIMESTAMP NULL , 
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
 
 
 CREATE TABLE `event_type` ( 

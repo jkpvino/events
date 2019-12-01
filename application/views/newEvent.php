@@ -213,11 +213,13 @@
         <div class="col-xs-12">
             <div class="col-md-12">
                 <h3> Step 2</h3>
+                <form id="inistitution-form" name="institution_save" enctype="multipart/form-data" role="form" action="<?php echo base_url(); ?>events/createEvent" method="post" >
+                    <input type="hidden" id="program_tab" name="program_tab" value="1">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
                             <div><label class="control-label"> Institution Name  </label></div>                                
-                            <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Institution Name" type="text" >
+                            <input class="form-control has-dark-background" name="name" id="name" placeholder="Institution Name" type="text" >
                         </div>
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
@@ -231,7 +233,7 @@
                     <div class="col-md-12">
                         <div class="input-group">
                             <div><label class="control-label"> About Institution  </label></div>                                
-                            <textarea rows="5" id="institution_description"></textarea>
+                            <textarea rows="5" name="description" id="description"></textarea>
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
@@ -239,7 +241,7 @@
                     <div class="col-md-6">
                         <div><label class="control-label"> Website URL   </label></div>   
                         <div class="input-group">
-                            <input type='text' id="institution_website" name="institution_website" class="form-control  has-dark-background" />
+                            <input type='text' id="website_url" name="website_url" class="form-control  has-dark-background" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-globe"></span>
                             </span>
@@ -248,60 +250,57 @@
                     <div class="col-md-6">
                         <div class="input-group">
                             <div><label class="control-label"> Institution Category   </label></div>
-                            <select name="slider-study-level" id="slider-study-level" multiple class="has-dark-background">
-                                <option value="">Institution Category</option>
-                                <option value="Beginner">School</option>
-                                <option value="Advanced">College</option>
-                                <option value="Intermediate">Office</option>
-                                <option value="Professional">Business</option>
+                            <select name="institution_category" id="institution_category" multiple class="has-dark-background">
+                                <?php foreach ($event_category as $eventkey => $ecategory) { ?>
+                                    <?php if ($ecategory->category_code && $ecategory->category) { ?>
+                                        <option value="<?php echo $ecategory->category_code ?>">
+                                            <?php echo $ecategory->category ?>
+                                        </option>
+                                    <?php } ?>
+                                <?php } ?>
                             </select>    
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
+
                 <div class="row"> <div class="col-md-12"> <h3>Location</h3> <hr> </div> </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <div><label class="control-label"> Zipcode  </label></div>                                
-                            <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Website" type="text" >
-                        </div>
-                    </div><!-- /.col-md-6 -->
+                    
                     <div class="col-md-6">
                         <div class="input-group">
                             <div><label class="control-label"> Country   </label></div>
-                            <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                <option value="">You Are In </option>
-                                <option value="Beginner">India</option>
-                                <option value="Advanced">College</option>
-                                <option value="Intermediate">Office</option>
-                                <option value="Professional">Business</option>
+                            <select name="country" id="country" onchange="getStates(this)" class="has-dark-background">
+                                <option value="">Select Country </option>
+                                <?php foreach ($countries as $cokey => $country) { ?>                                    
+                                    <option value="<?php echo $country->iso2 ?>"><?php echo $country->name ?></option>
+                                <?php } ?>
                             </select>    
                         </div>
                     </div><!-- /.col-md-6 -->
+
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div><label class="control-label"> State  </label></div>                                
+                            <select name="state" id="state" onchange="getCities(this)" class="has-dark-background">
+                                <option value=""> Select State </option>                            
+                            </select>  
+                        </div>
+                    </div><!-- /.col-md-6 -->
+
                 </div><!-- /.row -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> State  </label></div>                                
-                            <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                <option value="">You Are In </option>
-                                <option value="Beginner">India</option>
-                                <option value="Advanced">College</option>
-                                <option value="Intermediate">Office</option>
-                                <option value="Professional">Business</option>
-                            </select>  
+                            <div><label class="control-label"> City   </label></div>
+                            <select name="city" id="city" class="has-dark-background">
+                                <option value="">Select City </option>
+                            </select>    
                         </div>
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> City   </label></div>
-                            <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                <option value="">You Are In </option>
-                                <option value="Beginner">India</option>
-                                <option value="Advanced">College</option>
-                                <option value="Intermediate">Office</option>
-                                <option value="Professional">Business</option>
-                            </select>    
+                            <div><label class="control-label"> Zipcode / Postal Code  </label></div>                                
+                            <input class="form-control has-dark-background" name="postal_code" id="postal_code" placeholder="Postal Code" type="text" >
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
@@ -346,6 +345,8 @@
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
                 <button class="btn btn-framed nextBtn btn-lg pull-right" type="button" >Next</button>
+
+                </form>
             </div>
         </div>
     </div>

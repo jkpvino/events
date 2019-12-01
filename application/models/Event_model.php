@@ -50,6 +50,24 @@ class Event_model extends CI_Model {
             return $query->result();
         }
 
+        public function getCountries(){
+            $this->db->select('name, iso2');
+            $query = $this->db->get('countries');
+            return $query->result();
+        }
+
+        public function getStates($countryCode){
+            $this->db->select('name, iso2');
+            $query = $this->db->get_where('states',array('country_code'=>$countryCode));
+            return $query->result();
+        }
+
+        public function getCities($stateCode, $countryCode){
+            $this->db->select('name, id');
+            $query = $this->db->get_where('cities',array('state_code'=>$stateCode, 'country_code'=>$countryCode));
+            return $query->result();
+        }
+
         public function getAllEventCategory(){
             $this->db->select('category, category_code');
             $this->db->group_by('category_code');

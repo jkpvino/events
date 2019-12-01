@@ -112,11 +112,32 @@ class Events extends CI_Controller{
         }
     }
 
+    public function getStates(){
+        //$category_code = "school";
+        $countryId = $this->input->post('countryId');
+        $data = array();
+        if($countryId){
+            $response = $this->event_model->getStates($countryId);
+            echo json_encode($response);
+        }
+    }
+
+    public function getCities(){
+        $stateId = $this->input->post('stateId');
+        $countryId = $this->input->post('countryId');
+        $data = array();
+        if($stateId & $countryId){
+            $response = $this->event_model->getCities($stateId,$countryId);
+            echo json_encode($response);
+        }
+    }
+
     public function createEvent(){
         $userInfo = $this->data;
         if($userInfo['logged_in']['logid']){
             $vars['class'] = '';
             $vars['event_category'] = $this->event_model->getAllEventCategory();
+            $vars['countries'] = $this->event_model->getCountries();
            // print_r($vars);exit;
             /*if(isset($_REQUEST['program_tab'])){
                 $this->form_validation->set_rules('program_name', 'Event Title', 'required');

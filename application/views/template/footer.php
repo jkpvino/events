@@ -195,6 +195,34 @@ function getEventTypes(categoryCode){
     });
     saveData.error(function() { alert("Something went wrong"); });
 }    
+function getStates(countryId){
+    var saveData = $.ajax({
+          type: 'POST',
+          url: "<?php echo base_url().'events/getStates' ?>",
+          data: { countryId : countryId.value },
+          success: function(response) { 
+            $('#state').empty();
+            $.each(JSON.parse(response), function (index, states) {  
+                $('#state').append(`<option value="${states.iso2}"> ${states.name} </option>`);
+            });
+          }
+    });
+    saveData.error(function() { alert("Something went wrong"); });
+}     
+function getCities(stateId){
+    var saveData = $.ajax({
+          type: 'POST',
+          url: "<?php echo base_url().'events/getCities' ?>",
+          data: { stateId : stateId.value , countryId : jQuery("#country").val() },
+          success: function(response) { 
+            $('#city').empty();
+            $.each(JSON.parse(response), function (index, cities) {  
+                $('#city').append(`<option value="${cities.id}"> ${cities.name} </option>`);
+            });
+          }
+    });
+    saveData.error(function() { alert("Something went wrong"); });
+}    
 </script>
 
 
