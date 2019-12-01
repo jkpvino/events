@@ -84,9 +84,6 @@ $(document).ready(function($) {
         $(".count-down").ccountdown(2014,12,24,'18:00');
     }
 
-//  Selectize
-
-    $('select').selectize();
 
 //  Center Slide Vertically
 
@@ -169,15 +166,44 @@ $(document).ready(function($) {
 //  Slider Subscription Form
 
     $("#slider-submit").bind("click", function(event){
-        $("#slider-form").validate({
+        $("#program-form").validate({
+            rules: {
+                program_name: "required",
+                program_start: {
+                    required: true,
+                    date : true
+                },
+                program_end: {
+                    required: true,
+                    date : true
+                },
+                program_description: "required",
+                address: "required",
+                contact_info: "required",
+                program_category: "required",
+                program_type: "required",
+                gmap_location: {
+                    required : true,
+                    url: true
+                },
+                program_website: {
+                    required : true,
+                    url: true
+                },
+                online_booking: {
+                    required : true,
+                }
+            },
             submitHandler: function() {
-                $.post("save", $("#slider-form").serialize(),  function(response) {
+                $.post("save", $("#program-form").serialize(),  function(response) {
                     alert(response);
                     if(response){                        
                         $('#event_id').val(response);
+                        $('#form-status').html(response);
+                        $('#slider-submit').attr('disabled','true');
+                        $("#slider-next").trigger("click");
+                        return true;
                     }
-                    $('#form-status').html(response);
-                    $('#submit').attr('disabled','true');
                 });
                 return false;
             }
@@ -371,6 +397,39 @@ jQuery(document).ready(function() {
 
 jQuery(function () {
     jQuery('.datepicker').datepicker({ 
-        dateFormat: 'yy-mm-dd' 
+        dateFormat: 'yy-mm-dd',
+        timeFormat: 'HH:mm:ss',
+        onShow: function () {
+            this.setOptions({
+                maxDate:$('.datepicker').val()?$('.datepicker').val():false,
+                maxTime:$('.datepicker').val()?$('.datepicker').val():false
+            });
+        }
     });
 });
+
+
+
+
+
+
+function startUpload(){
+      document.getElementById('f1_upload_process').style.visibility = 'visible';
+      document.getElementById('f1_upload_form').style.visibility = 'hidden';
+      return true;
+}
+
+function stopUpload(success){
+  alert(success);
+      var result = '';
+      if (success == 1){
+         result = '<span class="msg">The file was uploaded successfully!<\/span><br/><br/>';
+      }
+      else {
+         result = '<span class="emsg">There was an error during file upload!<\/span><br/><br/>';
+      }
+      document.getElementById('f1_upload_process').style.visibility = 'hidden';
+      document.getElementById('f1_upload_form').innerHTML = result + '<label>File: <input name="myfile" type="file" size="30" /><\/label><label><input type="submit" name="submitBtn" class="sbtn" value="Upload" /><\/label>';
+      document.getElementById('f1_upload_form').style.visibility = 'visible';      
+      return true;   
+}

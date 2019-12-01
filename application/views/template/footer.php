@@ -100,7 +100,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/bootstrap/js/moment-with-locales.js"></script> -->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/selectize.min.js"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/selectize.min.js"></script> -->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.placeholder.js"></script>
@@ -181,32 +181,47 @@ $("#logo").change(function() {
 </script>
 <!-- Event Creation -->
 <script type="text/javascript">
-    /*$(function() {
-      $("form[name='program_save']").validate({
-        rules: {
-            program_name: "required",
-            program_start: {
-                required: true,
-                date : true
-            },
-            program_end: {
-                required: true,
-                date : true
-            },
-            program_description: "required",
-            address: "required",
-            contact_info: "required",
-            program_category: "required",
-            program_type: "required",
-            gmap_location: "required",
-            program_website: "required",
-            online_booking: "required",
-        },
-        submitHandler: function(form) {
-          form.submit();
-        }
-      });
-    });*/
+function getEventTypes(categoryCode){
+    var saveData = $.ajax({
+          type: 'POST',
+          url: "<?php echo base_url().'events/getEventTypes' ?>",
+          data: { category_code : categoryCode.value },
+          success: function(response) { 
+            $('#program_type').empty();
+            $.each(JSON.parse(response), function (index, category_types) {  
+                $('#program_type').append(`<option value="${category_types.name_code}"> ${category_types.name} </option>`);
+            });
+          }
+    });
+    saveData.error(function() { alert("Something went wrong"); });
+}    
 </script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#add_sub_event").click(function(){
+            var rowCount = $(".event_container > div").length;
+            alert(rowCount);
+            var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Event Name </label></div> <input class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Description </label></div> <textarea rows="5" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Contactus </label></div> <textarea rows="5" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Event Start </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Online Booking </label></div> <select name="slider-course" id="event_online_booking_'+rowCount+'" name="event_online_booking[]" class="has-dark-background"> <option value="">Online Booking </option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> How many slots ? </label></div> <div class="input-group"> <input type="number" class="form-control has-dark-background" name="slots_events[]" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-plus"></span> </span> </div> </div>> </div> </div></div>';
+            $(".event_container").append(newrow);
+            jQuery('.datepicker').datepicker({ 
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+</script>
+
+    
 </body>
 </html>

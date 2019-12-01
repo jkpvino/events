@@ -17,6 +17,16 @@ address {
 .colorwhite{
   color: #fff;
 }
+.none{
+  background: none;
+  border: 0px solid;
+}
+.bgpink{
+  background: #F00483;
+  border: 0px;
+  color: #fff;
+  font-weight: bold;
+}
 abbr {
   border-bottom: 1px dotted;
   color: #767676;
@@ -2697,7 +2707,7 @@ th.header:before {
   margin-left: 20px !important;
 }
 
-input[type="text"], input[type="file"], input[type="email"], input[type="search"], input[type="password"], input[type="number"], textarea {
+select, input[type="text"], input[type="file"], input[type="email"], input[type="search"], input[type="password"], input[type="number"], textarea {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2713,25 +2723,25 @@ input[type="text"], input[type="file"], input[type="email"], input[type="search"
   padding: 10px 9px 9px 9px;
   width: 100%;
 }
-input[type="text"]:hover, input[type="file"]:hover, input[type="email"]:hover, input[type="search"]:hover, input[type="password"]:hover, input[type="number"]:hover, textarea:hover {
+select:hover, input[type="text"]:hover, input[type="file"]:hover, input[type="email"]:hover, input[type="search"]:hover, input[type="password"]:hover, input[type="number"]:hover, textarea:hover {
   border: 2px solid #a6a6a6;
 }
-input[type="text"]:focus, input[type="file"]:focus, input[type="text"]:active, input[type="file"]:active, input[type="email"]:focus, input[type="email"]:active, input[type="search"]:focus, input[type="search"]:active, input[type="password"]:focus, input[type="password"]:active, input[type="number"]:focus, input[type="number"]:active, textarea:focus, textarea:active {
+select:focus, input[type="text"]:focus, input[type="file"]:focus, input[type="text"]:active, input[type="file"]:active, input[type="email"]:focus, input[type="email"]:active, input[type="search"]:focus, input[type="search"]:active, input[type="password"]:focus, input[type="password"]:active, input[type="number"]:focus, input[type="number"]:active, textarea:focus, textarea:active {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-color: #a6a6a6;
   background-color: #fff;
 }
-input[type="text"].has-dark-background, input[type="file"].has-dark-background, input[type="email"].has-dark-background, input[type="search"].has-dark-background, input[type="password"].has-dark-background, input[type="number"].has-dark-background, textarea.has-dark-background {
+select.has-dark-background,input[type="text"].has-dark-background, input[type="file"].has-dark-background, input[type="email"].has-dark-background, input[type="search"].has-dark-background, input[type="password"].has-dark-background, input[type="number"].has-dark-background, textarea.has-dark-background {
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   color: #fff;
 }
-input[type="text"].has-dark-background:hover, input[type="file"].has-dark-background:hover, input[type="email"].has-dark-background:hover, input[type="search"].has-dark-background:hover, input[type="password"].has-dark-background:hover, input[type="number"].has-dark-background:hover, textarea.has-dark-background:hover {
+select.has-dark-background:hover, input[type="text"].has-dark-background:hover, input[type="file"].has-dark-background:hover, input[type="email"].has-dark-background:hover, input[type="search"].has-dark-background:hover, input[type="password"].has-dark-background:hover, input[type="number"].has-dark-background:hover, textarea.has-dark-background:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
-input[type="text"].has-dark-background:focus, input[type="text"].has-dark-background:active, input[type="file"].has-dark-background:focus, input[type="file"].has-dark-background:active, input[type="email"].has-dark-background:focus, input[type="email"].has-dark-background:active, input[type="search"].has-dark-background:focus, input[type="search"].has-dark-background:active, input[type="password"].has-dark-background:focus, input[type="password"].has-dark-background:active, input[type="number"].has-dark-background:focus, input[type="number"].has-dark-background:active, textarea.has-dark-background:focus, textarea.has-dark-background:active {
+select.has-dark-background:focus,input[type="text"].has-dark-background:focus, input[type="text"].has-dark-background:active, input[type="file"].has-dark-background:focus, input[type="file"].has-dark-background:active, input[type="email"].has-dark-background:focus, input[type="email"].has-dark-background:active, input[type="search"].has-dark-background:focus, input[type="search"].has-dark-background:active, input[type="password"].has-dark-background:focus, input[type="password"].has-dark-background:active, input[type="number"].has-dark-background:focus, input[type="number"].has-dark-background:active, textarea.has-dark-background:focus, textarea.has-dark-background:active {
   background-color: #fff;
   color: #252525;
 }

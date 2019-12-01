@@ -10,7 +10,7 @@
     <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/selectize.css" type="text/css">
+    <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/selectize.css" type="text/css"> -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.carousel.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/vanillabox/vanillabox.css" type="text/css">
 

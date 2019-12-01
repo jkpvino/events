@@ -7,8 +7,45 @@ class Events extends CI_Controller{
         parent::__construct();        
         $this->load->helper('form');
         $this->load->library('form_validation');
+        //$this->load->model('upload_model');
         $this->load->model('event_model');
         $this->data = $this->session->get_userdata();
+    }
+
+    function test(){
+        $vars['class'] = '';
+        $this->load->template('uploadci',$vars);
+        //$this->load->view('uploadci');
+    }
+ 
+ 
+    function do_upload(){
+        $config['upload_path']="./assets/images";
+        $config['allowed_types']='gif|jpg|png';
+        $config['encrypt_name'] = TRUE;
+         
+        $this->load->library('upload',$config);
+        if($this->upload->do_upload("file")){
+            $data = array('upload_data' => $this->upload->data());
+ 
+            $title= $this->input->post('title');
+            $image= $data['upload_data']['file_name']; 
+             
+            //$result= $this->upload_model->save_upload($title,$image);
+            //echo json_decode($result);
+        }
+ 
+     }
+ 
+
+    public function ajaxupload()
+    {
+        $vars['class'] = '';
+        $this->load->template('ajaxupload',$vars);
+    }
+    public function uploadEventLogo(){
+        $vars['class'] = '';
+        $this->load->template('upload',$vars);
     }
 
     public function save(){
@@ -65,13 +102,21 @@ class Events extends CI_Controller{
         }
     }
 
-    public function createEvent(){
+    public function getEventTypes(){
+        //$category_code = "school";
+        $category_code = $this->input->post('category_code');
+        $data = array();
+        if($category_code){
+            $response = $this->event_model->getEventTypeByCategory($category_code);
+            echo json_encode($response);
+        }
+    }
 
+    public function createEvent(){
         $userInfo = $this->data;
         if($userInfo['logged_in']['logid']){
             $vars['class'] = '';
             $vars['event_category'] = $this->event_model->getAllEventCategory();
-            $vars['etype'] = $this->event_model->getEventTypes();
            // print_r($vars);exit;
             /*if(isset($_REQUEST['program_tab'])){
                 $this->form_validation->set_rules('program_name', 'Event Title', 'required');

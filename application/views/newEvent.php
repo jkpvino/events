@@ -7,7 +7,11 @@
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
                     <div class="stepwizard-step">
-                        <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                        <a href="#step-0" type="button" class="btn btn-primary btn-circle">0</a>
+                        <p>Step 0</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <a href="#step-1" type="button" class="btn btn-default btn-circle" disabled="disabled">1</a>
                         <p>Step 1</p>
                     </div>
                     <div class="stepwizard-step">
@@ -23,12 +27,12 @@
         </div>
     </div>
 
-
-    <div class="row setup-content" id="step-1">
+    
+    <div class="row setup-content" id="step-0">
         <div class="col-xs-12">
             <div class="col-md-12">
                 <h1>Create New Event</h1>
-                <form id="slider-form" name="program_save" enctype="multipart/form-data" role="form" action="<?php echo base_url(); ?>events/createEvent" method="post" >
+                <form id="program-form" name="program_save" enctype="multipart/form-data" role="form" action="<?php echo base_url(); ?>events/createEvent" method="post" >
                     <input type="hidden" id="program_tab" name="program_tab" value="1">
                     <input type="hidden" id="event_id" name="event_id" value="">
                     <div class="row"> 
@@ -89,11 +93,14 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <div><label class="control-label"> Events Category  </label></div>
-                                <select name="program_category" id="program_category"  class="has-dark-background">
-
-                                    <option value="">Event Category </option>
+                                <select name="program_category" onchange="getEventTypes(this)" id="program_category"  class="has-dark-background">
+                                    <option value="" >Select Category </option>
                                     <?php foreach ($event_category as $eventkey => $ecategory) { ?>
-                                        <option value="<?php echo $ecategory->category_code ?>"><?php echo $ecategory->category ?></option>
+                                        <?php if ($ecategory->category_code && $ecategory->category) { ?>
+                                            <option value="<?php echo $ecategory->category_code ?>">
+                                                <?php echo $ecategory->category ?>
+                                            </option>
+                                        <?php } ?>
                                     <?php } ?>
                                 </select>
                             </div><!-- /.form-group -->
@@ -102,29 +109,15 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Event Type  </label></div>
                                 <select name="program_type" id="program_type"  class="has-dark-background">
-                                    <option value="">Event Type</option>
+                                    <option value="">Select Event Type</option>
                                     <?php foreach ($etype as $eventTypekey => $etype) { ?>
-                                        <option value="<?php echo $etype->name_code ?>"><?php echo $etype->name ?></option>
+                                        <?php if ($etype->name_code && $etype->name) { ?>
+                                        <option value="<?php echo $etype->name_code ?>">
+                                            <?php echo $etype->name ?>
+                                        </option>
+                                        <?php } ?>
                                     <?php } ?>
                                 </select>
-                            </div><!-- /.form-group -->
-                        </div><!-- /.col-md-6 -->
-                    </div><!-- /.row -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div><label class="control-label"> Event Logo  </label></div>
-                            <div class="input-group">
-                                <input type="file" class="form-control has-dark-background"  id="logo" name="logo">
-                            </div>
-                            <img id="logo_preview" width="165" height="165" src="#" alt="your image" />
-                            <!-- /.form-group -->
-                        </div><!-- /.col-md-6 -->
-                        <div class="col-md-6">
-                            <div class="input-group">
-                                <div><label class="control-label"> Event Banner  </label></div>
-                                <div class="input-group">
-                                    <input type="file" class="form-control has-dark-background" id="banner" name="banner">
-                                </div>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
@@ -177,8 +170,8 @@
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
-                    <!-- <button type="submit" id="slider-submit" class="btn nextBtn btn-framed pull-right">Save & Continue</button> -->
-                    <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Save & Continue</button>
+                    <!-- <button style="visibility: hidden;height: 0px" id="slider-next" class="btn btn-framed nextBtn pull-right">Save & Continue</button> -->
+                    <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Save</button>
                     <div id="form-status"></div>
                 </form>
             </div><!-- /.col-md-12 -->
@@ -187,6 +180,35 @@
             
         </div>
     </div>
+    
+
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div><label class="control-label"> Event Logo  </label></div>
+                            <div class="input-group">
+                                <input type="file" class="form-control has-dark-background"  id="logo" name="logo">
+                            </div>
+                            <img id="logo_preview" width="165" height="165" src="#" alt="your image" />
+                            <!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div><label class="control-label"> Event Banner  </label></div>
+                                <div class="input-group">
+                                    <input type="file" class="form-control has-dark-background" id="banner" name="banner">
+                                </div>
+                            </div><!-- /.form-group -->
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.row -->
+            </div>
+        </div>
+    </div>
+
+
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
             <div class="col-md-12">

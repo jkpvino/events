@@ -58,6 +58,11 @@ class Event_model extends CI_Model {
           //  echo $this->db->last_query();exit;
             return $query->result();
         }
+        public function getEventTypeByCategory($category_code)
+        {       $this->db->select('name, name_code');
+                $query = $this->db->get_where('event_type', array('category_code' => $category_code));                
+                return $query->result();
+        }
         public function getEventType($sym_id)
         {
                 $query = $this->db->get_where('event_type', array('id' => $sym_id));                
