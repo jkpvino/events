@@ -52,6 +52,11 @@ class Events extends CI_Controller{
         $userInfo = $this->data;
         $eventTypeId = 1;
         if($this->input->post('program_tab')){
+            $catArray = array(
+                'category_code' => $this->input->post('program_category'),
+                'name_code' => $this->input->post('program_type'),
+            );
+            $eventTypeId = $this->event_model->getEventTypeId($catArray);
             $eventArray = array(
                 'name' => $this->input->post('program_name'), 
                 'event_from' => $this->input->post('program_start'), 
@@ -59,7 +64,6 @@ class Events extends CI_Controller{
                 'description' => $this->input->post('program_description'), 
                 'address' => $this->input->post('address'), 
                 'contact_info' => $this->input->post('contact_info'), 
-                //'program_category' => $this->input->post('program_category'), 
                 'event_type' => $eventTypeId, 
                 'gmap_location' => $this->input->post('gmap_location'), 
                 'allowed_users' => $this->input->post('allowed_users'), 
@@ -68,10 +72,40 @@ class Events extends CI_Controller{
             );
             if($this->input->post('event_id')){
                 $eventId = $this->input->post('event_id');
-                echo $eventInsertId = $this->event_model->updateSymposium($eventArray, $eventId);
+                $eventInsertId = $this->event_model->updateSymposium($eventArray, $eventId);
             }else{                
-                echo $eventInsertId = $this->event_model->setSymposium($eventArray);                
+                $eventInsertId = $this->event_model->setSymposium($eventArray);                
             }
+            echo trim($eventInsertId);
+        }
+        if ($this->input->post('institution_tab')) {
+            $institutionArray = array(
+                'name' => $this->input->post('name'), 
+                'description' => $this->input->post('description'), 
+                'website_url' => $this->input->post('website_url'), 
+                'institution_category' => $this->input->post('institution_category'), 
+                'country' => $this->input->post('country'), 
+                'state' => $this->input->post('state'), 
+                'city' => $this->input->post('city'), 
+                'postal_code' => $this->input->post('postal_code'), 
+                'address' => $this->input->post('address'), 
+                'facebook' => $this->input->post('facebook'), 
+                'google' => $this->input->post('google'), 
+                'twitter' => $this->input->post('twitter'), 
+                'linkedin' => $this->input->post('linkedin'), 
+            );
+            if ($this->input->post('institution_id')) {
+                $institutionId = trim($this->input->post('institution_id'));
+                $institutionInsertId = $this->event_model->updateInstitution($institutionArray, $institutionId);   
+            }else{
+                $institutionInsertId = $this->event_model->setInstitution($institutionArray);                
+            }
+            $eventId = trim($this->input->post('event_id'));
+            $eventArray = array(
+                'institution_id' => $institutionInsertId
+            );
+            $this->event_model->updateSymposium($eventArray, $eventId);
+            echo trim($institutionInsertId);
         }
         
     }

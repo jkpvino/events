@@ -198,7 +198,7 @@ $(document).ready(function($) {
                 $.post("save", $("#program-form").serialize(),  function(response) {
                     alert(response);
                     if(response){                        
-                        $('#event_id').val(response);
+                        $('.event_id').val(response);
                         $('#form-status').html(response);
                         $('#slider-submit').attr('disabled','true');
                         $("#slider-next").trigger("click");
@@ -211,43 +211,45 @@ $(document).ready(function($) {
     });
 
     //INSTITUTION FORM
-    $("#slider-submit").bind("click", function(event){
+    $("#slider-submit-institution").bind("click", function(event){
         $("#inistitution-form").validate({
             rules: {
-                program_name: "required",
-                program_start: {
-                    required: true,
-                    date : true
+                name: "required",
+                description: "required",
+                website_url: {
+                    required : true,
+                    url: true
                 },
-                program_end: {
-                    required: true,
-                    date : true
-                },
-                program_description: "required",
+                institution_category: "required",
+                country: "required",
+                state: "required",
+                city: "required",
+                postal_code: {
+                    required : true,
+                    number : true
+                },  
                 address: "required",
-                contact_info: "required",
-                program_category: "required",
-                program_type: "required",
-                gmap_location: {
-                    required : true,
+                facebook: {
                     url: true
                 },
-                program_website: {
-                    required : true,
+                linkedin: {
                     url: true
                 },
-                online_booking: {
-                    required : true,
+                google: {
+                    url: true
+                },
+                twitter: {
+                    url: true
                 }
             },
             submitHandler: function() {
-                $.post("save", $("#program-form").serialize(),  function(response) {
-                    alert(response);
+                $.post("save", $("#inistitution-form").serialize(),  function(response) {
+                    
                     if(response){                        
-                        $('#event_id').val(response);
+                        $('#institution_id').val(response);
                         $('#form-status').html(response);
-                        $('#slider-submit').attr('disabled','true');
-                        $("#slider-next").trigger("click");
+                        //$('#slider-submit-institution').attr('disabled','true');
+                        //$("#slider-next").trigger("click");
                         return true;
                     }
                 });

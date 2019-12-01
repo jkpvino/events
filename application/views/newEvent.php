@@ -34,7 +34,7 @@
                 <h1>Create New Event</h1>
                 <form id="program-form" name="program_save" enctype="multipart/form-data" role="form" action="<?php echo base_url(); ?>events/createEvent" method="post" >
                     <input type="hidden" id="program_tab" name="program_tab" value="1">
-                    <input type="hidden" id="event_id" name="event_id" value="">
+                    <input type="hidden" class="event_id" name="event_id" value="">
                     <div class="row"> 
                         <div class="col-md-12">
                             <div class="input-group">
@@ -110,13 +110,7 @@
                                 <div><label class="control-label"> Event Type  </label></div>
                                 <select name="program_type" id="program_type"  class="has-dark-background">
                                     <option value="">Select Event Type</option>
-                                    <?php foreach ($etype as $eventTypekey => $etype) { ?>
-                                        <?php if ($etype->name_code && $etype->name) { ?>
-                                        <option value="<?php echo $etype->name_code ?>">
-                                            <?php echo $etype->name ?>
-                                        </option>
-                                        <?php } ?>
-                                    <?php } ?>
+                                    
                                 </select>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
@@ -214,7 +208,9 @@
             <div class="col-md-12">
                 <h3> Step 2</h3>
                 <form id="inistitution-form" name="institution_save" enctype="multipart/form-data" role="form" action="<?php echo base_url(); ?>events/createEvent" method="post" >
-                    <input type="hidden" id="program_tab" name="program_tab" value="1">
+                    <input type="hidden" id="institution_tab" name="institution_tab" value="1">
+                    <input type="hidden" id="institution_id" name="institution_id" value="">                    
+                    <input type="hidden" class="event_id" name="event_id" value="">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
@@ -309,42 +305,55 @@
                     <div class="col-md-6">
                         <div class="input-group">
                             <div><label class="control-label"> Address   </label></div>                                
-                            <textarea rows="5" id="addressEditor"></textarea>
+                            <textarea rows="5" id="address" name="address"></textarea>
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div>
                 <div class="row"> <div class="col-md-12"> <h3>Socialinfo</h3> <hr> </div> </div>
                 
-                <div class="row">
+                <div class="row">                                    
                     <div class="col-md-6">
+                        <div><label class="control-label"> Facebook </label></div>   
                         <div class="input-group">
-                            <div><label class="control-label"> Facebook  </label></div>                                
-                            <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Facebook Page" type="text" >
+                            <input type='text' id="facebook" placeholder="Facebook Page" name="facebook" class="form-control  has-dark-background" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-globe"></span>
+                            </span>
                         </div>
-                    </div><!-- /.col-md-6 -->
+                    </div><!-- /.col-md-6 -->                
                     <div class="col-md-6">
+                        <div><label class="control-label"> Google </label></div>   
                         <div class="input-group">
-                            <div><label class="control-label"> Google   </label></div>                                
-                            <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Google Page" type="text" >
+                            <input type='text' id="google" placeholder="Google Page" name="google" class="form-control  has-dark-background" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-globe"></span>
+                            </span>
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
 
-                <div class="row">
+                <div class="row">                    
                     <div class="col-md-6">
+                        <div><label class="control-label"> Twitter </label></div>   
                         <div class="input-group">
-                            <div><label class="control-label"> Twitter  </label></div>                                
-                            <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Twitter Page" type="text" >
+                            <input type='text' id="twitter" placeholder="Twitter Page" name="twitter" class="form-control  has-dark-background" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-globe"></span>
+                            </span>
                         </div>
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
+                        <div><label class="control-label"> Linkedin </label></div>   
                         <div class="input-group">
-                            <div><label class="control-label"> Lingedin   </label></div>                                
-                            <input class="form-control has-dark-background" name="slider-name" id="slider-name" placeholder="Lingedin Page" type="text" >
+                            <input type='text' id="linkedin" placeholder="Lingedin Page" name="linkedin" class="form-control  has-dark-background" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-globe"></span>
+                            </span>
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
-                <button class="btn btn-framed nextBtn btn-lg pull-right" type="button" >Next</button>
+                <!-- <button class="btn btn-framed nextBtn btn-lg pull-right" type="button" >Next</button> -->
+                <button class="btn btn-framed btn-lg pull-right" id="slider-submit-institution" type="submit" >Save & Continue </button>
 
                 </form>
             </div>
