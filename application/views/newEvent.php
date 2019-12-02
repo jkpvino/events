@@ -363,82 +363,101 @@
         <div class="col-xs-12">
             <div class="col-md-12">
                 <h3> Step 3</h3>
+
+
                 <div class="row">
-                        <div class="pull-right" > <a href="javascript:void(0)" id="add_sub_event" style="color: #fff"> <span class="btn btn-circle btn-default"> <i class="fa fa-plus"> </i> </span> <label class="control-label">  Add Event </label> </a> </div>
-                </div>
-                <div class="event_container">
-                    <div class="event_row">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="input-group">
-                                    <div><label class="control-label"> Event Name  </label></div>                                
-                                    <input class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" >
-                                </div>
-                            </div><!-- /.col-md-6 -->
-                        </div><!-- /.row -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div><label class="control-label"> Event Description  </label></div>                               
-                                    <textarea rows="5" name="event_description[]"></textarea>
-                                </div>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div><label class="control-label"> Contactus   </label></div>                                
-                                    <textarea rows="5" name="contact_us[]"></textarea>
-                                </div>
-                            </div><!-- /.col-md-6 -->
-                        </div><!-- /.row -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="" ss="input-group">
-                                    <div><label class="control-label"> Event Start  </label></div>                                
-                                    <div class="input-group datetimepicker">
-                                        <input type='text' name="event_start[]" class="form-control datepicker  has-dark-background" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div><label class="control-label"> Event End  </label></div> 
-                                    <div class="input-group datetimepicker">
-                                        <input type='text' name="event_end[]" class="form-control datepicker has-dark-background" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div><!-- /.col-md-6 -->
-                        </div><!-- /.row -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="" ss="input-group">
-                                    <div><label class="control-label"> Online Booking  </label></div>                                
-                                    <select name="slider-course" id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
-                                        <option value="">Online Booking </option>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select>
-                                </div>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div><label class="control-label"> How many slots ?  </label></div> 
-                                    <div class="input-group">
-                                        <input type='number' class="form-control has-dark-background" name="slots_events[]" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-plus"></span>
-                                        </span>
-                                    </div>
-                                </div><!-- /.form-group -->
-                            </div><!-- /.col-md-6 -->
-                        </div><!-- /.row -->
+                    <div class="col-md-12">
+                        <div><label class="control-label"> Create Sub Events  </label></div>  
+                        <div class="input-group">
+                            <select class="has-dark-background" name="sub_events_decider" onchange="subEventsDecider('sub_events', this)">
+                               <option value="0">No</option>
+                               <option value="1">Yes</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+
+                <div id="sub_events">                    
+                    <div class="row">
+                        <div class="pull-right" > <a href="javascript:void(0)" id="add_sub_event" style="color: #fff"> <span class="btn btn-circle btn-default"> <i class="fa fa-plus"> </i> </span> <label class="control-label">  Add Event </label> </a> </div>
+                    </div>
+                    <div class="event_container">                    
+                        <input type="hidden" id="subevents_tab" name="subevents_tab" value="1">             
+                        <input type="hidden" class="event_id" name="event_id" value="">
+                        <div class="event_row" id="event_row_1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div><label class="control-label"> Event Name  </label></div>                                
+                                        <input class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" >
+                                    </div>
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div><label class="control-label"> Event Description  </label></div>                               
+                                        <textarea rows="5" class="event_description" name="event_description[]"></textarea>
+                                    </div>
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div><label class="control-label"> Contactus   </label></div>                                
+                                        <textarea rows="5" class="contact_us" name="contact_us[]"></textarea>
+                                    </div>
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="" ss="input-group">
+                                        <div><label class="control-label"> Event Start  </label></div>                                
+                                        <div class="input-group datetimepicker">
+                                            <input type='text' name="event_start[]" class="form-control datepicker  has-dark-background" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div><label class="control-label"> Event End  </label></div> 
+                                        <div class="input-group datetimepicker">
+                                            <input type='text' name="event_end[]" class="form-control datepicker has-dark-background" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="" ss="input-group">
+                                        <div><label class="control-label"> Online Booking  </label></div>                                
+                                        <select name="slider-course" id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
+                                            <option value="">Online Booking </option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div><label class="control-label"> How many slots ?  </label></div> 
+                                        <div class="input-group">
+                                            <input type='number' class="form-control has-dark-background" name="slots_events[]" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </span>
+                                        </div>
+                                    </div><!-- /.form-group -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                        </div>
+                    </div>
+                </div>
+               
                 <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
             </div>
         </div>

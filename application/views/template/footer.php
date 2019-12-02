@@ -232,8 +232,34 @@ function getCities(stateId){
         $("#add_sub_event").click(function(){
             var rowCount = $(".event_container > div").length;
             alert(rowCount);
-            var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Event Name </label></div> <input class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Description </label></div> <textarea rows="5" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Contactus </label></div> <textarea rows="5" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Event Start </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Online Booking </label></div> <select name="slider-course" id="event_online_booking_'+rowCount+'" name="event_online_booking[]" class="has-dark-background"> <option value="">Online Booking </option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> How many slots ? </label></div> <div class="input-group"> <input type="number" class="form-control has-dark-background" name="slots_events[]" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-plus"></span> </span> </div> </div>> </div> </div></div>';
+            var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Event Name </label></div> <input class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Description </label></div> <textarea rows="5" class="event_description" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Contactus </label></div> <textarea rows="5" class="contact_us" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Event Start </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Online Booking </label></div> <select name="slider-course" id="event_online_booking_'+rowCount+'" name="event_online_booking[]" class="has-dark-background"> <option value="">Online Booking </option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> How many slots ? </label></div> <div class="input-group"> <input type="number" class="form-control has-dark-background" name="slots_events[]" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-plus"></span> </span> </div> </div>> </div> </div></div>';
             $(".event_container").append(newrow);
+
+
+            
+            jQuery("#event_row_"+(rowCount+1)+" .event_description").richText({
+              height: 150,
+              heightPercentage: 0,
+              imageUpload: false,
+              fileUpload: false,
+              heading: false,
+              removeStyles: false,
+              videoEmbed: false,
+              urls: false,
+              table: false,
+            });
+            jQuery("#event_row_"+(rowCount+1)+" .contact_us").richText({
+              height: 150,
+              heightPercentage: 0,
+              imageUpload: false,
+              fileUpload: false,
+              heading: false,
+              removeStyles: false,
+              videoEmbed: false,
+              urls: false,
+              table: false,
+            });
+
             jQuery('.datepicker').datepicker({ 
                 dateFormat: 'yy-mm-dd'
             });

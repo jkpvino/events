@@ -416,7 +416,6 @@ $(document).ready(function () {
 
 jQuery(document).ready(function() {
     jQuery("#program_description").richText();
-    jQuery("#institution_description").richText();
     jQuery("#address").richText({
         height: 150,
         heightPercentage: 0,
@@ -439,23 +438,43 @@ jQuery(document).ready(function() {
         urls: false,
         table: false,
     });
+    jQuery("#description").richText();
+
+    jQuery("#event_row_1 .event_description").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
+    jQuery("#event_row_1 .contact_us").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
+
 });
 
 
 jQuery(function () {
     jQuery('.datepicker').datepicker({ 
         dateFormat: 'yy-mm-dd',
-        timeFormat: 'HH:mm:ss',
-        onShow: function () {
-            this.setOptions({
-                maxDate:$('.datepicker').val()?$('.datepicker').val():false,
-                maxTime:$('.datepicker').val()?$('.datepicker').val():false
-            });
-        }
     });
 });
 
-
+function subEventsDecider(divId, element){
+    document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+}
 
 
 
