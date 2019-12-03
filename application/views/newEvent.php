@@ -145,15 +145,15 @@
                         <div class="col-md-6">
                             <div class="" ss="input-group">
                                 <div><label class="control-label"> Online Booking  </label></div>                                
-                                <select name="online_booking" id="online_booking" class="has-dark-background">
+                                <select onchange="subEventsDecider('program_slots', this)" name="online_booking" id="online_booking" class="has-dark-background">
                                     <option value="">Online Booking</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
                                 </select>
                             </div>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
-                            <div class="input-group">
+                            <div class="input-group hidden" id="program_slots">
                                 <div><label class="control-label"> How many slots ?  </label></div> 
                                 <div class="input-group">
                                     <input type='number'  value="<?php echo set_value('allowed_users'); ?>" name="allowed_users" id="allowed_users" class="form-control has-dark-background" />
@@ -362,7 +362,7 @@
     <div class="row setup-content" id="step-3">
         <div class="col-xs-12">
             <div class="col-md-12">
-                <h3> Step 3</h3>
+                <p> </p>
 
 
                 <div class="row">
@@ -377,7 +377,8 @@
                     </div>
                 </div>
 
-                <div id="sub_events">                    
+                <div id="sub_events" class="hideblock">   
+                <form id="sub-events-form" name="sub-events-form" enctype="multipart/form-data" role="form" action="" method="post" >
                     <div class="row">
                         <div class="pull-right" > <a href="javascript:void(0)" id="add_sub_event" style="color: #fff"> <span class="btn btn-circle btn-default"> <i class="fa fa-plus"> </i> </span> <label class="control-label">  Add Event </label> </a> </div>
                     </div>
@@ -389,7 +390,7 @@
                                 <div class="col-md-12">
                                     <div class="input-group">
                                         <div><label class="control-label"> Event Name  </label></div>                                
-                                        <input class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" >
+                                        <input required class="form-control has-dark-background event_name" name="event_name[]" placeholder="Event Title" type="text" >
                                     </div>
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
@@ -397,13 +398,13 @@
                                 <div class="col-md-6">
                                     <div class="input-group">
                                         <div><label class="control-label"> Event Description  </label></div>                               
-                                        <textarea rows="5" class="event_description" name="event_description[]"></textarea>
+                                        <textarea rows="5" required class="event_description" name="event_description[]"></textarea>
                                     </div>
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-6">
                                     <div class="input-group">
                                         <div><label class="control-label"> Contactus   </label></div>                                
-                                        <textarea rows="5" class="contact_us" name="contact_us[]"></textarea>
+                                        <textarea rows="5" required class="contact_us" name="contact_us[]"></textarea>
                                     </div>
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
@@ -412,7 +413,7 @@
                                     <div class="" ss="input-group">
                                         <div><label class="control-label"> Event Start  </label></div>                                
                                         <div class="input-group datetimepicker">
-                                            <input type='text' name="event_start[]" class="form-control datepicker  has-dark-background" />
+                                            <input type='text' required name="event_start[]" class="form-control datepicker  has-dark-background" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -423,7 +424,7 @@
                                     <div class="input-group">
                                         <div><label class="control-label"> Event End  </label></div> 
                                         <div class="input-group datetimepicker">
-                                            <input type='text' name="event_end[]" class="form-control datepicker has-dark-background" />
+                                            <input type='text' required name="event_end[]" class="form-control datepicker has-dark-background" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -435,18 +436,18 @@
                                 <div class="col-md-6">
                                     <div class="" ss="input-group">
                                         <div><label class="control-label"> Online Booking  </label></div>                                
-                                        <select name="slider-course" id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
+                                        <select onchange="subEventsDecider('slots', this)" name="slider-course" required id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
                                             <option value="">Online Booking </option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
                                         </select>
                                     </div>
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-6">
-                                    <div class="input-group">
+                                    <div class="input-group hideblock" id="slots">
                                         <div><label class="control-label"> How many slots ?  </label></div> 
                                         <div class="input-group">
-                                            <input type='number' class="form-control has-dark-background" name="slots_events[]" />
+                                            <input type='number' value="0" class="form-control has-dark-background" name="slots_events[]" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </span>
@@ -456,9 +457,15 @@
                             </div><!-- /.row -->
                         </div>
                     </div>
+                    <button type="submit" id="sub-events-submit" class="btn btn-framed pull-right">Submit</button>
+                </form>
                 </div>
-               
-                <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button> -->
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

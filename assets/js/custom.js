@@ -257,6 +257,40 @@ $(document).ready(function($) {
             }
         });
     });
+
+     //INSTITUTION FORM
+    $("#sub-events-submit").bind("click", function(event){
+        $("#sub-events-form").validate({
+            rules: {
+                event_name: "required",
+                event_description: "required",
+                contact_us: "required",
+                event_online_booking: "required",
+                event_start: {
+                    required : true,
+                    date: true
+                },
+                event_end: {
+                    required : true,
+                    date: true
+                }
+            },
+            submitHandler: function() {
+                $.post("save", $("#sub-events-form").serialize(),  function(response) {
+                    alert(response);
+                    /*if(response){                        
+                        $('#institution_id').val(response);
+                        $('#form-status').html(response);
+                        //$('#slider-submit-institution').attr('disabled','true');
+                        //$("#slider-next").trigger("click");
+                        return true;
+                    }*/
+                });
+                return false;
+            }
+        });
+    });
+
 //  Contact Form with validation
 
     $("#submit").bind("click", function(event){

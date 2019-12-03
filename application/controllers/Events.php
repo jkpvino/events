@@ -107,6 +107,9 @@ class Events extends CI_Controller{
             $this->event_model->updateSymposium($eventArray, $eventId);
             echo trim($institutionInsertId);
         }
+        if ($this->input->post('subevents_tab')) {
+            
+        }
         
     }
     

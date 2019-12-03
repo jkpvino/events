@@ -21,7 +21,7 @@ address {
   background: none;
   border: 0px solid;
 }
-#sub_events{
+.hideblock{
   display: none;
 }
 .bgpink{
