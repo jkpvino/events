@@ -277,14 +277,11 @@ $(document).ready(function($) {
             },
             submitHandler: function() {
                 $.post("save", $("#sub-events-form").serialize(),  function(response) {
-                    alert(response);
-                    /*if(response){                        
-                        $('#institution_id').val(response);
-                        $('#form-status').html(response);
-                        //$('#slider-submit-institution').attr('disabled','true');
-                        //$("#slider-next").trigger("click");
-                        return true;
-                    }*/
+                    if(response == false){      
+                        alert("Please Fill All Information")
+                    }else{
+                        window.location.href = base_url+response;
+                    }
                 });
                 return false;
             }

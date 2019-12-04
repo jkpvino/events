@@ -61,20 +61,21 @@ class Events extends CI_Controller{
                 'name' => $this->input->post('program_name'), 
                 'event_from' => $this->input->post('program_start'), 
                 'event_to' => $this->input->post('program_end'), 
-                'description' => $this->input->post('program_description'), 
-                'address' => $this->input->post('address'), 
-                'contact_info' => $this->input->post('contact_info'), 
+                'description' => mysql_real_escape_string($this->input->post('program_description')), 
+                'address' => mysql_real_escape_string($this->input->post('address')), 
+                'contact_info' => mysql_real_escape_string($this->input->post('contact_info')), 
                 'event_type' => $eventTypeId, 
                 'gmap_location' => $this->input->post('gmap_location'), 
                 'allowed_users' => $this->input->post('allowed_users'), 
                 'status' =>20,
                 'user_id' => $userInfo['logged_in']['logid']
             );
+            //print_r($eventArray);
             if($this->input->post('event_id')){
                 $eventId = $this->input->post('event_id');
-                $eventInsertId = $this->event_model->updateSymposium($eventArray, $eventId);
+                $eventInsertId = $this->event_model->saveSymposium($eventArray, $eventId);
             }else{                
-                $eventInsertId = $this->event_model->setSymposium($eventArray);                
+                $eventInsertId = $this->event_model->saveSymposium($eventArray);                
             }
             echo trim($eventInsertId);
         }
@@ -108,6 +109,33 @@ class Events extends CI_Controller{
             echo trim($institutionInsertId);
         }
         if ($this->input->post('subevents_tab')) {
+            $status = true;
+            for ($i=0; $i < count($this->input->post('event_name')); $i++) {   
+                $rowId = $this->input->post('id')[$i] ? $this->input->post('id')[$i] : 0 ;              
+                $subEventsInfo = array(
+                    'name' => $this->input->post('event_name')[$i], 
+                    'description' => mysql_real_escape_string($this->input->post('event_description')[$i]), 
+                    'event_from' => $this->input->post('event_start')[$i], 
+                    'event_to' => $this->input->post('event_end')[$i], 
+                    'contact_us' => mysql_real_escape_string($this->input->post('contact_us')[$i]), 
+                    'sym_id' => $this->input->post('event_id'),  
+                    'status' => 20, 
+                );
+                if($this->input->post('event_online_booking')){
+                    $subEventsInfo['allowed_users'] = $this->input->post('slots_events')[$i] ? $this->input->post('slots_events')[$i] : 0;
+                }
+                $subEventsInfo['sym_id'] = 1;
+                $subEventId = $this->event_model->saveSubEvents($subEventsInfo, $rowId);
+                if (!$subEventId) {                    
+                    $status = false;
+                }                
+            }
+            $eventCatg = $this->event_model->getEventType($$eventArray['event_type']);
+            if ($status) {                
+                echo $url = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$value->url_key;
+            }else{
+                echo $status;
+            }
             
         }
         

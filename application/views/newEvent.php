@@ -386,11 +386,12 @@
                         <input type="hidden" id="subevents_tab" name="subevents_tab" value="1">             
                         <input type="hidden" class="event_id" name="event_id" value="">
                         <div class="event_row" id="event_row_1">
+                            <input type="hidden" id="sub_event_id_1" name="id[]" value="">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group">
                                         <div><label class="control-label"> Event Name  </label></div>                                
-                                        <input required class="form-control has-dark-background event_name" name="event_name[]" placeholder="Event Title" type="text" >
+                                        <input required class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" >
                                     </div>
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
@@ -436,7 +437,7 @@
                                 <div class="col-md-6">
                                     <div class="" ss="input-group">
                                         <div><label class="control-label"> Online Booking  </label></div>                                
-                                        <select onchange="subEventsDecider('slots', this)" name="slider-course" required id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
+                                        <select onchange="subEventsDecider('slots', this)" required id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
                                             <option value="">Online Booking </option>
                                             <option value="1">Yes</option>
                                             <option value="0">No</option>
@@ -447,7 +448,7 @@
                                     <div class="input-group hideblock" id="slots">
                                         <div><label class="control-label"> How many slots ?  </label></div> 
                                         <div class="input-group">
-                                            <input type='number' value="0" class="form-control has-dark-background" name="slots_events[]" />
+                                            <input type='number' value="0" class="form-control has-dark-background"  name="slots_events[]" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-plus"></span>
                                             </span>

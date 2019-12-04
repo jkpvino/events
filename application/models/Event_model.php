@@ -84,7 +84,7 @@ class Event_model extends CI_Model {
         public function getEventTypeId($catArray)
         {
                 $query = $this->db->get_where('event_type', $catArray);                
-                return $query->row();
+                return $query->row()->id;
         }
         public function getEventType($sym_id)
         {
@@ -97,16 +97,18 @@ class Event_model extends CI_Model {
                 return $query->row();
         }
 	
-        public function setSymposium($data){
-            $this->db->insert('symposium', $data);
-            $insert_id = $this->db->insert_id();
-            return  $insert_id; 
+        public function saveSymposium($data,$id = ''){
+            if ($id) {
+                $this->db->update('symposium', $data, array('id' => $id));
+                return $id;
+            }else{                
+                $this->db->insert('symposium', $data);
+                $insert_id = $this->db->insert_id();
+                return  $insert_id; 
+            }
         }
 
-        public function updateSymposium($data,$id){
-            $this->db->update('symposium', $data, array('id' => $id));
-            return $id;
-        }
+        
     
         public function setInstitution($data){
             $this->db->insert('institution', $data);
@@ -118,6 +120,17 @@ class Event_model extends CI_Model {
             print_r($data);
             $this->db->update('institution', $data, array('id' => $id));
             return $id;
+        }
+
+        public function saveSubEvents($data, $id){
+            if($id){
+                $this->db->update('events', $data, array('id' => $id));
+                return $id;
+            }else{
+                $this->db->insert('events', $data);
+                $insert_id = $this->db->insert_id();
+                return  $insert_id; 
+            }
         }
 
         
