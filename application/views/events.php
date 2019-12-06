@@ -72,43 +72,43 @@
     </div>
     <br>
     <div class="container">
-
         <div class="row">
             <div class="col-md-12">
-                <?php for ($j=0; $j < 3; $j++) { ?>
-                    <div class="row">
-                        <?php for ($i=0; $i < 3 ; $i++) { ?>
+                <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
+                    <?php 
+                    $eventCatg = $this->event_model->getEventType($symposium->event_type);
+                    $Eventurl = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$symposium->url_key;
+                    if($i % 3 == 0){ ?> <div class="row"> <?php } ?>
                         <div class="col-md-4 ">
                             <div class="col-md-12 lgx-single-news">
                                 <figure >
-                                    <a href="/e/kpjot3g4/india-atp-annual-conference">
-                                        <img src="https://dpnot7by18s6l.cloudfront.net/events/banners/540512575d4ac71e0ebc8.jpg" alt="India ATP  - Annual conference" title="India ATP  - Annual conference" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block !important;">                                    
+                                    <a href="<?php echo $Eventurl; ?>">
+                                        <img src="<?php echo base_url() ?>assets/images/banner/event-image.jpg" alt="<?php echo $symposium->name ?>" title="<?php echo $symposium->url_key ?>" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block;">                                    
                                     </a>
                                 </figure>
                                 <div class="single-news-info">
                                     <h3 class="title">
-                                        <a href="/e/kpjot3g4/india-atp-annual-conference">India ATP  - Annual conference</a>
+                                        <a href="<?php echo $Eventurl; ?>"><?php echo (strlen($symposium->name) > 55) ? substr($symposium->name,0,50).'...' : $symposium->name; ?></a>
                                     </h3>
                                     <div class="meta-wrapper">
-                                        <span><i class="fa fa-calendar" aria-hidden="true"></i> 20th Dec 2019</span>
-                                        <span><i class="fa fa-map-marker" aria-hidden="true"></i> Delhi</span>
+                                        <span><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo date("dS F Y", strtotime($symposium->event_from)); ?> </span>  
+                                        <a href="<?php echo $symposium->gmap_location ?>"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> Delhi</span> </a>
                                     </div>
-                                    <h5 class="mb-2">Conference</h5>
+                                    <h5 class="mb-2"><?php echo $eventCatg->name ?></h5>
                                     <hr class="m-0">
                                     <a href="/e/kpjot3g4/india-atp-annual-conference">
-                                        <h5 class="text-right mb-0 mt-2"> Readmore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
+                                        <h5 class="text-right mb-0 mt-2"> Readmore <?php echo $i; ?><i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
                                     </a>
                                 </div>
                             </div>
-                        </div>                        
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-                
+                        </div>  
+                    <?php if($i % 3 == 0){ ?> </div> <?php } ?> 
+                <?php $i++; }  ?>                
             </div>
         </div>
-
-
+    </div><!-- /.container -->
+</div>
+<!-- end Page Content -->
 <style type="text/css">
     #homepage-carousel{
         background:
@@ -136,64 +136,3 @@ background-size: 128px 128px;
     width: 100%;
 }
 </style>
-
-
-
-
-
-
-        <div class="row">
-            <!--MAIN Content-->
-            <div class="col-md-8">
-                <div id="page-main">
-                    <section class="events grid" id="events">
-                        <header><h1>Events</h1></header>
-                       
-
-
-                            <?php foreach ($sympos as $key => $value) { 
-                                $eventCatg = $this->event_model->getEventType($value->event_type);
-                                $url = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$value->url_key;
-                                $i=1;
-                                if($i%3 != 0){
-                                ?>
-                            <div class="row">
-                            <?php } ?>
-                            <div class="col-md-6 col-sm-6">
-                                <article class="event">
-                                    <figure class="date">
-                                        <div class="month"><?php $date =date('F',strtotime($value->event_from)); echo substr($date, 0, 3); ?></div>
-                                        <div class="day"><?php echo date('d',strtotime($value->event_from)); ?></div>
-                                    </figure>
-                                    <aside>
-                                        <header>
-                                            <a href="<?php echo base_url().$url; ?>"><?php echo $value->name; ?></a>
-                                        </header>
-                                        <div class="additional-info"><span class="fa fa-map-marker"></span> <?php echo $value->address; ?></div>
-                                        <div class="description">
-                                            <p><?php echo substr($value->description, 0, 200); ?>...
-                                            </p>
-                                        </div>
-                                        <a href="event-detail.html" class="btn btn-framed btn-color-grey btn-small">View Details</a>
-                                    </aside>
-                                </article><!-- /article -->
-                            </div><!-- /.col-md-6 -->
-                            <?php if($i%3 != 0){
-                                ?>
-                              </div><!-- /.row -->
-                          <?php } 
-                          $i++;
-                           } ?>
-
-                      
-
-
-                    </section><!-- /.events grid -->
-                   
-                </div><!-- /#page-main -->
-            </div><!-- /.col-md-8 -->
-
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</div>
-<!-- end Page Content -->

@@ -13,12 +13,9 @@ class Events extends CI_Controller{
     }
 
     function test(){
-        $name = 'WIZTECH’12 -SACS M.A.V.M.M. ENGINEERING COLLEGE (KIDARIPATTY, ALAGARKOIL, MADURAI)';
-        $url = preg_replace('#[^0-9a-z]+#i', '-', $name);
-        echo $url = strtolower($url);
-        exit();
-        $vars['class'] = '';
-        $this->load->template('uploadci',$vars);
+        $eventInfo = $this->event_model->getSymposiumInfoById(23);
+        print_r($eventInfo->event_type);
+        print_r($eventInfo);
         //$this->load->view('uploadci');
     }
  
@@ -137,10 +134,10 @@ class Events extends CI_Controller{
                     $status = false;
                 }                
             }
-            $eventArray['event_type'] = 5;
-            $eventArray['url_key'] = 'aaron-11';
-            $url_key = $eventArray['url_key'];
-            $eventCatg = $this->event_model->getEventType($eventArray['event_type']);
+            $eventInfo = $this->event_model->getSymposiumInfoById(trim($this->input->post('event_id')));
+            $eventType = $eventInfo->event_type;
+            $url_key = $eventInfo->url_key;
+            $eventCatg = $this->event_model->getEventType($eventType);
             if ($status) {                
                 echo $url = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$url_key;
             }else{
