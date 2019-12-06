@@ -7,32 +7,28 @@
                     <div class="col-md-3">
                         <div class="input-group">
 
-                            <div><label class="control-label"> Organization </label></div>
-                             <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                <option value="">Organization</option>
-                                <option data-range-key="all">All</option>
-                                <option value="school" >School</option>
-                                <option value="college" >College</option>
+                            <div><label class="control-label"> Event Category </label></div>
+                            <select name="program_category" onchange="getEventTypes(this)" id="program_category"  class="has-dark-background">
+                                <option value="" >Select Category </option>
+                                <?php foreach ($event_category as $eventkey => $ecategory) { ?>
+                                    <?php if ($ecategory->category_code && $ecategory->category) { ?>
+                                        <option value="<?php echo $ecategory->category_code ?>">
+                                            <?php echo $ecategory->category ?>
+                                        </option>
+                                    <?php } ?>
+                                <?php } ?>
                             </select>
-                            <!--
-                            <div><label class="control-label"> Event Date </label></div>
-                             <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                <option value="">Event date</option>
-                                <option data-range-key="all">All</option>
-                                <option data-range-key="Today" class="active">Today</option>
-                                <option data-range-key="Next 7 Days">Next 7 Days</option>
-                                <option data-range-key="Next 30 Days">Next 30 Days</option>
-                                <option data-range-key="Next 90 Days">Next 90 Days</option>
-                                <option value="last_month" >Last Month</option>
-                                <option value="last_year" >Last Year</option>
-                            </select>
-                            -->
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
                             <div><label class="control-label"> Event Type  </label></div>
-                             <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
+                                <select name="program_type" id="program_type"  class="has-dark-background">
+                                    <option value="">Select Event Type</option>                                    
+                                </select>
+
+
+                            <!--  <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
                                 <option value="">Event Type</option>
                                 <option>Event Type</option>
                                 <option>comedy</option>
@@ -50,13 +46,13 @@
                                 <option>Tourism</option>
                                 <option>Training &amp; Workshop</option>
                                 <option>Webinar</option>
-                            </select>
+                            </select> -->
                         </div>
                     </div>                    
                     <div class="col-md-4">
                         <div class="input-group">
                             <div><label class="control-label"> Event Name  </label></div>
-                            <input class="form-control has-dark-background" name="event_name" id="slider-name" placeholder="Search By Event Name" type="text" required>
+                            <input class="form-control has-dark-background event_name" name="event_name" id="slider-name" placeholder="Search By Event Name" type="text" required>
                              
                         </div>
                     </div>

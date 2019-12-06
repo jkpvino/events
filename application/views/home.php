@@ -112,7 +112,7 @@
                             </figure>
                             <aside>
                                 <header>
-                                    <a href="event-detail.html"><?php echo substr($value->description, 0, 80); ?>...</a>
+                                    <a href="event-detail.html"><?php //echo substr($value->description, 0, 80); ?>...</a>
                                 </header>
                                 <div class="additional-info"><?php echo $value->name; ?></div>
                             </aside>

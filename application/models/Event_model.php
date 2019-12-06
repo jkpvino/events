@@ -3,12 +3,15 @@
 class Event_model extends CI_Model {
 
 
-        public function get_symposium($limit = 12, $offset = 1)
+        public function get_symposium($limit = '', $offset = '')
         {
-                $query = $this->db->get_where('symposium', array('status' => ''), $limit, $offset);
-                //$query = $this->db->get_where('symposium', array('status' => '10'), $limit, $offset);
-                //echo $this->db->last_query();exit;
-                return $query->result();
+            $this->db->select('name,id,event_type,url_key,event_from,event_to,gmap_location');
+            if ($limit && $offset) {
+                $query = $this->db->get_where('symposium', array('status' => '10'), $limit, $offset);
+            }else{
+                $query = $this->db->get_where('symposium', array('status' => '10'));
+            }
+            return $query->result();
         }
         public function getSymposiumInfoById($id,$limit=1,$offset=0)
         {

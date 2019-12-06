@@ -1,4 +1,5 @@
 
+<?php //print_r(getSymposium()) ?>
 
 
 <!-- Footer -->
@@ -292,6 +293,21 @@ function getCities(stateId){
             });
         });
     });    
+</script>
+
+
+<script>
+  $( function() {
+    var symInfo = [
+      <?php foreach (getSymposium() as $syskey => $symposium) { ?>
+        "<?php echo $symposium->name ?>"
+        //{label: "<?php //echo $symposium->name ?>", value: "<?php //echo $symposium->id ?>" },
+      <?php } ?>
+    ];
+    $(".event_name").autocomplete({
+      source: symInfo
+    });
+  });
 </script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>

@@ -151,6 +151,8 @@ class Events extends CI_Controller{
 	public function index()
 	{
         $vars['class'] = '';
+        $vars['event_category'] = $this->event_model->getAllEventCategory();
+        $vars['countries'] = $this->event_model->getCountries();    
         $vars['sympos'] = $this->event_model->get_symposium();
         $this->load->template('events',$vars);
 	}

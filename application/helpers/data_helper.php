@@ -9,3 +9,14 @@ if ( ! function_exists('ishome'))
         return $is_home;
     }   
 }
+
+if(!function_exists('getSymposium')) 
+{
+    function getSymposium()
+    {
+        $CI =& get_instance();
+        $CI->load->model('event_model');
+        $getSymposium = $CI->event_model->get_symposium();
+        return $getSymposium;
+    }
+}
