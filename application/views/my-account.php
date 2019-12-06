@@ -53,7 +53,7 @@
                                 <div class="my-profile">
                                   <?php foreach ($user as $key => $value) { ?>
                                     
-                                
+                                <form name="updateprofile" method="post" action="<?php echo base_url(); ?>/customer/account/updateprofile">
                                     <article>
                                         <div class="table-responsive">
                                             <table class="my-profile-table">
@@ -62,7 +62,7 @@
                                                     <td class="title">First Name</td>
                                                     <td>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" id="firstname" value="<?php echo $value->firstname; ?>">
+                                                            <input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $value->firstname; ?>">
                                                         </div><!-- /input-group -->
                                                     </td>
                                                 </tr>
@@ -70,7 +70,7 @@
                                                     <td class="title">Last Name</td>
                                                     <td>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" id="lastname" value="<?php echo $value->lastname; ?>">
+                                                            <input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $value->lastname; ?>">
                                                         </div><!-- /input-group -->
                                                     </td>
                                                 </tr>
@@ -86,7 +86,7 @@
                                                     <td class="title">Phone No</td>
                                                     <td>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" id="phone_no" value="<?php echo $value->phone_no; ?>">
+                                                            <input type="text" class="form-control" id="phone_no" name="phone_no" value="<?php echo $value->phone_no; ?>">
                                                         </div><!-- /input-group -->
                                                     </td>
                                                 </tr>
@@ -108,7 +108,7 @@
                                                     <td class="title">Website</td>
                                                     <td>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" id="website" value="<?php echo $value->website;?>">
+                                                            <input type="text" class="form-control" id="website" name="website" value="<?php echo $value->website;?>">
                                                         </div><!-- /input-group -->
                                                     </td>
                                                 </tr>
@@ -116,7 +116,8 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <button type="submit" class="btn btn-framed pull-right">Save Changes</button>
+                                        <button type="submit" name="profilesubmit" class="btn btn-framed pull-right">Save Changes</button>
+                                    </form>
                                     </article>
                                       <?php }?>
                                 </div><!-- /.my-profile -->

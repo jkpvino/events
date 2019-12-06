@@ -194,6 +194,59 @@ class Account extends API_Controller {
             $this->session->set_flashdata('msg', 'Loggedout successfully');
                 redirect('/index');
         }
+      public function updateprofile(){
+        if (!isset($this->session->userdata['logged_in'])) { 
+          redirect('/index');
+        }
+        $logged_info = $this->session->userdata['logged_in'];
+        $email = $logged_info['email'];
+        $this->load->model('user_model'); 
+        $userInfo = $this->user_model->getUserByEmail($email);
+        $logid = $userInfo[0]->id;
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+       
+       
+       if(count($_POST) == 0){
+         redirect('/customer/account/myaccount');
+       }else{
+             $firstname = $this->input->post('firstname');
+            $lastname = $this->input->post('lastname');
+            $phone_no = $this->input->post('phone_no');
+            $gender = $this->input->post('gender');
+            $website = $this->input->post('website');
+            
+              $user_info = array(
+                'firstname' => $firstname,
+                'lastname' => $lastname,                
+                'gender' => $gender,
+                'website' => $website,
+            );
+            
+            $res = $this->user_model->updateUserPhone($phone_no,$logid);
+           // print_r($res);exit;
+            if ($res == true) {
+                
+                $this->session->set_flashdata('msg', 'Phone no is already exist');
+                redirect('/customer/account/myaccount');
+            }
+            $result  = $this->user_model->updateUserInfo($user_info,$logid);
+
+            if ($result != false) {
+                
+                $this->session->set_flashdata('msg', 'Updated successfully');
+                redirect('/customer/account/myaccount');
+            } else {
+                $this->session->set_flashdata('msg', 'Invalid fields');
+                redirect('/customer/account/myaccount');
+            }
+
+            
+          
+
+       }
+    }
 
 
 }

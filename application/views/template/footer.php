@@ -112,15 +112,7 @@
 <!-- Data Table -->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.min.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 
-<script src="<?php echo base_url(); ?>assets/js/editor.js"></script>
-
-<!-- Geolocation -->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/json/geodata.json"></script>
-
-<!--  ShareThis BEGIN -->
-<script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5dd0d63912574600123b54c5&product=sticky-share-buttons"></script>
 <!--  ShareThis END -->
 
 
@@ -163,6 +155,31 @@
       form.submit();
     }
   });
+
+   $("form[name='updateprofile']").validate({
+
+    rules: {
+ 
+      firstname: "required",
+      lastname: "required",
+      phone_no: {
+                required: true,
+                 minlength:10,
+                  maxlength:11,
+                  number: true
+            }
+    },
+    
+    messages: {
+      firstname: "Please enter your firstname",
+      lastname: "Please enter your lastname",
+      phone_no:"Please enter a valid phone number"
+    },
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+
 });
 </script>
 <script type="text/javascript">
@@ -277,6 +294,15 @@ function getCities(stateId){
     });    
 </script>
 
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+
+<script src="<?php echo base_url(); ?>assets/js/editor.js"></script>
+
+<!-- Geolocation -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/json/geodata.json"></script>
+
+<!--  ShareThis BEGIN -->
+<script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5dd0d63912574600123b54c5&product=sticky-share-buttons"></script>
     
 </body>
 </html>

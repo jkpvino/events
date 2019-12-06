@@ -17,6 +17,10 @@ class User_model extends CI_Model {
                 $insert_id = $this->db->insert_id();
                  return  $insert_id; 
         }
+        public function updateUserInfo($data,$logid){
+             $this->db->update('user_info', $data, array('user_id' => $logid));
+             return true;
+        }
 
         public function update_entry()
         {
@@ -48,6 +52,20 @@ class User_model extends CI_Model {
                 else{
                         return true;
                 }
+        }
+        public function updateUserPhone($key,$logid){
+            $this->db->where('id !=',$logid);
+           $this->db->where('phone_no',$key);
+            $query = $this->db->get('users');
+            //echo $this->db->last_query();exit;
+                if ($query->num_rows() > 0){                    
+                     return true;
+                }
+                else{
+                     $data['phone_no'] = $key;
+                     $this->db->update('users', $data, array('id' => $logid));
+                     return false;
+                } 
         }
         public function login_verify($user){
            $this->db->where('email',$user['email']);
