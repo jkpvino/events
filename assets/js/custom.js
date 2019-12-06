@@ -196,16 +196,15 @@ $(document).ready(function($) {
             },
             submitHandler: function() {
                 $.post("save", $("#program-form").serialize(),  function(response) {
-                    alert(response);
-                    if(response){                        
+                    if(response){
                         $('.event_id').val(response);
-                        $('#form-status').html(response);
                         $('#slider-submit').attr('disabled','true');
-                        $("#slider-next").trigger("click");
-                        return true;
+                        tabNext("#slider-submit");
+                    }else{
+                        alert("Something went wrong...")
                     }
                 });
-                return false;
+                //return false;
             }
         });
     });
@@ -244,13 +243,13 @@ $(document).ready(function($) {
             },
             submitHandler: function() {
                 $.post("save", $("#inistitution-form").serialize(),  function(response) {
-                    
                     if(response){                        
                         $('#institution_id').val(response);
-                        $('#form-status').html(response);
-                        //$('#slider-submit-institution').attr('disabled','true');
-                        //$("#slider-next").trigger("click");
+                        $('#slider-submit-institution').attr('disabled','true');
+                        tabNext("#slider-submit-institution");
                         return true;
+                    }else{
+                        alert("Something went wrong...")
                     }
                 });
                 return false;
@@ -258,7 +257,7 @@ $(document).ready(function($) {
         });
     });
 
-     //INSTITUTION FORM
+     //SUB EVENTS FORM
     $("#sub-events-submit").bind("click", function(event){
         $("#sub-events-form").validate({
             rules: {
@@ -384,7 +383,22 @@ if (typeof _date != 'undefined') { // run function only if _date is defined
 
 
 
-
+function tabNext(element){
+    var curStep = $(element).closest(".setup-content"),
+    curStepBtn = curStep.attr("id"),
+    nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+    curInputs = curStep.find("input[type='text'],input[type='url']"),
+    isValid = true;
+    $(".form-group").removeClass("has-error");
+    for(var i=0; i<curInputs.length; i++){
+        if (!curInputs[i].validity.valid){
+            isValid = false;
+            $(curInputs[i]).closest(".form-group").addClass("has-error");
+        }
+    }
+    if (isValid)
+        nextStepWizard.removeAttr('disabled').trigger('click');
+}
 
 
 

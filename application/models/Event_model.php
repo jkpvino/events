@@ -110,16 +110,15 @@ class Event_model extends CI_Model {
 
         
     
-        public function setInstitution($data){
-            $this->db->insert('institution', $data);
-            $insert_id = $this->db->insert_id();
-            return  $insert_id; 
-        }
-
-        public function updateInstitution($data,$id){
-            print_r($data);
-            $this->db->update('institution', $data, array('id' => $id));
-            return $id;
+        public function setInstitution($data,$id=''){
+            if($id){
+                $this->db->update('institution', $data, array('id' => $id));
+                return $id;
+            }else{                
+                $this->db->insert('institution', $data);
+                $insert_id = $this->db->insert_id();
+                return  $insert_id;
+            } 
         }
 
         public function saveSubEvents($data, $id){

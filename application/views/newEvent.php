@@ -164,7 +164,6 @@
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
-                    <!-- <button style="visibility: hidden;height: 0px" id="slider-next" class="btn btn-framed nextBtn pull-right">Save & Continue</button> -->
                     <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Save</button>
                     <div id="form-status"></div>
                 </form>
@@ -198,6 +197,9 @@
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
+                    <div class="row">
+                        <button type="submit" id="event_image" class="btn btn-framed nextBtn pull-right">Continue</button>
+                    </div>
             </div>
         </div>
     </div>
