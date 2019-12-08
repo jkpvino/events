@@ -207,6 +207,23 @@ class Events extends CI_Controller{
     }
 
     public function createEvent(){
+        $institutionTab = array(
+            'institution_id' => set_value('institution_id'), 
+            'name' => set_value('name'), 
+            'institution_category' => set_value('institution_category'), 
+            'website_url' => set_value('website_url'), 
+            'description' => set_value('description'), 
+            'country' => set_value('country'), 
+            'state' => set_value('state'), 
+            'city' => set_value('city'), 
+            'postal_code' => set_value('postal_code'), 
+            'address' => set_value('address'), 
+            'facebook' => set_value('facebook'), 
+            'google' => set_value('google'), 
+            'twitter' => set_value('twitter'), 
+            'linkedin' => set_value('linkedin'), 
+        );
+
         $programTab = array(
             'event_id' => set_value('event_id'), 
             'program_name' => set_value('program_name'), 
@@ -252,13 +269,40 @@ class Events extends CI_Controller{
                     $programTab['online_booking'] = 1;
                 }
                 $vars['event_type'] = $this->event_model->getEventTypeByCategory($programCategory);
+
+                if (isset($symInfo->institution_id)) {
+                    $institutionInfo = $this->event_model->getInstitution($symInfo->institution_id);
+                    $institutionTab = array(
+                        'institution_id' => $institutionInfo->id, 
+                        'name' => $institutionInfo->name, 
+                        'institution_category' => $institutionInfo->institution_category, 
+                        'website_url' => $institutionInfo->website_url, 
+                        'description' => $institutionInfo->description, 
+                        'country' => $institutionInfo->country, 
+                        'state' => $institutionInfo->state, 
+                        'city' => $institutionInfo->city, 
+                        'postal_code' => $institutionInfo->postal_code, 
+                        'address' => $institutionInfo->address, 
+                        'facebook' => $institutionInfo->facebook, 
+                        'google' => $institutionInfo->google, 
+                        'twitter' => $institutionInfo->twitter, 
+                        'linkedin' => $institutionInfo->linkedin, 
+                    );
+                }
+
+                
+
+
+
+                
             }            
         }
 
         echo "<pre>";
-                print_r($programTab);
+        print_r($programTab);
         echo "</pre>";
         $vars['programTab'] = $programTab;
+        $vars['institutionTab'] = $institutionTab;
         $vars['urlKey'] = $urlKey;
         
 
