@@ -162,10 +162,10 @@
                             </div>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
-                            <div class="input-group <?php if($programTab['online_booking'] == 0 ){?> hidden <?php } ?>" id="program_slots">
+                            <div class="input-group <?php if($programTab['online_booking'] == 0 ){?> hideblock <?php } ?>" id="program_slots">
                                 <div><label class="control-label"> How many slots ?  </label></div> 
                                 <div class="input-group">
-                                    <input type='number'  value="<?php echo $programTab['allowed_users']; ?>" name="allowed_users" id="allowed_users" class="form-control has-dark-background" />
+                                    <input type='number' value="<?php echo $programTab['allowed_users']; ?>" name="allowed_users" id="allowed_users" class="form-control has-dark-background" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-plus"></span>
                                     </span>
@@ -279,7 +279,7 @@
                             <select name="country" id="country" onchange="getStates(this)" class="has-dark-background">
                                 <option value="">Select Country </option>
                                 <?php foreach ($countries as $cokey => $country) { ?>                                    
-                                    <option value="<?php echo $country->iso2 ?>"><?php echo $country->name ?></option>
+                                    <option <?php if($institutionTab['country'] == $country->iso2){ ?> selected <?php } ?> value="<?php echo $country->iso2 ?>"><?php echo $country->name ?></option>
                                 <?php } ?>
                             </select>    
                         </div>
@@ -289,7 +289,13 @@
                         <div class="input-group">
                             <div><label class="control-label"> State  </label></div>                                
                             <select name="state" id="state" onchange="getCities(this)" class="has-dark-background">
-                                <option value=""> Select State </option>                            
+                                <option value=""> Select State </option>  
+                                <?php if(isset($institutionTab['country'])){ ?> 
+                                    <?php foreach ($states as $statekey => $state) { ?>                                    
+                                        <option <?php if($institutionTab['state'] == $state->iso2){ ?> selected <?php } ?> value="<?php echo $state->iso2 ?>"><?php echo $state->name ?></option>
+                                    <?php } ?>
+                                <?php } ?>
+                                                          
                             </select>  
                         </div>
                     </div><!-- /.col-md-6 -->
@@ -301,13 +307,19 @@
                             <div><label class="control-label"> City   </label></div>
                             <select name="city" id="city" class="has-dark-background">
                                 <option value="">Select City </option>
+
+                                <?php if(isset($institutionTab['country']) && isset($institutionTab['state'])){ ?> 
+                                    <?php foreach ($cities as $ckey => $city) { ?>                                    
+                                        <option <?php if($institutionTab['city'] == $city->id){ ?> selected <?php } ?> value="<?php echo $city->id ?>"><?php echo $city->name ?></option>
+                                    <?php } ?>
+                                <?php } ?>
                             </select>    
                         </div>
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
                         <div class="input-group">
                             <div><label class="control-label"> Zipcode / Postal Code  </label></div>                                
-                            <input class="form-control has-dark-background" name="postal_code" id="postal_code" placeholder="Postal Code" type="text" >
+                            <input class="form-control has-dark-background" value="<?php echo $institutionTab['postal_code'] ?>" name="postal_code" id="postal_code" placeholder="Postal Code" type="text" >
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
@@ -316,7 +328,7 @@
                     <div class="col-md-6">
                         <div class="input-group">
                             <div><label class="control-label"> Address   </label></div>                                
-                            <textarea rows="5" id="address" name="address"> <?php echo $institutionTab['address'] ?> </textarea>
+                            <textarea rows="5" id="institution_address" name="address"> <?php echo $institutionTab['address'] ?> </textarea>
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div>
@@ -335,7 +347,7 @@
                     <div class="col-md-6">
                         <div><label class="control-label"> Google </label></div>   
                         <div class="input-group">
-                            <input type='text' id="google" placeholder="Google Page" name="google" class="form-control  has-dark-background" />
+                            <input type='text' id="google" value="<?php echo $institutionTab['google'] ?>" placeholder="Google Page" name="google" class="form-control  has-dark-background" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-globe"></span>
                             </span>
@@ -347,7 +359,7 @@
                     <div class="col-md-6">
                         <div><label class="control-label"> Twitter </label></div>   
                         <div class="input-group">
-                            <input type='text' id="twitter" placeholder="Twitter Page" name="twitter" class="form-control  has-dark-background" />
+                            <input type='text' id="twitter" value="<?php echo $institutionTab['twitter'] ?>" placeholder="Twitter Page" name="twitter" class="form-control  has-dark-background" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-globe"></span>
                             </span>
@@ -356,7 +368,7 @@
                     <div class="col-md-6">
                         <div><label class="control-label"> Linkedin </label></div>   
                         <div class="input-group">
-                            <input type='text' id="linkedin" placeholder="Lingedin Page" name="linkedin" class="form-control  has-dark-background" />
+                            <input type='text' id="linkedin" value="<?php echo $institutionTab['linkedin'] ?>" placeholder="Lingedin Page" name="linkedin" class="form-control  has-dark-background" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-globe"></span>
                             </span>
@@ -387,6 +399,7 @@
                         </div>
                     </div>
                 </div>
+                
 
                 <div id="sub_events" class="hideblock">   
                 <form id="sub-events-form" name="sub-events-form" enctype="multipart/form-data" role="form" action="" method="post" >
@@ -396,6 +409,85 @@
                     <div class="event_container">                    
                         <input type="hidden" id="subevents_tab" name="subevents_tab" value="1">             
                         <input type="hidden" class="event_id" name="event_id" value="<?php echo $programTab['event_id']; ?>">
+                        <input type="hidden" id="subevents_count" name="subevents_count" value="<?php echo count($sub_events); ?>"> 
+                    <?php $subeventCount = 0; if(count($sub_events) > 0){ ?>
+                        <?php foreach ($sub_events as $sekey => $subevent) { $subeventCount++; ?>
+                            <div class="event_row" id="event_row_<?php echo $subeventCount ?>">
+                                <input type="hidden" id="sub_event_id_<?php echo $subeventCount ?>" name="id[]" value="<?php echo $subevent->id ?>">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <div><label class="control-label"> Event Name  </label></div>                                
+                                            <input required class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" value="<?php echo $subevent->name ?>" >
+                                        </div>
+                                    </div><!-- /.col-md-6 -->
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div><label class="control-label"> Event Description  </label></div>                               
+                                            <textarea rows="5" required class="event_description" name="event_description[]"> <?php echo $subevent->description ?> </textarea>
+                                        </div>
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div><label class="control-label"> Contactus   </label></div>                                
+                                            <textarea rows="5" required class="contact_us" name="contact_us[]"> <?php echo $subevent->contact_us ?> </textarea>
+                                        </div>
+                                    </div><!-- /.col-md-6 -->
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="" ss="input-group">
+                                            <div><label class="control-label"> Event Start  </label></div>                                
+                                            <div class="input-group datetimepicker">
+                                                <input type='text' required name="event_start[]" value="<?php echo $subevent->event_from ?>" class="form-control datepicker  has-dark-background" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <div><label class="control-label"> Event End  </label></div> 
+                                            <div class="input-group datetimepicker">
+                                                <input type='text' required name="event_end[]" value="<?php echo $subevent->event_to ?>" class="form-control datepicker has-dark-background" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.col-md-6 -->
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="" ss="input-group">
+                                            <div><label class="control-label"> Online Booking  </label></div>                                
+                                            <select onchange="subEventsDecider('slots', this)" required id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
+                                                <option value="">Online Booking </option>
+                                                <option value="1" <?php if($subevent->online_booking == 1 ){?> Selected <?php } ?> >Yes</option>
+                                                <option value="0" <?php if($subevent->online_booking == 0 ){?> Selected <?php } ?>>No</option>
+                                            </select>
+                                        </div>
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <div class="input-group <?php if($programTab['online_booking'] == 0 ){?> hideblock <?php } ?>" id="slots">
+                                            <div><label class="control-label"> How many slots ?  </label></div> 
+                                            <div class="input-group">
+                                                <input type='number' class="form-control has-dark-background" value="<?php echo $subevent->allowed_users ?>" name="slots_events[]" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </span>
+                                            </div>
+                                        </div><!-- /.form-group -->
+                                    </div><!-- /.col-md-6 -->
+                                </div><!-- /.row -->
+                            </div>
+
+                            <div class="row"> <div class="col-md-12"> <hr> </div> </div>
+                        <?php } ?>
+                    <?php } else{ ?> 
                         <div class="event_row" id="event_row_1">
                             <input type="hidden" id="sub_event_id_1" name="id[]" value="">
                             <div class="row">
@@ -468,6 +560,7 @@
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
                         </div>
+                    <?php } ?>
                     </div>
                     <button type="submit" id="sub-events-submit" class="btn btn-framed pull-right">Submit</button>
                 </form>

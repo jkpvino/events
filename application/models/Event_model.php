@@ -148,4 +148,9 @@ class Event_model extends CI_Model {
         }
 
         
+        public function getSubEventsBySymId($symId){       
+            //$this->db->select('name, name_code');
+            $query = $this->db->get_where('events', array('sym_id' => $symId));                
+            return $query->result();
+        }
 }

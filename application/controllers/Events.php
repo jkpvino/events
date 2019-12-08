@@ -239,11 +239,12 @@ class Events extends CI_Controller{
             'online_booking' => set_value('online_booking'), 
             'allowed_users' => set_value('allowed_users'), 
         );
-        $urlKey = $vars['event_type'] =  '';
+        $urlKey = $vars['event_type'] = $vars['states'] = $vars['cities'] = $vars['sub_events'] = '';
         if(end($this->uri->segments) != $this->router->fetch_method()){
             $urlKey = end($this->uri->segments);
             $symInfo = $this->event_model->getSymposiumInfoByUrlKey($urlKey);
             if (isset($symInfo->id)) {
+
                 $eventType = $symInfo->event_type;
                 if($eventType){
                     $eventTypeInfo = $this->event_model->getEventType($eventType);
@@ -287,11 +288,18 @@ class Events extends CI_Controller{
                         'google' => $institutionInfo->google, 
                         'twitter' => $institutionInfo->twitter, 
                         'linkedin' => $institutionInfo->linkedin, 
-                    );
+                    );                    
+                    if($institutionInfo->country){
+                        $vars['states'] = $this->event_model->getStates($institutionInfo->country);
+                    }
+                    if($institutionInfo->country && $institutionInfo->state){
+                        $vars['cities'] = $this->event_model->getCities($institutionInfo->state,$institutionInfo->country);
+                    }
                 }
-
                 
-
+                
+                //SUB EVENTS
+                $vars['sub_events'] = $this->event_model->getSubEventsBySymId($symInfo->id);
 
 
                 

@@ -247,6 +247,24 @@ function getCities(stateId){
 
 <script>
     $(document).ready(function(){
+      var eventrowleng = $(".event_container > div").length;
+      alert(eventrowleng);
+      /*for (var i = 1; i < parseInt(eventrowleng); i++) {
+        jQuery("#event_row_"+(eventrowleng+1)+" .contact_us").richText({
+          height: 150,
+          heightPercentage: 0,
+          imageUpload: false,
+          fileUpload: false,
+          heading: false,
+          removeStyles: false,
+          videoEmbed: false,
+          urls: false,
+          table: false,
+        });
+      }*/
+        
+
+
         $("#add_sub_event").click(function(){
             var rowCount = $(".event_container > div").length;
             alert(rowCount);
