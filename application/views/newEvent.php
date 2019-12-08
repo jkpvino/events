@@ -39,7 +39,7 @@
                         <div class="col-md-12">
                             <div class="input-group">
                                 <div><label class="control-label"> Event Title  </label></div>                                
-                                <input class="form-control has-dark-background" name="program_name" id="program_name" placeholder="Event Name" type="text"  value="<?php echo set_value('program_name'); ?>">
+                                <input class="form-control has-dark-background" name="program_name" id="program_name" placeholder="Event Name" type="text"  value="<?php echo $programTab['program_name']; ?>">
                             </div>
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
@@ -48,7 +48,7 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Event Start  </label></div>                                
                                 <div class="input-group date datetimepicker" >
-                                    <input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="<?php echo set_value('program_start'); ?>" />
+                                    <input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="<?php echo $programTab['program_start']; ?>" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -59,7 +59,7 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Event End  </label></div>                                
                                 <div class="input-group date datetimepicker" >
-                                    <input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="<?php echo set_value('program_end'); ?>" />
+                                    <input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="<?php echo $programTab['program_end']; ?>" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -71,7 +71,7 @@
                         <div class="col-md-12">
                             <div class="input-group">
                                 <div><label class="control-label"> Event Description  </label></div>  
-                                <textarea id="program_description" name="program_description"> <?php echo set_value('program_description'); ?> </textarea>
+                                <textarea id="program_description" name="program_description"> <?php echo $programTab['program_description']; ?> </textarea>
                             </div>
                         </div><!-- /.col-md-12 -->
                     </div><!-- /.row -->
@@ -79,13 +79,13 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <div><label class="control-label"> Address (Event Venue)  </label></div>  
-                                <textarea rows="5" id="address" class="richText" name="address" placeholder ="Write Event Venue Address Info..."> <?php echo set_value('address'); ?> </textarea>
+                                <textarea rows="5" id="address" class="richText" name="address" placeholder ="Write Event Venue Address Info..."> <?php echo $programTab['address']; ?> </textarea>
                             </div>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">
                                 <div><label class="control-label"> Event Contact Person Info  </label></div>  
-                                <textarea rows="5" id="contact_info"  name="contact_info"  placeholder ="Write Event Co-ordinator Contact Person Info..."> <?php echo set_value('contact_info'); ?> </textarea>
+                                <textarea rows="5" id="contact_info"  name="contact_info"  placeholder ="Write Event Co-ordinator Contact Person Info..."> <?php echo $programTab['contact_info']; ?> </textarea>
                             </div>
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
@@ -97,7 +97,7 @@
                                     <option value="" >Select Category </option>
                                     <?php foreach ($event_category as $eventkey => $ecategory) { ?>
                                         <?php if ($ecategory->category_code && $ecategory->category) { ?>
-                                            <option value="<?php echo $ecategory->category_code ?>">
+                                            <option <?php if($programTab['program_category'] == $ecategory->category_code ){?> Selected <?php } ?> value="<?php echo $ecategory->category_code ?>">
                                                 <?php echo $ecategory->category ?>
                                             </option>
                                         <?php } ?>
@@ -120,7 +120,7 @@
                             <div class="" ss="input-group">
                                 <div><label class="control-label"> Gmap URL  </label></div>                                
                                 <div class="input-group" id=''>
-                                    <input type='text' id="gmap_location" name="gmap_location" class="form-control  has-dark-background" />
+                                    <input type='text' id="gmap_location" value="<?php echo $programTab['gmap_location']; ?>" name="gmap_location" class="form-control  has-dark-background" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-map-marker"></span>
                                     </span>
@@ -131,7 +131,7 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Website URL   </label></div>                                
                                 <div class="input-group">
-                                    <input type='text' id="program_website" name="program_website" class="form-control  has-dark-background" />
+                                    <input type='text' id="program_website" value="<?php echo $programTab['program_website']; ?>" name="program_website" class="form-control  has-dark-background" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-globe"></span>
                                     </span>
@@ -147,8 +147,8 @@
                                 <div><label class="control-label"> Online Booking  </label></div>                                
                                 <select onchange="subEventsDecider('program_slots', this)" name="online_booking" id="online_booking" class="has-dark-background">
                                     <option value="">Online Booking</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
+                                    <option value="1" <?php if($programTab['online_booking'] == 1 ){?> Selected <?php } ?> >Yes</option>
+                                    <option value="0" <?php if($programTab['online_booking'] == 0 ){?> Selected <?php } ?>>No</option>
                                 </select>
                             </div>
                         </div><!-- /.col-md-6 -->

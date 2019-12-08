@@ -63,13 +63,13 @@ else
                         <span class="icon-bar"></span>
                     </button>
                     <div class="navbar-brand nav" id="brand">
-                        <a href="index.html"><img src="<?php echo base_url() ?>assets/img/logo.png" alt="brand"></a>
+                        <a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>assets/img/logo.png" alt="brand"></a>
                     </div>
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="" class="">Home</a>                            
+                            <a href="<?php echo base_url() ?>" class="">Home</a>                            
                         </li>
                         <li>
                             <a href="#" class="has-child no-link">Category</a>
@@ -103,8 +103,7 @@ else
                                 if (isset($this->session->userdata['logged_in'])) { ?>
                                      <li><a href="<?php echo base_url() ?>customer/account/myaccount">My Account</a></li>
                                       <li><a href="<?php echo base_url() ?>customer/account/logout">Logout</a></li>
-                                <?php }else{ ?>
-                               
+                                <?php }else{ ?>                               
                                 <li><a href="<?php echo base_url() ?>customer/account/register">Signup</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/login">Login</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/forgot">Forgot Password </a></li>
