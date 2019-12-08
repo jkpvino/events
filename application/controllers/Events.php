@@ -222,6 +222,7 @@ class Events extends CI_Controller{
             'online_booking' => set_value('online_booking'), 
             'allowed_users' => set_value('allowed_users'), 
         );
+        $urlKey = $vars['event_type'] =  '';
         if(end($this->uri->segments) != $this->router->fetch_method()){
             $urlKey = end($this->uri->segments);
             $symInfo = $this->event_model->getSymposiumInfoByUrlKey($urlKey);
@@ -250,6 +251,7 @@ class Events extends CI_Controller{
                 if($symInfo->allowed_users > 0){
                     $programTab['online_booking'] = 1;
                 }
+                $vars['event_type'] = $this->event_model->getEventTypeByCategory($programCategory);
             }            
         }
 
@@ -257,6 +259,7 @@ class Events extends CI_Controller{
                 print_r($programTab);
         echo "</pre>";
         $vars['programTab'] = $programTab;
+        $vars['urlKey'] = $urlKey;
         
 
         /*$institutionTab = array(

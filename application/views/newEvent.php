@@ -110,7 +110,16 @@
                                 <div><label class="control-label"> Event Type  </label></div>
                                 <select name="program_type" id="program_type"  class="has-dark-background">
                                     <option value="">Select Event Type</option>
+                                    <?php if($urlKey){ ?> 
                                     
+                                    <?php foreach ($event_type as $etypekey => $eventType) { ?>
+                                        <?php if ($eventType->name_code && $eventType->name) { ?>
+                                            <option <?php if($programTab['program_type'] == $eventType->name_code ){?> Selected <?php } ?> value="<?php echo $eventType->name_code ?>">
+                                                <?php echo $eventType->name ?>
+                                            </option>
+                                        <?php } ?>
+                                    <?php } ?>
+                                    <?php } ?>
                                 </select>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
@@ -153,10 +162,10 @@
                             </div>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
-                            <div class="input-group hidden" id="program_slots">
+                            <div class="input-group <?php if($programTab['online_booking'] == 0 ){?> hidden <?php } ?>" id="program_slots">
                                 <div><label class="control-label"> How many slots ?  </label></div> 
                                 <div class="input-group">
-                                    <input type='number'  value="<?php echo set_value('allowed_users'); ?>" name="allowed_users" id="allowed_users" class="form-control has-dark-background" />
+                                    <input type='number'  value="<?php echo $programTab['allowed_users']; ?>" name="allowed_users" id="allowed_users" class="form-control has-dark-background" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-plus"></span>
                                     </span>
