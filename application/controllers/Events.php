@@ -76,7 +76,7 @@ class Events extends CI_Controller{
             );
             //print_r($eventArray);
             if($this->input->post('event_id')){
-                $eventId = $this->input->post('event_id');
+                $eventId = trim($this->input->post('event_id'));
                 $eventInsertId = $this->event_model->saveSymposium($eventArray, $eventId);
             }else{                
                 $eventInsertId = $this->event_model->saveSymposium($eventArray);                
@@ -122,13 +122,13 @@ class Events extends CI_Controller{
                     'event_from' => $this->input->post('event_start')[$i], 
                     'event_to' => $this->input->post('event_end')[$i], 
                     'contact_us' => htmlentities($this->input->post('contact_us')[$i]), 
-                    'sym_id' => $this->input->post('event_id'),  
+                    'sym_id' => trim($this->input->post('event_id')),  
                     'status' => 20, 
                 );
                 if($this->input->post('event_online_booking')){
                     $subEventsInfo['allowed_users'] = $this->input->post('slots_events')[$i] ? $this->input->post('slots_events')[$i] : 0;
                 }
-                $subEventsInfo['sym_id'] = 22;
+                //$subEventsInfo['sym_id'] = 22;
                 $subEventId = $this->event_model->saveSubEvents($subEventsInfo, $rowId);
                 if (!$subEventId) {                    
                     $status = false;
@@ -220,43 +220,135 @@ class Events extends CI_Controller{
        }
     }
     public function createEvent(){
+        $institutionTab = array(
+            'institution_id' => set_value('institution_id'), 
+            'name' => set_value('name'), 
+            'institution_category' => set_value('institution_category'), 
+            'website_url' => set_value('website_url'), 
+            'description' => set_value('description'), 
+            'country' => set_value('country'), 
+            'state' => set_value('state'), 
+            'city' => set_value('city'), 
+            'postal_code' => set_value('postal_code'), 
+            'address' => set_value('address'), 
+            'facebook' => set_value('facebook'), 
+            'google' => set_value('google'), 
+            'twitter' => set_value('twitter'), 
+            'linkedin' => set_value('linkedin'), 
+        );
+
+        $programTab = array(
+            'event_id' => set_value('event_id'), 
+            'program_name' => set_value('program_name'), 
+            'program_start' => set_value('program_start'), 
+            'program_end' => set_value('program_end'),
+            'program_description' => set_value('program_description'),
+            'address' => set_value('address'),
+            'contact_info' => set_value('contact_info'),
+            'program_category' => set_value('program_category'),
+            'program_type' => set_value('program_type'), 
+            'gmap_location' => set_value('gmap_location'), 
+            'program_website' => set_value('program_website'), 
+            'online_booking' => set_value('online_booking'), 
+            'allowed_users' => set_value('allowed_users'), 
+        );
+        $urlKey = $vars['event_type'] = $vars['states'] = $vars['cities'] = $vars['sub_events'] = '';
+        if(end($this->uri->segments) != $this->router->fetch_method()){
+            $urlKey = end($this->uri->segments);
+            $symInfo = $this->event_model->getSymposiumInfoByUrlKey($urlKey);
+            if (isset($symInfo->id)) {
+
+                $eventType = $symInfo->event_type;
+                if($eventType){
+                    $eventTypeInfo = $this->event_model->getEventType($eventType);
+                    $programCategory = $eventTypeInfo->category_code;
+                    $programType = $eventTypeInfo->name_code;
+                }
+                $programTab = array(
+                    'event_id' => $symInfo->id, 
+                    'program_name' => $symInfo->name, 
+                    'program_start' => $symInfo->event_from, 
+                    'program_end' => $symInfo->event_to, 
+                    'program_description' => $symInfo->description, 
+                    'address' => $symInfo->address, 
+                    'contact_info' => $symInfo->contact_info, 
+                    'program_category' => $programCategory, 
+                    'program_type' => $programType, 
+                    'gmap_location' => $symInfo->gmap_location, 
+                    'program_website' => $symInfo->website, 
+                    'online_booking' => 0, 
+                    'allowed_users' => $symInfo->allowed_users, 
+                );
+                if($symInfo->allowed_users > 0){
+                    $programTab['online_booking'] = 1;
+                }
+                $vars['event_type'] = $this->event_model->getEventTypeByCategory($programCategory);
+
+                if (isset($symInfo->institution_id)) {
+                    $institutionInfo = $this->event_model->getInstitution($symInfo->institution_id);
+                    $institutionTab = array(
+                        'institution_id' => $institutionInfo->id, 
+                        'name' => $institutionInfo->name, 
+                        'institution_category' => $institutionInfo->institution_category, 
+                        'website_url' => $institutionInfo->website_url, 
+                        'description' => $institutionInfo->description, 
+                        'country' => $institutionInfo->country, 
+                        'state' => $institutionInfo->state, 
+                        'city' => $institutionInfo->city, 
+                        'postal_code' => $institutionInfo->postal_code, 
+                        'address' => $institutionInfo->address, 
+                        'facebook' => $institutionInfo->facebook, 
+                        'google' => $institutionInfo->google, 
+                        'twitter' => $institutionInfo->twitter, 
+                        'linkedin' => $institutionInfo->linkedin, 
+                    );                    
+                    if($institutionInfo->country){
+                        $vars['states'] = $this->event_model->getStates($institutionInfo->country);
+                    }
+                    if($institutionInfo->country && $institutionInfo->state){
+                        $vars['cities'] = $this->event_model->getCities($institutionInfo->state,$institutionInfo->country);
+                    }
+                }
+                
+                
+                //SUB EVENTS
+                $vars['sub_events'] = $this->event_model->getSubEventsBySymId($symInfo->id);
+
+
+                
+            }            
+        }
+
+        echo "<pre>";
+        print_r($programTab);
+        echo "</pre>";
+        $vars['programTab'] = $programTab;
+        $vars['institutionTab'] = $institutionTab;
+        $vars['urlKey'] = $urlKey;
+        
+
+        /*$institutionTab = array(
+            'institution_id' => , 
+            'name' => , 
+            'institution_category' => , 
+            'website_url' => , 
+            'description' => , 
+            'country' => , 
+            'state' => , 
+            'city' => , 
+            'postal_code' => , 
+            'address' => , 
+            'facebook' => , 
+            'google' => , 
+            'twitter' => , 
+            'linkedin' => , 
+        );*/
+
         $userInfo = $this->data;
         if($userInfo['logged_in']['logid']){
             $vars['class'] = '';
             $vars['event_category'] = $this->event_model->getAllEventCategory();
             $vars['countries'] = $this->event_model->getCountries();
-           // print_r($vars);exit;
-            /*if(isset($_REQUEST['program_tab'])){
-                $this->form_validation->set_rules('program_name', 'Event Title', 'required');
-                $this->form_validation->set_rules('program_start', 'Event Start Date', 'required');
-                $this->form_validation->set_rules('program_end', 'Event End Date', 'required');
-                $this->form_validation->set_rules('program_description', 'Event description', 'required');
-                $this->form_validation->set_rules('address', 'Address', 'required');
-                $this->form_validation->set_rules('contact_info', 'Contact Info', 'required');
-                $this->form_validation->set_rules('program_category', 'Event Category', 'required');
-                $this->form_validation->set_rules('program_type', 'Event Type', 'required');
-                $this->form_validation->set_rules('gmap_location', 'Gmap Location', 'required');
-                $this->form_validation->set_rules('online_booking', 'Online Booking', 'required');
-                if ($this->form_validation->run() == FALSE){
-
-                }else{
-                    $eventArray = array(
-                        'name' => $_REQUEST['program_name'], 
-                        'event_from' => $_REQUEST['program_start'], 
-                        'event_to' => $_REQUEST['program_end'], 
-                        'description' => $_REQUEST['program_description'], 
-                        'address' => $_REQUEST['address'], 
-                        'contact_info' => $_REQUEST['contact_info'], 
-                        'program_category' => $_REQUEST['program_category'], 
-                        'event_type' => $_REQUEST['program_type'], 
-                        'gmap_location' => $_REQUEST['gmap_location'], 
-                        'allowed_users' => $_REQUEST['allowed_users'], 
-                        'status' =>20,
-                        'user_id' => $userInfo['logid']
-                    );
-                    $this->event_model->setSymposium();
-                }
-            }*/
             $this->load->template('newEvent',$vars);
             //print_r($_FILES);
         }else{

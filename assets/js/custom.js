@@ -508,6 +508,19 @@ jQuery(document).ready(function() {
         table: false,
     });
 
+
+    jQuery("#institution_address").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
+
 });
 
 

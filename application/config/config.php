@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/events/';
+=======
+$config['base_url'] = 'http://magex.com/events/';
+>>>>>>> 33fbeaf7d8b700208594a69e4d102f67e9007825
 //$config['base_url'] = 'http://events.com/';
 
 /*

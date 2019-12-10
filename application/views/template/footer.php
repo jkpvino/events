@@ -248,6 +248,7 @@ function getCities(stateId){
 <script>
     $(document).ready(function(){
 
+
         $('#event_image').on('click', function() {
             var file_data = $('#logo').prop('files')[0];   
             var banner = $('#banner').prop('files')[0];
@@ -270,6 +271,24 @@ function getCities(stateId){
                 }
              });
         });
+
+      var eventrowleng = $(".event_container > div").length;
+      alert(eventrowleng);
+      /*for (var i = 1; i < parseInt(eventrowleng); i++) {
+        jQuery("#event_row_"+(eventrowleng+1)+" .contact_us").richText({
+          height: 150,
+          heightPercentage: 0,
+          imageUpload: false,
+          fileUpload: false,
+          heading: false,
+          removeStyles: false,
+          videoEmbed: false,
+          urls: false,
+          table: false,
+        });
+      }*/
+        
+
 
 
         $("#add_sub_event").click(function(){

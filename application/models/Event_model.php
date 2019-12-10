@@ -19,6 +19,12 @@ class Event_model extends CI_Model {
             $query = $this->db->get_where('symposium', array('id'=>$id), $limit, $offset);
             return $query->row();
         }
+        public function getSymposiumInfoByUrlKey($urlKey,$limit=1,$offset=0)
+        {
+            //$this->db->select('url_key,id,event_type,institution_id,user_id');
+            $query = $this->db->get_where('symposium', array('url_key'=>$urlKey), $limit, $offset);
+            return $query->row();
+        }
         public function getSymposiumById($user_id,$limit=1,$offset=0)
         {
                // $limit = 1;$offset = 0;
@@ -95,9 +101,9 @@ class Event_model extends CI_Model {
                 $query = $this->db->get_where('event_type', $catArray);                
                 return $query->row()->id;
         }
-        public function getEventType($sym_id)
+        public function getEventType($id)
         {
-                $query = $this->db->get_where('event_type', array('id' => $sym_id));                
+                $query = $this->db->get_where('event_type', array('id' => $id));                
                 return $query->row();
         }
          public function getInstitution($id)
@@ -142,4 +148,9 @@ class Event_model extends CI_Model {
         }
 
         
+        public function getSubEventsBySymId($symId){       
+            //$this->db->select('name, name_code');
+            $query = $this->db->get_where('events', array('sym_id' => $symId));                
+            return $query->result();
+        }
 }
