@@ -247,6 +247,31 @@ function getCities(stateId){
 
 <script>
     $(document).ready(function(){
+
+        $('#event_image').on('click', function() {
+            var file_data = $('#logo').prop('files')[0];   
+            var banner = $('#banner').prop('files')[0];
+            var form_data = new FormData();                  
+            form_data.append('logo', file_data);
+            form_data.append('banner', banner);
+            var a_url = '<?php echo base_url(); ?>events/upload';
+            //alert(form_data);                             
+            $.ajax({
+                url: a_url, // point to server-side PHP script 
+                dataType: 'text',  // what to expect back from the PHP script, if anything
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,                         
+                type: 'post',
+                success: function(php_script_response){
+                  console.log(php_script_response);
+                   // alert(php_script_response); // display response from the PHP script, if any
+                }
+             });
+        });
+
+
         $("#add_sub_event").click(function(){
             var rowCount = $(".event_container > div").length;
             alert(rowCount);

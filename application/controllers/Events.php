@@ -205,7 +205,20 @@ class Events extends CI_Controller{
             echo json_encode($response);
         }
     }
-
+    public function upload(){
+       // print_r($_FILES);exit;
+        $dir = FCPATH.'assets/images/';
+        if (move_uploaded_file($_FILES['banner']['tmp_name'], $dir."/banner/test.jpg")) {
+          print "Uploaded successfully!";
+       } else {
+          print "Upload failed!";
+       }
+       if (move_uploaded_file($_FILES['logo']['tmp_name'], $dir."/logo/test.jpg")) {
+          print "Uploaded successfully!";
+       } else {
+          print "Upload failed!";
+       }
+    }
     public function createEvent(){
         $userInfo = $this->data;
         if($userInfo['logged_in']['logid']){

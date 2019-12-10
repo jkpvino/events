@@ -178,7 +178,7 @@
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12">
             <div class="col-md-12">
-                
+                <form id="banner-form" name="banner_save" enctype="multipart/form-data" role="form" action="#" method="post" >
                     <div class="row">
                         <div class="col-md-6">
                             <div><label class="control-label"> Event Logo  </label></div>
@@ -198,8 +198,10 @@
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
                     <div class="row">
-                        <button type="submit" id="event_image" class="btn btn-framed nextBtn pull-right">Continue</button>
+                        <a href="javascript:void(0)" id="event_image" class="btn btn-framed nextBtn pull-right">submit</a>
+                        <!-- <button type="submit" id="event_image" class="btn btn-framed nextBtn pull-right">Continue</button> -->
                     </div>
+                </form>
             </div>
         </div>
     </div>
