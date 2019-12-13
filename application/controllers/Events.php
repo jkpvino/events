@@ -205,19 +205,74 @@ class Events extends CI_Controller{
             echo json_encode($response);
         }
     }
-    public function upload(){
-       // print_r($_FILES);exit;
-        $dir = FCPATH.'assets/images/';
-        if (move_uploaded_file($_FILES['banner']['tmp_name'], $dir."/banner/test.jpg")) {
-          print "Uploaded successfully!";
-       } else {
-          print "Upload failed!";
-       }
-       if (move_uploaded_file($_FILES['logo']['tmp_name'], $dir."/logo/test.jpg")) {
-          print "Uploaded successfully!";
-       } else {
-          print "Upload failed!";
-       }
+    public function upload(){  
+        $status = true; $message = '';      
+        if($this->input->post('event_id')){            
+            $eventInfo = $this->event_model->getSymposiumInfoById(trim($this->input->post('event_id')));
+            $eventType = $eventInfo->event_type;
+            $url_key = $eventInfo->url_key ? trim($eventInfo->url_key) : time();
+            $dir = FCPATH.'assets/images/';
+            $acceptable = array(
+                'image/jpeg',
+                'image/jpg',
+                'image/gif',
+                'image/png'
+            );
+            $logoerrors = array();
+            if(isset($_FILES['logo'])){ 
+                $logosize = @getimagesize($_FILES["logo"]["tmp_name"]);        
+                if((!in_array($_FILES['logo']['type'], $acceptable)) && (!empty($_FILES["logo"]["type"]))) {
+                    $message .= 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.<br/> '; $status = false;
+                }
+                if(($logosize[0] != $logosize[1])  || ($logosize[0] == 165) ){
+                    $message .= 'Logo Size Should be 165 X 165 Dimension.<br/> '; $status = false;
+                }
+                if($status  == true){
+                    if (move_uploaded_file($_FILES['logo']['tmp_name'], $dir."/logo/".$url_key.".jpg")) {
+                      $message .= "Logo Uploaded successfully!<br/> ";
+                    } else {
+                      $message .= "Logo Upload failed!<br/> "; $status = false;
+                    }
+                }
+            }
+
+
+            $bannererrors = array();
+            if(isset($_FILES['banner'])){ 
+                $bannersize = @getimagesize($_FILES["banner"]["tmp_name"]);        
+                $maxsize    = 2097152;
+                if((!in_array($_FILES['banner']['type'], $acceptable)) && (!empty($_FILES["banner"]["type"]))) {
+                    //$bannererrors[] = 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.';
+                    $message .= "Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.<br/> "; $status = false;
+                }
+                if(($bannersize[0] != 1920)  || ($logosize[1] != 684) ){
+                    //$bannererrors[] = 'Banner Size Should be 1920 X 684 Dimension.';
+                    $message .= "Banner Size Should be 1920 X 684 Dimension.<br/> "; $status = false;
+                }
+                if($status == true){
+                    if (move_uploaded_file($_FILES['banner']['tmp_name'], $dir."/banner/".$url_key.".jpg")) {
+                        //print "Banner Uploaded successfully!";
+                        $message .= "Banner Uploaded successfully!<br/> ";
+                    } else {
+                        //$bannererrors[] = "Banner Upload failed!";
+                        $status = false;
+                        $message .= "Banner Upload failed!<br/> ";
+                    }
+                }                 
+            }
+
+        }else{
+            $status = false;
+            $message = "Something Went Wrong....<br/> ";
+        }
+        
+        $response  = array(
+            'status' => $status, 
+            'Message' => $message, 
+        );
+        echo json_encode($response);
+        
+       
     }
     public function createEvent(){
         $institutionTab = array(
@@ -319,9 +374,9 @@ class Events extends CI_Controller{
             }            
         }
 
-        echo "<pre>";
+        /*echo "<pre>";
         print_r($programTab);
-        echo "</pre>";
+        echo "</pre>";*/
         $vars['programTab'] = $programTab;
         $vars['institutionTab'] = $institutionTab;
         $vars['urlKey'] = $urlKey;
