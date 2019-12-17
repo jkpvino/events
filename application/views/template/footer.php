@@ -184,17 +184,20 @@
 });
 </script>
 <script type="text/javascript">
-function readURL(input) {
+function readURL(input, id) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();    
     reader.onload = function(e) {
-      $('#logo_preview').attr('src', e.target.result);
+      $(id).attr('src', e.target.result);
     }    
     reader.readAsDataURL(input.files[0]);
   }
 }
 $("#logo").change(function() {
-  readURL(this);
+  readURL(this, "#logo_preview");
+}); 
+$("#banner").change(function() {
+  readURL(this, "#banner_preview");
 });    
 </script>
 <!-- Event Creation -->

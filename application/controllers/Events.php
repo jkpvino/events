@@ -220,11 +220,12 @@ class Events extends CI_Controller{
             );
             $logoerrors = array();
             if(isset($_FILES['logo'])){ 
-                $logosize = @getimagesize($_FILES["logo"]["tmp_name"]);        
+                $logosize = @getimagesize($_FILES["logo"]["tmp_name"]);    
+                echo "<pre>"    ; print_r($logosize); echo "</pre>";
                 if((!in_array($_FILES['logo']['type'], $acceptable)) && (!empty($_FILES["logo"]["type"]))) {
                     $message .= 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.<br/> '; $status = false;
                 }
-                if(($logosize[0] != $logosize[1])  || ($logosize[0] == 165) ){
+                if(($logosize[0] != $logosize[1])  || ($logosize[0] != 165) ){
                     $message .= 'Logo Size Should be 165 X 165 Dimension.<br/> '; $status = false;
                 }
                 if($status  == true){
@@ -245,7 +246,7 @@ class Events extends CI_Controller{
                     //$bannererrors[] = 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.';
                     $message .= "Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.<br/> "; $status = false;
                 }
-                if(($bannersize[0] != 1920)  || ($logosize[1] != 684) ){
+                if(($bannersize[0] != 1920)  || ($bannersize[1] != 684) ){
                     //$bannererrors[] = 'Banner Size Should be 1920 X 684 Dimension.';
                     $message .= "Banner Size Should be 1920 X 684 Dimension.<br/> "; $status = false;
                 }
