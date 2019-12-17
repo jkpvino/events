@@ -46,9 +46,7 @@ else
             </div>
             <ul class="secondary-navigation list-unstyled">
                 <li><a href="<?php echo base_url().'events/createevent' ?>">Create Event</a></li>
-                <li><a href="#">Current Students</a></li>
-                <li><a href="#">Faculty & Staff</a></li>
-                <li><a href="#">Alumni</a></li>
+                
             </ul>
         </div>
     </div><!-- /.secondary-navigation -->

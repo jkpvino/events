@@ -273,7 +273,7 @@ function getCities(stateId){
         });
 
       var eventrowleng = $(".event_container > div").length;
-      alert(eventrowleng);
+      //alert(eventrowleng);
       /*for (var i = 1; i < parseInt(eventrowleng); i++) {
         jQuery("#event_row_"+(eventrowleng+1)+" .contact_us").richText({
           height: 150,
