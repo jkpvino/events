@@ -269,28 +269,13 @@ function getCities(stateId){
                 type: 'post',
                 success: function(php_script_response){
                   console.log(php_script_response);
+                  tabNext("#event_image");
                    // alert(php_script_response); // display response from the PHP script, if any
                 }
              });
         });
 
-
-      var eventrowleng = $(".event_container > div").length;
-      //alert(eventrowleng);
-      /*for (var i = 1; i < parseInt(eventrowleng); i++) {
-        jQuery("#event_row_"+(eventrowleng+1)+" .contact_us").richText({
-          height: 150,
-          heightPercentage: 0,
-          imageUpload: false,
-          fileUpload: false,
-          heading: false,
-          removeStyles: false,
-          videoEmbed: false,
-          urls: false,
-          table: false,
-        });
-      }*/
-
+     
         
 
 

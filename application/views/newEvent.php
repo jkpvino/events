@@ -189,6 +189,7 @@
             <div class="col-md-12">
                 <form id="banner-form" name="banner_save" enctype="multipart/form-data" role="form" action="#" method="post" >
                     <input type="hidden" class="event_id" name="event_id"  value="<?php echo $programTab['event_id']; ?>">
+                    <h1> Event Images </h1>
                     <div class="row">
                         <div class="col-md-6">
                             <div><label class="control-label"> Event Logo  </label></div>
@@ -204,12 +205,12 @@
                                 <div class="input-group">
                                     <input type="file" class="form-control has-dark-background" id="banner" name="banner">
                                 </div>
-                                <img id="banner_preview" height="634" width="1920"  src="<?php echo base_url().'assets/img/event-slide-01.jpg' ?>" alt="" />
+                                <img id="banner_preview" style="width: 100%"  src="<?php echo base_url().'assets/img/event-slide-01.jpg' ?>" alt="" />
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
                     <div class="row">
-                        <a href="javascript:void(0)" id="event_image" class="btn btn-framed nextBtn pull-right">submit</a>
+                        <a href="javascript:void(0)" id="event_image" class="btn btn-framed pull-right">submit</a>
                         <!-- <button type="submit" id="event_image" class="btn btn-framed nextBtn pull-right">Continue</button> -->
                     </div>
                 </form>
