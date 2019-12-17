@@ -64,6 +64,7 @@ else
                         <a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>assets/img/logo.png" alt="brand"></a>
                     </div>
                 </div>
+
                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                     <ul class="nav navbar-nav">
                         <li class="active">
@@ -72,20 +73,18 @@ else
                         <li>
                             <a href="#" class="has-child no-link">Category</a>
                             <ul class="list-unstyled child-navigation">
-                                <li><a href="<?php echo base_url() ?>events/featured">Business</a></li>
-                                <li><a href="<?php echo base_url() ?>events/featured">college Fests</a></li>
-                                <li><a href="<?php echo base_url() ?>events/featured">School Fests</a></li>
+                                <?php foreach (getAllEventCategory() as $key => $value) { ?>
+                                    <li><a href="<?php echo base_url() ?>events/<?php echo $value->category_code; ?>"><?php echo $value->category; ?></a></li>
+                                <?php } ?>
                             </ul>
                         </li>
                         <li>
                             <a href="<?php echo base_url() ?>events/" class="has-child no-link">Events</a>
                             <ul class="list-unstyled child-navigation">
-                                <li><a href="<?php echo base_url() ?>events/upcoming">Symposium</a></li>
-                                <li><a href="<?php echo base_url() ?>events/upcoming">Workshop</a></li>
-                                <li><a href="<?php echo base_url() ?>events/featured">Conferences</a></li>
-                                <li><a href="<?php echo base_url() ?>events/featured">Seminars</a></li>
-                                <li><a href="<?php echo base_url() ?>events/upcoming">Upcoming Events</a></li>
-                                <li><a href="<?php echo base_url() ?>events/featured">Featured Events</a></li>
+                                <?php foreach (getEventTypes() as $key => $value) { ?>
+                                    <li><a href="<?php echo base_url() ?>events/<?php echo $value->name_code; ?>"><?php echo $value->name; ?></a></li>
+                                <?php } ?>
+                               
                             </ul>
                         </li>
                         <li>
