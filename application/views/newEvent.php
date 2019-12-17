@@ -188,13 +188,14 @@
         <div class="col-xs-12">
             <div class="col-md-12">
                 <form id="banner-form" name="banner_save" enctype="multipart/form-data" role="form" action="#" method="post" >
+                    <input type="hidden" class="event_id" name="event_id"  value="<?php echo $programTab['event_id']; ?>">
                     <div class="row">
                         <div class="col-md-6">
                             <div><label class="control-label"> Event Logo  </label></div>
                             <div class="input-group">
                                 <input type="file" class="form-control has-dark-background"  id="logo" name="logo">
                             </div>
-                            <img id="logo_preview" width="165" height="165" src="#" alt="your image" />
+                            <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/event_logo.jpg' ?>" alt="" />
                             <!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
@@ -203,6 +204,7 @@
                                 <div class="input-group">
                                     <input type="file" class="form-control has-dark-background" id="banner" name="banner">
                                 </div>
+                                <img id="banner_preview" height="634" width="1920"  src="<?php echo base_url().'assets/img/event-slide-01.jpg' ?>" alt="" />
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->

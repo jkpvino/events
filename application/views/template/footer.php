@@ -252,9 +252,11 @@ function getCities(stateId){
         $('#event_image').on('click', function() {
             var file_data = $('#logo').prop('files')[0];   
             var banner = $('#banner').prop('files')[0];
+            var event_id = jQuery(".event_id").val();
             var form_data = new FormData();                  
             form_data.append('logo', file_data);
             form_data.append('banner', banner);
+            form_data.append('event_id', event_id);
             var a_url = '<?php echo base_url(); ?>events/upload';
             //alert(form_data);                             
             $.ajax({
@@ -272,6 +274,7 @@ function getCities(stateId){
              });
         });
 
+
       var eventrowleng = $(".event_container > div").length;
       //alert(eventrowleng);
       /*for (var i = 1; i < parseInt(eventrowleng); i++) {
@@ -287,6 +290,7 @@ function getCities(stateId){
           table: false,
         });
       }*/
+
         
 
 
