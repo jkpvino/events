@@ -12,42 +12,6 @@ class Events extends CI_Controller{
         $this->data = $this->session->get_userdata();
     }
 
-    function test(){
-        $eventInfo = $this->event_model->getSymposiumInfoById(23);
-        print_r($eventInfo->event_type);
-        print_r($eventInfo);
-        //$this->load->view('uploadci');
-    }
- 
- 
-    function do_upload(){
-        $config['upload_path']="./assets/images";
-        $config['allowed_types']='gif|jpg|png';
-        $config['encrypt_name'] = TRUE;
-         
-        $this->load->library('upload',$config);
-        if($this->upload->do_upload("file")){
-            $data = array('upload_data' => $this->upload->data());
- 
-            $title= $this->input->post('title');
-            $image= $data['upload_data']['file_name']; 
-             
-            //$result= $this->upload_model->save_upload($title,$image);
-            //echo json_decode($result);
-        }
- 
-     }
- 
-
-    public function ajaxupload()
-    {
-        $vars['class'] = '';
-        $this->load->template('ajaxupload',$vars);
-    }
-    public function uploadEventLogo(){
-        $vars['class'] = '';
-        $this->load->template('upload',$vars);
-    }
 
     public function save(){
         $userInfo = $this->data;
@@ -63,13 +27,14 @@ class Events extends CI_Controller{
             $eventArray = array(
                 'name' => $this->input->post('program_name'), 
                 'url_key' => $urlKey,
+                'gmap_location' => $this->input->post('gmap_location'), 
+                'website' => $this->input->post('program_website'), 
                 'event_from' => $this->input->post('program_start'), 
                 'event_to' => $this->input->post('program_end'), 
                 'description' => htmlentities($this->input->post('program_description')), 
                 'address' => htmlentities($this->input->post('address')), 
                 'contact_info' => htmlentities($this->input->post('contact_info')), 
                 'event_type' => $eventTypeId, 
-                'gmap_location' => $this->input->post('gmap_location'), 
                 'allowed_users' => $this->input->post('allowed_users'), 
                 'status' =>20,
                 'user_id' => $userInfo['logged_in']['logid']
@@ -229,7 +194,13 @@ class Events extends CI_Controller{
                     $message .= 'Logo Size Should be 165 X 165 Dimension.<br/> '; $status = false;
                 }
                 if($status  == true){
+                    $ext = end((explode(".", $_FILES['logo']['name'])));
                     if (move_uploaded_file($_FILES['logo']['tmp_name'], $dir."/logo/".$url_key.".jpg")) {
+                        $eventId = trim($this->input->post('event_id'));
+                        $eventArray = array(
+                            'logo' => $url_key.$ext
+                        );
+                        $eventInsertId = $this->event_model->saveSymposium($eventArray, $eventId);
                       $message .= "Logo Uploaded successfully!<br/> ";
                     } else {
                       $message .= "Logo Upload failed!<br/> "; $status = false;

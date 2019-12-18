@@ -199,7 +199,7 @@
                             <?php if (!$programTab['logo']) { ?>
                                 <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/event_logo.jpg' ?>" alt="" />
                             <?php } else{ ?> 
-                                <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/logo/'.$programTab['logo'] ?>" alt="" />
+                                <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/logo/'.$programTab['logo'] ?>" alt="<?php echo $programTab['logo'] ?>" />
                             <?php } ?>
                             
                             <!-- /.form-group -->
@@ -213,7 +213,7 @@
                                 <?php if (!$programTab['banner']) { ?>
                                 <img id="banner_preview" style="width: 100%"  src="<?php echo base_url().'assets/img/event-slide-01.jpg' ?>" alt="" />
                                 <?php } else{ ?> 
-                                    <img id="banner_preview" style="width: 100%"  src="<?php echo base_url().'assets/images/banner/'.$programTab['banner'] ?>" alt="" />
+                                    <img id="banner_preview" style="width: 100%"  src="<?php echo base_url().'assets/images/banner/'.$programTab['banner'] ?>" alt="<?php echo $programTab['banner'] ?>" />
                             <?php } ?>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->

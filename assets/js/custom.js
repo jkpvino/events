@@ -195,7 +195,7 @@ $(document).ready(function($) {
                 }
             },
             submitHandler: function() {
-                $.post("save", $("#program-form").serialize(),  function(response) {
+                $.post(base_url+"events/save", $("#program-form").serialize(),  function(response) {
                     if(response){
                         $('.event_id').val(response);
                         $('#slider-submit').attr('disabled','true');
