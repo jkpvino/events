@@ -196,7 +196,12 @@
                             <div class="input-group">
                                 <input type="file" class="form-control has-dark-background"  id="logo" name="logo">
                             </div>
-                            <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/event_logo.jpg' ?>" alt="" />
+                            <?php if (!$programTab['logo']) { ?>
+                                <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/event_logo.jpg' ?>" alt="" />
+                            <?php } else{ ?> 
+                                <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/logo/'.$programTab['logo'] ?>" alt="" />
+                            <?php } ?>
+                            
                             <!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
@@ -205,7 +210,11 @@
                                 <div class="input-group">
                                     <input type="file" class="form-control has-dark-background" id="banner" name="banner">
                                 </div>
+                                <?php if (!$programTab['banner']) { ?>
                                 <img id="banner_preview" style="width: 100%"  src="<?php echo base_url().'assets/img/event-slide-01.jpg' ?>" alt="" />
+                                <?php } else{ ?> 
+                                    <img id="banner_preview" style="width: 100%"  src="<?php echo base_url().'assets/images/banner/'.$programTab['banner'] ?>" alt="" />
+                            <?php } ?>
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->

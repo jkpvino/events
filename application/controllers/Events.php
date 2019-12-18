@@ -307,6 +307,8 @@ class Events extends CI_Controller{
             'program_website' => set_value('program_website'), 
             'online_booking' => set_value('online_booking'), 
             'allowed_users' => set_value('allowed_users'), 
+            'logo' => '', 
+            'banner' => '', 
         );
         $urlKey = $vars['event_type'] = $vars['states'] = $vars['cities'] = $vars['sub_events'] = '';
         if(end($this->uri->segments) != $this->router->fetch_method()){
@@ -334,6 +336,8 @@ class Events extends CI_Controller{
                     'program_website' => $symInfo->website, 
                     'online_booking' => 0, 
                     'allowed_users' => $symInfo->allowed_users, 
+                    'logo' => $symInfo->logo, 
+                    'banner' => $symInfo->banner, 
                 );
                 if($symInfo->allowed_users > 0){
                     $programTab['online_booking'] = 1;
