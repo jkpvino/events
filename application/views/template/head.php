@@ -31,6 +31,13 @@ else
 ?>
 
 <body class=" <?php echo $bodyClass." ". $class; ?>  ">
+<div class="hide bgground">
+    <div class="loader" style="color:#fff; position: fixed;top: 25%;right: 0;left: 0;margin: 0 auto;text-align: center;z-index: 999;"> 
+        <img style="width: 120px" src="<?php echo base_url().'assets/images/loader.gif' ?>"> 
+        <p style="color: #fff;"> Loading... </p>
+    </div>
+    <div class="bgoverlay" style="background: #000;position: fixed;width: 100%;height: 100%;z-index: 888;opacity: 0.5;">  </div>
+</div>
 <!-- Wrapper -->
 <div class="wrapper">
 <!-- Header -->
