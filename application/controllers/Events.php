@@ -185,8 +185,10 @@ class Events extends CI_Controller{
             );
             $logoerrors = array();
             if(isset($_FILES['logo'])){ 
+                $logoNameInfo = explode('.', $_FILES['logo']['name']);
+                $logoNameInfo = end($logoNameInfo);
                 $logosize = @getimagesize($_FILES["logo"]["tmp_name"]);    
-                echo "<pre>"    ; print_r($logosize); echo "</pre>";
+                //echo "<pre>"    ; print_r($logosize); echo "</pre>";
                 if((!in_array($_FILES['logo']['type'], $acceptable)) && (!empty($_FILES["logo"]["type"]))) {
                     $message .= 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.<br/> '; $status = false;
                 }
@@ -194,11 +196,10 @@ class Events extends CI_Controller{
                     $message .= 'Logo Size Should be 165 X 165 Dimension.<br/> '; $status = false;
                 }
                 if($status  == true){
-                    $ext = end((explode(".", $_FILES['logo']['name'])));
-                    if (move_uploaded_file($_FILES['logo']['tmp_name'], $dir."/logo/".$url_key.".jpg")) {
+                    if (move_uploaded_file($_FILES['logo']['tmp_name'], $dir."/logo/".$url_key.".".$logoNameInfo)) {
                         $eventId = trim($this->input->post('event_id'));
                         $eventArray = array(
-                            'logo' => $url_key.$ext
+                            'logo' => $url_key.'.'.$logoNameInfo
                         );
                         $eventInsertId = $this->event_model->saveSymposium($eventArray, $eventId);
                       $message .= "Logo Uploaded successfully!<br/> ";
@@ -211,7 +212,9 @@ class Events extends CI_Controller{
 
             $bannererrors = array();
             if(isset($_FILES['banner'])){ 
-                $bannersize = @getimagesize($_FILES["banner"]["tmp_name"]);        
+                $bannersize = @getimagesize($_FILES["banner"]["tmp_name"]);  
+                $bannerInfo = explode('.', $_FILES['banner']['name']);
+                $bannerNameInfo = end($bannerInfo);      
                 $maxsize    = 2097152;
                 if((!in_array($_FILES['banner']['type'], $acceptable)) && (!empty($_FILES["banner"]["type"]))) {
                     //$bannererrors[] = 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.';
@@ -222,8 +225,13 @@ class Events extends CI_Controller{
                     $message .= "Banner Size Should be 1920 X 684 Dimension.<br/> "; $status = false;
                 }
                 if($status == true){
-                    if (move_uploaded_file($_FILES['banner']['tmp_name'], $dir."/banner/".$url_key.".jpg")) {
+                    if (move_uploaded_file($_FILES['banner']['tmp_name'], $dir."/banner/".$url_key.".".$bannerNameInfo)) {
                         //print "Banner Uploaded successfully!";
+                        $eventId = trim($this->input->post('event_id'));
+                        $eventArray = array(
+                            'banner' => $url_key.'.'.$bannerNameInfo
+                        );
+                        $eventInsertId = $this->event_model->saveSymposium($eventArray, $eventId);
                         $message .= "Banner Uploaded successfully!<br/> ";
                     } else {
                         //$bannererrors[] = "Banner Upload failed!";

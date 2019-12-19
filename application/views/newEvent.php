@@ -237,18 +237,12 @@
                     <input type="hidden" id="institution_id" name="institution_id" value="<?php echo $institutionTab['institution_id']; ?>">                    
                     <input type="hidden" class="event_id" name="event_id"  value="<?php echo $programTab['event_id']; ?>">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="input-group">
                             <div><label class="control-label"> Institution Name  </label></div>                                
                             <input class="form-control has-dark-background" name="name" id="name" placeholder="Institution Name" type="text" value="<?php echo $institutionTab['name']; ?>" >
                         </div>
-                    </div><!-- /.col-md-6 -->
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <div><label class="control-label"> Embelem   </label></div>                                
-                            <input type="file" class="form-control has-dark-background" name="logo">
-                        </div>
-                    </div><!-- /.col-md-6 -->
+                    </div><!-- /.col-md-12 -->
                 </div><!-- /.row -->
                 <div class="row">
                     <div class="col-md-12">
@@ -271,7 +265,7 @@
                     <div class="col-md-6">
                         <div class="input-group">
                             <div><label class="control-label"> Institution Category   </label></div>
-                            <select name="institution_category" id="institution_category" multiple class="has-dark-background">
+                            <select name="institution_category" id="institution_category" class="has-dark-background">
                                 <?php foreach ($event_category as $eventkey => $ecategory) { ?>
                                     <?php if ($ecategory->category_code && $ecategory->category) { ?>
                                         <option <?php if($institutionTab['institution_category'] == $ecategory->category_code){ ?> selected <?php } ?> value="<?php echo $ecategory->category_code ?>">
@@ -408,14 +402,14 @@
                         <div class="input-group">
                             <select class="has-dark-background" name="sub_events_decider" onchange="subEventsDecider('sub_events', this)">
                                <option value="0">No</option>
-                               <option value="1">Yes</option>
+                               <option value="1" <?php if(count($sub_events) > 0){ ?> Selected <?php } ?> >Yes</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 
 
-                <div id="sub_events" class="hideblock">   
+                <div id="sub_events" class="<?php if(count($sub_events) <= 0){ ?> hideblock <?php } ?>">   
                 <form id="sub-events-form" name="sub-events-form" enctype="multipart/form-data" role="form" action="" method="post" >
                     <div class="row">
                         <div class="pull-right" > <a href="javascript:void(0)" id="add_sub_event" style="color: #fff"> <span class="btn btn-circle btn-default"> <i class="fa fa-plus"> </i> </span> <label class="control-label">  Add Event </label> </a> </div>
@@ -480,8 +474,8 @@
                                             <div><label class="control-label"> Online Booking  </label></div>                                
                                             <select onchange="subEventsDecider('slots', this)" required id="event_online_booking" name="event_online_booking[]" class="has-dark-background">
                                                 <option value="">Online Booking </option>
-                                                <option value="1" <?php if($subevent->online_booking == 1 ){?> Selected <?php } ?> >Yes</option>
-                                                <option value="0" <?php if($subevent->online_booking == 0 ){?> Selected <?php } ?>>No</option>
+                                                <option value="1" <?php if($subevent->allowed_users > 0 ){?> Selected <?php } ?> >Yes</option>
+                                                <option value="0" <?php if($subevent->allowed_users == 0 ){?> Selected <?php } ?>>No</option>
                                             </select>
                                         </div>
                                     </div><!-- /.col-md-6 -->
