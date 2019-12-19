@@ -219,7 +219,7 @@
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
                     <div class="row">
-                        <a href="javascript:void(0)" id="event_image" class="btn btn-framed pull-right">submit</a>
+                        <a href="javascript:void(0)" id="event_image" class="btn btn-framed pull-right">Save & Continue</a>
                         <!-- <button type="submit" id="event_image" class="btn btn-framed nextBtn pull-right">Continue</button> -->
                     </div>
                 </form>

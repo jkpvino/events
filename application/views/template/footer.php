@@ -249,90 +249,6 @@ function getCities(stateId){
 
 
 <script>
-    $(document).ready(function(){
-
-
-        $('#event_image').on('click', function() {
-            var file_data = $('#logo').prop('files')[0];   
-            var banner = $('#banner').prop('files')[0];
-            var event_id = jQuery(".event_id").val();
-            var form_data = new FormData();                  
-            form_data.append('logo', file_data);
-            form_data.append('banner', banner);
-            form_data.append('event_id', event_id);
-            var a_url = '<?php echo base_url(); ?>events/upload';
-            //alert(form_data);                             
-            $.ajax({
-                url: a_url, // point to server-side PHP script 
-                dataType: 'text',  // what to expect back from the PHP script, if anything
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: form_data,                         
-                type: 'post',
-                success: function(php_script_response){
-                  console.log(php_script_response);
-                  tabNext("#event_image");
-                   // alert(php_script_response); // display response from the PHP script, if any
-                }
-             });
-        });
-
-     
-        
-
-
-
-        $("#add_sub_event").click(function(){
-            var rowCount = $(".event_container > div").length;
-            alert(rowCount);
-            var bookhideid = "slots_"+(rowCount+1)
-            var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <input type="hidden" id="sub_event_id_'+(rowCount+1)+'" name="id[]" value=""> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Event Name </label></div> <input class="form-control has-dark-background" required name="event_name[]" placeholder="Event Title" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Description </label></div> <textarea rows="5" required class="event_description" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Contactus </label></div> <textarea rows="5" required class="contact_us" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Start </label></div> <div class="input-group datetimepicker"> <input  required type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]"  required class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Online Booking </label></div> <select onchange="subEventsDecider(\''+bookhideid+'\',this)"  required id="event_online_booking_'+rowCount+'" name="event_online_booking[]" class="has-dark-background"> <option value="">Online Booking </option> <option value="1">Yes</option> <option value="0">No</option> </select> </div> </div> <div class="col-md-6"> <div class="input-group hideblock" id="'+bookhideid+'"> <div><label class="control-label"> How many slots ? </label></div> <div class="input-group"> <input type="number" required class="form-control has-dark-background" name="slots_events[]" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-plus"></span> </span> </div> </div> </div> </div> </div>';
-            $(".event_container").append(newrow);
-
-
-            
-            jQuery("#event_row_"+(rowCount+1)+" .event_description").richText({
-              height: 150,
-              heightPercentage: 0,
-              imageUpload: false,
-              fileUpload: false,
-              heading: false,
-              removeStyles: false,
-              videoEmbed: false,
-              urls: false,
-              table: false,
-            });
-            jQuery("#event_row_"+(rowCount+1)+" .contact_us").richText({
-              height: 150,
-              heightPercentage: 0,
-              imageUpload: false,
-              fileUpload: false,
-              heading: false,
-              removeStyles: false,
-              videoEmbed: false,
-              urls: false,
-              table: false,
-            });
-
-            jQuery('.datepicker').datepicker({ 
-                dateFormat: 'yy-mm-dd'
-            });
-        });
-        
-        // Find and remove selected table rows
-        $(".delete-row").click(function(){
-            $("table tbody").find('input[name="record"]').each(function(){
-                if($(this).is(":checked")){
-                    $(this).parents("tr").remove();
-                }
-            });
-        });
-    });    
-</script>
-
-
-<script>
   $( function() {
     var symInfo = [
       <?php foreach (getSymposium() as $syskey => $symposium) { ?>
@@ -347,6 +263,10 @@ function getCities(stateId){
 </script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+
+<?php if($this->router->fetch_method() == 'createevent'){ ?> 
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/newevent.js"></script>
+<?php } ?>
 
 <script src="<?php echo base_url(); ?>assets/js/editor.js"></script>
 

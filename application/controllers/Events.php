@@ -350,31 +350,10 @@ class Events extends CI_Controller{
             }            
         }
 
-        /*echo "<pre>";
-        print_r($programTab);
-        echo "</pre>";*/
         $vars['programTab'] = $programTab;
         $vars['institutionTab'] = $institutionTab;
         $vars['urlKey'] = $urlKey;
         
-
-        /*$institutionTab = array(
-            'institution_id' => , 
-            'name' => , 
-            'institution_category' => , 
-            'website_url' => , 
-            'description' => , 
-            'country' => , 
-            'state' => , 
-            'city' => , 
-            'postal_code' => , 
-            'address' => , 
-            'facebook' => , 
-            'google' => , 
-            'twitter' => , 
-            'linkedin' => , 
-        );*/
-
         $userInfo = $this->data;
         if($userInfo['logged_in']['logid']){
             $vars['class'] = '';
