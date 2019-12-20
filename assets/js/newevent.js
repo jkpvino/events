@@ -2,6 +2,7 @@
 //  Slider Subscription Form
 
     $("#slider-submit").bind("click", function(event){
+        jQuery(".bgground").show();
         $("#program-form").validate({
             rules: {
                 program_name: "required",
@@ -39,6 +40,7 @@
                     }else{
                         alert("Something went wrong...")
                     }
+                    jQuery(".bgground").hide();
                 });
                 //return false;
             }
@@ -47,6 +49,7 @@
 
     //INSTITUTION FORM
     $("#slider-submit-institution").bind("click", function(event){
+        jQuery(".bgground").show();
         $("#inistitution-form").validate({
             rules: {
                 name: "required",
@@ -87,6 +90,7 @@
                     }else{
                         alert("Something went wrong...")
                     }
+                    jQuery(".bgground").hide();
                 });
                 return false;
             }
@@ -95,6 +99,7 @@
 
      //SUB EVENTS FORM
     $("#sub-events-submit").bind("click", function(event){
+        jQuery(".bgground").show();
         $("#sub-events-form").validate({
             rules: {
                 event_name: "required",
@@ -118,6 +123,7 @@
                         window.location.href = base_url+response;
                     }
                 });
+                jQuery(".bgground").show();
                 return false;
             }
         });
@@ -127,6 +133,7 @@ $(document).ready(function(){
 
 
         $('#event_image').on('click', function() {
+            jQuery(".bgground").show();
             var file_data = $('#logo').prop('files')[0];   
             var banner = $('#banner').prop('files')[0];
             var event_id = jQuery(".event_id").val();
@@ -152,6 +159,7 @@ $(document).ready(function(){
                             tabNext("#event_image");
                         }
                     }
+                    jQuery(".bgground").show();
                 }
              });
         });
@@ -186,6 +194,7 @@ $(document).ready(function(){
         }
 
         $("#add_sub_event").click(function(){
+            jQuery(".bgground").show();
             var rowCount = $(".event_container > div").length;
             var bookhideid = "slots_"+(rowCount+1)
             var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <input type="hidden" id="sub_event_id_'+(rowCount+1)+'" name="id[]" value=""> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Event Name </label></div> <input class="form-control has-dark-background" required name="event_name[]" placeholder="Event Title" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Description </label></div> <textarea rows="5" required class="event_description" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Contactus </label></div> <textarea rows="5" required class="contact_us" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Start </label></div> <div class="input-group datetimepicker"> <input  required type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]"  required class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Online Booking </label></div> <select onchange="subEventsDecider(\''+bookhideid+'\',this)"  required id="event_online_booking_'+rowCount+'" name="event_online_booking[]" class="has-dark-background"> <option value="">Online Booking </option> <option value="1">Yes</option> <option value="0">No</option> </select> </div> </div> <div class="col-md-6"> <div class="input-group hideblock" id="'+bookhideid+'"> <div><label class="control-label"> How many slots ? </label></div> <div class="input-group"> <input type="number" required class="form-control has-dark-background" name="slots_events[]" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-plus"></span> </span> </div> </div> </div> </div> </div>';
@@ -219,6 +228,7 @@ $(document).ready(function(){
             jQuery('.datepicker').datepicker({ 
                 dateFormat: 'yy-mm-dd'
             });
+            jQuery(".bgground").hide();
         });
         
         // Find and remove selected table rows

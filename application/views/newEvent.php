@@ -298,7 +298,7 @@
                             <div><label class="control-label"> State  </label></div>                                
                             <select name="state" id="state" onchange="getCities(this)" class="has-dark-background">
                                 <option value=""> Select State </option>  
-                                <?php if(isset($institutionTab['country'])){ ?> 
+                                <?php if(isset($institutionTab['state'])){ ?> 
                                     <?php foreach ($states as $statekey => $state) { ?>                                    
                                         <option <?php if($institutionTab['state'] == $state->iso2){ ?> selected <?php } ?> value="<?php echo $state->iso2 ?>"><?php echo $state->name ?></option>
                                     <?php } ?>
