@@ -65,7 +65,11 @@ document.onreadystatechange = function () {
     background: radial-gradient(#fff 3px, transparent 4px), radial-gradient(#F00484 -48px, transparent 4px), linear-gradient(#fff 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #f1f1f1 75px, #f1f1f1 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #f1f1f1 76px, #F1F1F1 77px, transparent 78px, transparent 109px), #fff;
     background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
     background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    transition: visibility 0s linear 300ms, opacity 300ms;
 }	
+#wrapper{
+	transition: visibility 0s linear 300ms, opacity 300ms;
+}
 </style>
 <div class="hide bgground">
     <div class="loader" style="color:#fff; position: fixed;top: 25%;right: 0;left: 0;margin: 0 auto;text-align: center;z-index: 999;"> 
