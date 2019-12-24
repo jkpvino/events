@@ -1,3 +1,13 @@
+<section class="cover-sec">
+    <img src="<?php echo base_url() ?>assets/images/banner/wiztech-12.jpg" alt="">
+</section>
+
+<style type="text/css">
+.cover-sec img {
+    width: 100%;
+}    
+</style>
+
 <!-- Page Content -->
 <div id="page-content">
     <div id="homepage-carousel" style="background: #011C38; padding: 50px 0; ">
