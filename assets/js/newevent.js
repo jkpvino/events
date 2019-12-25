@@ -1,5 +1,43 @@
 
-//  Slider Subscription Form
+
+jQuery(document).ready(function() {
+    jQuery("#program_description").richText();
+    jQuery("#address").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
+    jQuery("#contact_info").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
+    jQuery("#description").richText();
+    jQuery("#institution_address").richText({
+        height: 150,
+        heightPercentage: 0,
+        imageUpload: false,
+        fileUpload: false,
+        heading: false,
+        removeStyles: false,
+        videoEmbed: false,
+        urls: false,
+        table: false,
+    });
+
+});
 
     $("#slider-submit").bind("click", function(event){        
         document.getElementById('wrapper').style.visibility="hidden";
