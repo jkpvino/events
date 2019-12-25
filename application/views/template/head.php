@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/editor.css" type="text/css">
 
+    <!-- Notification -->
     <link href="<?php echo base_url(); ?>assets/css/jquery.growl.css" rel="stylesheet" type="text/css" />
 
     <title>Meetup</title>
@@ -35,7 +36,7 @@ else
 
 
 <div id="load">
-    <div style="top: 45%; position: fixed; margin: 0 auto; text-align: center;left: 0px;right: 0px;color: #F00484; font-size: 2em;"> <img src="<?php echo base_url().'assets/images/loader.gif' ?>"> loading ...</div>
+	<div style="top: 45%; position: fixed; margin: 0 auto; text-align: center;    left: 0;    right: 0;    color: #F00484;    font-size: 2em;"> <img src="<?php echo base_url().'assets/images/loader.gif' ?>"> loading ...</div>
 </div>
 <script type="text/javascript">
 document.onreadystatechange = function () {
@@ -66,13 +67,6 @@ document.onreadystatechange = function () {
 	transition: visibility 0s linear 300ms, opacity 300ms;
 }
 </style>
-<div class="hide bgground">
-    <div class="loader" style="color:#fff; position: fixed;top: 25%;right: 0;left: 0;margin: 0 auto;text-align: center;z-index: 999;"> 
-        <img style="width: 120px" src="<?php echo base_url().'assets/images/loader.gif' ?>"> 
-        <p style="color: #fff;"> Loading... </p>
-    </div>
-    <div class="bgoverlay" style="background: #000;position: fixed;width: 100%;height: 100%;z-index: 888;opacity: 0.5;">  </div>
-</div>
 
 
 <!-- Wrapper -->
