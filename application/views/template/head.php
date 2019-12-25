@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/editor.css" type="text/css">
 
+
     <!-- Notification -->
     <link href="<?php echo base_url(); ?>assets/css/jquery.growl.css" rel="stylesheet" type="text/css" />
 

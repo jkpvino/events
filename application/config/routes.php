@@ -56,3 +56,4 @@ $route['event/(:any)/(:any)'] = 'events/event/$1/$2';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['404_override'] = 'my404';
