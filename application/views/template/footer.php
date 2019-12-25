@@ -279,10 +279,10 @@ function getCities(stateId){
 <!-- Notfication -->
 <script src="<?php echo base_url(); ?>assets/js/jquery.growl.js" type="text/javascript"></script>
 <script type="text/javascript">
-  $.growl({ title: "Growl", message: "The kitten is awake!" });
+  /*$.growl({ title: "Growl", message: "The kitten is awake!" });
   $.growl.error({ message: "The kitten is attacking!" });
   $.growl.notice({ message: "The kitten is cute!" });
-  $.growl.warning({ message: "The kitten is ugly!" });
+  $.growl.warning({ message: "The kitten is ugly!" });*/
 </script>
 <!--  ShareThis BEGIN -->
 <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5dd0d63912574600123b54c5&product=sticky-share-buttons"></script>

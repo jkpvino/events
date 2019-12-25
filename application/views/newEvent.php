@@ -16,24 +16,21 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">             
+        <div class="">             
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
                     <div class="stepwizard-step">
-                        <a href="#step-0" type="button" class="btn btn-primary btn-circle">0</a>
-                        <p>Step 0</p>
+                        <a href="#step-0" type="button" class="btn btn-primary"> I </a>
+
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-1" type="button" class="btn btn-default btn-circle" disabled="disabled">1</a>
-                        <p>Step 1</p>
+                        <a href="#step-1" type="button" class="btn btn-default" disabled="disabled">II</a>
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                        <p>Step 2</p>
+                        <a href="#step-2" type="button" class="btn btn-default" disabled="disabled">III</a>
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                        <p>Step 3</p>
+                        <a href="#step-3" type="button" class="btn btn-default" disabled="disabled">IV</a>
                     </div>
                 </div>
             </div>
@@ -431,7 +428,7 @@
                         <input type="hidden" id="subevents_tab" name="subevents_tab" value="1">             
                         <input type="hidden" class="event_id" name="event_id" value="<?php echo $programTab['event_id']; ?>">
                         <input type="hidden" id="subevents_count" name="subevents_count" value="<?php echo count($sub_events); ?>"> 
-                    <?php $subeventCount = 0; if(count($sub_events) > 0){ ?>
+                    <?php $subeventCount = 0; if($sub_events){ ?>
                         <?php foreach ($sub_events as $sekey => $subevent) { $subeventCount++; ?>
                             <div class="event_row" id="event_row_<?php echo $subeventCount ?>">
                                 <input type="hidden" id="sub_event_id_<?php echo $subeventCount ?>" name="id[]" value="<?php echo $subevent->id ?>">
@@ -604,9 +601,6 @@
     color: #fff;
     padding-bottom: 20px;
 }
-.stepwizard-step p {
-    margin-top: 10px;
-}
 
 .stepwizard-row {
     display: table-row;
@@ -617,6 +611,7 @@
     width: 100%;
     position: relative;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .stepwizard-step button[disabled] {
@@ -639,7 +634,12 @@
   font-size: 12px;
   line-height: 1.428571429;
   border-radius: 15px;
-}    
+}  
+.stepwizard-step a {
+    width: 100%;
+    line-height: 2px;
+    border: 0px;
+}  
 </style>
 
 

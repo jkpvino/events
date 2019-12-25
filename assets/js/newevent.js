@@ -73,13 +73,15 @@ jQuery(document).ready(function() {
             submitHandler: function() {
                 $.post(base_url+"events/save", $("#program-form").serialize(),  function(response) {
                     if(response){
-
                         $('.event_id').val(response);
-                        $.growl.notice({title: "Step1",  message: "Record has been successfully saved" });
-                        //$('#slider-submit').attr('disabled','true');
+                        setTimeout(function(){
+                            $.growl.notice({title: "Step1",  message: "Record has been successfully saved" });
+                        },2000);
                         tabNext("#slider-submit");
                     }else{
-                        $.growl.error({ message: "Something went wrong..." });
+                        setTimeout(function(){
+                            $.growl.error({ message: "Something went wrong..." });
+                        },2000);
                     }
                     setTimeout(function(){
                          document.getElementById('load').style.visibility="hidden";
@@ -129,12 +131,16 @@ jQuery(document).ready(function() {
                 $.post(base_url+"events/save", $("#inistitution-form").serialize(),  function(response) {
                     if(response){                        
                         $('#institution_id').val(response);
-                        //$('#slider-submit-institution').attr('disabled','true');
-                        $.growl.notice({title: "Step2",  message: "Record has been successfully saved" });
                         tabNext("#slider-submit-institution");
-                        return true;
+                        //$('#slider-submit-institution').attr('disabled','true');
+                        setTimeout(function(){
+                            $.growl.notice({title: "Step2",  message: "Record has been successfully saved" });
+                        },2000);
+                        
                     }else{
-                        $.growl.error({ message: "Something went wrong..." });
+                        setTimeout(function(){
+                            $.growl.error({ message: "Something went wrong..." });
+                        },2000);
                     }
                     setTimeout(function(){
                          document.getElementById('load').style.visibility="hidden";
