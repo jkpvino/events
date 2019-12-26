@@ -1,15 +1,9 @@
-<?php 
-//echo '<pre>';print_r($event);
-?>
-<section class="cover-sec">
-    <img src="<?php echo base_url() ?>assets/images/banner/wiztech-12.jpg" alt="">
+<?php //echo '<pre>';print_r($event); echo "</pre>"; ?>
+<?php  $institution = $this->event_model->getInstitution($event->institution_id); ?>
+<section class="banner-cover-image">
+    <img src="<?php echo base_url() ?>assets/images/banner/<?php echo $event->banner; ?>" alt="">
 </section>
 
-<style type="text/css">
-.cover-sec img {
-    width: 100%;
-}    
-</style>
 <!-- Page Content -->
 <div id="page-content" style="">
     <div class="container">
@@ -17,16 +11,14 @@
             <!-- Course Image -->
             <div class="col-md-2 col-sm-3">
                 <figure class="event-image">
-                    <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/img/course-detail-img.jpg"></div>
+                    <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $event->logo; ?>"></div>
                 </figure>
                 <div class="row" style="margin: 0 auto"> <a href="event-detail.html" data-toggle="modal" data-target="#modalSubscriptionForm" class="btn btn-large" style="width: 100%">Register</a> </div>
             </div>
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
                 <div id="page-main">
-                    <?php foreach ($event as $key => $value) { 
-                        $institution = $this->event_model->getInstitution($value->institution_id);
-                        ?>
+                    
                        
                     
 		        	<section id="event-detail">
@@ -34,16 +26,16 @@
 		                    <section id="event-header">
 		                        <header>
 		                            <h2 class="event-date">
-                                        <?php $date =date('F',strtotime($value->event_from)); 
-                                        echo $date .','.date('d,Y',strtotime($value->event_from)); ?>
+                                        <?php $date =date('F',strtotime($event->event_from)); 
+                                        echo $date .','.date('d,Y',strtotime($event->event_from)); ?>
                                     </h2>
-		                            <div class="course-category"><?php echo $value->ecatg; ?>:<a href="#"><?php echo $value->ename; ?></a></div>
+		                            <div class="course-category"><?php echo $event->ecatg; ?>:<a href="#"><?php echo $event->ename; ?></a></div>
 		                        </header>
 		                        <hr>
 		                        <div class="course-count-down" id="course-count-down">
 		                            <!-- /.course-start -->
 		                            <div class="count-down-wrapper">
-		                            	<div class="count-down-wrapper"><?php echo $value->name; ?></div>
+		                            	<div class="count-down-wrapper"><?php echo $event->name; ?></div>
 		                            	<p> <?php echo $institution->name; ?> </p>
 		                                <script type="text/javascript">var _date = 'Jun 27, 2015 23:28';</script>
 		                            </div><!-- /.count-down-wrapper -->
@@ -51,16 +43,15 @@
 		                        </div><!-- /.course-count-down -->
 		                        <hr>
 		                        <figure>
-		                            <span class="course-summary" id="course-length"><i class="fa fa-mobile"></i><?php echo $value->contact_info; ?></span>
+		                            <span class="course-summary" id="course-length"><i class="fa fa-mobile"></i><?php echo $event->contact_info; ?></span>
 		                          <!--   <span class="course-summary" id="course-time-amount"><i class="fa fa-envelope"></i>vinothkumarjeyaraman@gmail.com</span>
 		                            <span class="course-summary" id="course-time-amount"><i class="fa fa-map-marker"></i><a href=""> Direction </a> </span> -->
-		                            <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i><?php echo $value->event_from; ?> - <?php echo $value->event_to; ?></span>
+		                            <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i><?php echo $event->event_from; ?> - <?php echo $event->event_to; ?></span>
 		                        </figure>
 		                    </section><!-- /#course-header -->
 		                </article>
 		            </section>
 
-                <?php } ?>
 		        </div>
 		    </div>            
         </div><!-- /.row -->
@@ -68,7 +59,7 @@
             <section class="col-md-12">
             	<div>
 	                <header><h2>Event Info</h2></header>
-	                <p><?php echo $value->description;?></p>
+	                <p><?php echo $event->description;?></p>
                 </div>
 
             

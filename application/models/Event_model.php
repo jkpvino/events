@@ -42,7 +42,7 @@ class Event_model extends CI_Model {
 			
 			$query = $this->db->get();
 			 //echo $this->db->last_query();exit;
-			 return $query->result();
+			 return $query->row();
         }
         public function get_event($sym_id)
         {
