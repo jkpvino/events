@@ -90,7 +90,11 @@ jQuery(document).ready(function() {
                 });
                 //return false;
             }
-        });
+        });        
+        setTimeout(function(){
+             document.getElementById('load').style.visibility="hidden";
+             document.getElementById('wrapper').style.visibility="visible";
+        },1000);
     });
 
     //INSTITUTION FORM
@@ -149,7 +153,11 @@ jQuery(document).ready(function() {
                 });
                 return false;
             }
-        });
+        });        
+        setTimeout(function(){
+             document.getElementById('load').style.visibility="hidden";
+             document.getElementById('wrapper').style.visibility="visible";
+        },1000);
     });
 
      //SUB EVENTS FORM
@@ -183,12 +191,13 @@ jQuery(document).ready(function() {
                         window.location.href = base_url+response;
                     }
                 });
-
-                
-                //jQuery(".bgground").show();
-                return false;
             }
         });
+                
+        setTimeout(function(){
+             document.getElementById('load').style.visibility="hidden";
+             document.getElementById('wrapper').style.visibility="visible";
+        },1000);
     });
 
 $(document).ready(function(){

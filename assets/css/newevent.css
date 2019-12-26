@@ -1,0 +1,54 @@
+.date .dropdown-menu{
+    color: #F00484;
+}
+#page-content{
+    /*background: #4488BB;*/
+    background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0, radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0, radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
+    background-size: 110px 200px;
+    background-repeat: repeat-x;
+}
+.setup-content {
+    background: #04284A;
+    color: #fff;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.stepwizard-step a {
+    width: 100%;
+    line-height: 2px;
+    border: 0px;
+    font-size : 9px;
+}  
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+

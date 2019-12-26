@@ -1,36 +1,23 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Page Content -->
 <div id="page-content">
 
 <div class="container">
     <div class="row">
-        <div class="">             
+        <div class="col-md-12">             
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
                     <div class="stepwizard-step">
-                        <a href="#step-0" type="button" class="btn btn-primary"> I </a>
+                        <a href="#step-0" type="button" class="btn btn-primary"> 25% </a>
 
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-1" type="button" class="btn btn-default" disabled="disabled">II</a>
+                        <a href="#step-1" type="button" class="btn btn-default" disabled="disabled">50%</a>
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-2" type="button" class="btn btn-default" disabled="disabled">III</a>
+                        <a href="#step-2" type="button" class="btn btn-default" disabled="disabled">75%</a>
                     </div>
                     <div class="stepwizard-step">
-                        <a href="#step-3" type="button" class="btn btn-default" disabled="disabled">IV</a>
+                        <a href="#step-3" type="button" class="btn btn-default" disabled="disabled">100%</a>
                     </div>
                 </div>
             </div>
@@ -595,56 +582,3 @@
 
 </div>
 </div>
-<style type="text/css">
-.setup-content{
-    background: #04284A;
-    color: #fff;
-    padding-bottom: 20px;
-}
-
-.stepwizard-row {
-    display: table-row;
-}
-
-.stepwizard {
-    display: table;
-    width: 100%;
-    position: relative;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.stepwizard-step button[disabled] {
-    opacity: 1 !important;
-    filter: alpha(opacity=100) !important;
-}
-
-
-.stepwizard-step {
-    display: table-cell;
-    text-align: center;
-    position: relative;
-}
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}  
-.stepwizard-step a {
-    width: 100%;
-    line-height: 2px;
-    border: 0px;
-}  
-</style>
-
-
-<style type="text/css">
-.date .dropdown-menu{
-    color: #F00484;
-}
-</style>
