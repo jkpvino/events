@@ -1,3 +1,4 @@
+<?php include("notification-popup.php") ?>
 
 
 <!-- Page Content -->

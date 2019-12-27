@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/editor.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/notification-popup.css" type="text/css">
     <?php if($this->router->fetch_method() == 'createevent'){ ?> 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/newevent.css" type="text/css">
     <?php } ?>
