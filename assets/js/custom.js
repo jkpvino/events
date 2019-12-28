@@ -370,3 +370,31 @@ function stopUpload(success){
       document.getElementById('f1_upload_form').style.visibility = 'visible';      
       return true;   
 }
+
+
+/* Newsletter Subscribe 
+$(".subscribe_submit").bind("click", function(event){       
+event.preventDefault(); alert("ues") ;
+    $("#subscribe_popup").validate({
+        rules: {
+            subscribe_email: {
+                required: true
+            },
+        },
+        submitHandler: function() {
+            $.post(base_url+"customer/account/savesubscriber", $("#subscribe_popup").serialize(),  function(response) {
+                if(response){
+                    
+                }else{
+
+                }
+            });
+            //return false;
+        }
+    });    
+});
+*/
+
+$(window).on('load',function(){
+    $("#myModal").modal('show');
+});

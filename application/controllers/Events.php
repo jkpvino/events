@@ -370,6 +370,7 @@ class Events extends CI_Controller{
             $this->load->template('newEvent',$vars);
             //print_r($_FILES);
         }else{
+            $this->session->set_userdata('previous_url', current_url());
             redirect('/customer/account/login');
         }
         
