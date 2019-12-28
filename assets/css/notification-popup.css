@@ -58,6 +58,7 @@
     padding: 30px;
     border-radius: 0;       
     border: none;
+    background: #011C38;
 }
 .modal-newsletter .modal-header {
     border-bottom: none;   
@@ -65,7 +66,7 @@
     border-radius: 0;
 }
 .modal-newsletter h4 {
-    color: #000;
+    color: #FFF;
     font-size: 30px;
     margin: 0;
     font-weight: bold;
@@ -75,11 +76,16 @@
     top: -15px;
     right: -15px;
     text-shadow: none;
-    opacity: 0.3;
+    opacity: 0.6;
     font-size: 24px;
+    color: #fff;
 }
 .modal-newsletter .close:hover {
-    opacity: 0.8;
+    opacity: 1;
+}
+.subscibe_status {
+    font-size: 10px;
+    color: #07fb35;
 }
 .modal-newsletter .icon-box {
     color: #7265ea;     

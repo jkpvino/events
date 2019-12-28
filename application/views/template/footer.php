@@ -273,9 +273,9 @@ function getCities(stateId){
 
 <script src="<?php echo base_url(); ?>assets/js/editor.js"></script>
 
-<!-- Geolocation -->
+<!-- Geolocation 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/json/geodata.json"></script>
-
+-->
 <!-- Notfication -->
 <script src="<?php echo base_url(); ?>assets/js/jquery.growl.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -151,7 +151,7 @@ CREATE TABLE `subscribers` (
 `name` VARCHAR(255) NULL , 
 `email` VARCHAR(255) NULL , 
 `phone_no` VARCHAR(255) NULL , 
-`institution_id` INT NOT NULL, 
+`institution_id` INT NULL, 
 `program_id` INT NULL, 
 `event_ids` VARCHAR(255) NULL , 
 `event_type` INT NULL, 
