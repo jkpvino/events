@@ -390,6 +390,7 @@ $("#subscribe_submit").bind("click", function(event){
                         $("#newsletter_subscribe_modal").modal('hide');
                         $.growl.notice({title: "Newsletter Subscribe",  message: response.message });
                     },1000);
+                    localStorage.setItem('newsletter-homepage-popup','yes');
                 }else{
                     setTimeout(function(){
                         $.growl.error({title: "Newsletter Subscribe",  message: "Something went wrong... Please try after some time" });
@@ -400,7 +401,9 @@ $("#subscribe_submit").bind("click", function(event){
     });   
 });
 
-
-$(window).on('load',function(){
-    $("#newsletter_subscribe_modal").modal('show');
-});
+if(!localStorage.getItem('newsletter-homepage-popup')){    
+    $(window).on('load',function(){
+        $("#newsletter_subscribe_modal").modal('show');
+    });
+}
+/* END Newsletter Subscribe */
