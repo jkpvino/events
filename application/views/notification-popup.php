@@ -27,7 +27,7 @@
   </div>
 </div> -->
 
-<div id="myModal" class="modal popup fade">
+<!-- <div id="myModal" class="modal popup fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -48,4 +48,27 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-newsletter">
+    <div class="modal-content">
+      <form action="<?php echo base_url().'customer/account/subscribe' ?>" method="post">
+        <div class="modal-header">
+          <h4>Subscribe to our newsletter</h4>  
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
+        </div>
+        <div class="modal-body">          
+          <p>Signup for our weekly newsletter to get the latest news, updates and amazing offers delivered directly in your inbox.</p>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+            <span class="input-group-btn">
+              <input type="submit" class="btn btn-primary" value="Subscribe">
+            </span>
+          </div>
+        </div>
+      </form>     
+    </div>
+  </div>
 </div>
