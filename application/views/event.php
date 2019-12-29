@@ -1,9 +1,59 @@
 <?php //echo '<pre>';print_r($event); echo "</pre>"; ?>
 <?php  $institution = $this->event_model->getInstitution($event->institution_id); ?>
-<section class="banner-cover-image">
-    <img src="<?php echo base_url() ?>assets/images/banner/<?php echo $event->banner; ?>" alt="">
-</section>
+<?php if(@getimagesize(base_url().'assets/images/banner/'.$event->banner)){ ?>
+<section class="banner-cover-image" style="background: url('<?php echo base_url()."assets/images/banner/".$event->banner ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;" >
+    <div class="cover-image-content"> 
+        <br>
+        <div class="thumbnavIcon">
+            <img id="thumbBannerImg" src='<?php echo base_url()."assets/images/banner/".$event->banner ?>' alt="<?php echo $event->name; ?>" style="width:100%;max-width:150px">
+        </div>
+        <div class="event_name"> <?php echo $event->name; ?>  </div>
+        <div class="location"> Madurai, TamilNadu, India  </div>
 
+        <div class="tcf-event-details-dateClass">
+            <span>
+                <img src="<?php echo base_url() ?>assets/img/calander.png" alt="College Events Date" title="College Events Date">
+                <span class="eventDateClass ng-binding">Sat, 18 Jan '20<br>10:30 am</span>
+            </span>
+            <span class="tinySeparateClass">
+                <line-separator class="ng-isolate-scope">
+                    <!-- ngIf: !text -->
+                    <div ng-if="!text" class="ng-scope">
+                        <div class="tcf_separatorClass"></div>
+                    </div><!-- end ngIf: !text --><!-- ngIf: text -->
+                </line-separator>
+            </span>
+            <span>
+                <img src="<?php echo base_url() ?>assets/img/calander.png" alt="Marketing &amp; Entrepre Start Date" title="College Events Date">
+                <span class="eventDateClass ng-binding">Sun, 19 Jan '20<br>06:30 pm</span>
+            </span>
+        </div>
+    </div>
+</section>
+<div id="bannerImgPopup" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="thumbBannerPopImg">
+  <div id="caption"> <?php echo $event->name ?> </div>
+</div>
+<?php } ?>
+<style type="text/css">
+  
+</style>
+<script type="text/javascript">
+var modal = document.getElementById("bannerImgPopup");
+var img = document.getElementById("thumbBannerImg");
+var modalImg = document.getElementById("thumbBannerPopImg");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}    
+</script>
 <!-- Page Content -->
 <div id="page-content" style="">
     <div class="container">
@@ -13,7 +63,7 @@
                 <figure class="event-image">
                     <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $event->logo; ?>"></div>
                 </figure>
-                <div class="row" style="margin: 0 auto"> <a href="event-detail.html" data-toggle="modal" data-target="#modalSubscriptionForm" class="btn btn-large" style="width: 100%">Register</a> </div>
+                <div class="row" style="margin: 0 auto"> <a href="event-detail.html" data-toggle="modal" data-target="#modalSubscriptionForm" class="btn btn-large" style="width: 100%">GET TICKET</a> </div>
             </div>
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
@@ -43,7 +93,7 @@
 		                        </div><!-- /.course-count-down -->
 		                        <hr>
 		                        <figure>
-		                            <span class="course-summary" id="course-length"><i class="fa fa-mobile"></i><?php echo $event->contact_info; ?></span>
+		                            <span class="course-summary" id="course-length"><i class="fa fa-mobile"></i><?php echo html_entity_decode($event->contact_info); ?></span>
 		                          <!--   <span class="course-summary" id="course-time-amount"><i class="fa fa-envelope"></i>vinothkumarjeyaraman@gmail.com</span>
 		                            <span class="course-summary" id="course-time-amount"><i class="fa fa-map-marker"></i><a href=""> Direction </a> </span> -->
 		                            <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i><?php echo $event->event_from; ?> - <?php echo $event->event_to; ?></span>
@@ -59,27 +109,9 @@
             <section class="col-md-12">
             	<div>
 	                <header><h2>Event Info</h2></header>
-	                <p><?php echo $event->description;?></p>
+	                <p><?php echo html_entity_decode($event->description);?></p>
                 </div>
 
-            
-
-                <div class="row col-md-12">
-                	<div class=""><img style="width: 100%" src="<?php echo base_url() ?>assets/img/sym_banner.jpg"></div>
-            	<br>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-            
 
 
 
@@ -333,107 +365,10 @@ margin: 40px auto;
 
 
 
-<!-- Registration Popup -->
-<style type="text/css">
-	.modal-content{
-		background: #011C38;
-	}
-	.modal-header h6 {
-	    color: #fff;
-	    text-align: left;
-	    display: inline-block;
-	}
-	.modal-header{
-		border-bottom: 0px solid:
-	}
-</style>
-<div class="modal fade"  id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h6>Join the comunity of modern thinking students</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span> 
-        </button>
-      </div>
-      <div class="modal-body homepage-carousel-wrapper">
 
 
 
-      	<div class="slider-content">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form id="slider-form" role="form" action="" method="post">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                <input class="form-control has-dark-background" name="fullname" id="slider-name" placeholder="Full Name" type="text" required>
-                                            </div>
-                                        </div><!-- /.col-md-6 -->
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                <input class="form-control has-dark-background" name="email" id="slider-email" placeholder="Email" type="email" required>
-                                            </div>
-                                        </div><!-- /.col-md-6 -->
-                                    </div><!-- /.row -->
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                <input class="form-control has-dark-background" name="phone_no" id="slider-name" placeholder="Phone No" type="text" required>
-                                            </div>
-                                        </div><!-- /.col-md-6 -->
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                 <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                                    <option value="">Gender</option>
-                                                    <option value="1">Male</option>
-                                                    <option value="0">Female</option>
-                                                </select>
-                                            </div>
-                                        </div><!-- /.col-md-6 -->
-                                    </div><!-- /.row -->
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                                    <option value="">You Are From</option>
-                                                    <option value="school">School</option>
-                                                    <option value="cpllege">College</option>
-                                                </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-6 -->
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                <select name="slider-course" id="slider-course" class="has-dark-background">
-                                                    <option value="- Not selected -">Institution</option>
-                                                    <option value="Art and Design">SACS M.A.V.M.M ENGG COLLEGE</option>
-                                                    <option value="Marketing">LATHA MATHAVAN ENGG COLLEGE</option>
-                                                    <option value="Science">American Arts & Science college </option>
-                                                    <option value="History and Psychology"> Yadhava Girls College</option>
-                                                </select>
-                                            </div><!-- /.form-group -->
-                                        </div><!-- /.col-md-6 -->
-                                    </div><!-- /.row -->
-                                    <button type="submit" id="slider-submit" class="btn btn-framed pull-right">Submit</button>
-                                    <div id="form-status"></div>
-                                </form>
-                            </div><!-- /.col-md-12 -->
-                        </div><!-- /.row -->
-                    </div><!-- /.slider-content -->
-
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
+<!--
 <style>
 #mySidenav {
     position: fixed;
@@ -478,3 +413,4 @@ margin: 40px auto;
 	  <a href="#" id="registred">Registred <br> 100 </a>	
 	</div>
 </div>
+-->

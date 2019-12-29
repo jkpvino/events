@@ -54,6 +54,10 @@ $route['default_controller'] = 'index';
 $route['events/createEvent'] = 'events/createEvent';
 $route['event/(:any)/(:any)'] = 'events/event/$1/$2';
 
+$route['events/browse/(:any)'] = 'events/browse/$1';
+$route['events/location/(:any)'] = 'events/location/$1';
+$route['events/category/(:any)'] = 'events/category/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['404_override'] = 'my404';

@@ -5,7 +5,7 @@ class Event_model extends CI_Model {
 
         public function get_symposium($limit = '', $offset = '')
         {
-            $this->db->select('name,id,event_type,url_key,event_from,event_to,gmap_location');
+            $this->db->select('name,id,banner,event_type,url_key,event_from,event_to,gmap_location');
             if ($limit && $offset) {
                 $query = $this->db->get_where('symposium', array('status' => '10'), $limit, $offset);
             }else{

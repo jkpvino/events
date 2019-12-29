@@ -1,8 +1,9 @@
 <!-- Page Content -->
 <div id="page-content">
-    <div id="homepage-carousel" style="background: #011C38; padding: 50px 0; ">
+    <!--<div id="homepage-carousel" style="background: #011C38; padding: 50px 0; ">
         <div class="container">
             <div class="homepage-carousel-wrapper">
+                
                 <div class="row">
                     <div class="col-md-3">
                         <div class="input-group">
@@ -26,27 +27,6 @@
                                 <select name="program_type" id="program_type"  class="has-dark-background">
                                     <option value="">Select Event Type</option>                                    
                                 </select>
-
-
-                            <!--  <select name="slider-study-level" id="slider-study-level" class="has-dark-background">
-                                <option value="">Event Type</option>
-                                <option>Event Type</option>
-                                <option>comedy</option>
-                                <option>Competition</option>
-                                <option>Conference</option>
-                                <option>Conference Cum Exhibition</option>
-                                <option>Corporate Event</option>
-                                <option>Entertainment Event</option>
-                                <option>Exhibition and Trade Fair</option>
-                                <option>Incentive Event</option>
-                                <option>International Travel Roadshow Event</option>
-                                <option>Meet Up</option>
-                                <option>Picnic and Outing</option>
-                                <option>Research Colloquia</option>
-                                <option>Tourism</option>
-                                <option>Training &amp; Workshop</option>
-                                <option>Webinar</option>
-                            </select> -->
                         </div>
                     </div>                    
                     <div class="col-md-4">
@@ -63,10 +43,22 @@
                         </div>
                     </div>
                 </div>
+            
+                
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="input-group">
+                            <input class="form-control has-dark-background event_name" name="event_name" id="slider-name" placeholder="Search Your Event" type="text" required>
+                             
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <br>
+    --><br><br>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -79,7 +71,7 @@
                             <div class="col-md-12 lgx-single-news">
                                 <figure >
                                     <a href="<?php echo $Eventurl; ?>">
-                                        <img src="<?php echo base_url() ?>assets/images/banner/event-image.jpg" alt="<?php echo $symposium->name ?>" title="<?php echo $symposium->url_key ?>" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block;">                                    
+                                        <img src="<?php echo base_url() ?>assets/images/banner/<?php echo $symposium->banner ?>" alt="<?php echo $symposium->name ?>" title="<?php echo $symposium->url_key ?>" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block;">                                    
                                     </a>
                                 </figure>
                                 <div class="single-news-info">
@@ -92,8 +84,8 @@
                                     </div>
                                     <h5 class="mb-2"><?php echo $eventCatg->name ?></h5>
                                     <hr class="m-0">
-                                    <a href="/e/kpjot3g4/india-atp-annual-conference">
-                                        <h5 class="text-right mb-0 mt-2"> Readmore <?php echo $i; ?><i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
+                                    <a href="<?php echo $Eventurl; ?>">
+                                        <h5 class="text-right mb-0 mt-2"> Readmore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
                                     </a>
                                 </div>
                             </div>

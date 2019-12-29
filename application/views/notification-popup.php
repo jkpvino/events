@@ -60,7 +60,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
         </div>
         <div class="modal-body">          
-          <p>Signup for our weekly newsletter to get the latest news, updates and amazing offers delivered directly in your inbox.</p>
+          <p>Signup for our weekly newsletter to get the latest news and updates delivered directly in your inbox.</p>
           <div class="input-group">
             <input type="email" class="form-control" name="subscribe_email" id="subscribe_email" placeholder="Enter your email" required>
             <span class="input-group-btn">
