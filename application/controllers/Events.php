@@ -113,6 +113,14 @@ class Events extends CI_Controller{
         
     }
     
+    public function location($location)
+    {
+        print_r($location);
+        $vars['class'] = '';   
+        $vars['sympos'] = $this->event_model->get_symposium();
+        $this->load->template('events',$vars);
+    }
+    
 	public function index()
 	{
         $vars['class'] = '';

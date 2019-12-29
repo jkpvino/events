@@ -170,3 +170,9 @@ INSERT INTO `subscribers` (`id`, `name`, `email`, `phone_no`, `institution_id`, 
 INSERT INTO `subscribers` (`id`, `name`, `email`, `phone_no`, `institution_id`, `program_id`, `event_ids`, `event_type`, `created_at`, `updated_at`, `status`) VALUES (NULL, 'kumar', 'kumar@gmail.com', '8579327784', '1', '1', '1,2', '1', current_timestamp(), NULL, '10');
 
 INSERT INTO `subscribers` (`id`, `name`, `email`, `phone_no`, `institution_id`, `program_id`, `event_ids`, `event_type`, `created_at`, `updated_at`, `status`) VALUES (NULL, 'yashiv', 'yashiv@gmail.com', '8579327784', '1', '1', '1,2', '1', current_timestamp(), NULL, '10');
+
+
+
+create or replace view searchevents as SELECT sys.name as name, banner, url_key, event_from, event_to, sys.address, country.name as country, state.name as state, city.name as city, etype.name as etypename, etype.category as etypecategory FROM `symposium` as sys inner join institution as ins on sys.institution_id = ins.id LEFT JOIN event_type as etype on etype.id = sys.event_type LEFT JOIN countries as country ON ins.country = country.iso2 LEFT JOIN states as state ON ins.state = state.iso2 LEFT JOIN cities as city ON ins.city = city.id WHERE state.country_code = country.iso2;
+
+SELECT sys.name as name, banner, url_key, event_from, event_to, sys.address, country.name as country, state.name as state, city.name as city, etype.name as etypename, etype.category as etypecategory FROM `symposium` as sys inner join institution as ins on sys.institution_id = ins.id LEFT JOIN event_type as etype on etype.id = sys.event_type LEFT JOIN countries as country ON ins.country = country.iso2 LEFT JOIN states as state ON ins.state = state.iso2 LEFT JOIN cities as city ON ins.city = city.id WHERE state.country_code = country.iso2
