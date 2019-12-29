@@ -64,8 +64,8 @@
             <div class="col-md-12">
                 <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
                     <?php 
-                    $eventCatg = $this->event_model->getEventType($symposium->event_type);
-                    $Eventurl = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$symposium->url_key;
+                    //$eventCatg = $this->event_model->getEventType($symposium->event_type);
+                    $Eventurl = 'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;
                     if($i % 3 == 0){ ?> <div class="row"> <?php } ?>
                         <div class="col-md-4 ">
                             <div class="col-md-12 lgx-single-news">
@@ -80,9 +80,9 @@
                                     </h3>
                                     <div class="meta-wrapper">
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo date("dS F Y", strtotime($symposium->event_from)); ?> </span>  
-                                        <a href="<?php echo $symposium->gmap_location ?>"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> Delhi</span> </a>
+                                        <a href=""> <span><i class="fa fa-map-marker" aria-hidden="true"></i> Delhi</span> </a>
                                     </div>
-                                    <h5 class="mb-2"><?php echo $eventCatg->name ?></h5>
+                                    <h5 class="mb-2"><?php echo $symposium->etypename ?></h5>
                                     <hr class="m-0">
                                     <a href="<?php echo $Eventurl; ?>">
                                         <h5 class="text-right mb-0 mt-2"> Readmore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>

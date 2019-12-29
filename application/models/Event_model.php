@@ -5,11 +5,11 @@ class Event_model extends CI_Model {
 
         public function get_symposium($limit = '', $offset = '')
         {
-            $this->db->select('name,id,banner,event_type,url_key,event_from,event_to,gmap_location');
+            //$this->db->select('name,id,banner,event_type,url_key,event_from,event_to');
             if ($limit && $offset) {
-                $query = $this->db->get_where('symposium', array('status' => '10'), $limit, $offset);
+                $query = $this->db->get_where('searchevents', array('status' => '10'), $limit, $offset);
             }else{
-                $query = $this->db->get_where('symposium', array('status' => '10'));
+                $query = $this->db->get_where('searchevents', array('status' => '10'));
             }
             return $query->result();
         }
