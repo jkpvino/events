@@ -115,9 +115,15 @@ class Events extends CI_Controller{
     
     public function location($location)
     {
-        print_r($location);
+        //$limit = 12; $offset = 1;
+        $limit = ''; $offset = '';
+        if($location){
+            $searchData = array("location" => $location);
+            $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
+        }else{
+            $vars['sympos'] = $this->event_model->get_symposium();
+        }
         $vars['class'] = '';   
-        $vars['sympos'] = $this->event_model->get_symposium();
         $this->load->template('events',$vars);
     }
     

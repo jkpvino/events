@@ -80,7 +80,8 @@
                                     </h3>
                                     <div class="meta-wrapper">
                                         <span><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo date("dS F Y", strtotime($symposium->event_from)); ?> </span>  
-                                        <a href=""> <span><i class="fa fa-map-marker" aria-hidden="true"></i> Delhi</span> </a>
+                                        <br>
+                                        <a href="javascript:void(0)"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $symposium->city.', '.$symposium->state.', '.$symposium->country ?></span> </a>
                                     </div>
                                     <h5 class="mb-2"><?php echo $symposium->etypename ?></h5>
                                     <hr class="m-0">
