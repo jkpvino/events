@@ -117,7 +117,7 @@ document.onreadystatechange = function () {
                             <a href="#" class="has-child no-link">Category</a>
                             <ul class="list-unstyled child-navigation">
                                 <?php foreach (getAllEventCategory() as $key => $value) { ?>
-                                    <li><a href="<?php echo base_url() ?>events/<?php echo $value->category_code; ?>"><?php echo $value->category; ?></a></li>
+                                    <li><a href="<?php echo base_url() ?>events/category/<?php echo $value->category_code; ?>"><?php echo $value->category; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </li>
@@ -125,7 +125,7 @@ document.onreadystatechange = function () {
                             <a href="<?php echo base_url() ?>events/" class="has-child no-link">Events</a>
                             <ul class="list-unstyled child-navigation">
                                 <?php foreach (getEventTypes() as $key => $value) { ?>
-                                    <li><a href="<?php echo base_url() ?>events/<?php echo $value->name_code; ?>"><?php echo $value->name; ?></a></li>
+                                    <li><a href="<?php echo base_url() ?>events/category/<?php echo $value->name_code; ?>"><?php echo $value->name; ?></a></li>
                                 <?php } ?>
                                
                             </ul>
