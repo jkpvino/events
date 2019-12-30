@@ -21,6 +21,10 @@ class User_model extends CI_Model {
              $this->db->update('user_info', $data, array('user_id' => $logid));
              return true;
         }
+        public function updateUsers($data,$logid){
+             $this->db->update('users', $data, array('id' => $logid));
+             return true;
+        }
 
         public function update_entry()
         {

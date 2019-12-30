@@ -236,73 +236,6 @@
   <!--|                    Preheader                    |-->
   <!--===================================================-->
   <span class="preheader" style="color: transparent; display: none; font-size: 1px; height: 0; opacity: 0; visibility: hidden; width: 0;">Preheader shows up in Gmail and other email clients, 75 chars limit...</span>
-  <!--===================================================-->
-  <!--|                    Header 1                    |-->
-  <!--===================================================-->
-  <table style="background-color: #D8D8D8; margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0; width: 100%;" cellspacing="0" cellpadding="0" border="0" bgcolor="#D8D8D8" width="100%">
-    <tr>
-      <td align="center" valign="top">
-        <table class="p100" style="background-color: #EFEFEF; margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0; width: 800px;" width="800" cellspacing="0" cellpadding="0" border="0" bgcolor="#EFEFEF">
-          <tr>
-            <td align="center" valign="top">
-              <table class="p90" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0; width: 600px;" width="600" cellspacing="0" cellpadding="0" border="0" align="center">
-                <tr>
-                  <td align="left" valign="top">
-                    <table class="p100" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0; width: 600px;" width="600" cellspacing="0" cellpadding="0" border="0" align="left">
-                      <tr>
-                        <td style="font-size: 1px; height: 10px; line-height: 10px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td align="left" valign="top">
-                          <table style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="left">
-                            <tr>
-                              <td valign="middle" align="left">
-                                <table style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="left">
-                                  <tr>
-                                    <td valign="top" align="left">
-                                      <a href="tel: +48 333 444 XXX" style="border: none; display: block; outline: none; text-decoration: none;">
-                                        <img src="images/phone.png" style="-ms-interpolation-mode: bicubic; border: 0; display: block; outline: 0; text-decoration: none; width: 20px;" width="20" border="0" />
-                                      </a>
-                                    </td>
-                                    <td valign="middle" class="text xs-hide" style="color: #7B7B7B; font-family: 'Open Sans', sans-serif; font-size: 12px; padding-left: 5px; text-decoration: none;" align="left"><font face="'Open Sans', sans-serif">+48 333 444 XXX</font>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                              <td valign="middle" align="left">
-                                <table style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="left">
-                                  <tr>
-                                    <td style="width: 40px;" width="40" align="right" valign="top">
-                                      <a href="mailto:mail@company.com" style="border: none; display: block; outline: none; text-decoration: none;">
-                                        <img src="images/mail.png" style="-ms-interpolation-mode: bicubic; border: 0; display: block; outline: 0; text-decoration: none; width: 20px;" width="20" border="0" />
-                                      </a>
-                                    </td>
-                                    <td valign="middle" class="xs-hide" style="color: #7B7B7B; font-family: 'Open Sans', sans-serif; font-size: 12px; padding-left: 5px; text-decoration: none;" align="left"><a href="mailto:mail@company.com" class="text" style="border: none; color: #7B7B7B; display: block; font-size: 12px; outline: none; text-decoration: none;"><font face="'Open Sans', sans-serif">mail@company.com</font></a>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                        <td valign="middle" style="color: #7B7B7B; font-family: 'Open Sans', sans-serif; font-size: 12px; text-decoration: none;" align="right"><a href="#" _target="blank" class="text" style="border: none; color: #7B7B7B; display: block; font-size: 12px; outline: none; text-decoration: none;"><font face="'Open Sans', sans-serif">Open in browser</font></a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="font-size: 1px; height: 10px; line-height: 10px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  
-
 
 
 
@@ -349,7 +282,7 @@
                                   <tr>
                                     <td align="center" valign="top">
                                       <a href="#" style="border: none; display: block; outline: none; text-decoration: none;">
-                                        <img src="images/logo.png" alt="logo" style="-ms-interpolation-mode: bicubic; border: 0; display: block; outline: 0; text-decoration: none; width: 130px;" width="130" border="0" />
+                                        <img src="<?php echo base_url().'assets/e_img/logo.png'; ?>" alt="logo" style="-ms-interpolation-mode: bicubic; border: 0; display: block; outline: 0; text-decoration: none; width: 130px;" width="130" border="0" />
                                       </a>
                                     </td>
                                   </tr>
@@ -369,109 +302,7 @@
                               <td align="left" valign="top" style="font-size: 1px;">&nbsp;</td>
                             </tr>
                           </table>
-                          <!--[if gte mso 9]>
-                              </td>
-                              <td align="left" valign="top" width="360">
-                              <![endif]-->
-                          <table class="p100" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0; width: 360px;" width="360" cellspacing="0" cellpadding="0" border="0" align="right">
-                            <tr>
-                              <td class="hide" style="font-size: 1px; height: 20px; line-height: 20px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                            </tr>
-                            <tr>
-                              <td valign="middle" align="center">
-                                <table class="p100" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="right">
-                                  <tr>
-                                    <td align="center" valign="top">
-                                      <table class="p100" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="center">
-                                        <tr>
-                                          <td align="center" valign="top">
-                                            <table class="xs-p100" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="center">
-                                              <tr>
-                                                <td align="center" valign="top">
-                                                  <!--[if gte mso 9]>
-                                                      <table align="right" border="0" cellpadding="0" cellspacing="0" width="340">
-                                                      <tr>
-                                                      <td align="left" valign="top" width="85">
-                                                      <![endif]-->
-                                                  <table class="xs-p50" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="left">
-                                                    <tr>
-                                                      <td style="font-size: 1px; height: 30px; line-height: 30px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td class="xs-no-pad text" style="color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 700; line-height: 23px; padding-left: 0; padding-right: 15px; text-align: center; text-decoration: none; mso-line-height-rule: exactly;"
-                                                      valign="top" align="left"><font face="'Open Sans', sans-serif"><a href="#" style="border: none; color: #ffffff; display: block; font-size: 14px; font-weight: 700; line-height: 23px; outline: none; text-align: center; text-decoration: none;">Services</a></font>
-                                                      </td>
-                                                    </tr>
-                                                  </table>
-                                                  <!--[if gte mso 9]>
-                                                      </td>
-                                                      <td align="left" valign="top" width="85">
-                                                      <![endif]-->
-                                                  <table class="xs-p50" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="left">
-                                                    <tr>
-                                                      <td style="font-size: 1px; height: 30px; line-height: 30px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td class="xs-no-pad text" style="color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 700; line-height: 23px; padding-left: 15px; padding-right: 15px; text-align: center; text-decoration: none; mso-line-height-rule: exactly;"
-                                                      valign="top" align="left"><font face="'Open Sans', sans-serif"><a href="#" style="border: none; color: #ffffff; display: block; font-size: 14px; font-weight: 700; line-height: 23px; outline: none; text-align: center; text-decoration: none;">About Us</a></font>
-                                                      </td>
-                                                    </tr>
-                                                  </table>
-                                                  <!--[if gte mso 9]>
-                                                      </td>
-                                                      <td align="left" valign="top" width="85">
-                                                      <![endif]-->
-                                                  <table class="xs-p50" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="left">
-                                                    <tr>
-                                                      <td style="font-size: 1px; height: 30px; line-height: 30px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td class="xs-no-pad text" style="color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 700; line-height: 23px; padding-left: 15px; padding-right: 15px; text-align: center; text-decoration: none; mso-line-height-rule: exactly;"
-                                                      valign="top" align="left"><font face="'Open Sans', sans-serif"><a href="#" style="border: none; color: #ffffff; display: block; font-size: 14px; font-weight: 700; line-height: 23px; outline: none; text-align: center; text-decoration: none;">Portfolio</a></font>
-                                                      </td>
-                                                    </tr>
-                                                  </table>
-                                                  <!--[if gte mso 9]>
-                                                      </td>
-                                                      <td align="left" valign="top" width="85">
-                                                      <![endif]-->
-                                                  <table class="xs-p50" style="margin: 0; mso-table-lspace: 0; mso-table-rspace: 0; padding: 0;" cellspacing="0" cellpadding="0" border="0" align="left">
-                                                    <tr>
-                                                      <td style="font-size: 1px; height: 30px; line-height: 30px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td class="xs-no-pad text" style="color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 700; line-height: 23px; padding-left: 15px; padding-right: 0; text-align: center; text-decoration: none; mso-line-height-rule: exactly;"
-                                                      valign="top" align="left"><font face="'Open Sans', sans-serif"><a href="#" style="border: none; color: #ffffff; display: block; font-size: 14px; font-weight: 700; line-height: 23px; outline: none; text-align: center; text-decoration: none;">Contact</a></font>
-                                                      </td>
-                                                    </tr>
-                                                  </table>
-                                                  <!--[if gte mso 9]>
-                                                      </td>
-                                                      </tr>
-                                                      </table>
-                                                      <![endif]-->
-                                                </td>
-                                              </tr>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                      </table>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td style="font-size: 1px; height: 30px; line-height: 30px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                            </tr>
-                            <tr>
-                              <td class="hide" style="font-size: 1px; height: 15px; line-height: 15px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
-                            </tr>
-                          </table>
-                          <!--[if gte mso 9]>
-                              </tr>
-                              </table>
-                              <![endif]-->
+                     
                         </td>
                       </tr>
                     </table>
@@ -481,7 +312,7 @@
                   <td style="font-size: 1px; height: 30px; line-height: 30px; mso-line-height-rule: exactly;" valign="top" align="left">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td class="editable_text" align="center" valign="top" style="text-align: left"><font face="'Open Sans', sans-serif"><span><span class="header2" style="color: #ffffff; display: inline-block; font-family: 'Open Sans', sans-serif; font-size: 17px; font-weight: 700; line-height: 65px; text-align: left;">Welcome</span><span class="hide">&#xA0;</span><span class="header3 p100" style="color: #f40084; display: inline-block; font-family: 'Open Sans', sans-serif; font-size: 17px; font-weight: 700; line-height: 65px; text-align: left; white-space: normal;">Vinoth Kumar Jeyaraman, </span></span></font>
+                  <td class="editable_text" align="center" valign="top" style="text-align: left"><font face="'Open Sans', sans-serif"><span><span class="header2" style="color: #ffffff; display: inline-block; font-family: 'Open Sans', sans-serif; font-size: 17px; font-weight: 700; line-height: 65px; text-align: left;">Welcome</span><span class="hide">&#xA0;</span><span class="header3 p100" style="color: #f40084; display: inline-block; font-family: 'Open Sans', sans-serif; font-size: 17px; font-weight: 700; line-height: 65px; text-align: left; white-space: normal;"><?php echo $name; ?>, </span></span></font>
                   </td>
                 </tr>
                 <tr>
@@ -500,9 +331,9 @@
                       </tr>-->
                       <tr>
                         <td style="color: #ffffff; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 400; line-height: 23px; text-align: left; mso-line-height-rule: exactly;" valign="top" align="left"><font face="'Open Sans', sans-serif">
-                            <b style="color: #017AFE"> Your Email </b> : vinothkumarjeyaraman@gmail.com
+                            <b style="color: #017AFE"> Your Email </b> : <?php echo $email; ?>
                             <br>
-                            <b style="color: #017AFE"> Your Password </b> : KSDKFJ487843
+                            <b style="color: #017AFE"> Your Password </b> : <?php echo $password; ?>
                           </font>
                         </td>
                       </tr>
@@ -613,37 +444,37 @@
                             <tr>
                               <td style="width: 40px;" width="40" align="left" valign="top">
                                 <a href="#" style="border: none; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: none; text-decoration: none; width: 35px;">
-                                  <img src="images/google.png" alt="google" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35" border="0"
+                                  <img src="<?php echo base_url().'assets/e_img/google.png'; ?>" alt="google" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35" border="0"
                                   />
                                 </a>
                               </td>
                               <td style="width: 40px;" width="40" align="left" valign="top">
                                 <a href="#" style="border: none; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: none; text-decoration: none; width: 35px;">
-                                  <img src="images/facebook.png" alt="fb" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35" border="0"
+                                  <img src="<?php echo base_url().'assets/e_img/facebook.png'; ?>" alt="fb" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35" border="0"
                                   />
                                 </a>
                               </td>
                               <td style="width: 40px;" width="40" align="left" valign="top">
                                 <a href="#" style="border: none; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: none; text-decoration: none; width: 35px;">
-                                  <img src="images/web.png" alt="web" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35" border="0"
+                                  <img src="<?php echo base_url().'assets/e_img/web.png'; ?>" alt="web" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35" border="0"
                                   />
                                 </a>
                               </td>
                               <td style="width: 40px;" width="40" align="left" valign="top">
                                 <a href="#" style="border: none; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: none; text-decoration: none; width: 35px;">
-                                  <img src="images/behance.png" alt="behance" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35"
+                                  <img src="<?php echo base_url().'assets/e_img/behance.png'; ?>" alt="behance" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35"
                                   border="0" />
                                 </a>
                               </td>
                               <td style="width: 40px;" width="40" align="left" valign="top">
                                 <a href="#" style="border: none; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: none; text-decoration: none; width: 35px;">
-                                  <img src="images/twitter.png" alt="twitter" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35"
+                                  <img src="<?php echo base_url().'assets/e_img/twitter.png'; ?>" alt="twitter" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35"
                                   border="0" />
                                 </a>
                               </td>
                               <td style="width: 40px;" width="40" align="left" valign="top">
                                 <a href="#" style="border: none; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: none; text-decoration: none; width: 35px;">
-                                  <img src="images/instagram.png" alt="insta" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35"
+                                  <img src="<?php echo base_url().'assets/e_img/instagram.png'; ?>" alt="insta" style="-ms-interpolation-mode: bicubic; border: 0; display: block; font-size: 1px; height: 35px; line-height: 35px; outline: 0; text-decoration: none; width: 35px;" width="35"
                                   border="0" />
                                 </a>
                               </td>

@@ -1,4 +1,3 @@
-
 <!-- Page Content -->
 <div id="page-content">
 <!-- Slider -->
@@ -18,12 +17,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h1>Forgot Password</h1>
-                                <p> Aliquam feugiat turpis quis felis adipiscing, non pulvinar odio lacinia. Aliquam elementum pharetra fringilla. Duis blandit, sapien in semper vehicula, tellus elit gravida odio, ac tincidunt nisl mi at ante. Vivamus tincidunt nunc nibh. </p>
-                                <form id="slider-form" role="form" action="" method="post">
+                                
+                                <form id="forgot" role="form" action="<?php echo base_url(); ?>customer/account/forgot" method="post">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <input class="form-control has-dark-background" name="email" id="email" placeholder="Email / Phone No" type="text" >
+                                                <input class="form-control has-dark-background" name="email" id="email" placeholder="Email" type="text" >
                                             </div>
                                         </div><!-- /.col-md-12 -->
                                         <div class="col-md-6">

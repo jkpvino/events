@@ -44,6 +44,49 @@ class Account extends API_Controller {
   }
   public function forgot()
   {
+  
+    $email = $this->input->post('email');
+    if($email){
+      $this->load->model('user_model');
+       $userInfo = $this->user_model->getUserByEmail($email);
+       if(count($userInfo)>0){
+        $random = $this->getRandomPassword();
+        $password = md5($random);
+        $data = array('password'=>$password);
+        $logid = $userInfo[0]->id; 
+        $name = $userInfo[0]->firstname.' '.$userInfo[0]->lastname;
+        $this->user_model->updateUsers($data,$logid);
+
+        $this->load->library('email');
+        $fromemail=SENDER_EMAIL;
+        $toemail = $email;
+        $subject = "Meetup - Your password ";
+        $data=array('email'=>$toemail,'password'=>$random,'name'=>$name);
+        $mesg = $this->load->view('email/forgotpassword',$data,true);
+//exit;
+
+        $config=array(
+          'charset'=>'utf-8',
+          'wordwrap'=> TRUE,
+          'mailtype' => 'html'
+        );
+
+        $this->email->initialize($config);
+
+        $this->email->to($toemail);
+        $this->email->from($fromemail, "Title");
+        $this->email->subject($subject);
+        $this->email->message($mesg);
+        $mail = $this->email->send();
+
+          $this->session->set_flashdata('msg', "Mail sent to {$email}.");
+          redirect('/customer/account/forgot');
+       }else{
+          $this->session->set_flashdata('msg', 'Your Email does not exist.');
+          redirect('/customer/account/forgot');
+       }
+     
+    }
     $vars['class'] = '';
     $this->load->template('forgotpass',$vars);
   }
