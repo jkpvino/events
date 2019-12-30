@@ -1,5 +1,6 @@
 <?php //echo '<pre>';print_r($event); echo "</pre>"; ?>
 <?php  $institution = $this->event_model->getInstitution($event->institution_id); ?>
+<?php  $locationInfo = $this->event_model->getLocationInfo($institution->country, $institution->state, $institution->city); ?>
 <?php if(@getimagesize(base_url().'assets/images/banner/'.$event->banner)){ ?>
 <section class="banner-cover-image" style="background: url('<?php echo base_url()."assets/images/banner/".$event->banner ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;" >
     <div class="cover-image-content"> 

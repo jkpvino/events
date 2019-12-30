@@ -64,7 +64,7 @@
             <div class="col-md-12">
                 <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
                     <?php 
-                    $Eventurl = 'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;
+                    $Eventurl = base_url().'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;
                     if($i % 3 == 0){ ?> <div class="row"> <?php } ?>
                         <div class="col-md-4 ">
                             <div class="col-md-12 lgx-single-news">

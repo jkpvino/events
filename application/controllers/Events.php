@@ -170,10 +170,12 @@ class Events extends CI_Controller{
                 // $vars['sub_event'] = $sub_event;
                 $this->load->template('event',$vars);
             }else{
-                echo '404';   
+                $this->output->set_status_header('404');
+                $this->load->view('err404'); 
             }
         }else{
-            echo '404';
+            $this->output->set_status_header('404');
+            $this->load->view('err404'); 
         }
     }
 
