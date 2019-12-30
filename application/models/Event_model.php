@@ -5,19 +5,33 @@ class Event_model extends CI_Model {
 
         public function get_symposium($like = array(), $limit = '', $offset = '')
         {
-        	
-            //$this->db->select('name,id,banner,event_type,url_key,event_from,event_to');
-            if($like['location']){
+            if(isset($like['location'])){
             	$this->db->like('country', $like['location']); 
             	$this->db->or_like('state', $like['location']); 
             	$this->db->or_like('city', $like['location']);
-            }            
+            } 
+            if(isset($like['browse'])){
+            	$this->db->like('name', $like['browse']); 
+            	$this->db->or_like('url_key', $like['browse']);
+            	$this->db->or_like('event_from', $like['browse']);
+            	$this->db->or_like('event_to', $like['browse']);
+            	$this->db->or_like('event_to', $like['browse']);
+            	$this->db->or_like('etypename', $like['browse']);
+            	$this->db->or_like('etypecategory', $like['browse']);
+            	$this->db->or_like('country', $like['browse']);
+            	$this->db->or_like('state', $like['browse']);
+            	$this->db->or_like('city', $like['browse']);
+            }  
+            if(isset($like['category'])){
+            	$this->db->like('etypename', $like['category']); 
+            	$this->db->or_like('etypecategory', $like['category']);
+            }           
             if ($limit && $offset) {
-                $query = $this->db->get_where('searchevents', array('status' => '10'), $limit, $offset);
+                $query = $this->db->get_where('searchevents', array('status' => '10'),$limit, $offset);
             }else{
                 $query = $this->db->get_where('searchevents', array('status' => '10'));
             }
-            echo $this->db->last_query();
+            //echo $this->db->last_query();
             return $query->result();
         }
         public function getSymposiumInfoById($id,$limit=1,$offset=0)

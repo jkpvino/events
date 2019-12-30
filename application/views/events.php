@@ -64,7 +64,6 @@
             <div class="col-md-12">
                 <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
                     <?php 
-                    //$eventCatg = $this->event_model->getEventType($symposium->event_type);
                     $Eventurl = 'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;
                     if($i % 3 == 0){ ?> <div class="row"> <?php } ?>
                         <div class="col-md-4 ">
@@ -99,14 +98,14 @@
 </div>
 <!-- end Page Content -->
 <style type="text/css">
-    #homepage-carousel{
-        background:
-linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
-linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
-linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
-background-color:#e1ebbd;
-background-size: 128px 128px;
-    }
+#homepage-carousel{
+    background:
+    linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+    linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+    linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+    background-color:#e1ebbd;
+    background-size: 128px 128px;
+}
 .lgx-single-news {
     margin-bottom: 2.6rem;
     padding: 15px;
