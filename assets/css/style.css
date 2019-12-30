@@ -4440,7 +4440,15 @@ section.banner-cover-image .cover-image-content {
 .eventDateClass {
     left: 4px;
     position: relative;
-    top: -8px;
+}
+.get_ticket {
+    margin: 25px auto;
+    padding: 10px;
+}
+.btn.btn-framed.white {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
 }
 .tcf-event-details-dateClass {
     color: #fff;

@@ -65,6 +65,15 @@ class Event_model extends CI_Model {
 			 //echo $this->db->last_query();exit;
 			 return $query->row();
         }
+        public function getLocationInfo($country,$state,$city){        	
+        	$this->db->select('countries.name as country, states.name as state, cities.name as city');
+			$this->db->from('countries');
+			$this->db->join('states','countries.iso2= states.country_code','left');	   
+			$this->db->join('cities','cities.country_code= countries.iso2','left');	     
+			$this->db->where('countries.iso2', $country)->where('states.iso2', $state)->where('cities.id', $city); 		
+			$query = $this->db->get();
+			return $query->row();
+        }
         public function get_event($sym_id)
         {
                

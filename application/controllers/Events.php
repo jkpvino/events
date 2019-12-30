@@ -161,12 +161,20 @@ class Events extends CI_Controller{
          //$this->load->model('event_model');
          $event_type_id = $this->event_model->getEventId($event_type);
          if($event_type_id){
-             $event = $this->event_model->get_event_details($event_type_id,$url_key);             
-             if($event){
-                // $sym_id = $event[0]->id;
-                 //$sub_event = $this->event_model->get_event($sym_id);
+             $event = $this->event_model->get_event_details($event_type_id,$url_key);           
+             if($event){                
+                 $institution = $this->event_model->getInstitution($event->institution_id); 
+                 if($institution->country && $institution->state && $institution->city){
+                    $locationInfo = $this->event_model->getLocationInfo($institution->country, $institution->state, $institution->city); 
+                    $vars['locationInfo'] = $locationInfo; 
+                 } else{
+                    $vars['locationInfo'] = '';
+                 }
                  $vars['class'] = 'page-course-detail';
                  $vars['event'] = $event; 
+                 $vars['institution'] = $institution; 
+
+
                 // $vars['sub_event'] = $sub_event;
                 $this->load->template('event',$vars);
             }else{

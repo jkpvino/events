@@ -1,20 +1,20 @@
-<?php //echo '<pre>';print_r($event); echo "</pre>"; ?>
-<?php  $institution = $this->event_model->getInstitution($event->institution_id); ?>
-<?php  $locationInfo = $this->event_model->getLocationInfo($institution->country, $institution->state, $institution->city); ?>
+<?php //echo '<pre>';print_r($locationInfo); echo "</pre>"; ?>
 <?php if(@getimagesize(base_url().'assets/images/banner/'.$event->banner)){ ?>
 <section class="banner-cover-image" style="background: url('<?php echo base_url()."assets/images/banner/".$event->banner ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;" >
     <div class="cover-image-content"> 
         <br>
         <div class="thumbnavIcon">
             <img id="thumbBannerImg" src='<?php echo base_url()."assets/images/banner/".$event->banner ?>' alt="<?php echo $event->name; ?>" style="width:100%;max-width:150px">
+            <br>
         </div>
         <div class="event_name"> <?php echo $event->name; ?>  </div>
-        <div class="location"> Madurai, TamilNadu, India  </div>
+        <div class="location"> <?php echo $locationInfo->country ?>, <?php echo $locationInfo->state ?>,<?php echo $locationInfo->city ?>  </div>
 
         <div class="tcf-event-details-dateClass">
             <span>
                 <img src="<?php echo base_url() ?>assets/img/calander.png" alt="College Events Date" title="College Events Date">
-                <span class="eventDateClass ng-binding">Sat, 18 Jan '20<br>10:30 am</span>
+                <span class="eventDateClass ng-binding"> <?php echo date('D, d M \'y',strtotime($event->event_from)); ?> <!-- <br>10:30 am --></span>
+
             </span>
             <span class="tinySeparateClass">
                 <line-separator class="ng-isolate-scope">
@@ -26,8 +26,12 @@
             </span>
             <span>
                 <img src="<?php echo base_url() ?>assets/img/calander.png" alt="Marketing &amp; Entrepre Start Date" title="College Events Date">
-                <span class="eventDateClass ng-binding">Sun, 19 Jan '20<br>06:30 pm</span>
+                <span class="eventDateClass ng-binding"><?php echo date('D, d M \'y',strtotime($event->event_to)); ?></span>
             </span>
+        </div>
+        <br>
+        <div class="get_ticket"> 
+            <button class="btn btn-framed white"> Get Tickets </button>
         </div>
     </div>
 </section>
