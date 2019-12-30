@@ -94,9 +94,20 @@ class User_model extends CI_Model {
             $this->db->where('users.email', $email);
             
             $query = $this->db->get();
-           //  echo $this->db->last_query();exit;
              return $query->result();
 
+        }
+
+        public function saveNotExistsSubscribe($table,$data){
+            $this->db->where('email',$data['email']);
+            $isExists = $this->db->get($table);
+            if ($isExists->num_rows() == 0)  {           
+                $this->db->insert($table, $data);
+                $insert_id = $this->db->insert_id();
+                return  $insert_id; 
+            }else{
+                $this->db->update($table, $data, array('email' => $data['email']));
+            }
         }
 
 }

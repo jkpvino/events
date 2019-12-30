@@ -113,6 +113,42 @@ class Events extends CI_Controller{
         
     }
     
+    public function location($location='',$limit='',$offset='')
+    { 
+        if($location){
+            $searchData = array("location" => $location);
+            $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
+        }else{
+            $vars['sympos'] = $this->event_model->get_symposium();
+        }
+        $vars['class'] = '';   
+        $this->load->template('events',$vars);
+    }
+    
+    public function browse($browse='',$limit='',$offset='')
+    { 
+        if($browse){
+            $searchData = array("browse" => $browse);
+            $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
+        }else{
+            $vars['sympos'] = $this->event_model->get_symposium();
+        }
+        $vars['class'] = '';   
+        $this->load->template('events',$vars);
+    }
+    
+    public function category($browse='',$limit='',$offset='')
+    { 
+        if($browse){
+            $searchData = array("category" => $browse);
+            $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
+        }else{
+            $vars['sympos'] = $this->event_model->get_symposium();
+        }
+        $vars['class'] = '';   
+        $this->load->template('events',$vars);
+    }
+    
 	public function index()
 	{
         $vars['class'] = '';
@@ -134,10 +170,12 @@ class Events extends CI_Controller{
                 // $vars['sub_event'] = $sub_event;
                 $this->load->template('event',$vars);
             }else{
-                echo '404';   
+                $this->output->set_status_header('404');
+                $this->load->view('err404'); 
             }
         }else{
-            echo '404';
+            $this->output->set_status_header('404');
+            $this->load->view('err404'); 
         }
     }
 

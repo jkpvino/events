@@ -9,6 +9,26 @@ class Account extends API_Controller {
         parent::__construct();
     }
 
+    public function subscribe(){
+      $this->load->model('user_model');
+      if($this->input->post('subscribe_email')){
+        $parts = explode("@", $this->input->post('subscribe_email'));
+        $username = $parts[0];
+        $data = array(
+          'name' => $username,
+          'email' => $this->input->post('subscribe_email'), 
+          'status' => 10
+        );
+        $userid  = $this->user_model->saveNotExistsSubscribe('subscribers',$data);
+        if($userid){
+            $response = array('status' => true, "message" => "You have Subscibed successfully");
+        }else{
+            $response = array('status' => false, "message" => "You have Already Subscibed");
+        }
+        echo json_encode($response);
+      }
+    }
+
     public function getRandomPassword() {
         $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&$@';
         $pass = array(); //remember to declare $pass as an array

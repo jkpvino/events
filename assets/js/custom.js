@@ -372,29 +372,38 @@ function stopUpload(success){
 }
 
 
-/* Newsletter Subscribe 
-$(".subscribe_submit").bind("click", function(event){       
-event.preventDefault(); alert("ues") ;
-    $("#subscribe_popup").validate({
+/* Newsletter Subscribe */
+$("#subscribe_submit").bind("click", function(event){ 
+    $("#subscribe_newsletter_popup").validate({
         rules: {
             subscribe_email: {
-                required: true
+                required: true,
+                email : true
             },
         },
         submitHandler: function() {
-            $.post(base_url+"customer/account/savesubscriber", $("#subscribe_popup").serialize(),  function(response) {
-                if(response){
-                    
+            $.post(base_url+"customer/account/subscribe", $("#subscribe_newsletter_popup").serialize(),  function(res) {
+                var response = JSON.parse(res);
+                if(response.message){
+                    jQuery(".subscibe_status").html(response.message);
+                    setTimeout(function(){
+                        $("#newsletter_subscribe_modal").modal('hide');
+                        $.growl.notice({title: "Newsletter Subscribe",  message: response.message });
+                    },1000);
+                    localStorage.setItem('newsletter-homepage-popup','yes');
                 }else{
-
+                    setTimeout(function(){
+                        $.growl.error({title: "Newsletter Subscribe",  message: "Something went wrong... Please try after some time" });
+                    },1000);
                 }
             });
-            //return false;
         }
-    });    
+    });   
 });
-*/
 
-$(window).on('load',function(){
-    $("#myModal").modal('show');
-});
+if(!localStorage.getItem('newsletter-homepage-popup')){    
+    $(window).on('load',function(){
+        $("#newsletter_subscribe_modal").modal('show');
+    });
+}
+/* END Newsletter Subscribe */
