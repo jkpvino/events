@@ -35,7 +35,7 @@
                     <div class="row"> 
                         <div class="col-md-12">
                             <div class="input-group">
-                                <div><label class="control-label"> Event Title  </label></div>                                
+                                <div><label class="control-label"> Event Title  </label> <span> (* Required to fill information) </span></div>                                
                                 <input class="form-control has-dark-background" name="program_name" id="program_name" placeholder="Event Name" type="text"  value="<?php echo $programTab['program_name']; ?>">
                             </div>
                         </div><!-- /.col-md-6 -->
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Event Start  </label></div>                                
+                                <div><label class="control-label"> Event Start  </label><span> (* Required to fill information) </span></div>                                
                                 <div class="input-group date datetimepicker" >
                                     <input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="<?php echo $programTab['program_start']; ?>" />
                                     <span class="input-group-addon">
@@ -54,7 +54,7 @@
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Event End  </label></div>                                
+                                <div><label class="control-label"> Event End  </label><span> (* Required to fill information) </span></div>                                
                                 <div class="input-group date datetimepicker" >
                                     <input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="<?php echo $programTab['program_end']; ?>" />
                                     <span class="input-group-addon">
@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="input-group">
-                                <div><label class="control-label"> Event Description  </label></div>  
+                                <div><label class="control-label"> Event Description  </label><span> (* Required to fill information) </span></div>  
                                 <textarea id="program_description" name="program_description"> <?php echo $programTab['program_description']; ?> </textarea>
                             </div>
                         </div><!-- /.col-md-12 -->
@@ -75,13 +75,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Address (Event Venue)  </label></div>  
+                                <div><label class="control-label"> Address (Event Venue)  </label><span> (* Required to fill information) </span></div>  
                                 <textarea rows="5" id="address" class="richText" name="address" placeholder ="Write Event Venue Address Info..."> <?php echo $programTab['address']; ?> </textarea>
                             </div>
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Event Contact Person Info  </label></div>  
+                                <div><label class="control-label"> Event Contact Person Info  </label><span> (* Required to fill information) </span></div>  
                                 <textarea rows="5" id="contact_info"  name="contact_info"  placeholder ="Write Event Co-ordinator Contact Person Info..."> <?php echo $programTab['contact_info']; ?> </textarea>
                             </div>
                         </div><!-- /.col-md-6 -->
@@ -89,7 +89,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Events Category  </label></div>
+                                <div><label class="control-label"> Events Category  </label><span> (* Required to fill information) </span></div>
                                 <select name="program_category" onchange="getEventTypes(this)" id="program_category"  class="has-dark-background">
                                     <option value="" >Select Category </option>
                                     <?php foreach ($event_category as $eventkey => $ecategory) { ?>
@@ -104,7 +104,7 @@
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Event Type  </label></div>
+                                <div><label class="control-label"> Event Type  </label><span> (* Required to fill information) </span></div>
                                 <select name="program_type" id="program_type"  class="has-dark-background">
                                     <option value="">Select Event Type</option>
                                     <?php if($urlKey){ ?> 
@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="" ss="input-group">
-                                <div><label class="control-label"> Gmap URL  </label></div>                                
+                                <div><label class="control-label"> Gmap URL  </label><span> (Optional) </span></div>                                
                                 <div class="input-group" id=''>
                                     <input type='text' id="gmap_location" value="<?php echo $programTab['gmap_location']; ?>" name="gmap_location" class="form-control  has-dark-background" />
                                     <span class="input-group-addon">
@@ -150,7 +150,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="" ss="input-group">
-                                <div><label class="control-label"> Online Booking  </label></div>                                
+                                <div><label class="control-label"> Online Booking  </label><span> (Optional) </span></div>                                
                                 <select onchange="subEventsDecider('program_slots', this)" name="online_booking" id="online_booking" class="has-dark-background">
                                     <option value="">Online Booking</option>
                                     <option value="1" <?php if($programTab['online_booking'] == 1 ){?> Selected <?php } ?> >Yes</option>
@@ -160,7 +160,7 @@
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group <?php if($programTab['online_booking'] == 0 ){?> hideblock <?php } ?>" id="program_slots">
-                                <div><label class="control-label"> How many slots ?  </label></div> 
+                                <div><label class="control-label"> How many slots ?  </label> <span> (Optional) </span></div> 
                                 <div class="input-group">
                                     <input type='number' value="<?php echo $programTab['allowed_users']; ?>" name="allowed_users" id="allowed_users" class="form-control has-dark-background" />
                                     <span class="input-group-addon">

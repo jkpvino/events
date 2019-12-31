@@ -697,7 +697,9 @@ ul.list-links a:hover {
   border: none;
   margin-bottom: 0;
 }
-
+.setup-content .input-group span, .input-group span{
+  color: #017AFE;
+}
 .course-image, .event-image {
   height: 165px;
   overflow: hidden;
