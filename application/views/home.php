@@ -165,6 +165,70 @@
 </div>
 <!-- end News, Events, About -->
 
+
+
+
+
+
+
+<section class="cta section-padding border-bottom">
+    <div class="container">
+        <header>
+            <h2>About Universo</h2>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <img src="<?php echo base_url() ?>assets/img/illustration-1.svg" alt="" class="svg">
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 col-md-6 mt-5 mt-md-0">
+                        <ul class="feature-list-wrapper list-unstyled">
+                            <li>
+                                <div class="icon"><span class="circle-secondary"><i class="la la-check-circle"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Claim Listing</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="circle-success"><i class="la la-money"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Paid Listing</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="circle-primary"><i class="la la-line-chart"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Promote your Business</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                        </ul><!-- ends: .feature-list-wrapper -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- ends: .cta -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Testimonial -->
 <section id="testimonials">
     <div class="block">
@@ -264,108 +328,6 @@
     </div><!-- /.container -->
 </div>
 <!-- end Academic Life, Campus Life, Newsletter -->
-
-
-<style type="text/css">
-.feature-list-wrapper .icon {
-    margin-right: 1.33333rem;
-}
-.feature-list-wrapper .icon span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 20rem;
-    font-size: 2rem;
-}
-.circle-secondary {
-    color: #903af9;
-    background: rgba(144, 58, 249, 0.1);
-}
-.circle-success {
-    color: #32cc6f;
-    background: rgba(50, 204, 111, 0.1);
-}
-.circle-primary {
-    color: #f5548e;
-    background: rgba(245, 84, 142, 0.1);
-}
-.feature-list-wrapper .list-content {
-    flex: 1;
-}
-.feature-list-wrapper .list-content h4 {
-    margin-bottom: 0.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-    font-size: 2rem;
-}
-.feature-list-wrapper .list-content p {
-    line-height: 2.4rem;
-    margin: 0;
-    font-size: 1.4rem;
-}
-.feature-list-wrapper li {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 2.33333rem;
-}
-.la {
-    font: normal normal normal 16px/1 LineAwesome;
-    font-size: inherit;
-    text-decoration: inherit;
-    text-rendering: optimizeLegibility;
-    text-transform: none;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-}    
-</style>
-<section class="cta section-padding border-bottom">
-    <div class="container">
-        <div class="row">
-            <!-- <div class="col-md-12">
-                <div class="section-title">
-                    <h2>Why <span>Direo</span> for your Business?</h2>
-                    <p>Explore the popular listings around the world</p>
-                </div>
-            </div> -->
-            <div class="col-md-12">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <img src="<?php echo base_url() ?>assets/img/illustration-1.svg" alt="" class="svg">
-                    </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-6 mt-5 mt-md-0">
-                        <ul class="feature-list-wrapper list-unstyled">
-                            <li>
-                                <div class="icon"><span class="circle-secondary"><i class="la la-check-circle"></i></span></div>
-                                <div class="list-content">
-                                    <h4>Claim Listing</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon"><span class="circle-success"><i class="la la-money"></i></span></div>
-                                <div class="list-content">
-                                    <h4>Paid Listing</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon"><span class="circle-primary"><i class="la la-line-chart"></i></span></div>
-                                <div class="list-content">
-                                    <h4>Promote your Business</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                </div>
-                            </li>
-                        </ul><!-- ends: .feature-list-wrapper -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- ends: .cta -->
-
 
 <!-- Partners, Make a Donation -->
 <div class="block">
