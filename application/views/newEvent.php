@@ -135,7 +135,7 @@
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Website URL   </label></div>                                
+                                <div><label class="control-label"> Website URL   </label> <span> (Optional) </span> </div>                                
                                 <div class="input-group">
                                     <input type='text' id="program_website" value="<?php echo $programTab['program_website']; ?>" name="program_website" class="form-control  has-dark-background" />
                                     <span class="input-group-addon">
@@ -189,7 +189,7 @@
                     <h1> Event Images </h1>
                     <div class="row">
                         <div class="col-md-6">
-                            <div><label class="control-label"> Event Logo  </label></div>
+                            <div><label class="control-label"> Event Logo  </label> <span> (Optional) </span> </div>
                             <div class="input-group">
                                 <input type="file" class="form-control has-dark-background"  id="logo" name="logo">
                             </div>
@@ -203,7 +203,7 @@
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6">
                             <div class="input-group">
-                                <div><label class="control-label"> Event Banner  </label></div>
+                                <div><label class="control-label"> Event Banner  </label> <span> (Optional) </span> </div>
                                 <div class="input-group">
                                     <input type="file" class="form-control has-dark-background" id="banner" name="banner">
                                 </div>
@@ -236,7 +236,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-group">
-                            <div><label class="control-label"> Institution Name  </label></div>                                
+                            <div><label class="control-label"> Institution Name  </label> <span> (* Required to fill information) </span> </div>                                
                             <input class="form-control has-dark-background" name="name" id="name" placeholder="Institution Name" type="text" value="<?php echo $institutionTab['name']; ?>" >
                         </div>
                     </div><!-- /.col-md-12 -->
@@ -244,7 +244,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-group">
-                            <div><label class="control-label"> About Institution  </label></div>                                
+                            <div><label class="control-label"> About Institution  </label><span> (* Required to fill information) </span></div>                                
                             <textarea rows="5" name="description" id="description">  <?php echo $institutionTab['description']; ?> </textarea>
                         </div>
                     </div><!-- /.col-md-6 -->
@@ -261,7 +261,7 @@
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> Institution Category   </label></div>
+                            <div><label class="control-label"> Institution Category   </label><span> (* Required to fill information) </span></div>
                             <select name="institution_category" id="institution_category" class="has-dark-background">
                                 <?php foreach ($event_category as $eventkey => $ecategory) { ?>
                                     <?php if ($ecategory->category_code && $ecategory->category) { ?>
@@ -280,7 +280,7 @@
                     
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> Country   </label></div>
+                            <div><label class="control-label"> Country   </label><span> (* Required to fill information) </span></div>
                             <select name="country" id="country" onchange="getStates(this)" class="has-dark-background">
                                 <option value="">Select Country </option>
                                 <?php foreach ($countries as $cokey => $country) { ?>                                    
@@ -292,7 +292,7 @@
 
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> State  </label></div>                                
+                            <div><label class="control-label"> State  </label><span> (* Required to fill information) </span></div>                                
                             <select name="state" id="state" onchange="getCities(this)" class="has-dark-background">
                                 <option value=""> Select State </option>  
                                 <?php if(isset($institutionTab['state'])){ ?> 
@@ -309,7 +309,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> City   </label></div>
+                            <div><label class="control-label"> City   </label><span> (* Required to fill information) </span></div>
                             <select name="city" id="city" class="has-dark-background">
                                 <option value="">Select City </option>
 
@@ -323,7 +323,7 @@
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> Zipcode / Postal Code  </label></div>                                
+                            <div><label class="control-label"> Zipcode / Postal Code  </label><span> (* Required to fill information) </span></div>                                
                             <input class="form-control has-dark-background" value="<?php echo $institutionTab['postal_code'] ?>" name="postal_code" id="postal_code" placeholder="Postal Code" type="text" >
                         </div>
                     </div><!-- /.col-md-6 -->
@@ -332,7 +332,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="input-group">
-                            <div><label class="control-label"> Address   </label></div>                                
+                            <div><label class="control-label"> Address   </label><span> (* Required to fill information) </span></div>                                
                             <textarea rows="5" id="institution_address" name="address"> <?php echo $institutionTab['address'] ?> </textarea>
                         </div>
                     </div><!-- /.col-md-6 -->
@@ -395,7 +395,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div><label class="control-label"> Create Sub Events  </label></div>  
+                        <div><label class="control-label"> Create Sub Events  </label><span> (* Required to fill information) </span></div>  
                         <div class="input-group">
                             <select class="has-dark-background" name="sub_events_decider" onchange="subEventsDecider('sub_events', this)">
                                <option value="0">No</option>

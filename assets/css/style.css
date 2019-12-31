@@ -558,7 +558,7 @@ ul.list-links a:hover {
 .course-count-down .count-down-wrapper {
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .course-count-down .count-down-wrapper > span {
   position: relative;
@@ -724,6 +724,48 @@ ul.list-links a:hover {
   margin-right: 5px;
 }
 
+.event-list-content {
+    margin-left: 50px;
+    margin-right: 20px;
+    padding: 50px;
+    position: relative;
+    border: 10px solid #edf5ff;
+    transition: all 0.3s ease 0s;
+}
+.event-list-content h2 {
+margin-bottom: 30px;
+}.eventli .user p {
+font-weight: bold;
+color: #ff007a;
+}.eventli .user h5 {
+margin-top: 20px;
+}
+.eventli h1, .eventli h2, .eventli h3, .eventli h4, .eventli h5, .eventli h6 {
+font-family: 'Montserrat', sans-serif;
+color: #002691;
+margin-top: 0px;
+font-style: normal;
+font-weight: bold;
+}
+.eventli .user ul {
+padding-top: 10px;
+border-top: 1px solid #edf5ff;
+}
+.eventli .user ul li {
+margin-top: 10px;
+}
+.eventli .user ul li i {
+margin-right: 5px;
+}
+.eventli .btn.btn-framed {
+border-radius: 25px;
+}
+.event-list-content:hover {
+border: 10px solid #ff007a;
+}
+.eventli .row {
+margin: 40px auto;
+}
 .course-list-table .course-title {
   font-weight: bold;
 }

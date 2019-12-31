@@ -68,7 +68,6 @@ span.onclick = function() {
                 <figure class="event-image">
                     <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $event->logo; ?>"></div>
                 </figure>
-                <div class="row" style="margin: 0 auto"> <a href="event-detail.html" data-toggle="modal" data-target="#modalSubscriptionForm" class="btn btn-large" style="width: 100%">GET TICKET</a> </div>
             </div>
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
@@ -79,30 +78,21 @@ span.onclick = function() {
 		        	<section id="event-detail">
 		                <article class="event-detail">
 		                    <section id="event-header">
-		                        <header>
-		                            <h2 class="event-date">
-                                        <?php $date =date('F',strtotime($event->event_from)); 
-                                        echo $date .','.date('d,Y',strtotime($event->event_from)); ?>
-                                    </h2>
-		                            <div class="course-category"><?php echo $event->ecatg; ?>:<a href="#"><?php echo $event->ename; ?></a></div>
-		                        </header>
-		                        <hr>
 		                        <div class="course-count-down" id="course-count-down">
 		                            <!-- /.course-start -->
 		                            <div class="count-down-wrapper">
 		                            	<div class="count-down-wrapper"><?php echo $event->name; ?></div>
-		                            	<p> <?php echo $institution->name; ?> </p>
-		                                <script type="text/javascript">var _date = 'Jun 27, 2015 23:28';</script>
+		                            	<p style="font-size: 2rem;"> <?php echo $institution->name; ?> </p>
 		                            </div><!-- /.count-down-wrapper -->
 
 		                        </div><!-- /.course-count-down -->
 		                        <hr>
-		                        <figure>
-		                            <span class="course-summary" id="course-length"><i class="fa fa-mobile"></i><?php echo html_entity_decode($event->contact_info); ?></span>
-		                          <!--   <span class="course-summary" id="course-time-amount"><i class="fa fa-envelope"></i>vinothkumarjeyaraman@gmail.com</span>
-		                            <span class="course-summary" id="course-time-amount"><i class="fa fa-map-marker"></i><a href=""> Direction </a> </span> -->
-		                            <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i><?php echo $event->event_from; ?> - <?php echo $event->event_to; ?></span>
-		                        </figure>
+                                <header>
+                                    <div class="course-category"> <label> Category : </label> <?php echo $event->ecatg; ?> : <label> Type : </label>  <?php echo $event->ename; ?> </div>
+                                </header>
+                                <figure>
+                                    <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i><?php echo date('D, d M \'y',strtotime($event->event_from)); ?> - <?php echo date('D, d M \'y',strtotime($event->event_to)); ?></span>
+                                </figure>
 		                    </section><!-- /#course-header -->
 		                </article>
 		            </section>
@@ -116,142 +106,52 @@ span.onclick = function() {
 	                <header><h2>Event Info</h2></header>
 	                <p><?php echo html_entity_decode($event->description);?></p>
                 </div>
-
-
-
-
-
-
-
-<style type="text/css">
-.event-list-content {
-    margin-left: 50px;
-    margin-right: 20px;
-    padding: 50px;
-    position: relative;
-    border: 10px solid #edf5ff;
-    transition: all 0.3s ease 0s;
-}
-.event-list-content h2 {
-margin-bottom: 30px;
-}.eventli .user p {
-font-weight: bold;
-color: #ff007a;
-}.eventli .user h5 {
-margin-top: 20px;
-}
-.eventli h1, .eventli h2, .eventli h3, .eventli h4, .eventli h5, .eventli h6 {
-font-family: 'Montserrat', sans-serif;
-color: #002691;
-margin-top: 0px;
-font-style: normal;
-font-weight: bold;
-}
-.eventli .user ul {
-padding-top: 10px;
-border-top: 1px solid #edf5ff;
-}
-.eventli .user ul li {
-margin-top: 10px;
-}
-.eventli .user ul li i {
-margin-right: 5px;
-}
-.eventli .btn.btn-framed {
-border-radius: 25px;
-}
-.event-list-content:hover {
-border: 10px solid #ff007a;
-}
-.eventli .row {
-margin: 40px auto;
-}
-            
-
-
-
-
-
-
-
-
-
-
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
-
-        <section class="eventli">       
-        	<?php for ($i=0; $i < 3; $i++) { ?>
-            <div class="row">
-               <div class="col-lg-2">
-				  <div class="user">
-					  <div class="title">  
-						  <img src="<?php echo base_url() ?>assets/img/image-04.jpg" alt="img">							  
-						 <h5>Rosalina William</h5>
-						 <p>UX Deisgn</p>
-					  </div>
-					  <ul class="list-unstyled">
-	                     <li><i class="fa fa-mobile"></i>+91 8220466675</li>
-	                     <li><i class="fa fa-clock-o"></i>6:00pm – 8:00pm</li>
-	                  </ul>
-				  </div>
-               </div>
-               <div class="col-lg-10">
-                  <div class="event-list-content fix">
-                    
-					 <h2>UX Design Trend Party 2019</h2>
-					 <p>In order to save time you have to break down the content strategy for the event or conference you are planning step by step. Creating this process from scratch will take the longest amount of time to build, but once you have content production foundation.</p>
-					 <ul> 
-						<li>Participants should bring their college identity cards along with bonafide certificates duly signed by the Head of the Institution/Department. </li>
-						<li>Participants should come in full formals. </li>
-						<li>A single candidate can participate only in maximum 3 events. </li>
-						<li>Registration fee- Rs150/- </li>
-						<li>DD should be taken in favor of “THE PRINCIPAL, SACS MAVMM ENGINEERING COLLEGE, ALAGAR KOVIL” payable at Madurai. </li>
-						<li>DD should be sent to our college within 15-9-2011. </li>
-						<li>Registration fee will be collected only once even if the candidate will participate in one (or) more events. </li>
-						<li>There would be overlapping of events during the day of the symposium. Hence, the participants should make internal arrangements for participation accordingly.(refer agenda) </li>
-						<li>The candidate who want to participate in gaming, can register their name in the spot by giving registration fee-Rs50/- </li>
-					</ul>
-					 <a href="#" class="btn btn-framed"><i class="fa fa-thumbs-up"></i> Subscribe </a>
-					 <!-- <a href="#" class="btn btn-framed">Register</a> -->
-					 <div class="crical"><i class="fal fa-video"></i> </div>
-                  </div>
-               </div>
-            </div>   
-
-        	<?php } ?>
-        </section>
-
+                
+                
+                
+                <section class="eventli">       
+                	<?php foreach ($subevents as $subeventKey => $subevent) { ?>
+                    <div class="row">
+                       <div class="col-lg-2">
+        				  <div class="user">
+        					  <div class="title">  
+        						  <!-- <img src="<?php echo base_url() ?>assets/img/image-04.jpg" alt="img">	 -->						  
+        						 <h5><?php echo $subevent->name; ?></h5>
+        						 <p>Vinoth Kumar J</p>
+        					  </div>
+        					  <ul class="list-unstyled">
+        	                     <li><i class="fa fa-mobile"></i>+91 8220466675</li>
+        	                     <li><i class="fa fa-clock-o"></i><?php echo date('h:i A',strtotime($subevent->event_from)); ?> – <?php echo date('h:i A',strtotime($subevent->event_to)); ?></li> 
+        	                  </ul>
+        				  </div>
+                       </div>
+                       <div class="col-lg-10">
+                          <div class="event-list-content fix">
+                            
+        					 <h2><?php echo $subevent->name; ?></h2>
+                             <div> <?php echo html_entity_decode($subevent->description); ?> </div>
+        					 
+        					<!--  <ul> 
+        						<li>Participants should bring their college identity cards along with bonafide certificates duly signed by the Head of the Institution/Department. </li>
+        						<li>Participants should come in full formals. </li>
+        						<li>A single candidate can participate only in maximum 3 events. </li>
+        						<li>Registration fee- Rs150/- </li>
+        						<li>DD should be taken in favor of “THE PRINCIPAL, SACS MAVMM ENGINEERING COLLEGE, ALAGAR KOVIL” payable at Madurai. </li>
+        						<li>DD should be sent to our college within 15-9-2011. </li>
+        						<li>Registration fee will be collected only once even if the candidate will participate in one (or) more events. </li>
+        						<li>There would be overlapping of events during the day of the symposium. Hence, the participants should make internal arrangements for participation accordingly.(refer agenda) </li>
+        						<li>The candidate who want to participate in gaming, can register their name in the spot by giving registration fee-Rs50/- </li>
+        					</ul> 
+        					 <a href="#" class="btn btn-framed"><i class="fa fa-thumbs-up"></i> Subscribe </a>-->
+        					 <!-- <a href="#" class="btn btn-framed">Register</a> -->
+        					 <div class="crical"><i class="fal fa-video"></i> </div>
+                          </div>
+                       </div>
+                    </div>   
+                	<?php } ?>
+                </section>
             </section>
             <!-- /#course-info -->
-
         </div>
 
 
@@ -267,30 +167,23 @@ margin: 40px auto;
             <div class="col-md-12">
                 <div id="page-main">
                     <section id="contact">
-                        <header><h1>Contact Us</h1></header>
+                        <header><h1>Event Venue</h1></header>
                         <div class="row">
                             <div class="col-md-6">
                                 <address>
-                                    <h3>University of Universo</h3>
-                                    <br>
-                                    <span>4877 Spruce Drive</span>
-                                    <br><br>
-                                    <span>West Newton, PA 15089</span>
-                                    <br>
-                                    <abbr title="Telephone">Telephone:</abbr> +1 (734) 123-4567
-                                    <br>
-                                    <abbr title="Email">Email:</abbr> <a href="#">questions@youruniversity.com</a>
+                                    <h3><?php echo $institution->name ?></h3>
+                                    <?php echo html_entity_decode($institution->address) ?>
                                 </address>
+                                <p> <abbr title="Website">Website:</abbr> <a href="<?php echo $institution->website_url ?>" target="_blank"><?php echo $institution->website_url ?></a> </p>
                                 <div class="icons">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-pinterest"></i></a>
-                                    <a href=""><i class="fa fa-youtube-play"></i></a>
+                                    <a href="<?php echo $institution->twitter ?>"><i class="fa fa-twitter"></i></a>
+                                    <a href="<?php echo $institution->facebook ?>"><i class="fa fa-facebook"></i></a>
+                                    <a href="<?php echo $institution->google ?>"><i class="fa fa-pinterest"></i></a>
+                                    <a href="<?php echo $institution->linkedin ?>"><i class="fa fa-youtube-play"></i></a>
                                 </div><!-- /.icons -->
                                 <hr>
                                 <p>
-                                    Morbi rutrum massa eget mi gravida, sit amet mollis magna gravida. Morbi sodales,
-                                    ligula quis ornare bibendum, magna erat convallis ipsum, id posuere ligula massa vitae leo.
+                                    <?php echo html_entity_decode($institution->description); ?>
                                 </p>
                             </div>
                             <div class="col-md-6">

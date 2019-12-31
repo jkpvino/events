@@ -174,6 +174,11 @@ class Events extends CI_Controller{
                  } else{
                     $vars['locationInfo'] = '';
                  }
+
+                 //SUB EVENTS
+                 $vars['subevents'] = $this->event_model->getSubEventsBySymId($event->id);
+
+
                  $vars['class'] = 'page-course-detail';
                  $vars['event'] = $event; 
                  $vars['institution'] = $institution; 
