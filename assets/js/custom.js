@@ -407,3 +407,41 @@ if(!localStorage.getItem('newsletter-homepage-popup')){
     });
 }
 /* END Newsletter Subscribe */
+
+/* Event Search */
+var currentRequest = null; 
+function searchevent(sel){
+    if(sel.value.length >= 3){               
+        currentRequest = $.ajax({
+            type: "POST",
+            dataType : "json",
+            url: base_url+"events/browse/"+sel.value,
+            data: { isAjax: true},
+            beforeSend : function()    {           
+                if(currentRequest != null) {
+                    currentRequest.abort();
+                }
+            },
+            success: function (result) {
+                if(result){
+                    jQuery(".eventlists").fadeOut();
+                    console.log(result);
+                    var rowcount = 0;
+                    var res = '';
+                    jQuery(result).each(function(i, item){
+                        rowcount++;
+                        res += '<div class="col-md-4 "> <div class="col-md-12 lgx-single-news"> <figure> <a href="'+base_url+'event/'+item.etypecategory+'-'+item.etypename+'/'+item.url_key+'"> <img src="'+base_url+'assets/images/banner/'+item.banner+'" alt="'+item.name+'" title="'+item.name+'" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block;"> </a> </figure> <div class="single-news-info"> <h3 class="title"> <a href="'+base_url+'event/'+item.etypecategory+'-'+item.etypename+'/'+item.url_key+'">'+item.name+'</a> </h3> <div class="meta-wrapper"> <span><i class="fa fa-calendar" aria-hidden="true"></i> '+item.event_from+' </span> <br> <a href="javascript:void(0)"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> '+item.institution+' '+item.city+', '+item.state+', '+item.country+'</span> </a> </div> <h5 class="mb-2">'+item.etypename+'</h5> <hr class="m-0"> <a href="'+base_url+'/event/'+item.etypecategory+'-'+item.etypename+'/'+item.url_key+'"> <h5 class="text-right mb-0 mt-2"> Readmore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5> </a> </div> </div></div>';
+                    })
+                    if(rowcount > 0){
+                        jQuery(".eventsearchlist").html(res);
+                        jQuery(".eventsearchlist").fadeIn();
+                    }
+                }
+               
+            }
+        });
+
+    }else{
+        jQuery(".eventlists").show();
+    }
+}

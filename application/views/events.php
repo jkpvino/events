@@ -12,32 +12,35 @@
                         <div class="title">Find the Best Places to Be</div>
                         <p class="sub_title">All the top locations – from restaurants and clubs, to galleries, famous places and more..</p>
                     </div><!-- ends: .search_title_area -->
-                    <form action="/" class="search_form">
+                    <div class="search_form">
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
-                                <input class="form-control search_fields" type="text" placeholder="What are you looking for?">
+                                <input class="form-control search_fields" onkeypress="searchevent(this)" type="text" placeholder="What are you looking for?">
                             </div>
                             <!-- <div class="single_search_field search_category">
+                                <select class="search_fields" id="at_biz_dir-category">
+                                    <option value="">Sort By</option>
+                                    <option value="automobile">Recent Events</option>
+                                    <option value="education">Last Week</option>
+                                    <option value="event">Last Month </option>
+                                    <option value="event">Last Year </option>
+                                    <option value="event">All </option>
+                                </select>
+                            </div>
+                            <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
                                     <option value="">Select a category</option>
                                     <option value="automobile">Automobile</option>
                                     <option value="education">Education</option>
                                     <option value="event">Event</option>
                                 </select>
-                            </div>
-                            <div class="single_search_field search_location">
-                                <select class="search_fields" id="at_biz_dir-location">
-                                    <option value="">Select a location</option>
-                                    <option value="ab">AB Simple</option>
-                                    <option value="australia">Australia</option>
-                                    <option value="australia-australia">Australia</option>
-                                </select>
                             </div> -->
                             <div class="atbd_submit_btn">
                                 <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
                             </div>
                         </div>
-                    </form><!-- ends: .search_form -->
+                    </div><!-- ends: .search_form -->
+                
                 </div><!-- ends: .col-lg-10 -->
             </div>
         </div>
@@ -128,7 +131,9 @@
     --><br><br>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 eventsearchlist" style="display: none;">
+            </div>
+            <div class="col-md-12 eventlists" >
                 <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
                     <?php 
                     $Eventurl = base_url().'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;

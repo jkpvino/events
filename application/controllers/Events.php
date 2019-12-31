@@ -134,7 +134,11 @@ class Events extends CI_Controller{
             $vars['sympos'] = $this->event_model->get_symposium();
         }
         $vars['class'] = '';   
-        $this->load->template('events',$vars);
+        if($this->input->post('isAjax') == true){
+            echo json_encode($vars['sympos']);
+        }else{
+            $this->load->template('events',$vars);
+        }        
     }
     
     public function category($browse='',$limit='',$offset='')
