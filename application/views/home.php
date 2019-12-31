@@ -266,77 +266,106 @@
 <!-- end Academic Life, Campus Life, Newsletter -->
 
 
-
-<!-- Our Professors, Gallery -->
-<div class="block">
+<style type="text/css">
+.feature-list-wrapper .icon {
+    margin-right: 1.33333rem;
+}
+.feature-list-wrapper .icon span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 20rem;
+    font-size: 2rem;
+}
+.circle-secondary {
+    color: #903af9;
+    background: rgba(144, 58, 249, 0.1);
+}
+.circle-success {
+    color: #32cc6f;
+    background: rgba(50, 204, 111, 0.1);
+}
+.circle-primary {
+    color: #f5548e;
+    background: rgba(245, 84, 142, 0.1);
+}
+.feature-list-wrapper .list-content {
+    flex: 1;
+}
+.feature-list-wrapper .list-content h4 {
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2rem;
+}
+.feature-list-wrapper .list-content p {
+    line-height: 2.4rem;
+    margin: 0;
+    font-size: 1.4rem;
+}
+.feature-list-wrapper li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2.33333rem;
+}
+.la {
+    font: normal normal normal 16px/1 LineAwesome;
+    font-size: inherit;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}    
+</style>
+<section class="cta section-padding border-bottom">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4">
-                <section id="our-professors">
-                    <header>
-                        <h2>Our Professors</h2>
-                    </header>
-                    <div class="section-content">
-                        <div class="professors">
-                            <article class="professor-thumbnail">
-                                <figure class="professor-image"><a href="member-detail.html"><img src="<?php echo base_url() ?>assets/img/professor.jpg" alt=""></a></figure>
-                                <aside>
-                                    <header>
-                                        <a href="member-detail.html">Prof. Mathew Davis</a>
-                                        <div class="divider"></div>
-                                        <figure class="professor-description">Applied Science and Engineering</figure>
-                                    </header>
-                                    <a href="member-detail.html" class="show-profile">Show Profile</a>
-                                </aside>
-                            </article><!-- /.professor-thumbnail -->
-                            <article class="professor-thumbnail">
-                                <figure class="professor-image"><a href="member-detail.html"><img src="<?php echo base_url() ?>assets/img/professor-02.jpg" alt=""></a></figure>
-                                <aside>
-                                    <header>
-                                        <a href="member-detail.html">Prof. Jane Stairway</a>
-                                        <div class="divider"></div>
-                                        <figure class="professor-description">Applied Science and Engineering</figure>
-                                    </header>
-                                    <a href="member-detail.html" class="show-profile">Show Profile</a>
-                                </aside>
-                            </article><!-- /.professor-thumbnail -->
-                            <a href="" class="read-more stick-to-bottom">All Professors</a>
-                        </div><!-- /.professors -->
-                    </div><!-- /.section-content -->
-                </section><!-- /.our-professors -->
-            </div><!-- /.col-md-4 -->
+            <!-- <div class="col-md-12">
+                <div class="section-title">
+                    <h2>Why <span>Direo</span> for your Business?</h2>
+                    <p>Explore the popular listings around the world</p>
+                </div>
+            </div> -->
+            <div class="col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <img src="<?php echo base_url() ?>assets/img/illustration-1.svg" alt="" class="svg">
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 col-md-6 mt-5 mt-md-0">
+                        <ul class="feature-list-wrapper list-unstyled">
+                            <li>
+                                <div class="icon"><span class="circle-secondary"><i class="la la-check-circle"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Claim Listing</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="circle-success"><i class="la la-money"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Paid Listing</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="circle-primary"><i class="la la-line-chart"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Promote your Business</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                        </ul><!-- ends: .feature-list-wrapper -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- ends: .cta -->
 
-            <div class="col-md-8 col-sm-8">
-                <section id="gallery">
-                    <header>
-                        <h2>Gallery</h2>
-                    </header>
-                    <div class="section-content">
-                        <ul class="gallery-list">
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-01.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-02.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-03.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-04.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-05.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-06.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-07.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-08.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-09.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-10.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-11.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-12.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-13.jpg" alt=""></a></li>
-                            <li><a href="assets/img/gallery-big-image.jpg" class="image-popup"><img src="<?php echo base_url() ?>assets/img/image-14.jpg" alt=""></a></li>
-                        </ul>
-                        <a href="" class="read-more">Go to Gallery</a>
-                    </div><!-- /.section-content -->
-                </section><!-- /.gallery -->
-            </div><!-- /.col-md-4 -->
-
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</div>
-<!-- end Our Professors, Gallery -->
 
 <!-- Partners, Make a Donation -->
 <div class="block">
@@ -349,11 +378,11 @@
                     </header>
                     <div class="section-content">
                         <div class="logos">
-                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-01.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-02.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-03.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-04.png" alt=""></a></div>
-                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/logo-partner-05.png" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/hariniJewellers.jpg" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/hariniJewellers.jpg" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/hariniJewellers.jpg" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/hariniJewellers.jpg" alt=""></a></div>
+                            <div class="logo"><a href=""><img src="<?php echo base_url() ?>assets/img/hariniJewellers.jpg" alt=""></a></div>
                         </div>
                     </div>
                 </section>

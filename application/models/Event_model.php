@@ -12,6 +12,7 @@ class Event_model extends CI_Model {
             } 
             if(isset($like['browse'])){
             	$this->db->like('name', $like['browse']); 
+            	$this->db->like('institution', $like['browse']); 
             	$this->db->or_like('url_key', $like['browse']);
             	$this->db->or_like('event_from', $like['browse']);
             	$this->db->or_like('event_to', $like['browse']);
