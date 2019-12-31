@@ -7,7 +7,7 @@
     <div class="directory_content_area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
                         <h2 class="title">Find the Best Places to Be</h2>
                         <p class="sub_title">All the top locations – from restaurants and clubs, to galleries, famous places and more..</p>
@@ -138,9 +138,11 @@
     border-radius: 0.1875rem;
 }
 }
-
+.single_search_field.search_query {
+    flex: 2;
+}
 .directory_content_area .search_form .atbd_seach_fields_wrapper .single_search_field {
-    margin-right: 0.4rem;
+    margin-right: 1rem;
     flex: 2;
 }
 .directory_content_area .search_form .atbd_seach_fields_wrapper .single_search_field.search_category, .directory_content_area .search_form .atbd_seach_fields_wrapper .single_search_field.search_location {
@@ -151,6 +153,11 @@
 }
 .btn-gradient.btn-gradient-one {
     background: linear-gradient(to right, #f5548e, #903af9);
+    border: 0px solid;
+    padding: 10px 0;
+}
+.offset-lg-1 {
+    margin-left: 8.33333%;
 }
 .btn-gradient.btn-gradient-one:before {
     background: linear-gradient(to right, #903af9, #f5548e);
