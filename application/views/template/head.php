@@ -134,7 +134,7 @@ document.onreadystatechange = function () {
                             <a href="about-us.html">About Us</a>
                         </li>
                         <li>
-                            <a href="contact-us.html">Contact Us</a>
+                            <a href="javascript:void(0)"  data-toggle="modal" data-target="#contactus_form">Contact Us</a>
                         </li>                        
                         <li>
                             <a href="#" class="has-child no-link"> My Account </a>
