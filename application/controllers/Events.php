@@ -115,6 +115,7 @@ class Events extends CI_Controller{
     
     public function location($location='',$limit='',$offset='')
     { 
+        $vars['browse'] = $location;
         if($location){
             $searchData = array("location" => $location);
             $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
@@ -127,8 +128,9 @@ class Events extends CI_Controller{
     
     public function browse($browse='',$limit='',$offset='')
     { 
+        $vars['browse'] = $browse;
         if($browse){
-            $searchData = array("browse" => $browse);
+            $searchData = array("browse" => $browse);            
             $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
         }else{
             $vars['sympos'] = $this->event_model->get_symposium();
@@ -143,6 +145,7 @@ class Events extends CI_Controller{
     
     public function category($browse='',$limit='',$offset='')
     { 
+        $vars['browse'] = $browse;
         if($browse){
             $searchData = array("category" => $browse);
             $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);

@@ -15,7 +15,7 @@
                     <div class="search_form">
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
-                                <input class="form-control search_fields" onkeypress="searchevent(this)" type="text" placeholder="What are you looking for?">
+                                <input class="form-control search_fields" id="searchevent" value="<?php echo $browse; ?>" onkeypress="searchevent(this)" type="text" placeholder="What are you looking for?">
                             </div>
                             <!-- <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
@@ -36,7 +36,7 @@
                                 </select>
                             </div> -->
                             <div class="atbd_submit_btn">
-                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
+                                <button type="submit" onclick="redirectUrl('#searchevent','<?php echo base_url() ?>events/browse')" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
                             </div>
                         </div>
                     </div><!-- ends: .search_form -->

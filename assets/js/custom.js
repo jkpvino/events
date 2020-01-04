@@ -446,3 +446,11 @@ function searchevent(sel){
         jQuery(".eventlists").show();
     }
 }
+
+
+/* Event Search */
+function redirectUrl(id, url){
+    var suffix = jQuery(id).val();
+    console.log(suffix);
+    window.location.href = url+"/"+suffix;
+}
