@@ -2,7 +2,7 @@
 
 
 <section class="intro-wrapper bgimage overlay overlay--dark">
-    <div class="bg_image_holder" style="background-image: url('<?php echo base_url() ?>assets/img/intro.jpg'); opacity: 1;"><img src="<?php echo base_url() ?>assets/img/intro.jpg" alt=""></div>
+    <div class="bg_image_holder" style="background-image: url('<?php echo base_url() ?>assets/img/intro.jpg'); opacity: 0.3;"><img src="<?php echo base_url() ?>assets/img/intro.jpg" alt=""></div>
     
     <div class="directory_content_area">
         <div class="container">

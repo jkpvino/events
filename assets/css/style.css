@@ -4624,7 +4624,7 @@ section.banner-cover-image .cover-image-content {
     overflow: hidden;
 }
 .overlay.overlay--dark:before {
-    background: rgba(47, 38, 57, 0.8);
+    background: #000;
 }
 .overlay:before {
     position: absolute;
@@ -4634,9 +4634,7 @@ section.banner-cover-image .cover-image-content {
     left: 0;
     top: 0;
 }
-.bgimage:before {
-    z-index: 1;
-}
+
 .bg_image_holder {
     position: absolute;
     height: 100%;
@@ -4659,7 +4657,7 @@ section.banner-cover-image .cover-image-content {
     display: flex;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     padding-bottom: 4rem;
 }
 .directory_content_area .search_title_area {

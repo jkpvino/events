@@ -82,8 +82,8 @@ document.onreadystatechange = function () {
             <div class="navigation-contact pull-left">Call Us:  <span class="opacity-70">+91 8220466675</span></div>
             <div class="search">
                 <div class="input-group">
-                    <input type="search" class="form-control" name="search" placeholder="Search">
-                    <span class="input-group-btn"><button type="submit" id="search-submit" class="btn"><i class="fa fa-search"></i></button></span>
+                    <input type="search" class="form-control" name="search" id="headSearch" placeholder="Search">
+                    <span class="input-group-btn"><button id="search-submit" onclick="redirectUrl('#headSearch','<?php echo base_url() ?>events/browse')" class="btn"><i class="fa fa-search"></i></button></span>
                 </div><!-- /.input-group -->
             </div>
             <ul class="secondary-navigation list-unstyled">

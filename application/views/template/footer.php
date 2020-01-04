@@ -18,9 +18,9 @@
                 </div><!-- /.social -->
                 <div class="search pull-right">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" id="globalSearch" placeholder="Search">
                     <span class="input-group-btn">
-                        <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+                        <button type="submit"  onclick="redirectUrl('#globalSearch','<?php echo base_url() ?>events/browse')"  class="btn"><i class="fa fa-search"></i></button>
                     </span>
                     </div><!-- /input-group -->
                 </div><!-- /.pull-right -->
