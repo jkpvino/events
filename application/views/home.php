@@ -95,6 +95,53 @@
 
 
 
+
+
+<!-- <section class="cta section-padding border-bottom">
+    <div class="container">
+        <header>
+            <h2>About Universo</h2>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <img src="<?php echo base_url() ?>assets/img/illustration-1.svg" alt="" class="svg">
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 col-md-6 mt-5 mt-md-0">
+                        <ul class="feature-list-wrapper list-unstyled">
+                            <li>
+                                <div class="icon"><span class="circle-secondary"><i class="la la-check-circle"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Claim Listing</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="circle-success"><i class="la la-money"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Paid Listing</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><span class="circle-primary"><i class="la la-line-chart"></i></span></div>
+                                <div class="list-content">
+                                    <h4>Promote your Business</h4>
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+
 <!-- News, Events, About -->
 <div class="block">
     <div class="container">
@@ -102,7 +149,7 @@
             <div class="col-md-4 col-sm-6">
                 <section class="news-small" id="news-small">
                     <header>
-                        <h2>News</h2>
+                        <h2>Latest Events</h2>
                     </header>
                     <div class="section-content">
                         <article>
@@ -124,11 +171,10 @@
             <div class="col-md-4 col-sm-6">
                 <section class="events small" id="events-small">
                     <header>
-                        <h2>Events</h2>
-                        <a href="" class="link-calendar">Calendar</a>
+                        <h2>School Events</h2>
                     </header>
                     <div class="section-content">
-                    	<?php foreach ($sympos as $key => $value) { ?>
+                    	<?php foreach ($schoolEvents as $key => $value) { ?>
                         <article class="event nearest">
                             <figure class="date">
                                 <div class="month"><?php $date =date('F',strtotime($value->event_from)); echo substr($date, 0, 3); ?></div>
@@ -171,47 +217,6 @@
 
 
 
-<section class="cta section-padding border-bottom">
-    <div class="container">
-        <header>
-            <h2>About Universo</h2>
-        </header>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <img src="<?php echo base_url() ?>assets/img/illustration-1.svg" alt="" class="svg">
-                    </div>
-                    <div class="col-lg-5 offset-lg-1 col-md-6 mt-5 mt-md-0">
-                        <ul class="feature-list-wrapper list-unstyled">
-                            <li>
-                                <div class="icon"><span class="circle-secondary"><i class="la la-check-circle"></i></span></div>
-                                <div class="list-content">
-                                    <h4>Claim Listing</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon"><span class="circle-success"><i class="la la-money"></i></span></div>
-                                <div class="list-content">
-                                    <h4>Paid Listing</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon"><span class="circle-primary"><i class="la la-line-chart"></i></span></div>
-                                <div class="list-content">
-                                    <h4>Promote your Business</h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit.</p>
-                                </div>
-                            </li>
-                        </ul><!-- ends: .feature-list-wrapper -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- ends: .cta -->
 
 
 
@@ -225,109 +230,6 @@
 
 
 
-
-
-
-
-<!-- Testimonial -->
-<section id="testimonials">
-    <div class="block">
-        <div class="container">
-            <div class="author-carousel">
-                <div class="author">
-                    <blockquote>
-                        <figure class="author-picture"><img src="<?php echo base_url() ?>assets/img/student-testimonial.jpg" alt=""></figure>
-                        <article class="paragraph-wrapper">
-                            <div class="inner">
-                                <header>Morbi nec nisi ante. Quisque lacus ligula, iaculis in elit et, interdum semper quam. Fusce in interdum tortor.
-                                    Ut sollicitudin lectus dolor eget imperdiet libero pulvinar sit amet.</header>
-                                <footer>Claire Doe</footer>
-                            </div>
-                        </article>
-                    </blockquote>
-                </div><!-- /.author -->
-                <div class="author">
-                    <blockquote>
-                        <figure class="author-picture"><img src="<?php echo base_url() ?>assets/img/student-testimonial.jpg" alt=""></figure>
-                        <article class="paragraph-wrapper">
-                            <div class="inner">
-                                <header>Morbi nec nisi ante. Quisque lacus ligula, iaculis in elit et, interdum semper quam. Fusce in interdum tortor.
-                                    Ut sollicitudin lectus dolor eget imperdiet libero pulvinar sit amet.</header>
-                                <footer>Claire Doe</footer>
-                            </div>
-                        </article>
-                    </blockquote>
-                </div><!-- /.author -->
-            </div><!-- /.author-carousel -->
-        </div><!-- /.container -->
-    </div><!-- /.block -->
-</section>
-<!-- end Testimonial -->
-
-<!-- Academic Life, Campus Life, Newsletter -->
-<div class="block">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-4">
-                <section id="academic-life">
-                    <header>
-                        <h2>Academic Life & Research</h2>
-                    </header>
-                    <div class="section-content">
-                        <ul class="list-links">
-                            <li><a href="#">Programs and Areas</a></li>
-                            <li><a href="#">Research</a></li>
-                            <li><a href="#">Graduate & Postdoctoral Programs</a></li>
-                            <li><a href="#">Continuing Studies</a></li>
-                            <li><a href="#">International Activities</a></li>
-                            <li><a href="#">Course Calendars & Listings</a></li>
-                        </ul>
-                    </div><!-- /.section-content -->
-                </section><!-- /.academic-life -->
-            </div><!-- /.col-md-4 -->
-
-            <div class="col-md-4 col-sm-4">
-                <section id="campus-life">
-                    <header>
-                        <h2>Campus Life</h2>
-                    </header>
-                    <div class="section-content">
-                        <ul class="list-links">
-                            <li><a href="#">Athletics & Recreation</a></li>
-                            <li><a href="#">Clubs & Extra-curricular Activities</a></li>
-                            <li><a href="#">Health & Wellness</a></li>
-                            <li><a href="#">Housing & Residence</a></li>
-                            <li><a href="#">Arts & Culture</a></li>
-                            <li><a href="#">Student IT Services</a></li>
-                        </ul>
-                    </div><!-- /.section-content -->
-                </section><!-- /.campus-life -->
-            </div><!-- /.col-md-4 -->
-
-            <div class="col-md-4 col-sm-4">
-                <section id="newsletter">
-                    <header>
-                        <h2>Newsletter</h2>
-                        <div class="section-content">
-                            <div class="newsletter">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Your e-mail">
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn"><i class="fa fa-angle-right"></i></button>
-                                    </span>
-                                </div><!-- /input-group -->
-                            </div><!-- /.newsletter -->
-                            <p class="opacity-50">Ut tincidunt, quam in tincidunt vestibulum, turpis ipsum porttitor nisi, et fermentum augue
-                                lit eu neque. In at tempor dolor, sit amet dictum lacus. Praesent porta orci eget laoreet ultrices.
-                            </p>
-                        </div><!-- /.section-content -->
-                    </header>
-                </section><!-- /.newsletter -->
-            </div><!-- /.col-md-4 -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</div>
-<!-- end Academic Life, Campus Life, Newsletter -->
 
 <!-- Partners, Make a Donation -->
 <div class="block">

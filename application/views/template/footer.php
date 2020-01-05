@@ -1,7 +1,3 @@
-
-<?php //print_r(getSymposium()) ?>
-
-
 <!-- Footer -->
 <footer id="page-footer">
     <section id="footer-top">
