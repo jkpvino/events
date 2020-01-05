@@ -146,7 +146,7 @@
 <div class="block">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-6">
+            <!-- <div class="col-md-4 col-sm-6">
                 <section class="news-small" id="news-small">
                     <header>
                         <h2>Latest Events</h2>
@@ -155,43 +155,67 @@
                         <article>
                             <figure class="date"><i class="fa fa-file-o"></i>08-24-2014</figure>
                             <header><a href="#">U-M School of Public Health, Detroit partners aim to improve air quality in the city</a></header>
-                        </article><!-- /article -->
+                        </article>
                         <article>
                             <figure class="date"><i class="fa fa-file-o"></i>08-24-2014</figure>
                             <header><a href="#">At 50, Center for the Education of Women celebrates a wider mission</a></header>
-                        </article><!-- /article -->
+                        </article>
                         <article>
                             <figure class="date"><i class="fa fa-file-o"></i>08-24-2014</figure>
                             <header><a href="#">Three U-Michigan scientists receive Sloan fellowships</a></header>
-                        </article><!-- /article -->
-                    </div><!-- /.section-content -->
+                        </article>
+                    </div>
                     <a href="" class="read-more stick-to-bottom">All News</a>
-                </section><!-- /.news-small -->
-            </div><!-- /.col-md-4 -->
+                </section>
+            </div> -->
             <div class="col-md-4 col-sm-6">
                 <section class="events small" id="events-small">
                     <header>
                         <h2>School Events</h2>
                     </header>
                     <div class="section-content">
-                    	<?php foreach ($schoolEvents as $key => $value) { ?>
+                        <?php foreach ($schoolEvents as $key => $schoolevent) { ?>
                         <article class="event nearest">
                             <figure class="date">
-                                <div class="month"><?php $date =date('F',strtotime($value->event_from)); echo substr($date, 0, 3); ?></div>
-                                <div class="day"><?php echo date('d',strtotime($value->event_from)); ?></div>
+                                <div class="month"><?php $date =date('F',strtotime($schoolevent->event_from)); echo substr($date, 0, 3); ?></div>
+                                <div class="day"><?php echo date('d',strtotime($schoolevent->event_from)); ?></div>
                             </figure>
                             <aside>
                                 <header>
-                                    <a href="event-detail.html"><?php //echo substr($value->description, 0, 80); ?>...</a>
+                                    <a href=""> <?php echo $schoolevent->name; ?> </a>
                                 </header>
-                                <div class="additional-info"><?php echo $value->name; ?></div>
+                                <div class="additional-info"><?php echo substr($schoolevent->institution, 0, 80); ?>...</div>
                             </aside>
-                        </article><!-- /article -->
+                        </article>
                         <?php } ?>
                        
-                    </div><!-- /.section-content -->
-                </section><!-- /.events-small -->
-            </div><!-- /.col-md-4 -->
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <section class="events small" id="events-small">
+                    <header>
+                        <h2>College Events</h2>
+                    </header>
+                    <div class="section-content">
+                    	<?php foreach ($collegeEvents as $key => $collegeEvent) { ?>
+                        <article class="event nearest">
+                            <figure class="date">
+                                <div class="month"><?php $date =date('F',strtotime($collegeEvent->event_from)); echo substr($date, 0, 3); ?></div>
+                                <div class="day"><?php echo date('d',strtotime($collegeEvent->event_from)); ?></div>
+                            </figure>
+                            <aside>
+                                <header>
+                                    <a href=""> <?php echo $collegeEvent->name; ?> </a>
+                                </header>
+                                <div class="additional-info"><?php echo substr($collegeEvent->institution, 0, 80); ?>...</div>
+                            </aside>
+                        </article>
+                        <?php } ?>
+                       
+                    </div>
+                </section>
+            </div>
             <div class="col-md-4 col-sm-12">
                 <section id="about">
                     <header>
@@ -202,6 +226,7 @@
                         <p><strong>Welcome o Universo.</strong> Premium HTML Template for schools, universieties and other educational institutes.
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet semper tincidunt.
                             Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        <br>
                         <a href="" class="read-more stick-to-bottom">Read More</a>
                     </div><!-- /.section-content -->
                 </section><!-- /.about -->
