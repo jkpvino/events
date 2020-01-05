@@ -178,3 +178,7 @@ create or replace view searchevents as SELECT sys.id as id,sys.name as name,ins.
 
 SELECT sys.id as id,sys.name as name,ins.name as institution, sys.status as status, banner, url_key, event_from, event_to, sys.address, country.name as country, state.name as state, city.name as city, etype.name as etypename, etype.category as etypecategory FROM `symposium` as sys inner join institution as ins on sys.institution_id = ins.id LEFT JOIN event_type as etype on etype.id = sys.event_type LEFT JOIN countries as country ON ins.country = country.iso2 LEFT JOIN states as state ON ins.state = state.iso2 LEFT JOIN cities as city ON ins.city = city.id WHERE state.country_code = country.iso2
 
+
+
+
+CREATE TABLE `events`.`contact_us` ( `id` INT NOT NULL AUTO_INCREMENT , `fullname` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `phone` VARCHAR(255) NULL , `message` TEXT NULL , `status` ENUM('10','20','30','') NOT NULL DEFAULT '30' COMMENT '10 => Completed, 20 => Inprogress, 30 => Pending' , PRIMARY KEY (`id`)) ENGINE = InnoDB;

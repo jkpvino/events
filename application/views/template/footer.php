@@ -93,6 +93,9 @@
 </footer>
 <!-- end Footer -->
 
+
+
+<?php include("contact_us.php") ?>    
 </div>
 <!-- end Wrapper -->
 <script type="text/javascript">var base_url = '<?php echo base_url(); ?>'; </script>
@@ -287,7 +290,5 @@ function getCities(stateId){
 <!--  ShareThis BEGIN -->
 <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5dd0d63912574600123b54c5&product=sticky-share-buttons"></script>
     
-
-<?php include("contact_us.php") ?>    
 </body>
 </html>

@@ -19,6 +19,28 @@ class Index extends CI_Controller{
         $this->load->template('home',$vars);
     }
 
+    public function savecontact(){
+        $this->load->model('user_model');
+        if($this->input->post('email')){
+            $contactInfo = array(
+                'fullname' => $this->input->post('fullname'),
+                'email' => $this->input->post('email'),
+                'phone' => $this->input->post('phone'),
+                'message' => $this->input->post('message'),
+                'status' => '30'
+            );
+            $table = 'contact_us';
+            $contactId = $this->user_model->savecontact($table,$contactInfo);  
+            if($contactId){
+                $response = array("status" => true, "data" => $contactId );
+            }else{
+                $response = array("status" => false, "data" => "" );
+            }
+        }else{
+            $response = array("status" => false, "data" => "" );
+        }
+        echo json_encode($response);
+    }
    
     public function newevent(){        
         $vars['class'] = '';

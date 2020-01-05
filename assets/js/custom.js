@@ -1,3 +1,35 @@
+
+
+/* CONTACTUS */
+$("#contact-submit").bind("click", function(event){ 
+    $("#contact_us_form").validate({
+        rules: {
+            fullname: {
+                required: true,
+            },
+            phone: {
+                required: true,
+            },
+            message: {
+                required: true,
+            },
+            email: {
+                required: true,
+                email : true
+            }
+        },
+        submitHandler: function() {
+            $.post(base_url+"index/savecontact", $("#contact_us_form").serialize(),  function(res) {                              
+                var data = JSON.parse(res); 
+                if(data.status == true){
+                    jQuery(".contact-content").hide();
+                    jQuery(".smilebox").show();
+                }
+            });
+        }
+    });   
+});
+
 var _days = 'Days';
 var _hours = 'Hours';
 var _minutes = 'Minutes';
@@ -454,3 +486,5 @@ function redirectUrl(id, url){
     console.log(suffix);
     window.location.href = url+"/"+suffix;
 }
+
+

@@ -110,4 +110,10 @@ class User_model extends CI_Model {
             }
         }
 
+        public function saveContact($table,$data){
+            $this->db->insert($table, $data);
+            $insert_id = $this->db->insert_id();
+            return  $insert_id; 
+        }
+
 }

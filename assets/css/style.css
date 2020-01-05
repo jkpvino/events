@@ -4853,3 +4853,14 @@ section.banner-cover-image .cover-image-content {
     color: #fff;
       opacity: 0.6;
   }
+
+.smilenav {
+    text-align: center;
+    padding: 10px;
+}
+.smilecont p.thanks {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 10px 0;
+}
