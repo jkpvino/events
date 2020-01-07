@@ -21,6 +21,30 @@ class Account extends API_Controller {
         );
         $userid  = $this->user_model->saveNotExistsSubscribe('subscribers',$data);
         if($userid){
+
+        $this->load->library('email');
+        $fromemail=SENDER_EMAIL;
+        $toemail = $data['email'];
+        $subject = "Meetup - Subscription ";
+       // $data=array('email'=>$toemail,'password'=>$random,'name'=>$name);
+        $mesg = $this->load->view('email/subscribe',$data,true);
+//exit;
+
+        $config=array(
+          'charset'=>'utf-8',
+          'wordwrap'=> TRUE,
+          'mailtype' => 'html'
+        );
+
+        $this->email->initialize($config);
+
+        $this->email->to($toemail);
+        $this->email->from($fromemail, "Meetup");
+        $this->email->subject($subject);
+        $this->email->message($mesg);
+        $mail = $this->email->send();
+
+
             $response = array('status' => true, "message" => "You have Subscibed successfully");
         }else{
             $response = array('status' => false, "message" => "You have Already Subscibed");
@@ -94,7 +118,7 @@ class Account extends API_Controller {
         $this->email->initialize($config);
 
         $this->email->to($toemail);
-        $this->email->from($fromemail, "Title");
+        $this->email->from($fromemail, "Meetup");
         $this->email->subject($subject);
         $this->email->message($mesg);
         $mail = $this->email->send();
@@ -157,11 +181,11 @@ class Account extends API_Controller {
          $vars['validation_msg'] = '';
          $this->load->template('register',$vars); 
       }else{
-
+        $random = $this->getRandomPassword();
         $user = array(
             'email' => $this->input->post('email'),
             'phone_no' => $this->input->post('phone_no'),
-            'password' => md5($this->getRandomPassword())
+            'password' => md5($random)
         );
         $userid  = $this->user_model->insert('users',$user);
         $users_info =  array(
@@ -171,13 +195,36 @@ class Account extends API_Controller {
             'user_id'=>$userid         
 
         );
-        $insertId = $this->user_model->insert('user_info',$users_info);
-        if($insertId){
+        //$insertId = $this->user_model->insert('user_info',$users_info);
+        //if($insertId){
+
+           $this->load->library('email');
+        $fromemail=SENDER_EMAIL;
+        $toemail = $email;
+        $subject = "Meetup - Your password ";
+        $data=array('email'=>$toemail,'password'=>$random,'name'=>$users_info['firstname']);
+        $mesg = $this->load->view('email/register',$data,true);
+//exit;
+
+        $config=array(
+          'charset'=>'utf-8',
+          'wordwrap'=> TRUE,
+          'mailtype' => 'html'
+        );
+
+        $this->email->initialize($config);
+
+        $this->email->to($toemail);
+        $this->email->from($fromemail, "Meetup");
+        $this->email->subject($subject);
+        $this->email->message($mesg);
+        $mail = $this->email->send();
+
           $response = array(
             'status' => true,
             'message' => "We appreciate your registration to Cognizant. <br> System will generate the new password and will send across to your Email ID."
           );
-        }
+       // }
          $vars['validation_msg'] = 'Your account has been created';
           $this->session->set_flashdata('msg', 'Account created successfully');
          redirect('/index');
