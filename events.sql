@@ -182,3 +182,9 @@ SELECT sys.id as id,sys.name as name,ins.name as institution, sys.status as stat
 
 
 CREATE TABLE `events`.`contact_us` ( `id` INT NOT NULL AUTO_INCREMENT , `fullname` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `phone` VARCHAR(255) NULL , `message` TEXT NULL , `status` ENUM('10','20','30','') NOT NULL DEFAULT '30' COMMENT '10 => Completed, 20 => Inprogress, 30 => Pending' , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+
+CREATE TABLE `hsm_admin` ( `id` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(255) NOT NULL , `password` TEXT NOT NULL , `status` ENUM('1') NOT NULL DEFAULT '1' , `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `hsm_admin` (`id`, `username`, `password`, `status`, `created_at`) VALUES (NULL, 'vinothkumar@gmail.com', MD5('admin123'), '1', current_timestamp());
+

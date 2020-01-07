@@ -95,8 +95,6 @@
 
 
 
-
-
 <!-- <section class="cta section-padding border-bottom">
     <div class="container">
         <header>
@@ -236,6 +234,123 @@
 </div>
 <!-- end News, Events, About -->
 
+
+
+
+    <section id="latest-courses">
+        <div class="block">
+            <div class="container">
+                <!-- <header><h2>Latest Courses</h2></header> -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="latest-course">
+                            <figure class="image">
+                                <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/img/course-01.jpg"></a></div>
+                            </figure>
+                            <aside class="description">
+                                <a href="course-detail-v1.html"><h4>Neuroscience for the Beginners: Complete Course</h4></a>
+                                <!--<a href="#" class="course-category">Science</a>-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et urna fringilla</p>
+                                <div class="course-meta">
+                                    <span class="course-date"><i class="fa fa-calendar-o"></i>01-03-2014</span>
+                                    <span class="course-length"><i class="fa fa-clock-o"></i>3 months</span>
+                                </div>
+                            </aside>
+                            <hr>
+                        </div><!-- /.latest-course -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4">
+                        <div class="latest-course">
+                            <figure class="image">
+                                <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/img/course-02.jpg"></a></div>
+                            </figure>
+                            <aside class="description">
+                                <a href="course-detail-v1.html"><h4>Architecture Photography: Power of Light and Shadows</h4></a>
+                                <!--<a href="#" class="course-category">Science</a>-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et urna fringilla</p>
+                                <div class="course-meta">
+                                    <span class="course-date"><i class="fa fa-calendar-o"></i>01-03-2014</span>
+                                    <span class="course-length"><i class="fa fa-clock-o"></i>8 lessons</span>
+                                </div>
+                            </aside>
+                            <hr>
+                        </div><!-- /.latest-course -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4">
+                        <div class="latest-course">
+                            <figure class="image">
+                                <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/img/course-03.jpg"></a></div>
+                            </figure>
+                            <aside class="description">
+                                <a href="course-detail-v1.html"><h4>Character Drawing: Basic and Advanced Principles</h4></a>
+                                <!--<a href="#" class="course-category">Science</a>-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et urna fringilla</p>
+                                <div class="course-meta">
+                                    <span class="course-date"><i class="fa fa-calendar-o"></i>01-03-2014</span>
+                                    <span class="course-length"><i class="fa fa-clock-o"></i>8 lessons</span>
+                                </div>
+                            </aside>
+                            <hr>
+                        </div><!-- /.latest-course -->
+                    </div><!-- /.col-md-4 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="latest-course">
+                            <figure class="image">
+                                <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/img/course-04.jpg"></a></div>
+                            </figure>
+                            <aside class="description">
+                                <a href="course-detail-v1.html"><h4>Introduction to modo 701</h4></a>
+                                <!--<a href="#" class="course-category">Science</a>-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et urna fringilla</p>
+                                <div class="course-meta">
+                                    <span class="course-date"><i class="fa fa-calendar-o"></i>01-03-2014</span>
+                                    <span class="course-length"><i class="fa fa-clock-o"></i>3 months</span>
+                                </div>
+                            </aside>
+                            <hr>
+                        </div><!-- /.latest-course -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4">
+                        <div class="latest-course">
+                            <figure class="image">
+                                <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/img/course-01.jpg"></a></div>
+                            </figure>
+                            <aside class="description">
+                                <a href="course-detail-v1.html"><h4>Become self marketer</h4></a>
+                                <!--<a href="#" class="course-category">Science</a>-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et urna fringilla</p>
+                                <div class="course-meta">
+                                    <span class="course-date"><i class="fa fa-calendar-o"></i>01-03-2014</span>
+                                    <span class="course-length"><i class="fa fa-clock-o"></i>8 lessons</span>
+                                </div>
+                            </aside>
+                            <hr>
+                        </div><!-- /.latest-course -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4">
+                        <div class="latest-course">
+                            <figure class="image">
+                                <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/img/course-02.jpg"></a></div>
+                            </figure>
+                            <aside class="description">
+                                <a href="course-detail-v1.html"><h4>History in complex view</h4></a>
+                                <!--<a href="#" class="course-category">Science</a>-->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et urna fringilla</p>
+                                <div class="course-meta">
+                                    <span class="course-date"><i class="fa fa-calendar-o"></i>01-03-2014</span>
+                                    <span class="course-length"><i class="fa fa-clock-o"></i>8 lessons</span>
+                                </div>
+                            </aside>
+                            <hr>
+                        </div><!-- /.latest-course -->
+                    </div><!-- /.col-md-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.block -->
+    </section>
+    <!-- /#latest-courses -->
 
 
 
