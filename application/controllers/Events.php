@@ -351,68 +351,65 @@ class Events extends CI_Controller{
         if(end($this->uri->segments) != $this->router->fetch_method()){
             $urlKey = end($this->uri->segments);
             $symInfo = $this->event_model->getSymposiumInfoByUrlKey($urlKey);
-            if (isset($symInfo->id)) {
+            $userData = $this->session->userdata('logged_in');
+            if (isset($symInfo->id) && isset($symInfo->user_id)) {
+            	if($symInfo->user_id == $userData['logid']){
+            		$eventType = $symInfo->event_type;
+	                if($eventType){
+	                    $eventTypeInfo = $this->event_model->getEventType($eventType);
+	                    $programCategory = $eventTypeInfo->category_code;
+	                    $programType = $eventTypeInfo->name_code;
+	                }
+	                $programTab = array(
+	                    'event_id' => $symInfo->id, 
+	                    'program_name' => $symInfo->name, 
+	                    'program_start' => $symInfo->event_from, 
+	                    'program_end' => $symInfo->event_to, 
+	                    'program_description' => $symInfo->description, 
+	                    'address' => $symInfo->address, 
+	                    'contact_info' => $symInfo->contact_info, 
+	                    'program_category' => $programCategory, 
+	                    'program_type' => $programType, 
+	                    'gmap_location' => $symInfo->gmap_location, 
+	                    'program_website' => $symInfo->website, 
+	                    'online_booking' => 0, 
+	                    'allowed_users' => $symInfo->allowed_users, 
+	                    'logo' => $symInfo->logo, 
+	                    'banner' => $symInfo->banner, 
+	                );
+	                if($symInfo->allowed_users > 0){
+	                    $programTab['online_booking'] = 1;
+	                }
+	                $vars['event_type'] = $this->event_model->getEventTypeByCategory($programCategory);
 
-                $eventType = $symInfo->event_type;
-                if($eventType){
-                    $eventTypeInfo = $this->event_model->getEventType($eventType);
-                    $programCategory = $eventTypeInfo->category_code;
-                    $programType = $eventTypeInfo->name_code;
-                }
-                $programTab = array(
-                    'event_id' => $symInfo->id, 
-                    'program_name' => $symInfo->name, 
-                    'program_start' => $symInfo->event_from, 
-                    'program_end' => $symInfo->event_to, 
-                    'program_description' => $symInfo->description, 
-                    'address' => $symInfo->address, 
-                    'contact_info' => $symInfo->contact_info, 
-                    'program_category' => $programCategory, 
-                    'program_type' => $programType, 
-                    'gmap_location' => $symInfo->gmap_location, 
-                    'program_website' => $symInfo->website, 
-                    'online_booking' => 0, 
-                    'allowed_users' => $symInfo->allowed_users, 
-                    'logo' => $symInfo->logo, 
-                    'banner' => $symInfo->banner, 
-                );
-                if($symInfo->allowed_users > 0){
-                    $programTab['online_booking'] = 1;
-                }
-                $vars['event_type'] = $this->event_model->getEventTypeByCategory($programCategory);
-
-                if (isset($symInfo->institution_id)) {
-                    $institutionInfo = $this->event_model->getInstitution($symInfo->institution_id);
-                    $institutionTab = array(
-                        'institution_id' => $institutionInfo->id, 
-                        'name' => $institutionInfo->name, 
-                        'institution_category' => $institutionInfo->institution_category, 
-                        'website_url' => $institutionInfo->website_url, 
-                        'description' => $institutionInfo->description, 
-                        'country' => $institutionInfo->country, 
-                        'state' => $institutionInfo->state, 
-                        'city' => $institutionInfo->city, 
-                        'postal_code' => $institutionInfo->postal_code, 
-                        'address' => $institutionInfo->address, 
-                        'facebook' => $institutionInfo->facebook, 
-                        'google' => $institutionInfo->google, 
-                        'twitter' => $institutionInfo->twitter, 
-                        'linkedin' => $institutionInfo->linkedin, 
-                    );                    
-                    if($institutionInfo->country){
-                        $vars['states'] = $this->event_model->getStates($institutionInfo->country);
-                    }
-                    if($institutionInfo->country && $institutionInfo->state){
-                        $vars['cities'] = $this->event_model->getCities($institutionInfo->state,$institutionInfo->country);
-                    }
-                }
-                
-                
-                //SUB EVENTS
-                $vars['sub_events'] = $this->event_model->getSubEventsBySymId($symInfo->id);
-
-
-                
+	                if (isset($symInfo->institution_id)) {
+	                    $institutionInfo = $this->event_model->getInstitution($symInfo->institution_id);
+	                    $institutionTab = array(
+	                        'institution_id' => $institutionInfo->id, 
+	                        'name' => $institutionInfo->name, 
+	                        'institution_category' => $institutionInfo->institution_category, 
+	                        'website_url' => $institutionInfo->website_url, 
+	                        'description' => $institutionInfo->description, 
+	                        'country' => $institutionInfo->country, 
+	                        'state' => $institutionInfo->state, 
+	                        'city' => $institutionInfo->city, 
+	                        'postal_code' => $institutionInfo->postal_code, 
+	                        'address' => $institutionInfo->address, 
+	                        'facebook' => $institutionInfo->facebook, 
+	                        'google' => $institutionInfo->google, 
+	                        'twitter' => $institutionInfo->twitter, 
+	                        'linkedin' => $institutionInfo->linkedin, 
+	                    );                    
+	                    if($institutionInfo->country){
+	                        $vars['states'] = $this->event_model->getStates($institutionInfo->country);
+	                    }
+	                    if($institutionInfo->country && $institutionInfo->state){
+	                        $vars['cities'] = $this->event_model->getCities($institutionInfo->state,$institutionInfo->country);
+	                    }
+	                }	                
+	                //SUB EVENTS
+	                $vars['sub_events'] = $this->event_model->getSubEventsBySymId($symInfo->id);
+            	}                
             }            
         }
 

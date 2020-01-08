@@ -77,7 +77,8 @@ class User_model extends CI_Model {
             $query = $this->db->get('userview');
             //echo $this->db->last_query();exit;
                 if ($query->num_rows() == 1){
-                     return true;
+                    return $query->row()->id;
+                    // return true;
                 }
                 else{
                         return false;
