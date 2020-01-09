@@ -30,12 +30,16 @@ class Event_model extends CI_Model {
             if ($limit) {
                 $this->db->limit($limit);
             }
+            if($offset){
+                $this->db->offset($offset);
+            }
             $query = $this->db->get_where('searchevents', array('status' => '10'));
             if($orderby){
                 $this->db->order_by("id", $orderby);
             }else{
                 $this->db->order_by("id", "desc");
-            }            echo $this->db->last_query();
+            }            
+            echo $this->db->last_query(); echo "<br>";
             return $query->result();
         }
         public function getSymposiumInfoById($id,$limit=1,$offset=0)
