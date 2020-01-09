@@ -39,7 +39,7 @@ class Event_model extends CI_Model {
             }else{
                 $this->db->order_by("id", "desc");
             }            
-            echo $this->db->last_query(); echo "<br>";
+            //echo $this->db->last_query(); echo "<br>";
             return $query->result();
         }
         public function getSymposiumInfoById($id,$limit=1,$offset=0)
