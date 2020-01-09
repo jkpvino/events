@@ -27,8 +27,8 @@ class Event_model extends CI_Model {
             	$this->db->like('etypename', $like['category']); 
             	$this->db->or_like('etypecategory', $like['category']);
             }           
-            if ($limit && $offset) {
-                $this->db->limit($offset, $limit);
+            if ($limit) {
+                $this->db->limit($limit);
             }
             $query = $this->db->get_where('searchevents', array('status' => '10'));
             if($orderby){
