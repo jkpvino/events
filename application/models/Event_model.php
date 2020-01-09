@@ -3,7 +3,7 @@
 class Event_model extends CI_Model {
 
 
-        public function get_symposium($like = array(), $limit = '', $offset = '')
+        public function get_symposium($like = array(), $limit = '', $offset = '', $orderby = '')
         {
             if(isset($like['location'])){
             	$this->db->like('country', $like['location']); 
@@ -28,11 +28,14 @@ class Event_model extends CI_Model {
             	$this->db->or_like('etypecategory', $like['category']);
             }           
             if ($limit && $offset) {
-                $query = $this->db->get_where('searchevents', array('status' => '10'),$limit, $offset);
-            }else{
-                $query = $this->db->get_where('searchevents', array('status' => '10'));
+                $this->db->limit($offset, $limit);
             }
-            //echo $this->db->last_query();
+            $query = $this->db->get_where('searchevents', array('status' => '10'));
+            if($orderby){
+                $this->db->order_by("id", $orderby);
+            }else{
+                $this->db->order_by("id", "desc");
+            }            echo $this->db->last_query();
             return $query->result();
         }
         public function getSymposiumInfoById($id,$limit=1,$offset=0)
