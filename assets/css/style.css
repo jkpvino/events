@@ -4864,3 +4864,17 @@ section.banner-cover-image .cover-image-content {
     text-align: center;
     margin: 10px 0;
 }
+
+
+/* No Results Found */
+.no_results_found {
+  text-align: center;
+  font-weight: 600;
+}
+.no_results_found h4 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.no_results_found img {
+    margin-bottom: 30px;
+}
