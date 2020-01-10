@@ -1,6 +1,4 @@
 <?php include("notification-popup.php") ?>
-
-
 <!-- Page Content -->
 <div id="page-content">
 <!-- Slider -->
@@ -245,15 +243,28 @@
                     <?php foreach ($latestevents as $key => $latestevent) { ?>
                         <div class="col-md-4">
                             <div class="latest-course">
-                                <figure class="image">
-                                    <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $latestevent->banner ?>"></a></div>
-                                </figure>
+                                <?php $filename =  base_url().'assets/images/logo/'.$latestevent->banner; $file_headers = @get_headers($filename); ?>
+                                <?php if($file_headers[0] == 'HTTP/1.0 404 Not Found'){ ?>
+                                    <figure class="date thumb">
+                                        <div class="month">Dec</div>
+                                        <div class="day"><?php echo date('d', strtotime($latestevent->event_from)) ?></div>
+                                    </figure>
+                                <?php } elseif ($file_headers[0] == 'HTTP/1.0 302 Found' && $file_headers[7] == 'HTTP/1.0 404 Not Found'){ ?>                                    
+                                    <figure class="date thumb">
+                                        <div class="month">Dec</div>
+                                        <div class="day"><?php echo date('d', strtotime($latestevent->event_from)) ?></div>
+                                    </figure>
+                                <?php }else{ ?> 
+                                    <figure class="image">
+                                        <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $latestevent->banner ?>"></a></div>
+                                    </figure>
+                                <?php } ?>                                
                                 <aside class="description">
-                                    <a href="course-detail-v1.html"><h4><?php echo $latestevent->name ?></h4></a>
+                                    <a href="course-detail-v1.html"><h4><?php echo (strlen($latestevent->name) > 25) ? substr($latestevent->name,0,25).'...' : $latestevent->name; ?></h4></a>
                                     <p> <?php echo $latestevent->institution ?> </p>
                                     <p> <?php echo $latestevent->country ?>, <?php echo $latestevent->state ?>, <?php echo $latestevent->city ?> </p>
                                     <div class="course-meta">
-                                        <span class="course-date"><i class="fa fa-calendar-o"></i>01-03-2014</span>
+                                        <span class="course-date"><i class="fa fa-calendar-o"></i><?php echo $latestevent->event_from ?></span>
                                         <span class="course-length"><i class="fa fa-clock-o"></i>3 months</span>
                                     </div>
                                 </aside>
