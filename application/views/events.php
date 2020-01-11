@@ -130,44 +130,7 @@
     </div>
     --><br><br>
     <div class="container">
-        <div class="row">
-            <!-- <div class="col-md-12 eventsearchlist" style="display: none;">
-            </div>
-            <div class="col-md-12 eventlists" >
-            <?php if(count($sympos) > 0){ ?> 
-
-                <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
-                    <?php 
-                    $Eventurl = base_url().'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;
-                    if($i % 3 == 0){ ?> <div class="row"> <?php } ?>
-                        <div class="col-md-4 ">
-                            <div class="col-md-12 lgx-single-news">
-                                <figure >
-                                    <a href="<?php echo $Eventurl; ?>">
-                                        <img src="<?php echo base_url() ?>assets/images/banner/<?php echo $symposium->banner ?>" alt="<?php echo $symposium->name ?>" title="<?php echo $symposium->url_key ?>" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block;">                                    
-                                    </a>
-                                </figure>
-                                <div class="single-news-info">
-                                    <h3 class="title">
-                                        <a href="<?php echo $Eventurl; ?>"><?php echo (strlen($symposium->name) > 25) ? substr($symposium->name,0,25).'...' : $symposium->name; ?></a>
-                                    </h3>
-                                    <div class="meta-wrapper">
-                                        <span><i class="fa fa-calendar" aria-hidden="true"></i> <?php echo date("dS F Y", strtotime($symposium->event_from)); ?> </span>  
-                                        <br>
-                                        <a href="javascript:void(0)"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $symposium->institution; ?>, <?php echo $symposium->city.', '.$symposium->state.', '.$symposium->country ?></span> </a>
-                                    </div>
-                                    <h5 class="mb-2"><?php echo $symposium->etypename ?></h5>
-                                    <hr class="m-0">
-                                    <a href="<?php echo $Eventurl; ?>">
-                                        <h5 class="text-right mb-0 mt-2"> Readmore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>  
-                    <?php if($i % 3 == 0){ ?> </div> <?php } ?> 
-
-                <?php $i++; }  ?>                
-            </div> -->
+        
 
     <div ng-app='myApp' ng-controller='DemoController'>
         <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
@@ -195,28 +158,14 @@
                                     <h5 class="text-right mb-0 mt-2"> Readmore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
                                 </a>
                             </div>
-                        </div>
-                 
+                        </div>                 
                 </div> 
-
-                <?php $i++; }  ?> 
-                <?php }else{ ?>
-                    <div class="no_results_found">
-                        <h4> Nothing exists here </h4>
-                        <p> We couldn't find any results for your search. Try clearing some filters and try again. </p>
-                        <img src="<?php echo base_url().'assets/img/noresultsfound.png' ?>">
-                        <br/>
-                    </div>
-                <?php } ?>               
-
             </div>
             <div ng-show='reddit.loader'>Loading data...</div>
         </div>
     </div>
 
 
-
-        </div>
     </div><!-- /.container -->
 </div>
 <!-- end Page Content -->
