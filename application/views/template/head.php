@@ -88,7 +88,7 @@ document.onreadystatechange = function () {
             </div>
             <ul class="secondary-navigation list-unstyled">
                 <li><a href="<?php echo base_url().'events/createevent' ?>">Create Event</a></li>
-                <li><a href="<?php echo base_url().'events/createevent' ?>">Browse Event</a></li>
+                <li><a href="<?php echo base_url().'events/browse' ?>">Browse Event</a></li>
                 
             </ul>
         </div>

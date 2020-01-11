@@ -233,49 +233,8 @@
                     <input type="hidden" id="institution_tab" name="institution_tab" value="1">
                     <input type="hidden" id="institution_id" name="institution_id" value="<?php echo $institutionTab['institution_id']; ?>">                    
                     <input type="hidden" class="event_id" name="event_id"  value="<?php echo $programTab['event_id']; ?>">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <div><label class="control-label"> Institution Name  </label> <span> (* Required to fill information) </span> </div>                                
-                            <input class="form-control has-dark-background" name="name" id="name" placeholder="Institution Name" type="text" value="<?php echo $institutionTab['name']; ?>" >
-                        </div>
-                    </div><!-- /.col-md-12 -->
-                </div><!-- /.row -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="input-group">
-                            <div><label class="control-label"> About Institution  </label><span> (* Required to fill information) </span></div>                                
-                            <textarea rows="5" name="description" id="description">  <?php echo $institutionTab['description']; ?> </textarea>
-                        </div>
-                    </div><!-- /.col-md-6 -->
-                </div><!-- /.row -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div><label class="control-label"> Website URL   </label></div>   
-                        <div class="input-group">
-                            <input type='text' id="website_url" value="<?php echo $institutionTab['website_url']; ?>" name="website_url" class="form-control  has-dark-background" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-globe"></span>
-                            </span>
-                        </div>
-                    </div><!-- /.col-md-6 -->
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <div><label class="control-label"> Institution Category   </label><span> (* Required to fill information) </span></div>
-                            <select name="institution_category" id="institution_category" class="has-dark-background">
-                                <?php foreach ($event_category as $eventkey => $ecategory) { ?>
-                                    <?php if ($ecategory->category_code && $ecategory->category) { ?>
-                                        <option <?php if($institutionTab['institution_category'] == $ecategory->category_code){ ?> selected <?php } ?> value="<?php echo $ecategory->category_code ?>">
-                                            <?php echo $ecategory->category ?>
-                                        </option>
-                                    <?php } ?>
-                                <?php } ?>
-                            </select>    
-                        </div>
-                    </div><!-- /.col-md-6 -->
-                </div><!-- /.row -->
-
-                <div class="row"> <div class="col-md-12"> <h3>Location</h3> <hr> </div> </div>
+                
+                <div class="row"> <div class="col-md-12"> <h3>Event Venue </h3> <hr> </div> </div>
                 <div class="row">
                     
                     <div class="col-md-6">
@@ -337,7 +296,54 @@
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div>
-                <div class="row"> <div class="col-md-12"> <h3>Socialinfo</h3> <hr> </div> </div>
+
+                <div class="row"> <div class="col-md-12"> <h3>About Institution</h3> <hr> </div> </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <div><label class="control-label"> Institution Name  </label> <span> (* Required to fill information) </span> </div>                                
+                            <input class="form-control has-dark-background" name="name" id="name" placeholder="Institution Name" type="text" value="<?php echo $institutionTab['name']; ?>" >
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <div><label class="control-label"> About Institution  </label><span> (* Required to fill information) </span></div>                                
+                            <textarea rows="5" name="description" id="description">  <?php echo $institutionTab['description']; ?> </textarea>
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div><label class="control-label"> Website URL   </label></div>   
+                        <div class="input-group">
+                            <input type='text' id="website_url" value="<?php echo $institutionTab['website_url']; ?>" name="website_url" class="form-control  has-dark-background" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-globe"></span>
+                            </span>
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div><label class="control-label"> Institution Category   </label><span> (* Required to fill information) </span></div>
+                            <select name="institution_category" id="institution_category" class="has-dark-background">
+                                <?php foreach ($event_category as $eventkey => $ecategory) { ?>
+                                    <?php if ($ecategory->category_code && $ecategory->category) { ?>
+                                        <option <?php if($institutionTab['institution_category'] == $ecategory->category_code){ ?> selected <?php } ?> value="<?php echo $ecategory->category_code ?>">
+                                            <?php echo $ecategory->category ?>
+                                        </option>
+                                    <?php } ?>
+                                <?php } ?>
+                            </select>    
+                        </div>
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+
+                
+
+                <div class="row"> <div class="col-md-12"> <h3>Socialmedia Info</h3> <hr> </div> </div>
                 
                 <div class="row">                                    
                     <div class="col-md-6">

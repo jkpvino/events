@@ -64,6 +64,16 @@ class Events extends CI_Controller{
                 'twitter' => $this->input->post('twitter'), 
                 'linkedin' => $this->input->post('linkedin'), 
             );
+            if($this->input->post('event_id')){
+            	$eventId = $this->input->post('event_id');
+	            $eventArray = array(
+	            	'country' => $this->input->post('country'), 
+	                'state' => $this->input->post('state'), 
+	                'city' => $this->input->post('city'), 
+	                'postal_code' => $this->input->post('postal_code'), 
+	            );
+	            $this->event_model->saveSymposium($eventArray, $eventId);
+	        }
             if ($this->input->post('institution_id')) {
                 $institutionId = trim($this->input->post('institution_id'));
                 $institutionInsertId = $this->event_model->setInstitution($institutionArray, $institutionId);   
