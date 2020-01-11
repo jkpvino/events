@@ -456,6 +456,7 @@ function searchevent(sel){
                 }
             },
             success: function (result) {
+                var noresults = '<div class="no_results_found"> <h4> Nothing exists here </h4> <p> We couldn\'t find any results for your search. Try clearing some filters and try again. </p> <img src="'+base_url+'assets/img/noresultsfound.png"> <br/> </div>';
                 if(result){
                     jQuery(".eventlists").fadeOut();
                     console.log(result);
@@ -469,7 +470,13 @@ function searchevent(sel){
                     if(rowcount > 0){
                         jQuery(".eventsearchlist").html(res);
                         jQuery(".eventsearchlist").fadeIn();
+                    }else{                        
+                        jQuery(".eventsearchlist").html(noresults);
+                        jQuery(".eventsearchlist").fadeIn();
                     }
+                }else{                    
+                    jQuery(".eventsearchlist").html(noresults);
+                    jQuery(".eventsearchlist").fadeIn();
                 }
                
             }

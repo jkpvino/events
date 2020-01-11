@@ -133,8 +133,9 @@
         <div class="row">
             <!-- <div class="col-md-12 eventsearchlist" style="display: none;">
             </div>
+            <div class="col-md-12 eventlists" >
+            <?php if(count($sympos) > 0){ ?> 
 
-           <div class="col-md-12 eventlists" >
                 <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
                     <?php 
                     $Eventurl = base_url().'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;
@@ -164,6 +165,7 @@
                             </div>
                         </div>  
                     <?php if($i % 3 == 0){ ?> </div> <?php } ?> 
+
                 <?php $i++; }  ?>                
             </div> -->
 
@@ -196,6 +198,17 @@
                         </div>
                  
                 </div> 
+
+                <?php $i++; }  ?> 
+                <?php }else{ ?>
+                    <div class="no_results_found">
+                        <h4> Nothing exists here </h4>
+                        <p> We couldn't find any results for your search. Try clearing some filters and try again. </p>
+                        <img src="<?php echo base_url().'assets/img/noresultsfound.png' ?>">
+                        <br/>
+                    </div>
+                <?php } ?>               
+
             </div>
             <div ng-show='reddit.loader'>Loading data...</div>
         </div>

@@ -4864,3 +4864,40 @@ section.banner-cover-image .cover-image-content {
     text-align: center;
     margin: 10px 0;
 }
+
+
+/* No Results Found */
+.no_results_found {
+  text-align: center;
+  font-weight: 600;
+}
+.no_results_found h4 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.no_results_found img {
+    margin-bottom: 30px;
+}
+
+
+.thumb.date .day {
+    bottom: 15px;
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+    right: -12px;
+}
+.thumb.date{
+    background-color: #012951;
+    color: #fff;
+    float: left;
+    height: 70px;
+    overflow: hidden;
+    width: 70px;
+}
+.thumb.month{
+    font-size: 14px;
+    padding-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
