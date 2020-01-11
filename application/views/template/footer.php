@@ -263,7 +263,60 @@ function getCities(stateId){
     });
   });
 </script>
+<!-- Events load more-->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/angular.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/ng-infinite-scroll.js"></script>
+<script>
+var myApp = angular.module('myApp', ['infinite-scroll']);
 
+myApp.controller('DemoController', function($scope, Reddit) {
+  $scope.reddit = new Reddit();
+});
+
+
+myApp.factory('Reddit', function($http) {
+  var Reddit = function() {
+    this.items = [];
+    this.busy = false;
+    this.loader = false;
+    this.after = 0;
+  };
+  var searchtext = "false";
+  var controller = '<?php echo $this->uri->segment(1); ?>';
+  var method = '<?php echo $this->uri->segment(2); ?>';
+  if(controller == 'events' && method == 'browse'){
+    searchtext = '<?php echo $this->uri->segment(3); ?>';
+  }  
+  var limit = 10;
+  Reddit.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+    this.loader = true;    
+    
+    var url = "<?php echo base_url(); ?>"+"events/browse/"+searchtext+"/"+limit+"/"+ this.after;
+    $http.post(url, { isAjax: true }).success(function(response) {
+    console.log(response);
+    var items = response;
+    for (var i = 0; i < items.length; i++) {
+   
+        this.items.push(response[i]);
+      }
+      this.after = this.items.length;      
+      if(response.length == 0){
+        this.busy = true;
+        this.loader =false;
+      }else{
+        this.busy = false;
+        this.loader = false;
+      }
+  }.bind(this));
+
+  };
+
+  return Reddit;
+});
+</script>
+<!-- Events load more-->
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 
 <?php if($this->router->fetch_method() == 'createevent'){ ?> 

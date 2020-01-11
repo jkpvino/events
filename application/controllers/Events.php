@@ -127,16 +127,27 @@ class Events extends CI_Controller{
     }
     
     public function browse($browse='',$limit='',$offset='')
-    { 
+    {   
+        $request_body = file_get_contents('php://input');
+        $data = json_decode($request_body,true);
+        $ajax = '';
+        if(isset($data['isAjax'])){
+            $ajax = true;
+        }
+        if($browse == 'false'){$browse = '';}
         $vars['browse'] = $browse;
         if($browse){
             $searchData = array("browse" => $browse);            
             $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
         }else{
-            $vars['sympos'] = $this->event_model->get_symposium();
+            $vars['sympos'] = $this->event_model->get_symposium('',$limit,$offset);
         }
         $vars['class'] = '';   
-        if($this->input->post('isAjax') == true){
+        if($this->input->post('isAjax') == true || $ajax == true){
+            foreach($vars['sympos'] as $key => $data){
+                $vars['sympos'][$key]->name = (strlen($data->name) > 25) ? substr($data->name,0,25).'...' : $data->name;
+                $vars['sympos'][$key]->event_from = date("dS F Y", strtotime($data->event_from));
+            }
             echo json_encode($vars['sympos']);
         }else{
             $this->load->template('events',$vars);

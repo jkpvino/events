@@ -443,6 +443,7 @@ if(!localStorage.getItem('newsletter-homepage-popup')){
 /* Event Search */
 var currentRequest = null; 
 function searchevent(sel){
+    return false;
     if(sel.value.length >= 3){               
         currentRequest = $.ajax({
             type: "POST",

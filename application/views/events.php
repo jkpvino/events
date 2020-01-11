@@ -131,9 +131,10 @@
     --><br><br>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 eventsearchlist" style="display: none;">
+            <!-- <div class="col-md-12 eventsearchlist" style="display: none;">
             </div>
-            <div class="col-md-12 eventlists" >
+
+           <div class="col-md-12 eventlists" >
                 <?php $i=1; foreach ($sympos as $skey => $symposium) { ?>
                     <?php 
                     $Eventurl = base_url().'event/'.$symposium->etypecategory.'-'.$symposium->etypename.'/'.$symposium->url_key;
@@ -164,11 +165,49 @@
                         </div>  
                     <?php if($i % 3 == 0){ ?> </div> <?php } ?> 
                 <?php $i++; }  ?>                
+            </div> -->
+
+    <div ng-app='myApp' ng-controller='DemoController'>
+        <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
+            <div ng-repeat='(key, item) in reddit.items' >
+            
+                <div class="col-md-4 sym_{{key}}">
+                        <div class="col-md-12 lgx-single-news">
+                            <figure >
+                                <a href="{{item.name}}">
+                                    <img src="<?php echo base_url() ?>assets/images/banner/{{item.banner}}" alt="{{item.name}}" title="{{item.url_key}}" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block;">                                    
+                                </a>
+                            </figure>
+                            <div class="single-news-info">
+                                <h3 class="title">
+                                    <a href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}">{{item.name}}{{key}}</a>
+                                </h3>
+                                <div class="meta-wrapper">
+                                    <span><i class="fa fa-calendar" aria-hidden="true"></i> {{item.event_from}}</span>  
+                                    <br>
+                                    <a href="javascript:void(0)"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{item.institution}}, {{item.city}}, {{item.state}}, {{item.country}}</span> </a>
+                                </div>
+                                <h5 class="mb-2">{{item.etypename}}</h5>
+                                <hr class="m-0">
+                                <a href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}">
+                                    <h5 class="text-right mb-0 mt-2"> Readmore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></h5>
+                                </a>
+                            </div>
+                        </div>
+                 
+                </div> 
             </div>
+            <div ng-show='reddit.loader'>Loading data...</div>
+        </div>
+    </div>
+
+
+
         </div>
     </div><!-- /.container -->
 </div>
 <!-- end Page Content -->
+
 <style type="text/css">
 #homepage-carousel{
     background:
