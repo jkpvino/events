@@ -79,11 +79,24 @@
                                 <textarea rows="5" id="address" class="richText" name="address" placeholder ="Write Event Venue Address Info..."> <?php echo $programTab['address']; ?> </textarea>
                             </div>
                         </div><!-- /.col-md-6 -->
+                        <?php $contact_info = $programTab['contact_info']; print_r($programTab); exit(); ?>
                         <div class="col-md-6">
                             <div class="input-group">
+                                <div><label class="control-label"> Event Co-ordinator Name  </label> <span> (* Required to fill information) </span> </div>                                
+                                <input required class="form-control has-dark-background" name="coordinator_name" placeholder="Contact Person Name" type="text" value="<?php echo $contact_info['name'] ?>" >
+                            </div> <br>
+                            <div class="input-group">
+                                <div><label class="control-label"> Event Co-ordinator No  </label> <span> (* Required to fill information) </span> </div>                                
+                                <input required class="form-control has-dark-background" name="coordinator_phone" placeholder="Contact Phone No" type="text" value="<?php echo $contact_info['phone'] ?>" >
+                            </div> <br>
+                            <div class="input-group">
+                                <div><label class="control-label"> Event Co-ordinator Email Address  </label> <span> (* Required to fill information) </span> </div>
+                                <input required class="form-control has-dark-background" name="coordinator_email" placeholder="Contact Email Address" type="text" value="<?php echo $contact_info['email'] ?>" >
+                            </div>
+                            <!--<div class="input-group">
                                 <div><label class="control-label"> Event Contact Person Info  </label><span> (* Required to fill information) </span></div>  
                                 <textarea rows="5" id="contact_info"  name="contact_info"  placeholder ="Write Event Co-ordinator Contact Person Info..."> <?php echo $programTab['contact_info']; ?> </textarea>
-                            </div>
+                            </div>-->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
                     <div class="row">

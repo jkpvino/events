@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
         urls: false,
         table: false,
     });
-    jQuery("#contact_info").richText({
+    /*jQuery("#contact_info").richText({
         height: 150,
         heightPercentage: 0,
         imageUpload: false,
@@ -23,7 +23,7 @@ jQuery(document).ready(function() {
         videoEmbed: false,
         urls: false,
         table: false,
-    });
+    });*/
     jQuery("#description").richText();
     jQuery("#institution_address").richText({
         height: 150,

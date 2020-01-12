@@ -23,7 +23,12 @@ class Events extends CI_Controller{
             );
             $eventTypeId = $this->event_model->getEventTypeId($catArray);
             $urlKey = strtolower(preg_replace('#[^0-9a-z]+#i', '-', $this->input->post('program_name')));
-        
+        	$contactArray = array(
+        		'name' => $this->input->post('coordinator_name'), 
+        		'phone' => $this->input->post('coordinator_phone'), 
+        		'email' => $this->input->post('coordinator_email'), 
+        	);
+        	$contact_info = json_encode($contactArray);
             $eventArray = array(
                 'name' => $this->input->post('program_name'), 
                 'url_key' => $urlKey,
@@ -33,7 +38,8 @@ class Events extends CI_Controller{
                 'event_to' => $this->input->post('program_end'), 
                 'description' => htmlentities($this->input->post('program_description')), 
                 'address' => htmlentities($this->input->post('address')), 
-                'contact_info' => htmlentities($this->input->post('contact_info')), 
+                //'contact_info' => htmlentities($this->input->post('contact_info')), 
+                'contact_info' => $contact_info, 
                 'event_type' => $eventTypeId, 
                 'allowed_users' => $this->input->post('allowed_users'), 
                 'status' =>20,
@@ -351,7 +357,11 @@ class Events extends CI_Controller{
             'twitter' => set_value('twitter'), 
             'linkedin' => set_value('linkedin'), 
         );
-
+        $contact_info = array(
+        	'name' => set_value('coordinator_name'),
+        	'phone' => set_value('coordinator_phone'),
+        	'email' => set_value('coordinator_email'),
+        );
         $programTab = array(
             'event_id' => set_value('event_id'), 
             'program_name' => set_value('program_name'), 
@@ -359,7 +369,7 @@ class Events extends CI_Controller{
             'program_end' => set_value('program_end'),
             'program_description' => set_value('program_description'),
             'address' => set_value('address'),
-            'contact_info' => set_value('contact_info'),
+            'contact_info' => $contact_info,            
             'program_category' => set_value('program_category'),
             'program_type' => set_value('program_type'), 
             'gmap_location' => set_value('gmap_location'), 
@@ -382,6 +392,21 @@ class Events extends CI_Controller{
 	                    $programCategory = $eventTypeInfo->category_code;
 	                    $programType = $eventTypeInfo->name_code;
 	                }
+	                $contact_info = json_decode($symInfo->contact_info);
+	                
+	                if($contact_info){
+	                	$programTab['contact_info'] = array(
+			            	'name' => $contact_info->name,
+			            	'phone' => $contact_info->phone,
+			            	'email' => $contact_info->email,
+			            );
+	                }else{
+	                	$programTab['contact_info'] = array(
+			            	'name' => '',
+			            	'phone' => '',
+			            	'email' => '',
+			            );
+	                }
 	                $programTab = array(
 	                    'event_id' => $symInfo->id, 
 	                    'program_name' => $symInfo->name, 
@@ -389,7 +414,6 @@ class Events extends CI_Controller{
 	                    'program_end' => $symInfo->event_to, 
 	                    'program_description' => $symInfo->description, 
 	                    'address' => $symInfo->address, 
-	                    'contact_info' => $symInfo->contact_info, 
 	                    'program_category' => $programCategory, 
 	                    'program_type' => $programType, 
 	                    'gmap_location' => $symInfo->gmap_location, 
