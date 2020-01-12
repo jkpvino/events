@@ -2,7 +2,7 @@
 
 jQuery(document).ready(function() {
     jQuery("#program_description").richText();
-    jQuery("#address").richText({
+    /*jQuery("#address").richText({
         height: 150,
         heightPercentage: 0,
         imageUpload: false,
@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
         videoEmbed: false,
         urls: false,
         table: false,
-    });
+    });*/
     /*jQuery("#contact_info").richText({
         height: 150,
         heightPercentage: 0,
