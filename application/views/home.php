@@ -15,8 +15,7 @@
                 </div><!-- /.col-md-6 -->
                 <div class="col-md-6 col-sm-5">
                     <div class="slider-content">
-                        <div class="row">
-                            <?php if(isset($logged_info['email'])){ ?> <?php }else{ ?> 
+                        <div class="row">                            
                             <div class="col-md-12">
                                 <h1>Join our community</h1>
                                 <?php 
@@ -78,8 +77,6 @@
                                     <div id="form-status"></div>
                                 </form>
                             </div><!-- /.col-md-12 -->
-                            
-                            <?php } ?>
                         </div><!-- /.row -->
                     </div><!-- /.slider-content -->
                 </div><!-- /.col-md-6 -->
@@ -264,8 +261,8 @@
                                     <p> <?php echo $latestevent->institution ?> </p>
                                     <p> <?php echo $latestevent->country ?>, <?php echo $latestevent->state ?>, <?php echo $latestevent->city ?> </p>
                                     <div class="course-meta">
-                                        <span class="course-date"><i class="fa fa-calendar-o"></i><?php echo $latestevent->event_from ?></span>
-                                        <span class="course-length"><i class="fa fa-clock-o"></i>3 months</span>
+                                        <span class="course-date"><i class="fa fa-calendar-o"></i><?php echo date('Y-M-d', strtotime($latestevent->event_from)); ?></span> <b> - &nbsp;</b>
+                                        <span class="course-length"><i class="fa fa-calendar-o"></i> <?php echo date('Y-M-d', strtotime($latestevent->event_to)); ?> </span>
                                     </div>
                                 </aside>
                                 <hr>
@@ -320,11 +317,11 @@
             <div class="col-md-3 col-sm-3">
                 <section id="donation">
                     <header>
-                        <h2>Make a Donation</h2>
+                        <h2>Make a Event</h2>
                     </header>
                     <div class="section-content">
-                        <a href="" class="universal-button">
-                            <h3>Support the University of Universo!</h3>
+                        <a href="<?php echo base_url().'events/createevent' ?>" class="universal-button">
+                            <h3>Create Event</h3>
                             <figure class="date"><i class="fa fa-arrow-right"></i></figure>
                         </a>
                     </div><!-- /.section-content -->

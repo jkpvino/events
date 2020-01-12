@@ -1,4 +1,12 @@
 
+function closediv(element){
+    jQuery(element).fadeOut();
+}
+jQuery(window).load(function () {
+    setTimeout(function () {
+        $(".flashmessage").fadeOut()  
+    }, 3000);
+});
 
 /* CONTACTUS */
 $("#contact-submit").bind("click", function(event){ 

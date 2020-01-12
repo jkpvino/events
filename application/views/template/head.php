@@ -159,8 +159,11 @@ document.onreadystatechange = function () {
         <img src="<?php echo base_url() ?>assets/img/background-city.png"  alt="background">
     </div>
     <?php if($this->session->flashdata('msg')): ?>
-    <p><?php echo $this->session->flashdata('msg'); ?></p>
-<?php endif; ?>
+    <div class="flashmessage">
+        <p class="flashclose" onclick="closediv('.flashmessage')"> x </p>        
+            <p><?php echo $this->session->flashdata('msg'); ?></p>        
+    </div>
+    <?php endif; ?>
 </div>
 <!-- end Header -->
 
