@@ -226,6 +226,11 @@
                             <?php } else{ ?> 
                                 <img id="logo_preview" width="165" height="165" src="<?php echo base_url().'assets/images/logo/'.$programTab['logo'] ?>" alt="<?php echo $programTab['logo'] ?>" />
                             <?php } ?>
+                            <h4> Instruction </h4>
+                            <ul>
+                                <li> File Resolution should be 165x165px. </li>
+                                <li> Supports Png, Jpeg, Jpg File format. </li>
+                            </ul>
                             
                             <!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
@@ -243,6 +248,7 @@
                             </div><!-- /.form-group -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
+                    <div class="error_msg_fileupload">  </div>
                     <div class="row">
                         <a href="javascript:void(0)" id="event_image" class="btn btn-framed pull-right">Save & Continue</a>
                         <!-- <button type="submit" id="event_image" class="btn btn-framed nextBtn pull-right">Continue</button> -->

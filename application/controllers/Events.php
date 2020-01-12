@@ -37,11 +37,11 @@ class Events extends CI_Controller{
                 'event_from' => $this->input->post('program_start'), 
                 'event_to' => $this->input->post('program_end'), 
                 'description' => htmlentities($this->input->post('program_description')), 
-                'address' => htmlentities($this->input->post('address')), 
+                //'address' => htmlentities($this->input->post('address')), 
                 //'contact_info' => htmlentities($this->input->post('contact_info')), 
                 'contact_info' => $contact_info, 
                 'event_type' => $eventTypeId, 
-                'allowed_users' => $this->input->post('allowed_users'), 
+                //'allowed_users' => $this->input->post('allowed_users'), 
                 'status' =>20,
                 'user_id' => $userInfo['logged_in']['logid']
             );
@@ -76,7 +76,8 @@ class Events extends CI_Controller{
 	            	'country' => $this->input->post('country'), 
 	                'state' => $this->input->post('state'), 
 	                'city' => $this->input->post('city'), 
-	                'postal_code' => $this->input->post('postal_code'), 
+                    'postal_code' => $this->input->post('postal_code'), 
+	                'address' => htmlentities($this->input->post('address')),
 	            );
 	            $this->event_model->saveSymposium($eventArray, $eventId);
 	        }
@@ -276,7 +277,7 @@ class Events extends CI_Controller{
                 $logosize = @getimagesize($_FILES["logo"]["tmp_name"]);    
                 //echo "<pre>"    ; print_r($logosize); echo "</pre>";
                 if((!in_array($_FILES['logo']['type'], $acceptable)) && (!empty($_FILES["logo"]["type"]))) {
-                    $message .= 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.<br/> '; $status = false;
+                    $message .= 'Invalid file type. Only JPG, GIF and PNG types are accepted.<br/> '; $status = false;
                 }
                 if(($logosize[0] != $logosize[1])  || ($logosize[0] != 165) ){
                     $message .= 'Logo Size Should be 165 X 165 Dimension.<br/> '; $status = false;
@@ -392,21 +393,6 @@ class Events extends CI_Controller{
 	                    $programCategory = $eventTypeInfo->category_code;
 	                    $programType = $eventTypeInfo->name_code;
 	                }
-	                $contact_info = json_decode($symInfo->contact_info);
-	                
-	                if($contact_info){
-	                	$programTab['contact_info'] = array(
-			            	'name' => $contact_info->name,
-			            	'phone' => $contact_info->phone,
-			            	'email' => $contact_info->email,
-			            );
-	                }else{
-	                	$programTab['contact_info'] = array(
-			            	'name' => '',
-			            	'phone' => '',
-			            	'email' => '',
-			            );
-	                }
 	                $programTab = array(
 	                    'event_id' => $symInfo->id, 
 	                    'program_name' => $symInfo->name, 
@@ -426,6 +412,20 @@ class Events extends CI_Controller{
 	                if($symInfo->allowed_users > 0){
 	                    $programTab['online_booking'] = 1;
 	                }
+                    $contact_info = json_decode($symInfo->contact_info);                    
+                    if($contact_info){
+                        $programTab['contact_info'] = array(
+                            'name' => $contact_info->name,
+                            'phone' => $contact_info->phone,
+                            'email' => $contact_info->email,
+                        );
+                    }else{
+                        $programTab['contact_info'] = array(
+                            'name' => '',
+                            'phone' => '',
+                            'email' => '',
+                        );
+                    }
 	                $vars['event_type'] = $this->event_model->getEventTypeByCategory($programCategory);
 
 	                if (isset($symInfo->institution_id)) {

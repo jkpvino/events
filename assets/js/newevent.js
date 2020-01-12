@@ -54,20 +54,28 @@ jQuery(document).ready(function() {
                     date : true
                 },
                 program_description: "required",
-                address: "required",
-                contact_info: "required",
+                //address: "required",
+                //contact_info: "required",
                 program_category: "required",
                 program_type: "required",
+                coordinator_name: {
+                    required: true
+                },
+                coordinator_phone: {
+                    required: true,
+                    minlength:10,
+                    maxlength:10,
+                    number: true
+                },
+                coordinator_email:{
+                    required:true,
+                    email:true
+                },
                 gmap_location: {
-                    required : true,
                     url: true
                 },
                 program_website: {
-                    required : true,
                     url: true
-                },
-                online_booking: {
-                    required : true,
                 }
             },
             submitHandler: function() {
@@ -169,7 +177,6 @@ jQuery(document).ready(function() {
                 event_name: "required",
                 event_description: "required",
                 contact_us: "required",
-                event_online_booking: "required",
                 event_start: {
                     required : true,
                     date: true
@@ -204,6 +211,9 @@ $(document).ready(function(){
 
 
         $('#event_image').on('click', function() {
+                
+            document.getElementById('wrapper').style.visibility="hidden";
+            document.getElementById('load').style.visibility="visible";
             jQuery(".bgground").show();
             var file_data = $('#logo').prop('files')[0];   
             var banner = $('#banner').prop('files')[0];
@@ -223,11 +233,21 @@ $(document).ready(function(){
                 data: form_data,                         
                 type: 'post',
                 success: function(response){
+                    setTimeout(function(){
+                         document.getElementById('load').style.visibility="hidden";
+                         document.getElementById('wrapper').style.visibility="visible";
+                    },1000);
                     if(response){
                         var obj = JSON.parse(response);
                         if(obj.status == true){
-                            $('#event_image').attr('disabled','true');    
+                            //$('#event_image').attr('disabled','true');    
+                            $(".msg_fileupload").html("Success : "+obj.Message);
+                            setTimeout(function(){
+                                $.growl.notice({title: "Step2",  message: obj.Message });
+                            },2000);
                             tabNext("#event_image");
+                        }else{
+                            $(".msg_fileupload").html("Error : "+obj.Message);
                         }
                     }
                     jQuery(".bgground").show();
