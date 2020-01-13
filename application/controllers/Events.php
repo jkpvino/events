@@ -307,9 +307,9 @@ class Events extends CI_Controller{
                     //$bannererrors[] = 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.';
                     $message .= "Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.<br/> "; $status = false;
                 }
-                if(($bannersize[0] != 1920)  || ($bannersize[1] != 684) ){
+                if(($bannersize[0] != 1600)  || ($bannersize[1] != 570) ){
                     //$bannererrors[] = 'Banner Size Should be 1920 X 684 Dimension.';
-                    $message .= "Banner Size Should be 1920 X 684 Dimension.<br/> "; $status = false;
+                    $message .= "Banner Size Should be 1600 X 570 Dimension.<br/> "; $status = false;
                 }
                 if($status == true){
                     if (move_uploaded_file($_FILES['banner']['tmp_name'], $dir."/banner/".$url_key.".".$bannerNameInfo)) {

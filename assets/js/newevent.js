@@ -282,13 +282,38 @@ $(document).ready(function(){
                     table: false,
                 });
             }
+        }else{
+            jQuery("#event_row_1 .event_description").richText({
+              height: 150,
+              heightPercentage: 0,
+              imageUpload: false,
+              fileUpload: false,
+              heading: false,
+              removeStyles: false,
+              videoEmbed: false,
+              urls: false,
+              table: false,
+            });
+
+            jQuery("#event_row_1 .contact_us").richText({
+                height: 150,
+                heightPercentage: 0,
+                imageUpload: false,
+                fileUpload: false,
+                heading: false,
+                removeStyles: false,
+                videoEmbed: false,
+                urls: false,
+                table: false,
+            });
         }
 
         $("#add_sub_event").click(function(){
             jQuery(".bgground").show();
             var rowCount = $(".event_container > div").length;
             var bookhideid = "slots_"+(rowCount+1)
-            var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <input type="hidden" id="sub_event_id_'+(rowCount+1)+'" name="id[]" value=""> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Event Name </label></div> <input class="form-control has-dark-background" required name="event_name[]" placeholder="Event Title" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Description </label></div> <textarea rows="5" required class="event_description" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Contactus </label></div> <textarea rows="5" required class="contact_us" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Start </label></div> <div class="input-group datetimepicker"> <input  required type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]"  required class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Online Booking </label></div> <select onchange="subEventsDecider(\''+bookhideid+'\',this)"  required id="event_online_booking_'+rowCount+'" name="event_online_booking[]" class="has-dark-background"> <option value="">Online Booking </option> <option value="1">Yes</option> <option value="0">No</option> </select> </div> </div> <div class="col-md-6"> <div class="input-group hideblock" id="'+bookhideid+'"> <div><label class="control-label"> How many slots ? </label></div> <div class="input-group"> <input type="number" required class="form-control has-dark-background" name="slots_events[]" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-plus"></span> </span> </div> </div> </div> </div> </div>';
+            //var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <input type="hidden" id="sub_event_id_'+(rowCount+1)+'" name="id[]" value=""> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Event Name </label></div> <input class="form-control has-dark-background" required name="event_name[]" placeholder="Event Title" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Description </label></div> <textarea rows="5" required class="event_description" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Contactus </label></div> <textarea rows="5" required class="contact_us" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event Start </label></div> <div class="input-group datetimepicker"> <input  required type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Event End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]"  required class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="" ss="input-group"> <div><label class="control-label"> Online Booking </label></div> <select onchange="subEventsDecider(\''+bookhideid+'\',this)"  required id="event_online_booking_'+rowCount+'" name="event_online_booking[]" class="has-dark-background"> <option value="">Online Booking </option> <option value="1">Yes</option> <option value="0">No</option> </select> </div> </div> <div class="col-md-6"> <div class="input-group hideblock" id="'+bookhideid+'"> <div><label class="control-label"> How many slots ? </label></div> <div class="input-group"> <input type="number" required class="form-control has-dark-background" name="slots_events[]" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-plus"></span> </span> </div> </div> </div> </div> </div>';
+            var newrow = '<div class="event_row" id="event_row_'+(rowCount+1)+'"> <input type="hidden" id="sub_event_id_'+(rowCount+1)+'" name="id[]" value=""> <div class="row"> <div class="col-md-12"> <hr> </div> </div> <div class="row"> <div class="col-md-12"> <div class="input-group"> <div><label class="control-label"> Program Name </label></div> <input class="form-control has-dark-background"  name="event_name[]" placeholder="Program Name" type="text" > </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> About Program </label></div> <textarea rows="5"  class="event_description" name="event_description[]"></textarea> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Organizer Information </label></div> <textarea rows="5"  class="contact_us" name="contact_us[]"></textarea> </div> </div> </div><div class="row"> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Program Start </label></div> <div class="input-group datetimepicker"> <input   type="text" name="event_start[]" class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> <div class="col-md-6"> <div class="input-group"> <div><label class="control-label"> Program End </label></div> <div class="input-group datetimepicker"> <input type="text" name="event_end[]"   class="form-control datepicker has-dark-background" /> <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div> </div> </div> </div> </div> </div>';
             $(".event_container").append(newrow);
 
 

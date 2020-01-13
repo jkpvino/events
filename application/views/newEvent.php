@@ -246,9 +246,15 @@
                                     <img id="banner_preview" style="width: 100%"  src="<?php echo base_url().'assets/images/banner/'.$programTab['banner'] ?>" alt="<?php echo $programTab['banner'] ?>" />
                             <?php } ?>
                             </div><!-- /.form-group -->
+
+                            <h4> Instruction </h4>
+                            <ul>
+                                <li> File Resolution should be 1600 X 570. </li>
+                                <li> Supports Png, Jpeg, Jpg File format. </li>
+                            </ul>
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
-                    <div class="error_msg_fileupload">  </div>
+                    <div class="msg_fileupload">  </div>
                     <div class="row">
                         <a href="javascript:void(0)" id="event_image" class="btn btn-framed pull-right">Save & Continue</a>
                         <!-- <button type="submit" id="event_image" class="btn btn-framed nextBtn pull-right">Continue</button> -->
@@ -431,7 +437,7 @@
             <div class="col-md-12">
                 <p> </p>
 
-
+                <!--
                 <div class="row">
                     <div class="col-md-12">
                         <div><label class="control-label"> Are you want to create Agenda ? </label><span> (* Required to fill information) </span></div>  
@@ -443,9 +449,15 @@
                         </div>
                     </div>
                 </div>
-                
-
-                <div id="sub_events" class="<?php if(count($sub_events) <= 0){ ?> hideblock <?php } ?>">   
+                -->
+                <div class="row"> 
+                    <div class="col-md-12"> 
+                        <h3> Create Agenda </h3>
+                        <hr>
+                    </div>
+                </div>
+                <!-- <div id="sub_events" class="<?php if(count($sub_events) <= 0){ ?> hideblock <?php } ?>">   -->
+                <div id="sub_events" class="">   
                 <form id="sub-events-form" name="sub-events-form" enctype="multipart/form-data" role="form" action="" method="post" >
                     <div class="row">
                         <div class="pull-right" > <a href="javascript:void(0)" id="add_sub_event" style="color: #fff"> <span class="btn btn-circle btn-default"> <i class="fa fa-plus"> </i> </span> <label class="control-label">  Add Program </label> </a> </div>
@@ -539,7 +551,7 @@
                                 <div class="col-md-12">
                                     <div class="input-group">
                                         <div><label class="control-label"> Program Name  </label></div>                                
-                                        <input required class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" >
+                                        <input class="form-control has-dark-background" name="event_name[]" placeholder="Event Title" type="text" >
                                     </div>
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
@@ -547,13 +559,13 @@
                                 <div class="col-md-6">
                                     <div class="input-group">
                                         <div><label class="control-label"> About Program  </label></div>                               
-                                        <textarea rows="5" required class="event_description" name="event_description[]"></textarea>
+                                        <textarea rows="5" class="event_description" name="event_description[]"></textarea>
                                     </div>
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-6">
                                     <div class="input-group">
                                         <div><label class="control-label"> Organizer Information   </label></div>                                
-                                        <textarea rows="5" required class="contact_us" name="contact_us[]"></textarea>
+                                        <textarea rows="5" class="contact_us" name="contact_us[]"></textarea>
                                     </div>
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
@@ -562,7 +574,7 @@
                                     <div class="" ss="input-group">
                                         <div><label class="control-label"> Program Start  </label></div>                                
                                         <div class="input-group datetimepicker">
-                                            <input type='text' required name="event_start[]" class="form-control datepicker  has-dark-background" />
+                                            <input type='text' name="event_start[]" class="form-control datepicker  has-dark-background" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -573,7 +585,7 @@
                                     <div class="input-group">
                                         <div><label class="control-label"> Program End  </label></div> 
                                         <div class="input-group datetimepicker">
-                                            <input type='text' required name="event_end[]" class="form-control datepicker has-dark-background" />
+                                            <input type='text' name="event_end[]" class="form-control datepicker has-dark-background" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>

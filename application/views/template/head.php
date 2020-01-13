@@ -8,6 +8,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery-ui.css" type="text/css">
     <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/selectize.css" type="text/css"> -->
