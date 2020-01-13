@@ -183,16 +183,20 @@ span.onclick = function() {
                                 </div><!-- /.icons -->
                                 <hr>
                                 <p>
-                                    <?php echo html_entity_decode($institution->description); ?>
+                                    
                                 </p>
                             </div>
                             <div class="col-md-6">
-                                <div class="map-wrapper">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.389928525137!2d-0.11316612883517647!3d51.52440760342934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b48959f07e1%3A0xb6b70e6a76950525!2s5+Phoenix+Pl!5e0!3m2!1ssk!2s!4v1395674632609" width="100%" height="350" frameborder="0" style="border:0"></iframe>
-                                </div>
+                                <h3><?php echo $institution->name ?></h3>
+                                <?php echo html_entity_decode($institution->description); ?>
+                                <!--  -->
                             </div>
                         </div>
                     </section>
+
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.389928525137!2d-0.11316612883517647!3d51.52440760342934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b48959f07e1%3A0xb6b70e6a76950525!2s5+Phoenix+Pl!5e0!3m2!1ssk!2s!4v1395674632609" width="100%" height="350" frameborder="0" style="border:0"></iframe>
+                    </div>
                     <section id="contact-form" class="clearfix">
                         <header><h2>Send Us a Message</h2></header>
                         <form class="contact-form" id="contactform" method="post" action="">
