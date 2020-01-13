@@ -494,9 +494,13 @@
                                     </div><!-- /.col-md-6 -->
                                 </div><!-- /.row -->
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="" ss="input-group">
-                                            <div><label class="control-label"> Program Start  </label></div>                                
+                                    <div class="col-md-6"> <div><label class="control-label"> Program Start Time  </label> <hr></div>  </div>
+                                    <div class="col-md-6"> <div><label class="control-label"> Program End Time  </label></div> </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="input-group">                                                   
+                                            <div><label class="control-label"> Date  </label></div>                                
                                             <div class="input-group datetimepicker">
                                                 <input type='text' required name="event_start[]" value="<?php echo $subevent->event_from ?>" class="form-control datepicker  has-dark-background" />
                                                 <span class="input-group-addon">
@@ -504,10 +508,34 @@
                                                 </span>
                                             </div>
                                         </div>
-                                    </div><!-- /.col-md-6 -->
-                                    <div class="col-md-6">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="" ss="input-group">
+                                            <div><label class="control-label"> Hour  </label></div>                                
+                                            <div class="input-group">
+                                                <select class="form-control has-dark-background">
+                                                    <?php for ($i=1; $i <= 24; $i++) { ?>                   
+                                                        <option value="<?php echo $i ?>"> <?php echo $i ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="" ss="input-group">
+                                            <div><label class="control-label"> Minute  </label></div>                                
+                                            <div class="input-group">
+                                                <select class="form-control has-dark-background">
+                                                    <?php for ($i=1; $i <= 60; $i++) { ?>                   
+                                                        <option value="<?php echo $i ?>"> <?php echo $i ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
                                         <div class="input-group">
-                                            <div><label class="control-label"> Program End  </label></div> 
+                                            <div><label class="control-label"> Date </label></div> 
                                             <div class="input-group datetimepicker">
                                                 <input type='text' required name="event_end[]" value="<?php echo $subevent->event_to ?>" class="form-control datepicker has-dark-background" />
                                                 <span class="input-group-addon">
@@ -515,7 +543,32 @@
                                                 </span>
                                             </div>
                                         </div>
-                                    </div><!-- /.col-md-6 -->
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="" ss="input-group">
+                                            <div><label class="control-label"> Hour  </label></div>                                
+                                            <div class="input-group">
+                                                <select class="form-control has-dark-background">
+                                                    <?php for ($i=1; $i <= 24; $i++) { ?>                   
+                                                        <option value="<?php echo $i ?>"> <?php echo $i ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="" ss="input-group">
+                                            <div><label class="control-label"> Minute  </label></div>                                
+                                            <div class="input-group">
+                                                <select class="form-control has-dark-background">
+                                                    <?php for ($i=1; $i <= 60; $i++) { ?>                   
+                                                        <option value="<?php echo $i ?>"> <?php echo $i ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div><!-- /.row -->
                                 
                                 <!--<div class="row">
