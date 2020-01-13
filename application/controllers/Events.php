@@ -12,6 +12,14 @@ class Events extends CI_Controller{
         $this->data = $this->session->get_userdata();
     }
 
+    public function deleteagenda(){
+        if($this->input->post('id')){
+            $deleteStatus = $this->event_model->deleteSubEvents($this->input->post('id'));
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public function save(){
         $userInfo = $this->data;

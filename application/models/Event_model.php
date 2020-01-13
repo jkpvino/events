@@ -2,7 +2,10 @@
 
 class Event_model extends CI_Model {
 
-
+        public function deleteSubEvents($id){
+            $this->db->where('id', $id);
+            $this->db->delete('events');
+        }
         public function get_symposium($like = array(), $limit = '', $offset = '', $orderby = '')
         {
             if(isset($like['location'])){

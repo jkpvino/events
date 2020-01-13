@@ -356,3 +356,16 @@ $(document).ready(function(){
             });
         });
     });  
+
+
+function deleteagenda(id){
+    var deleteagenda = $.ajax({
+          type: 'POST',
+          url: base_url+"events/deleteagenda",
+          data: { id : id },
+          success: function(response) { 
+            alert(response)
+          }
+    });
+    deleteagenda.error(function() { alert("Something went wrong"); });
+}
