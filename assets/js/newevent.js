@@ -341,7 +341,7 @@ $(document).ready(function(){
               table: false,
             });
 
-            jQuery('.datepicker').datepicker({ 
+            jQuery('.datepicker').datetimepicker({ 
                 dateFormat: 'yy-mm-dd'
             });
             jQuery(".bgground").hide();

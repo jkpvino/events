@@ -29,10 +29,10 @@
                 <span class="eventDateClass ng-binding"><?php echo date('D, d M \'y',strtotime($event->event_to)); ?></span>
             </span>
         </div>
-        <br>
+        <!-- <br>
         <div class="get_ticket"> 
             <button class="btn btn-framed white"> Get Tickets </button>
-        </div>
+        </div> -->
     </div>
 </section>
 <div id="bannerImgPopup" class="modal">
