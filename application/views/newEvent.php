@@ -470,7 +470,7 @@
                         <?php foreach ($sub_events as $sekey => $subevent) { $subeventCount++; ?>
                             <div class="event_row" id="event_row_<?php echo $subeventCount ?>">
                                 <input type="hidden" id="sub_event_id_<?php echo $subeventCount ?>" name="id[]" value="<?php echo $subevent->id ?>">
-                                <div class="row" style="margin-top: 30px;"> <div class="col-md-12"><button class="btn btn-framed pull-right" onclick="deleteagenda('<?php echo $subevent->id ?>')"> Delete Row </button> </div> </div> 
+                                <div class="row" style="margin-top: 30px;"> <div class="col-md-12"><button class="btn btn-framed pull-right" onclick="deleteagenda('<?php echo $subevent->id ?>','<?php echo $subeventCount ?>')"> Delete Row </button> </div> </div> 
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="input-group">
@@ -543,7 +543,7 @@
                                 </div> -->
                             </div>
 
-                            <div class="row"> <div class="col-md-12"> <hr> </div> </div>
+                            <div class="row event_row_<?php echo $subeventCount ?>"> <div class="col-md-12"> <hr> </div> </div>
                         <?php } ?>
                     <?php } else{ ?> 
                         <div class="event_row" id="event_row_1">
