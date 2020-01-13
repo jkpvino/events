@@ -117,10 +117,10 @@ span.onclick = function() {
         					  <div class="title">  
         						  <!-- <img src="<?php echo base_url() ?>assets/img/image-04.jpg" alt="img">	 -->						  
         						 <h5><?php echo $subevent->name; ?></h5>
-        						 <p>Vinoth Kumar J</p>
+        						 <p><?php echo html_entity_decode($subevent->contact_us); ?></p>
         					  </div>
         					  <ul class="list-unstyled">
-        	                     <li><i class="fa fa-mobile"></i>+91 8220466675</li>
+        	                     <li><i class="fa fa-mobile"></i><?php echo date('d-M-Y',strtotime($subevent->event_from)); ?></li>
         	                     <li><i class="fa fa-clock-o"></i><?php echo date('h:i A',strtotime($subevent->event_from)); ?> – <?php echo date('h:i A',strtotime($subevent->event_to)); ?></li> 
         	                  </ul>
         				  </div>
