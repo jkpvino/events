@@ -143,7 +143,7 @@ class Events extends CI_Controller{
         $this->load->template('events',$vars);
     }
     
-    public function browse($browse='',$limit='',$offset='')
+    public function browse($browse='',$limit='',$offset='',$method='browse')
     {   
         $request_body = file_get_contents('php://input');
         $data = json_decode($request_body,true);
@@ -152,9 +152,9 @@ class Events extends CI_Controller{
             $ajax = true;
         }
         if($browse == 'false'){$browse = '';}
-        $vars['browse'] = $browse;
+        $vars[$method] = $browse;
         if($browse){
-            $searchData = array("browse" => $browse);            
+            $searchData = array($method => $browse);            
             $vars['sympos'] = $this->event_model->get_symposium($searchData,$limit,$offset);
         }else{
             $vars['sympos'] = $this->event_model->get_symposium('',$limit,$offset);

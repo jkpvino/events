@@ -284,16 +284,19 @@ myApp.factory('Reddit', function($http) {
   var searchtext = "false";
   var controller = '<?php echo $this->uri->segment(1); ?>';
   var method = '<?php echo $this->uri->segment(2); ?>';
-  if(controller == 'events' && method == 'browse'){
-    searchtext = '<?php echo $this->uri->segment(3); ?>';
-  }  
+  if(controller == 'events' && (method == 'browse' || method == 'category')){
+    searchtext = '<?php echo $this->uri->segment(3); ?>';    
+  }
+  if(searchtext == ''){
+      searchtext = "false";
+  }
   var limit = 10;
   Reddit.prototype.nextPage = function() {
     if (this.busy) return;
     this.busy = true;
     this.loader = true;    
     
-    var url = "<?php echo base_url(); ?>"+"events/browse/"+searchtext+"/"+limit+"/"+ this.after;
+    var url = "<?php echo base_url(); ?>"+"events/browse/"+searchtext+"/"+limit+"/"+ this.after+"/"+method;
     $http.post(url, { isAjax: true }).success(function(response) {
     console.log(response);
     var items = response;
