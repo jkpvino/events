@@ -502,7 +502,7 @@
                                         <div class="input-group">                                                   
                                             <div><label class="control-label"> Date  </label></div>                                
                                             <div class="input-group datetimepicker">
-                                                <input type='text' required name="event_start[]" value="<?php echo $subevent->event_from ?>" class="form-control datepicker  has-dark-background" />
+                                                <input type='text' required name="event_start[]" value="<?php echo date('yy-m-d', strtotime($subevent->event_from) ) ?>" class="form-control datepicker  has-dark-background" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -513,9 +513,10 @@
                                         <div class="" ss="input-group">
                                             <div><label class="control-label"> Hour  </label></div>                                
                                             <div class="input-group">
-                                                <select class="form-control has-dark-background">
-                                                    <?php for ($i=1; $i <= 24; $i++) { ?>                   
-                                                        <option value="<?php echo $i ?>"> <?php echo $i ?></option>
+                                                <?php $hour = date('H', strtotime($subevent->event_from) ) ?>
+                                                <select class="form-control has-dark-background" name="event_start_hour[]">
+                                                    <?php for ($i=0; $i <= 23; $i++) { ?>                   
+                                                        <option <?php if($hour == $i){ echo "selected" ; } ?> value="<?php echo $i ?>"> <?php echo $i ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -525,9 +526,10 @@
                                         <div class="" ss="input-group">
                                             <div><label class="control-label"> Minute  </label></div>                                
                                             <div class="input-group">
-                                                <select class="form-control has-dark-background">
-                                                    <?php for ($i=1; $i <= 60; $i++) { ?>                   
-                                                        <option value="<?php echo $i ?>"> <?php echo $i ?></option>
+                                                <?php $minute = date('i', strtotime($subevent->event_from) ) ?>
+                                                <select class="form-control has-dark-background" name="event_start_minute[]">
+                                                    <?php for ($i=0; $i <= 59; $i++) { ?>                   
+                                                        <option <?php if($minute == $i){ echo "selected" ; } ?> value="<?php echo $i ?>"> <?php echo $i ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
