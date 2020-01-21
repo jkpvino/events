@@ -11,6 +11,8 @@ class Index extends CI_Controller{
 
     public function index()
     {
+        echo date('Y-m-d H:i:s');
+        exit();
         $logged_info = isset($this->session->userdata['logged_in']) ? $this->session->userdata['logged_in'] : array();
         $this->load->model('event_model');
         $vars['class'] = '';

@@ -105,12 +105,19 @@ class Events extends CI_Controller{
         if ($this->input->post('subevents_tab')) {
             $status = true;
             for ($i=0; $i < count($this->input->post('event_name')); $i++) {   
-                $rowId = $this->input->post('id')[$i] ? $this->input->post('id')[$i] : 0 ;              
+                $rowId = $this->input->post('id')[$i] ? $this->input->post('id')[$i] : 0 ;   
+                $startHour = $this->input->post('event_start_hour')[$i];
+                $startMins = $this->input->post('event_start_minute')[$i];
+                $endHour = $this->input->post('event_end_hour')[$i];
+                $endMins = $this->input->post('event_end_minute')[$i];
+                $eventStartDate = $this->input->post('event_start')[$i];
+                $eventEndDate = $this->input->post('event_end')[$i];
+
                 $subEventsInfo = array(
                     'name' => $this->input->post('event_name')[$i], 
                     'description' => htmlentities($this->input->post('event_description')[$i]), 
-                    'event_from' => $this->input->post('event_start')[$i], 
-                    'event_to' => $this->input->post('event_end')[$i], 
+                    'event_from' => date('Y-m-d H:i:s', strtotime('+'.$startHour.' hour'.' +'.$startMins.' minutes', strtotime($eventStartDate))), 
+                    'event_to' => date('Y-m-d H:i:s', strtotime('+'.$endHour.' hour'.' +'.$endMins.' minutes', strtotime($eventEndDate))), 
                     'contact_us' => htmlentities($this->input->post('contact_us')[$i]), 
                     'sym_id' => trim($this->input->post('event_id')),  
                     'status' => 20, 
