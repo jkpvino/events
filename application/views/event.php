@@ -167,20 +167,15 @@ span.onclick = function() {
             <div class="col-md-12">
                 <div id="page-main">
                     <section id="contact">
-                        <header><h1>About Venue</h1></header>
+                        <!-- <header><h1>About Venue</h1></header> -->
                         <div class="row">
-                            <div class="col-md-9">
-                                <h3><?php echo $institution->name ?></h3>
-                                <?php echo substr(html_entity_decode($institution->description), 0, 3000); ?> <br>
-                                <?php if($event->gmap_location){ ?> 
-                                <div class="map-wrapper">
-                                    <iframe src="<?php echo $event->gmap_location ?>" width="100%" height="350" frameborder="0" style="border:0"></iframe>
-                                </div>
-                                <?php } ?>
+                            <div class="col-md-9 aboutins">
+                                <header> <h2><?php echo $institution->name ?></h2> </header>
+                                <?php echo substr(html_entity_decode($institution->description), 0, 3000); ?> 
                                 <!--  -->
                             </div>
                             <div class="col-md-3">
-                                <header><h1>Event Venue</h1></header>
+                                <header><h2>Address</h2></header>
                                 <address>
                                     <h3><?php echo $institution->name ?></h3>
                                     <?php echo html_entity_decode($institution->address) ?>
@@ -193,9 +188,12 @@ span.onclick = function() {
                                     <a href="<?php echo $institution->linkedin ?>"><i class="fa fa-youtube-play"></i></a>
                                 </div><!-- /.icons -->
                                 <hr>
-                                <p>
-                                    
-                                </p>
+                                <br>
+                                <?php if($event->gmap_location){ ?> 
+                                <div class="map-wrapper">
+                                    <iframe src="<?php echo $event->gmap_location ?>" width="100%" height="350" frameborder="0" style="border:0"></iframe>
+                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </section>

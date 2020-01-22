@@ -723,7 +723,13 @@ ul.list-links a:hover {
   color: #f40084;
   margin-right: 5px;
 }
-
+.aboutins{
+    border: 10px solid #edf5ff;
+    margin-bottom: 20px;
+}
+.aboutins:hover {
+border: 10px solid #ff007a;
+}
 .event-list-content {
     margin-left: 50px;
     margin-right: 20px;
