@@ -599,7 +599,7 @@
                                 </div> -->
                             </div>
 
-                            <div class="row event_row_<?php echo $subeventCount ?>"> <div class="col-md-12"> <hr> </div> </div>
+                            <div class="row event_row_<?php echo $subeventCount ?>"> <div class="col-md-12"> <!-- <hr> --> </div> </div>
                         <?php } ?>
                     <?php } else{ ?> 
                         <div class="event_row" id="event_row_1">
