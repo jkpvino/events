@@ -166,6 +166,14 @@
     </div>
 
 
+    <!-- No Results -->
+    <div class="no_results_found">
+        <h4> Nothing exists here </h4>
+        <p> We couldn't find any results for your search. Try clearing some filters and try again. </p>
+        <img src="<?php echo base_url().'assets/img/noresultsfound.png' ?>">
+        <br/>
+    </div>
+
     </div><!-- /.container -->
 </div>
 <!-- end Page Content -->
