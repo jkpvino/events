@@ -126,6 +126,7 @@
                         <div class="tab-pane" id="tab-my-events">
                             <section id="course-list">
                                 <header><h3>My Events</h3></header>
+                                
                                 <table class="table table-hover table-responsive course-list-table tablesorter">
                                     <thead>
                                     <tr>
@@ -136,69 +137,27 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="status-not-started">
-                                        <th class="course-title"><a href="course-detail-v1.html">Introduction to modo 701</a></th>
-                                        <th class="course-category"><a href="#">Symposium</a></th>
-                                        <th>01-03-2014</th>
-                                        <th class="status"><i class="fa fa-calendar-o"></i>Not started yet</th>
-                                    </tr>
-                                    <tr class="status-not-started">
-                                        <th class="course-title"><a href="course-detail-v1.html">Become self marketer</a></th>
-                                        <th class="course-category"><a href="#">Workshop</a></th>
-                                        <th>03-03-2014</th>
-                                        <th class="status"><i class="fa fa-calendar-o"></i>Not started yet</th>
-                                    </tr>
-                                    <tr class="status-in-progress">
-                                        <th class="course-title"><a href="course-detail-v2.html">How to find long term customers</a></th>
-                                        <th class="course-category"><a href="#">Conference</a></th>
-                                        <th>06-03-2014</th>
-                                        <th class="status"><i class="fa fa-clock-o"></i>In progress</th>
-                                    </tr>
-                                    <tr class="status-in-progress">
-                                        <th class="course-title"><a href="course-detail-v2.html">Neuroscience and the future</a></th>
-                                        <th class="course-category"><a href="#">Science</a></th>
-                                        <th>21-03-2014</th>
-                                        <th class="status"><i class="fa fa-clock-o"></i>In progress</th>
-                                    </tr>
-                                    <tr class="status-completed">
-                                        <th class="course-title"><a href="course-detail-v1.html">History in complex view</a></th>
-                                        <th class="course-category"><a href="#">History and Psychology</a></th>
-                                        <th>06-04-2014</th>
-                                        <th class="status"><i class="fa fa-check"></i>Completed</th>
-                                    </tr>
-                                    <tr class="status-completed">
-                                        <th class="course-title"><a href="course-detail-v1.html">Become self marketer</a></th>
-                                        <th class="course-category"><a href="#">Marketing</a></th>
-                                        <th>03-03-2014</th>
-                                        <th class="status"><i class="fa fa-check"></i>Completed</th>
-                                    </tr>
-                                    <tr class="status-completed">
-                                        <th class="course-title"><a href="course-detail-v1.html">How to find long term customers</a></th>
-                                        <th class="course-category"><a href="#">Marketing</a></th>
-                                        <th>06-03-2014</th>
-                                        <th class="status"><i class="fa fa-check"></i>Completed</th>
-                                    </tr>
-                                    <tr class="status-completed">
-                                        <th class="course-title"><a href="course-detail-v1.html">Neuroscience and the future</a></th>
-                                        <th class="course-category"><a href="#">Science</a></th>
-                                        <th>21-03-2014</th>
-                                        <th class="status"><i class="fa fa-check"></i>Completed</th>
-                                    </tr>
-                                    <tr class="status-completed">
-                                        <th class="course-title"><a href="course-detail-v1.html">History in complex view</a></th>
-                                        <th class="course-category"><a href="#">History and Psychology</a></th>
-                                        <th>06-04-2014</th>
-                                        <th class="status"><i class="fa fa-check"></i>Completed</th>
-                                    </tr>
+                                    
+                                    <?php 
+                                    foreach($events as $event){  ?>
+                                     <tr class="status-not-started">
+                                        <th class="course-title"><a href="<?php echo base_url() ?>event/<?php echo $catg[$event->event_type]['category_code'].'-'.$catg[$event->event_type]['name_code'].'/'.$event->url_key; ?>"><?php echo $event->name; ?></a></th>
+                                        <th class="course-category"><a href="#"><?php echo $catg[$event->event_type]['name']; ?></a></th>
+                                        <th class="status"><i class="fa fa-calendar-o"></i><?php echo date("dS F Y", strtotime($event->event_from)); ?></th>
+                                        <th><?php echo ($event->status == '10')?'Enable':'Disable'; ?></th>
+                                      </tr>
+                                    <?php }
+                                    ?>
+                                   
                                     </tbody>
                                 </table>
-                                <div class="center">
+                               <!-- <div class="center">
                                     <ul class="pagination">
                                         <li class="active"><a href="#">1</a></li>
                                         <li><a href="#">2</a></li>
                                         <li><a href="#">3</a></li>
                                     </ul>
-                                </div>
+                                </div>-->
                             </section><!-- /#course-list -->
                         </div><!-- /.tab-pane -->
 

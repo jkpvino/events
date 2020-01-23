@@ -80,10 +80,17 @@ class Account extends API_Controller {
     
     $userInfo = $this->user_model->getUserByEmail($email);
     $logid = $userInfo[0]->id;
-    $myEvents = $this->event_model->getSymposiumById($logid);
+    $myEvents = $this->event_model->getSymposiumById($logid,'500');
+    $event_types = $this->event_model->getEventTypes();
+    foreach($event_types as $eventType){
+      $ev_type[$eventType->id]['name'] = $eventType->name;
+      $ev_type[$eventType->id]['name_code'] = $eventType->name_code;
+      $ev_type[$eventType->id]['category_code'] = $eventType->category_code;
+    }
       $vars['class'] = '';
       $vars['user'] = $userInfo;
       $vars['events'] = $myEvents;
+      $vars['catg'] = $ev_type;
       $this->load->template('my-account',$vars);
   }
   public function forgot()
