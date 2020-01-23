@@ -168,25 +168,21 @@
                                 <header><h3>Change Password</h3></header>
                                 <div class="row">
                                     <div class="col-md-5 col-md-offset-4">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            In sollicitudin mi id urna pulvinar, in ornare dui scelerisque.
-                                            Nunc nec odio eros
-                                        </p>
-                                        <form role="form" class="clearfix" action="course-joined.html">
+                                       
+                                        <form role="form" name="resetpass" method="post" class="clearfix" action="<?php echo base_url(); ?>/customer/account/updatepassword">
                                             <div class="form-group">
                                                 <label for="current-password">Current Password</label>
-                                                <input type="password" class="form-control" id="current-password">
+                                                <input required type="password" name="c-pass"class="form-control" id="current-password">
                                             </div>
                                             <div class="form-group">
                                                 <label for="new-password">New Password</label>
-                                                <input type="password" class="form-control" id="new-password">
+                                                <input required type="password" name="n-pass" class="form-control" id="new-password">
                                             </div>
                                             <div class="form-group">
                                                 <label for="repeat-new-password">Repeat New Password</label>
-                                                <input type="password" class="form-control" id="repeat-new-password">
+                                                <input required type="password" name="cn-pass" class="form-control" id="repeat-new-password">
                                             </div>
-                                            <button type="submit" class="btn pull-right">Change Password</button>
+                                            <button type="submit" class="btn pull-right" onclick="return Validate()">Change Password</button>
                                         </form>
                                     </div>
                                 </div>
@@ -204,3 +200,14 @@
     </div><!-- /.container -->
 </div>
 <!-- end Page Content -->
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("new-password").value;
+        var confirmPassword = document.getElementById("repeat-new-password").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>

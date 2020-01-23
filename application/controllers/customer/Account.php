@@ -93,6 +93,40 @@ class Account extends API_Controller {
       $vars['catg'] = $ev_type;
       $this->load->template('my-account',$vars);
   }
+  public function updatepassword(){
+    $this->load->helper('form');
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('c-pass', 'passwod', 'required');
+    $this->form_validation->set_rules('n-pass', 'new password', 'required');
+    $this->form_validation->set_rules('cn-pass', 'confirm password', 'required');
+    if (!isset($this->session->userdata['logged_in'])) { 
+      redirect('/index');
+    }
+    $this->load->model('user_model');
+    
+    $logged_info = $this->session->userdata['logged_in'];
+    $email = $logged_info['email'];
+    
+    $userInfo = $this->user_model->getUserByEmail($email);
+    $logid = $userInfo[0]->id;
+    if ($this->form_validation->run() == FALSE){
+      redirect('/customer/account');
+    }else{
+      $pass = md5($this->input->post('c-pass'));
+      $npass = md5($this->input->post('n-pass'));
+      $old_pass = $userInfo[0]->password;
+       if($pass == $old_pass){
+        $data = array('password'=>$npass);
+         $this->user_model->updateUsers($data,$logid);
+         $this->session->set_flashdata('msg', "Password updated successfully");
+        redirect('/customer/account/myaccount');
+       }else{
+        
+        $this->session->set_flashdata('msg', "Password does not match");
+        redirect('/customer/account/myaccount');
+       }
+    }
+  }
   public function forgot()
   {
   
