@@ -285,6 +285,7 @@ myApp.factory('Reddit', function($http) {
     this.items = [];
     this.busy = false;
     this.loader = false;
+    this.no_result = false;
     this.after = 0;
   };
   var searchtext = "false";
@@ -304,13 +305,16 @@ myApp.factory('Reddit', function($http) {
     
     var url = "<?php echo base_url(); ?>"+"events/browse/"+searchtext+"/"+limit+"/"+ this.after+"/"+method;
     $http.post(url, { isAjax: true }).success(function(response) {
-    console.log(response);
+   // console.log(response);
     var items = response;
     for (var i = 0; i < items.length; i++) {
    
         this.items.push(response[i]);
       }
-      this.after = this.items.length;      
+      this.after = this.items.length;    
+      if(this.after == 0){
+        this.no_result =true;
+      }  
       if(response.length == 0){
         this.busy = true;
         this.loader =false;
