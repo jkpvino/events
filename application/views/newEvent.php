@@ -47,7 +47,7 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Event Start  </label><span> (* Required to fill information) </span></div>                                
                                 <div class="input-group date datetimepicker" >
-                                    <input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="<?php echo $programTab['program_start']; ?>" />
+                                    <input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="<?php echo date('Y-m-d', strtotime($programTab['program_start'])) ?>" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -58,7 +58,7 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Event End  </label><span> (* Required to fill information) </span></div>                                
                                 <div class="input-group date datetimepicker" >
-                                    <input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="<?php echo $programTab['program_end']; ?>" />
+                                    <input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="<?php echo date('Y-m-d', strtotime($programTab['program_end'])) ?>" />
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -502,7 +502,7 @@
                                         <div class="input-group">                                                   
                                             <div><label class="control-label"> Date  </label></div>                                
                                             <div class="input-group datetimepicker">
-                                                <input type='text' required name="event_start[]" value="<?php echo date('yy-m-d', strtotime($subevent->event_from) ) ?>" class="form-control datepicker  has-dark-background" />
+                                                <input type='text' required name="event_start[]" value="<?php echo date('Y-m-d', strtotime($subevent->event_from) ) ?>" class="form-control datepicker  has-dark-background" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -539,7 +539,7 @@
                                         <div class="input-group">
                                             <div><label class="control-label"> Date </label></div> 
                                             <div class="input-group datetimepicker">
-                                                <input type='text' required name="event_end[]" value="<?php echo date('yy-m-d', strtotime($subevent->event_to) ) ?>" class="form-control datepicker has-dark-background" />
+                                                <input type='text' required name="event_end[]" value="<?php echo date('Y-m-d', strtotime($subevent->event_to) ) ?>" class="form-control datepicker has-dark-background" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
