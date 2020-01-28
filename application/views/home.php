@@ -240,7 +240,7 @@
                     <?php foreach ($latestevents as $key => $latestevent) { ?>
                         <div class="col-md-4">
                             <div class="latest-course">
-                                <?php $filename =  base_url().'assets/images/logo/'.$latestevent->banner; $file_headers = @get_headers($filename); ?>
+                                <?php $filename =  base_url().'assets/images/logo/'.$latestevent->logo; $file_headers = @get_headers($filename); ?>
                                 <?php if($file_headers[0] == 'HTTP/1.0 404 Not Found'){ ?>
                                     <figure class="date thumb">
                                         <div class="month">Dec</div>
@@ -253,7 +253,7 @@
                                     </figure>
                                 <?php }else{ ?> 
                                     <figure class="image">
-                                        <div class="image-wrapper"><a href="course-detail-v1.html"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $latestevent->banner ?>"></a></div>
+                                        <div class="image-wrapper"><a href="<?php echo base_url().'event/'.$latestevent->etypecategory.'-'.$latestevent->etypename.'/'.$latestevent->url_key ?>"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $latestevent->logo ?>"></a></div>
                                     </figure>
                                 <?php } ?>                                
                                 <aside class="description">
