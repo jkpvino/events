@@ -136,7 +136,8 @@ class Events extends CI_Controller{
             $url_key = $eventInfo->url_key;
             $eventCatg = $this->event_model->getEventType($eventType);
             if ($status) {                
-                echo $url = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$url_key;
+                //echo $url = 'event/'.$eventCatg->category.'-'.$eventCatg->name.'/'.$url_key;
+                echo $url = 'customer/account/myaccount';
             }else{
                 echo $status;
             }
