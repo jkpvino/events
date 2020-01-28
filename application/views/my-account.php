@@ -7,7 +7,7 @@
 
 
             <!--SIDEBAR Content-->
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div id="page-sidebar" class="sidebar">
                     <aside class="news-small" id="news-small">
                         <header>
@@ -21,7 +21,7 @@
                                     <li> <a href=""> Workshop </a></li>
                                     <li> <a href=""> Conference </a></li>
                                 </ul>
-                            </article><!-- /article -->
+                            </article>
                             <article>
                                 <h6><a href="#"> Category </a></h6>
                                 <ul>
@@ -29,16 +29,16 @@
                                     <li> <a href=""> School </a></li>
                                     <li> <a href=""> College </a></li>
                                 </ul>
-                            </article><!-- /article -->
-                        </div><!-- /.section-content -->
+                            </article>
+                        </div>
                         <a href="" class="read-more">All News</a>
-                    </aside><!-- /.news-small -->
-                </div><!-- /#sidebar -->
-            </div><!-- /.col-md-4 -->
+                    </aside>
+                </div>
+            </div> -->
             <!-- end SIDEBAR Content-->
 
 
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <section id="my-account">
                     <ul class="nav nav-tabs" id="tabs">
                         <li class="active"><a href="#tab-profile" data-toggle="tab">Profile</a></li>
@@ -77,7 +77,7 @@
                                                 <tr>
                                                     <td class="title">Email</td>
                                                     <td>
-                                                        <div class="input-group">
+                                                        <div class="input-group emailbox">
                                                             <?php echo $value->email; ?>
                                                         </div><!-- /input-group -->
                                                     </td>
@@ -134,6 +134,8 @@
                                         <th>Event Type</th>
                                         <th class="starts">Starts</th>
                                         <th class="status">Status</th>
+                                        <th class="">Action</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -145,6 +147,7 @@
                                         <th class="course-category"><a href="#"><?php echo $catg[$event->event_type]['name']; ?></a></th>
                                         <th class="status"><i class="fa fa-calendar-o"></i><?php echo date("dS F Y", strtotime($event->event_from)); ?></th>
                                         <th><?php echo ($event->status == '10')?'Enable':'Disable'; ?></th>
+                                        <th> <a target="_blank" href="<?php echo base_url().'events/createevent/'.$event->url_key ?>"> Edit </a> </th>
                                       </tr>
                                     <?php }
                                     ?>

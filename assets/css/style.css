@@ -1594,9 +1594,17 @@ margin: 40px auto;
   color: #252525;
   padding-left: 0;
 }
+.my-profile article .my-profile-table tbody tr td select.has-dark-background, .my-profile article .my-profile-table tbody tr td .input-group input[type="text"], .my-profile article .my-profile-table tbody tr td .input-group textarea{
+  border: 1px solid #f1f1f1;
+  max-width: 320px;
+  padding: 10px;
+}
 .my-profile article .my-profile-table tbody tr td .input-group input[type="text"]:hover, .my-profile article .my-profile-table tbody tr td .input-group textarea:hover {
   border-color: #c5c5c5;
   padding-left: 9px;
+}
+.my-profile article .my-profile-table tbody tr td .input-group.emailbox{
+  padding-left: 10px;
 }
 
 /****
