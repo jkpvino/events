@@ -175,7 +175,7 @@
                             </figure>
                             <aside>
                                 <header>
-                                    <a href=""> <?php echo $schoolevent->name; ?> </a>
+                                    <a href="<?php echo base_url().'event/'.$schoolevent->etypecategory.'-'.$schoolevent->etypename.'/'.$schoolevent->url_key ?>"> <?php echo $schoolevent->name; ?> </a>
                                 </header>
                                 <div class="additional-info"><?php echo substr($schoolevent->institution, 0, 80); ?>...</div>
                             </aside>
@@ -199,7 +199,7 @@
                             </figure>
                             <aside>
                                 <header>
-                                    <a href=""> <?php echo $collegeEvent->name; ?> </a>
+                                    <a href="<?php echo base_url().'event/'.$collegeEvent->etypecategory.'-'.$collegeEvent->etypename.'/'.$collegeEvent->url_key ?>"> <?php echo $collegeEvent->name; ?> </a>
                                 </header>
                                 <div class="additional-info"><?php echo substr($collegeEvent->institution, 0, 80); ?>...</div>
                             </aside>
