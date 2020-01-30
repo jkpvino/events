@@ -43,7 +43,7 @@ else
 
 
 <div id="load">
-	<div style="top: 45%; position: fixed; margin: 0 auto; text-align: center;    left: 0;    right: 0;    color: #F00484;    font-size: 2em;"> <img src="<?php echo base_url().'assets/images/loader.gif' ?>"> loading ...</div>
+	<div style="top: 45%; position: fixed; margin: 0 auto; text-align: center;    left: 0;    right: 0;    color: #F00484;    font-size: 2em;"> <img style="width: auto;" src="<?php echo base_url().'assets/images/loader.gif' ?>"> loading ...</div>
 </div>
 <script type="text/javascript">
 document.onreadystatechange = function () {

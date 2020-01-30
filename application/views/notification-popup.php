@@ -53,7 +53,7 @@
 
 <div id="newsletter_subscribe_modal" class="modal fade">
   <div class="modal-dialog modal-newsletter">
-    <div class="modal-content">
+    <div class="modal-content col-md-12">
       <form action="<?php echo base_url().'customer/account/subscribe' ?>" name="subscribe_newsletter_popup" id="subscribe_newsletter_popup" method="post">
         <div class="modal-header">
           <h4>Subscribe to our newsletter</h4>  

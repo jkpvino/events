@@ -51,7 +51,7 @@
 
 .modal-newsletter { 
     color: #999;
-    width: 625px;
+    max-width: 625px;
     font-size: 15px;
 }
 .modal-newsletter .modal-content {
@@ -117,7 +117,6 @@
     transition: all 0.4s;
     line-height: normal;
     padding: 6px 20px;
-    min-width: 150px;
     margin-left: 6px !important;
     border: none;
 }

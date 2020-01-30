@@ -295,7 +295,7 @@
 
 
 <!-- Partners, Make a Donation -->
-<div class="block">
+<!--<div class="block">
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-sm-9">
@@ -313,7 +313,7 @@
                         </div>
                     </div>
                 </section>
-            </div><!-- /.col-md-9 -->
+            </div>
             <div class="col-md-3 col-sm-3">
                 <section id="donation">
                     <header>
@@ -324,12 +324,12 @@
                             <h3>Create Event</h3>
                             <figure class="date"><i class="fa fa-arrow-right"></i></figure>
                         </a>
-                    </div><!-- /.section-content -->
+                    </div>
                 </section>
-            </div><!-- /.col-md-3 -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</div>
+            </div>
+        </div>
+    </div>
+</div>-->
 <!-- end Partners, Make a Donation -->
 </div>
 <!-- end Page Content -->
