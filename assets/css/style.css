@@ -1565,9 +1565,9 @@ margin: 40px auto;
 .my-profile .profile-avatar {
   float: left;
 }
-.my-profile article {
+/*.my-profile article {
   padding-left: 120px;
-}
+}*/
 .my-profile article .my-profile-table {
   margin-bottom: 20px;
   width: 100%;
@@ -1581,8 +1581,11 @@ margin: 40px auto;
 }
 .my-profile article .my-profile-table tbody tr td.title {
   font-weight: bold;
-  width: 130px;
-  padding-right: 30px;
+  /*width: 130px;
+  padding-right: 30px;*/
+}
+.tab-pane #course-list{
+  overflow-x: auto; 
 }
 .my-profile article .my-profile-table tbody tr td .input-group {
   margin-bottom: 0px;
