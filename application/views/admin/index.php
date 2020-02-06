@@ -84,6 +84,13 @@
 	<script type= 'text/javascript'>
 	    $(document).ready(function () {
 
+	        var url = '<?php echo base_url(); ?>admin/eventlist';
+	        $('#event-grid').DataTable({
+	            "processing": true,
+	            "serverSide": true,
+	            "ajax": url
+	        });
+
 	    	var user_type='<?php echo $_SESSION['logbyadmin']['usertype']; ?>';
 
 	        var url = '<?php echo base_url(); ?>admin/adminlist';

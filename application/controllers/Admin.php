@@ -96,6 +96,93 @@ class Admin extends CI_Controller {
     } 
 
 
+    /* ----------------- Event Collection ----------------- */
+    public function manageevent(){
+        if(isAdminLogged()){
+            $session_data = $this->session->userdata('logbyadmin');        
+            $_method = $this->router->fetch_method();   
+            $pagecontent = array(
+                'username' => $session_data['username'], 
+                'logid' => $session_data['id'],
+            );
+            $data = array(
+                'title' => 'Manage Event',
+                'subtitle' => '',
+                'body_content' => 'manageevent/events.php', 
+                'pagecontent' => $pagecontent,
+                'method' => $_method,
+            );
+            $this->load->view('admin/index',$data);
+        }else{
+            redirect('admin', 'refresh');
+        }
+    }
+    public function eventlist() {
+        $results = $this->admin_model->geteventlist();
+        echo json_encode($results);
+    }
+    public function eventupdate(){
+        $id = $this->input->get('id') ? $this->input->get('id') : '';
+        $status = $this->input->get('status') ? $this->input->get('status') : '';
+        if($id && $status){
+            $data = array(
+                'status' => $status, 
+            );
+            $this->admin_model->updateevent($data,$id);
+        }
+        redirect('admin/manageevent', 'refresh');
+    }
+    /* ----------------- End Event Collection ----------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function settings(){
         if(isAdminLogged()){
             $session_data = $this->session->userdata('logbyadmin');        
@@ -148,33 +235,7 @@ class Admin extends CI_Controller {
 
 
 
-    /* ----------------- User Collection ----------------- */
-    public function manageusers(){
-        if(isAdminLogged()){
-            $session_data = $this->session->userdata('logbyadmin');        
-            $_method = $this->router->fetch_method();   
-            $pagecontent = array(
-                'username' => $session_data['username'], 
-                'logid' => $session_data['id'],
-                'usertype' => $session_data['usertype']
-            );
-            $data = array(
-                'title' => 'Manage Users',
-                'subtitle' => '',
-                'body_content' => 'manageusers/admin_users.php', 
-                'pagecontent' => $pagecontent,
-                'method' => $_method,
-            );
-            $this->load->view('admin/index',$data);
-        }else{
-            redirect('admin', 'refresh');
-        }
-    }
-    public function userslist() {
-        $results = $this->admin_model->getclientlist();
-        echo json_encode($results);
-    }
-    /* ----------------- End User Collection ----------------- */
+    
 
     /* -------------Admin Collection -------------------------*/
     public function manageadmin(){

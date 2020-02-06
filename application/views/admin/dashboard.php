@@ -60,97 +60,40 @@
 						</td>
 
 						<td class="text-right col-md-2">
-							<a href="<?php echo base_url('admin/manageusers') ?>" class="btn btn-primary"> View <i class="icon-arrow-right14 position-right"></i> </a>
+							<a href="<?php echo base_url('admin/manageusers') ?>" class="btn btn-primary"> View All <i class="icon-arrow-right14 position-right"></i> </a>
 						</td>
 					</tr>
 				</tbody>
 			</table>	
-		</div>
-
-
-		<div class="table-responsive">
-			<table class="table text-nowrap">
-				<thead>
-					<tr>
-						<th style="width: 50px">Due</th>
-						<th>Image</th>
-						<th> Full Name </th>
-						<th> Phone No </th>
-						<th> Created </th>
-						<th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="active border-double">
-						<td colspan="5">New Users</td>
-						<td class="text-right">
-							<span class="badge bg-blue"><?php echo getTodayUsersCount(); ?> </span>
-						</td>
-					</tr>
-					<?php if(count(getTodayUsers()) <= 0){ ?> 
-					<tr >
-						<td colspan="6"> No Records Found </td>						
-					</tr>
-					<?php }else{ ?> 
-					<?php foreach (getTodayUsers() as $key => $todayusers) { ?>
-					<?php 
-						$hourdiff = round((strtotime(date('Y-m-d H:i:s')) - strtotime($todayusers->d_created))/3600, 1);
-					?>
-					<tr>
-						<td class="text-center">
-							<h6 class="no-margin"> <?php echo $hourdiff; ?>  <small class="display-block text-size-small no-margin">hours</small></h6>
-						</td>
-						<td class="text-center"> 
-						<?php 
-							if($todayusers->profileimg)
-								$img_url = base_url().'assests/uploads/users/'.$todayusers->profileimg;
-							else
-								$img_url = base_url().'assests/admin/assets/images/placeholder.jpg';
-
-						?>
-							<img class="profileimg img-circle img-sm" src="<?php echo $img_url; ?>">
-						</td>
-						<td>
-							<div class="">
-								<a href="#" class="display-inline-block text-default text-semibold letter-icon-title"> 
-									<?php echo $todayusers->FullName ; ?> 
-								</a>
-								<div class="text-muted text-size-small"> 
-								<?php if($todayusers->user_status == 1){ ?> 
-									<span class="status-mark border-blue position-left"></span> Active 
-								<?php }else{ ?> 
-									<span class="status-mark border-warning position-left"></span> InActive 
-								<?php } ?></div> 
-							</div>
-
-						</td>
-						<td>
-							<a href="#" class="text-default display-inline-block">
-								<span class="text-semibold"><?php echo $todayusers->Phone_no; ?> </span>
-								
-							</a>
-						</td>
-						<td>
-							<span class="text-semibold"><?php echo $todayusers->d_created; ?> </span>
-						</td>
-						<td> 
-							<a class="letter-icon-title" href="<?php echo base_url('admin/profile').'/'.$todayusers->id; ?>">View</a>
-						</td>
-						
-					</tr>
-					<?php } ?>
-					<?php } ?>
-
-					
-
-				</tbody>
-			</table>
-		</div>
+		</div>		
 	</div>
 	<!-- /Users -->
 
-
-
+	<?php if(count(getTodayUsers()) > 0){ ?> 
+	<div class="table-responsive">
+		<table class="table text-nowrap">
+			<thead>
+				<tr>
+					<th style="width: 50px">Id</th>
+					<th>Image</th>
+					<th> Full Name </th>
+					<th> Phone No </th>
+					<th> Email Address </th>
+					<th> Created At </th>
+					<th class="text-center" style="width: 20px;"><i class="icon-arrow-down12"></i></th>
+				</tr>
+				<tr class="active border-double">
+					<td colspan="6">New Users</td>
+					<td class="text-right">
+						<span class="badge bg-blue"><?php echo getTodayUsersCount(); ?> </span>
+					</td>
+				</tr>				
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	<?php } ?>
 
 	<!-- Footer -->
 	<div class="footer text-muted">
