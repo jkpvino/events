@@ -7,7 +7,7 @@ class Admin_model extends CI_Model {
 
     public function isexists($username, $password){
         $limit = 1;
-        $query = $this->db->get_where('HSM_ADMIN', array('username' => $username,'password' => md5($password), 'status' => 1 ), $limit);
+        $query = $this->db->get_where('hsm_admin', array('username' => $username,'password' => md5($password), 'status' => 1 ), $limit);
         if($query -> num_rows() == 1)
             return $query->result();
         else
@@ -16,7 +16,7 @@ class Admin_model extends CI_Model {
 
     public function getadmininfobyId($id){
         $limit = 1;
-        $query = $this->db->get_where('HSM_ADMIN', array('id' => $id, 'status' => 1 ), $limit);
+        $query = $this->db->get_where('hsm_admin', array('id' => $id, 'status' => 1 ), $limit);
         if($query -> num_rows() == 1)
             return $query->result();
         else
