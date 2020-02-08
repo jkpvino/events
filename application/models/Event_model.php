@@ -60,7 +60,7 @@ class Event_model extends CI_Model {
         public function getSymposiumById($user_id,$limit=10,$offset=0)
         {
                // $limit = 1;$offset = 0;
-                $query = $this->db->get_where('symposium', array('status' => '10','user_id'=>$user_id), $limit, $offset);
+                $query = $this->db->get_where('symposium', array('user_id'=>$user_id), $limit, $offset);
                 //echo $this->db->last_query();exit;
                 return $query->result();
         }

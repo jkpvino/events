@@ -133,9 +133,9 @@ document.onreadystatechange = function () {
                                
                             </ul>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="about-us.html">About Us</a>
-                        </li>
+                        </li>-->
                         <li>
                             <a href="javascript:void(0)"  data-toggle="modal" data-target="#contactus_form">Contact Us</a>
                         </li>                        
