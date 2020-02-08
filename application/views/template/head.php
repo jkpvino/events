@@ -27,7 +27,7 @@
     <!-- Notification -->
     <link href="<?php echo base_url(); ?>assets/css/jquery.growl.css" rel="stylesheet" type="text/css" />
 
-    <title>Meetup</title>
+    <title>Icoots.com</title>
 
 </head>
   
