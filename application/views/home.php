@@ -212,15 +212,13 @@
             <div class="col-md-4 col-sm-12">
                 <section id="about">
                     <header>
-                        <h2>About Universo</h2>
+                        <h2>About icoots</h2>
                     </header>
                     <div class="section-content">
                         <img src="<?php echo base_url() ?>assets/img/students.jpg" alt="" class="add-margin">
-                        <p><strong>Welcome o Universo.</strong> Premium HTML Template for schools, universieties and other educational institutes.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet semper tincidunt.
-                            Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+                        <p>The icoots is the application for creation or sharing your events such as symposium, conference, workshop, business events, seminar, exhibition, festivals, ceremonies, weddings, formal parties, concerts, or conventions etc...</p>
                         <br>
-                        <a href="" class="read-more stick-to-bottom">Read More</a>
+                        <a href="<?php echo base_url().'events' ?>" class="read-more stick-to-bottom">All Events</a>
                     </div><!-- /.section-content -->
                 </section><!-- /.about -->
             </div><!-- /.col-md-4 -->

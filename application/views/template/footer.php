@@ -7,7 +7,7 @@
                     <figure>Follow us:</figure>
                     <div class="icons">
                         <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/Icoots-107898950784053/" target="__blank"><i class="fa fa-facebook"></i></a>
                         <a href=""><i class="fa fa-pinterest"></i></a>
                         <a href=""><i class="fa fa-youtube-play"></i></a>
                     </div><!-- /.icons -->
@@ -36,15 +36,15 @@
                     <aside>
                         <header><h4>Contact Us</h4></header>
                         <address>
-                            <strong>University of Universo</strong>
+                            <strong>Icoots.com</strong>
                             <br>
-                            <span>4877 Spruce Drive</span>
+                            <span>Whitefield, Bangalore</span>
                             <br><br>
-                            <span>West Newton, PA 15089</span>
+                            <spa>Karnataka India</span>
                             <br>
-                            <abbr title="Telephone">Telephone:</abbr> +1 (734) 123-4567
-                            <br>
-                            <abbr title="Email">Email:</abbr> <a href="#">questions@youruniversity.com</a>
+                            <!--<abbr title="Telephone">Telephone:</abbr> +1 (734) 123-4567
+                            <br>-->
+                            <abbr title="Email">Email:</abbr> <a href="#">icoots2020@gmail.com</a>
                         </address>
                     </aside>
                 </div><!-- /.col-md-3 -->
@@ -52,24 +52,21 @@
                     <aside>
                         <header><h4>Important Links</h4></header>
                         <ul class="list-links">
-                            <li><a href="#">Future Students</a></li>
+                            <li><a href="#">Conference</a></li>
                             <li><a href="#">Alumni</a></li>
-                            <li><a href="#">Give a Donation</a></li>
-                            <li><a href="#">Professors</a></li>
-                            <li><a href="#">Libary & Health</a></li>
-                            <li><a href="#">Research</a></li>
+                            <li><a href="#">Workshop</a></li>
+                            <li><a href="#">Culture Fest</a></li>
+                            <li><a href="#">Technical Fest</a></li>
                         </ul>
                     </aside>
                 </div><!-- /.col-md-3 -->
                 <div class="col-md-3 col-sm-4">
                     <aside>
-                        <header><h4>About Universo</h4></header>
-                        <p>Aliquam feugiat turpis quis felis adipiscing, non pulvinar odio lacinia.
-                            Aliquam elementum pharetra fringilla. Duis blandit, sapien in semper vehicula,
-                            tellus elit gravida odio, ac tincidunt nisl mi at ante. Vivamus tincidunt nunc nibh.
+                        <header><h4>About Icoots</h4></header>
+                        <p>The icoots is the application for creation or sharing your events such as symposium, conference, workshop, business events, seminar, exhibition, festivals, ceremonies, weddings, formal parties, concerts, or conventions etc...
                         </p>
                         <div>
-                            <a href="" class="read-more">All News</a>
+                            <a href="<?php echo base_url().'events' ?>" target="__blank" class="read-more">All Events</a>
                         </div>
                     </aside>
                 </div><!-- /.col-md-3 -->
@@ -81,7 +78,7 @@
     <section id="footer-bottom">
         <div class="container">
             <div class="footer-inner">
-                <div class="copyright">© Theme Starz, All rights reserved</div><!-- /.copyright -->
+                <div class="copyright">© Icoots.com, All rights reserved</div><!-- /.copyright -->
             </div><!-- /.footer-inner -->
         </div><!-- /.container -->
     </section><!-- /#footer-bottom -->
