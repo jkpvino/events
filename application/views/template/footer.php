@@ -52,11 +52,11 @@
                     <aside>
                         <header><h4>Important Links</h4></header>
                         <ul class="list-links">
-                            <li><a href="#">Conference</a></li>
-                            <li><a href="#">Alumni</a></li>
-                            <li><a href="#">Workshop</a></li>
-                            <li><a href="#">Culture Fest</a></li>
-                            <li><a href="#">Technical Fest</a></li>
+                            <li><a href="<?php echo base_url() ?>events/category/conference">Conference</a></li>
+                            <li><a href="<?php echo base_url() ?>events/category/alumini">Alumni</a></li>
+                            <li><a href="<?php echo base_url() ?>events/category/workshop">Workshop</a></li>
+                            <li><a href="<?php echo base_url() ?>events/category/culture">Culture Fest</a></li>
+                            <li><a href="<?php echo base_url() ?>events/category/technical">Technical Fest</a></li>
                         </ul>
                     </aside>
                 </div><!-- /.col-md-3 -->

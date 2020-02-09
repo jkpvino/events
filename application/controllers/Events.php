@@ -213,7 +213,10 @@ class Events extends CI_Controller{
          //$this->load->model('event_model');
          $event_type_id = $this->event_model->getEventId($event_type);
          if($event_type_id){
-             $event = $this->event_model->get_event_details($event_type_id,$url_key);           
+             $event = $this->event_model->get_event_details($event_type_id,$url_key);    
+             if($event->status != 10){
+                echo "<div class= 'demonotice' > Admin approval required to publish page content </div>";
+             }
              if($event){                
                  $institution = $this->event_model->getInstitution($event->institution_id); 
                  if($institution->country && $institution->state && $institution->city){

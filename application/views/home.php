@@ -255,7 +255,7 @@
                                     </figure>
                                 <?php } ?>                                
                                 <aside class="description">
-                                    <a href="course-detail-v1.html"><h4><?php echo (strlen($latestevent->name) > 25) ? substr($latestevent->name,0,25).'...' : $latestevent->name; ?></h4></a>
+                                    <a href="<?php echo base_url().'event/'.$latestevent->etypecategory.'-'.$latestevent->etypename.'/'.$latestevent->url_key ?>"><h4><?php echo (strlen($latestevent->name) > 25) ? substr($latestevent->name,0,25).'...' : $latestevent->name; ?></h4></a>
                                     <p> <?php echo $latestevent->institution ?> </p>
                                     <p> <?php echo $latestevent->country ?>, <?php echo $latestevent->state ?>, <?php echo $latestevent->city ?> </p>
                                     <div class="course-meta">

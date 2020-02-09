@@ -9,8 +9,8 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
-                        <div class="title">Find the Best Places to Be</div>
-                        <p class="sub_title">All the top locations – from restaurants and clubs, to galleries, famous places and more..</p>
+                        <div class="title">Find the Upcoming/Existing Events</div>
+                        <p class="sub_title">All the top locations – from college, schools, business events, conference, workshop, symposium, and more..</p>
                     </div><!-- ends: .search_title_area -->
                     <div class="search_form">
                         <div class="atbd_seach_fields_wrapper">
