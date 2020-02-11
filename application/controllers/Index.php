@@ -15,8 +15,8 @@ class Index extends CI_Controller{
         $this->load->model('event_model');
         $vars['class'] = '';
         $vars['logged_info'] = $logged_info;
-        $vars['schoolEvents'] = $this->event_model->get_symposium(array('category' => 'school'), 3, 0);
-        $vars['collegeEvents'] = $this->event_model->get_symposium(array('category' => 'college'), 3, 0);
+        $vars['schoolEvents'] = $this->event_model->get_symposium(array('category' => 'conference'), 3, 0);
+        $vars['collegeEvents'] = $this->event_model->get_symposium(array('category' => 'symposium'), 3, 0);
         $vars['latestevents'] = $this->event_model->get_symposium(array(), 6, 0);
         $this->load->template('home',$vars);
     }

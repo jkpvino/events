@@ -145,7 +145,7 @@
                             </figure>
                             <div class="single-news-info">
                                 <h3 class="title">
-                                    <a href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}">{{item.name}}{{key}}</a>
+                                    <a href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}">{{item.name}}</a>
                                 </h3>
                                 <div class="meta-wrapper">
                                     <span><i class="fa fa-calendar" aria-hidden="true"></i> {{item.event_from}}</span>  
