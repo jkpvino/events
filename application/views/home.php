@@ -69,7 +69,7 @@
 
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="terms" id="terms">I Understand <a href="#">Terms & Conditions</a>
+                                                <input type="checkbox" name="terms" id="terms">I understand <a href="javascript:void(0)">Terms & Conditions</a>
                                             </label>
                                         </div>
                                     </div><!-- /.row -->
@@ -216,8 +216,10 @@
                     </header>
                     <div class="section-content">
                         <img src="<?php echo base_url() ?>assets/img/students.jpg" alt="" class="add-margin">
-                        <p>The icoots is the application for creation or sharing your events such as symposium, conference, workshop, business events, seminar, exhibition, festivals, ceremonies, weddings, formal parties, concerts, or conventions etc...</p>
-                        <br>
+                        <p>Icoots orignated from the thought that there exists creative thinkers who wants to Publish events in online and prefer to do faster without coding at therir own pace .Icoots helps you to create event and publish online.</p>
+                        
+                        <p> Icoots Template and resources are freely available and we encourage our users to acquire as many things as they would like to. </p>
+                        <p> Our mission is "Make things online" </p> <br>
                         <a href="<?php echo base_url().'events' ?>" class="read-more stick-to-bottom">All Events</a>
                     </div><!-- /.section-content -->
                 </section><!-- /.about -->

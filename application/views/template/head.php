@@ -82,7 +82,7 @@ document.onreadystatechange = function () {
 <div class="navigation-wrapper">
     <div class="secondary-navigation-wrapper">
         <div class="container">
-            <div class="navigation-contact pull-left">Call Us:  <span class="opacity-70">+91 8220466675</span></div>
+            <div class="navigation-contact pull-left"><i class="fa fa-phone"></i> Call us :  <span class="opacity-70">+91 8220466675</span></div>
             <div class="search">
                 <div class="input-group">
                     <input type="search" class="form-control" name="search" id="headSearch" placeholder="Search">
@@ -119,17 +119,27 @@ document.onreadystatechange = function () {
                         <li>
                             <a href="#" class="has-child no-link">Category</a>
                             <ul class="list-unstyled child-navigation">
-                                <?php foreach (getAllEventCategory() as $key => $value) { ?>
-                                    <li><a href="<?php echo base_url() ?>events/category/<?php echo $value->category_code; ?>"><?php echo $value->category; ?></a></li>
-                                <?php } ?>
+                            	<li> <a href="<?php echo base_url() ?>events/category/summer"> Summer Events </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/technical"> Technical Fest </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/cultural"> Cultural Fest </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/management"> Management Fests </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/entrepreneurship"> Entrepreneurship </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/annualday"> Annual Day </a> </li>
+                                
                             </ul>
                         </li>
                         <li>
                             <a href="<?php echo base_url() ?>events/" class="has-child no-link">Events</a>
                             <ul class="list-unstyled child-navigation">
-                                <?php foreach (getEventTypes() as $key => $value) { ?>
-                                    <li><a href="<?php echo base_url() ?>events/category/<?php echo $value->name_code; ?>"><?php echo $value->name; ?></a></li>
-                                <?php } ?>
+                            	<li> <a href="<?php echo base_url() ?>events/category/symposium"> Symposium </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/conference"> Conference </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/workshop"> Workshop </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/alumini"> Alumini Meet </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/sports"> Sports Meet </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/fun"> Fun Events </a> </li>
+                                <!-- <?php //foreach (getEventTypes() as $key => $value) { ?>
+                                    <li><a href="<?php //echo base_url() ?>events/category/<?php //echo $value->name_code; ?>"><?php //echo $value->name; ?></a></li>
+                                <?php //} ?> -->
                                
                             </ul>
                         </li>
@@ -137,17 +147,17 @@ document.onreadystatechange = function () {
                             <a href="about-us.html">About Us</a>
                         </li>-->
                         <li>
-                            <a href="javascript:void(0)"  data-toggle="modal" data-target="#contactus_form">Contact Us</a>
+                            <a href="javascript:void(0)"  data-toggle="modal" data-target="#contactus_form">Contactus</a>
                         </li>                        
                         <li>
-                            <a href="#" class="has-child no-link"> My Account </a>
+                            <a href="<?php echo base_url() ?>customer/account/myaccount" class="has-child no-link"> My Account </a>
                             <ul class="list-unstyled child-navigation">
                                 <?php
                                 if (isset($this->session->userdata['logged_in'])) { ?>
                                      <li><a href="<?php echo base_url() ?>customer/account/myaccount">My Account</a></li>
                                       <li><a href="<?php echo base_url() ?>customer/account/logout">Logout</a></li>
                                 <?php }else{ ?>                               
-                                <li><a href="<?php echo base_url() ?>customer/account/register">Signup</a></li>
+                                <li><a href="<?php echo base_url() ?>customer/account/register">Sign Up</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/login">Login</a></li>
                                 <li><a href="<?php echo base_url() ?>customer/account/forgot">Forgot Password </a></li>
                             <?php } ?>

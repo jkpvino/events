@@ -38,10 +38,10 @@
                         <address>
                             <strong>Icoots.com</strong>
                             <br>
-                            <span>Whitefield, Bangalore</span>
-                            <br><br>
-                            <spa>Karnataka India</span>
+                            <span>Whitefield, Bangalore, </span>
                             <br>
+                            <spa>Karnataka India</span>
+                            <br><br>
                             <!--<abbr title="Telephone">Telephone:</abbr> +1 (734) 123-4567
                             <br>-->
                             <abbr title="Email">Email:</abbr> <a href="#">icoots2020@gmail.com</a>
@@ -63,8 +63,9 @@
                 <div class="col-md-3 col-sm-4">
                     <aside>
                         <header><h4>About Icoots</h4></header>
-                        <p>The icoots is the application for creation or sharing your events such as symposium, conference, workshop, business events, seminar, exhibition, festivals, ceremonies, weddings, formal parties, concerts, or conventions etc...
+                        <p>Icoots orignated from the thought that there exists creative thinkers who wants to Publish events in online and prefer to do faster without coding at therir own pace .Icoots helps you to create event and publish online.
                         </p>
+                        
                         <div>
                             <a href="<?php echo base_url().'events' ?>" target="__blank" class="read-more">All Events</a>
                         </div>
