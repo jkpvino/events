@@ -164,7 +164,7 @@
             <div class="col-md-4 col-sm-6">
                 <section class="events small" id="events-small">
                     <header>
-                        <h2>Conferences</h2>
+                        <h2>Conference</h2>
                     </header>
                     <div class="section-content">
                         <?php foreach ($schoolEvents as $key => $schoolevent) { ?>
