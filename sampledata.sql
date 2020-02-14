@@ -34,4 +34,4 @@ INSERT INTO `event_type` (`id`, `name`, `name_code`, `category`, `category_code`
 
 INSERT INTO `event_type` (`id`, `name`, `name_code`, `category`, `category_code`, `status`, `created_at`, `updated_at`) VALUES (NULL, 'Online Events', 'online', 'College', 'college', '10', current_timestamp(), NULL);
 
-INSERT INTO `event_type` (`id`, `name`, `name_code`, `category`, `category_code`, `status`, `created_at`, `updated_at`) VALUES (NULL, 'Model United Nations', 'model-united-nations', 'College', 'college', '10', current_timestamp(), NULL);
+INSERT INTO `event_type` (`id`, `name`, `name_code`, `category`, `category_code`, `status`, `created_at`, `updated_at`) VALUES (NULL, 'Model United Nations', 'model_united_nations', 'College', 'college', '10', current_timestamp(), NULL);
