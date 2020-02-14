@@ -125,6 +125,11 @@ document.onreadystatechange = function () {
                             	<li> <a href="<?php echo base_url() ?>events/category/management"> Management Fests </a> </li>
                             	<li> <a href="<?php echo base_url() ?>events/category/entrepreneurship"> Entrepreneurship </a> </li>
                             	<li> <a href="<?php echo base_url() ?>events/category/annualday"> Annual Day </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/literary"> Literary Fests </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/ppt"> PPT Topics </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/concerts"> Concerts </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/online"> Online Events </a> </li>
+                            	<li> <a href="<?php echo base_url() ?>events/category/model-united-nations"> Model United Nations </a> </li>
                                 
                             </ul>
                         </li>
