@@ -124,6 +124,12 @@ class Event_model extends CI_Model {
             return $query->result();
         }
 
+        public function getAllCities($countryCode){
+            $this->db->select('name, id');
+            $query = $this->db->get_where('cities',array('country_code'=>$countryCode));
+            return $query->result();
+        }
+
         public function getAllEventCategory(){
             $this->db->select('category, category_code');
             $this->db->group_by('category_code');

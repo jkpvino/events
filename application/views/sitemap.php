@@ -6,7 +6,7 @@
         <changefreq>daily</changefreq>
     </url>
 
-    <!-- Sitemap -->
+    <!-- Product List -->
     <?php foreach($eventview as $eview) { ?>
     <url>
         <loc><?php echo base_url()."event/".$eview->etypecategory.'-'.$eview->etypename.'/'.$eview->url_key ?></loc>
@@ -22,5 +22,24 @@
     </url>
     <?php } ?>
 
-
+    <!-- Location -->
+    <url>
+        <loc><?php echo base_url()."events/location/india" ?></loc>
+        <priority>0.5</priority>
+        <changefreq>always</changefreq>
+    </url>
+    <?php foreach($states as $state) { ?>
+    <url>
+        <loc><?php echo base_url()."events/location/".$state->name ?></loc>
+        <priority>0.5</priority>
+        <changefreq>always</changefreq>
+    </url>
+    <?php } ?>    
+    <?php foreach($cities as $city) { ?>
+    <url>
+        <loc><?php echo base_url()."events/location/".$city->name ?></loc>
+        <priority>0.5</priority>
+        <changefreq>always</changefreq>
+    </url>
+    <?php } ?>
 </urlset> 

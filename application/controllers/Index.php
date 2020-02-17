@@ -13,7 +13,9 @@ class Index extends CI_Controller{
     {
     	$data = array();
     	$this->load->model('event_model');
-    	$data['eventview'] = $this->event_model->get_symposium();
+        $data['eventview'] = $this->event_model->get_symposium();
+        $data['states'] = $this->event_model->getStates('IN');
+    	$data['cities'] = $this->event_model->getAllCities('IN');
         $this->load->view('sitemap', $data);
     }
 
