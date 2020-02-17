@@ -68,6 +68,9 @@ span.onclick = function() {
                 <figure class="event-image">
                     <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $event->logo; ?>"></div>
                 </figure>
+                <!-- <div class="text-center">
+                  <a href="javascript:void(0)" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#eventsubscribe"> Book Events </a>
+                </div> -->
             </div>
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
@@ -93,6 +96,7 @@ span.onclick = function() {
                                 <figure>
                                     <span class="course-summary" id="course-course-time"><i class="fa fa-clock-o"></i><?php echo date('D, d M \'y',strtotime($event->event_from)); ?> - <?php echo date('D, d M \'y',strtotime($event->event_to)); ?></span>
                                 </figure>
+                                
 		                    </section><!-- /#course-header -->
 		                </article>
 		            </section>
@@ -319,3 +323,55 @@ span.onclick = function() {
 	</div>
 </div>
 -->
+
+
+<div class="modal fade event-subscribe-popup" id="eventsubscribe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100 font-weight-bold">Are you interest to participate this event ?</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body  mx-3">
+        <div class="md-form mb-5">          
+          <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
+          <input type="text" id="name" placeholder="Enter Your Name" class="form-control validate">
+        </div>
+        <div class="md-form mb-5">          
+          <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
+          <input type="email" id="email" placeholder="Enter Your Email"  class="form-control validate">
+        </div>
+
+        <div class="md-form mb-4">          
+          <label data-error="wrong" data-success="right" for="orangeForm-pass">Phone No</label>
+          <input type="text" id="phoneno" placeholder="Enter Your Phone No"  class="form-control validate">
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-deep-orange">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style type="text/css">
+.event-subscribe-popup input{
+    margin-bottom: 15px;
+}    
+.event-subscribe-popup .modal-footer, .event-subscribe-popup .modal-header{
+    border: 0px solid;
+}
+.event-subscribe-popup .modal-content {
+    background: #011C38;
+    color: #fff;
+}
+.event-subscribe-popup .modal-header .close {
+    color: #fff;
+    opacity: 0.8;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+</style>

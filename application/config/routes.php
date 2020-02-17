@@ -57,6 +57,7 @@ $route['event/(:any)/(:any)'] = 'events/event/$1/$2';
 $route['events/browse/(:any)'] = 'events/browse/$1';
 $route['events/location/(:any)/(:any)/(:any)'] = 'events/location/$1/$2/$3';
 $route['events/category/(:any)'] = 'events/category/$1';
+$route['sitemap\.xml'] = "index/sitemap";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

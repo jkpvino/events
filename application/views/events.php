@@ -139,18 +139,18 @@
                 <div class="col-md-4 sym_{{key}}">
                         <div class="col-md-12 lgx-single-news">
                             <figure >
-                                <a href="{{item.name}}">
+                                <a target="__blank" href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}">
                                     <img src="<?php echo base_url() ?>assets/images/banner/{{item.banner}}" alt="{{item.name}}" title="{{item.url_key}}" style="border-radius: 5px 5px 0 0; object-fit: cover; height:160px; display:block;">                                    
                                 </a>
                             </figure>
                             <div class="single-news-info">
                                 <h3 class="title">
-                                    <a href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}">{{item.name}}</a>
+                                    <a target="__blank" href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}">{{item.name}}</a>
                                 </h3>
                                 <div class="meta-wrapper">
                                     <span><i class="fa fa-calendar" aria-hidden="true"></i> {{item.event_from}}</span>  
                                     <br>
-                                    <a href="javascript:void(0)"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{item.institution}}, {{item.city}}, {{item.state}}, {{item.country}}</span> </a>
+                                    <a target="__blank" href="<?php echo base_url() ?>event/{{item.etypecategory}}-{{item.etypename}}/{{item.url_key}}"> <span><i class="fa fa-map-marker" aria-hidden="true"></i> {{item.institution}}, {{item.city}}, {{item.state}}, {{item.country}}</span> </a>
                                 </div>
                                 <h5 class="mb-2">{{item.etypename}}</h5>
                                 <hr class="m-0">

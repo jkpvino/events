@@ -9,6 +9,14 @@ class Index extends CI_Controller{
         $this->load->library('form_validation');
     }
 
+    public function sitemap()
+    {
+    	$data = array();
+    	$this->load->model('event_model');
+    	$data['eventview'] = $this->event_model->get_symposium();
+        $this->load->view('sitemap', $data);
+    }
+
     public function index()
     {
         $logged_info = isset($this->session->userdata['logged_in']) ? $this->session->userdata['logged_in'] : array();
