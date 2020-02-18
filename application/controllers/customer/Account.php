@@ -298,8 +298,8 @@ class Account extends API_Controller {
     public function login(){
            $this->load->helper('form');
        $this->load->library('form_validation');
-        $redirectURL = $this->session->get_userdata('previous_url') ? $this->session->get_userdata('previous_url') : base_url();
-        
+       $userData = $this->session->get_userdata();
+        $redirectURL = isset($userData['previous_url']) ? $userData['previous_url'] : base_url();
        $this->load->model('user_model'); 
         $vars['class'] = '';
         $vars['validation_msg'] ='';
@@ -323,11 +323,13 @@ class Account extends API_Controller {
                 $session_data = array(                    
                     'logid' => $result,
                     'email' => $email,
+                    'previous_url' => base_url()
                 );
-
+                
                 $this->session->set_userdata('logged_in', $session_data);
-                $this->session->set_flashdata('msg', 'Loggedin successfully');                
-                redirect('/index', 'refresh');
+                $this->session->set_flashdata('msg', 'Loggedin successfully'); 
+                header('Location: '.$redirectURL);     
+                //redirect('/index', 'refresh');
             } else {
                 $vars['validation_msg'] ='Invalid Username or Password';
                 

@@ -178,6 +178,9 @@ class Events extends CI_Controller{
         $vars['class'] = '';   
         if($this->input->post('isAjax') == true || $ajax == true){
             foreach($vars['sympos'] as $key => $data){
+                if(!$vars['sympos'][$key]->banner){
+                    $vars['sympos'][$key]->banner = 'noimg.jpg';
+                }
                 $vars['sympos'][$key]->name = (strlen($data->name) > 25) ? substr($data->name,0,25).'...' : $data->name;
                 $vars['sympos'][$key]->event_from = date("dS F Y", strtotime($data->event_from));
             }
