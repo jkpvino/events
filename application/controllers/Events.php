@@ -388,8 +388,8 @@ class Events extends CI_Controller{
         $programTab = array(
             'event_id' => set_value('event_id'), 
             'program_name' => set_value('program_name'), 
-            'program_start' => set_value('program_start'), 
-            'program_end' => set_value('program_end'),
+            'program_start' => '', 
+            'program_end' => '',
             'program_description' => set_value('program_description'),
             'address' => set_value('address'),
             'contact_info' => $contact_info,            

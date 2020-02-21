@@ -349,6 +349,16 @@ myApp.factory('Reddit', function($http) {
 </script>
 <!--  ShareThis BEGIN -->
 <script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5dd0d63912574600123b54c5&product=sticky-share-buttons"></script>
-    
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158746983-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-158746983-1');
+</script>
+
 </body>
 </html>
