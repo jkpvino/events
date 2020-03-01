@@ -465,7 +465,11 @@
                     <div class="event_container">                    
                         <input type="hidden" id="subevents_tab" name="subevents_tab" value="1">             
                         <input type="hidden" class="event_id" name="event_id" value="<?php echo $programTab['event_id']; ?>">
-                        <input type="hidden" id="subevents_count" name="subevents_count" value="<?php echo count($sub_events); ?>"> 
+                        <?php if(!$sub_events){ ?> 
+                        	<input type="hidden" id="subevents_count" name="subevents_count" value="0"> 
+                    	<?php }else{ ?> 
+                    		<input type="hidden" id="subevents_count" name="subevents_count" value="<?php echo count($sub_events); ?>"> 
+                    	<?php } ?>
                     <?php $subeventCount = 0; if($sub_events){ ?>
                         <?php foreach ($sub_events as $sekey => $subevent) { $subeventCount++; ?>
                             <div class="event_row" id="event_row_<?php echo $subeventCount ?>">
