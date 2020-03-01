@@ -47,7 +47,11 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Event Start  </label><span> (* Required to fill information) </span></div>                                
                                 <div class="input-group date datetimepicker" >
-                                    <input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="<?php echo date('Y-m-d', strtotime($programTab['program_start'])) ?>" />
+                                	<?php if($programTab['program_start']){ ?> 
+                                    	<input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="<?php echo date('Y-m-d', strtotime($programTab['program_start'])) ?>" />
+                                	<?php }else{ ?> 
+                                    	<input id='program_start' name="program_start" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"   value="" />
+                                	<?php } ?>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -58,7 +62,11 @@
                             <div class="input-group">
                                 <div><label class="control-label"> Event End  </label><span> (* Required to fill information) </span></div>                                
                                 <div class="input-group date datetimepicker" >
-                                    <input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="<?php echo date('Y-m-d', strtotime($programTab['program_end'])) ?>" />
+                                	<?php if($programTab['program_end']){ ?> 
+                                    	<input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="<?php echo date('Y-m-d', strtotime($programTab['program_end'])) ?>" />
+                                	<?php }else{ ?> 
+                                    	<input id='program_end' name="program_end" type='text' class="form-control datepicker has-dark-background" placeholder="YYYY-MM-DD"  value="" />
+                                	<?php } ?>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
