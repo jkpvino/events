@@ -708,6 +708,9 @@ ul.list-links a:hover {
 .setup-content .input-group span, .input-group span{
   color: #017AFE;
 }
+.input-group .richText span{
+  color: #000;
+}
 .course-image, .event-image {
   height: 165px;
   overflow: hidden;
