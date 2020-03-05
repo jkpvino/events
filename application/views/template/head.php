@@ -3,6 +3,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="msvalidate.01" content "4AAB61D07D25694F6287C95ADF89FBDA" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Theme Starz">
     <?php if(isset($metatags)){ echo $metatags; }else{ meta_tags(); } ?>
@@ -42,7 +43,7 @@ else
 
 
 <div id="load">
-	<div style="top: 45%; position: fixed; margin: 0 auto; text-align: center;    left: 0;    right: 0;    color: #F00484;    font-size: 2em;"> <img style="width: auto;" src="<?php echo base_url().'assets/images/loader.gif' ?>"> loading ...</div>
+    <div style="top: 45%; position: fixed; margin: 0 auto; text-align: center;    left: 0;    right: 0;    color: #F00484;    font-size: 2em;"> <img style="width: auto;" src="<?php echo base_url().'assets/images/loader.gif' ?>"> loading ...</div>
 </div>
 <script type="text/javascript">
 document.onreadystatechange = function () {
@@ -56,7 +57,7 @@ document.onreadystatechange = function () {
          document.getElementById('wrapper').style.visibility="visible";
       },1000);
   }
-}	
+}   
 </script>
 <style type="text/css">
 #load{
@@ -68,9 +69,9 @@ document.onreadystatechange = function () {
     background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
     background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
     transition: visibility 0s linear 300ms, opacity 300ms;
-}	
+}   
 #wrapper{
-	transition: visibility 0s linear 300ms, opacity 300ms;
+    transition: visibility 0s linear 300ms, opacity 300ms;
 }
 </style>
 
@@ -118,29 +119,29 @@ document.onreadystatechange = function () {
                         <li>
                             <a href="#" class="has-child no-link">Category</a>
                             <ul class="list-unstyled child-navigation">
-                            	<li> <a href="<?php echo base_url() ?>events/category/summer"> Summer Events </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/technical"> Technical Fest </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/cultural"> Cultural Fest </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/management"> Management Fests </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/entrepreneurship"> Entrepreneurship </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/annualday"> Annual Day </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/literary"> Literary Fests </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/ppt"> PPT Topics </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/concerts"> Concerts </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/online"> Online Events </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/model-united-nations"> Model United Nations </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/summer"> Summer Events </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/technical"> Technical Fest </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/cultural"> Cultural Fest </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/management"> Management Fests </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/entrepreneurship"> Entrepreneurship </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/annualday"> Annual Day </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/literary"> Literary Fests </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/ppt"> PPT Topics </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/concerts"> Concerts </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/online"> Online Events </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/model-united-nations"> Model United Nations </a> </li>
                                 
                             </ul>
                         </li>
                         <li>
                             <a href="<?php echo base_url() ?>events/" class="has-child no-link">Events</a>
                             <ul class="list-unstyled child-navigation">
-                            	<li> <a href="<?php echo base_url() ?>events/category/symposium"> Symposium </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/conference"> Conference </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/workshop"> Workshop </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/alumini"> Alumini Meet </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/sports"> Sports Meet </a> </li>
-                            	<li> <a href="<?php echo base_url() ?>events/category/fun"> Fun Events </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/symposium"> Symposium </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/conference"> Conference </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/workshop"> Workshop </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/alumini"> Alumini Meet </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/sports"> Sports Meet </a> </li>
+                                <li> <a href="<?php echo base_url() ?>events/category/fun"> Fun Events </a> </li>
                                 <!-- <?php //foreach (getEventTypes() as $key => $value) { ?>
                                     <li><a href="<?php //echo base_url() ?>events/category/<?php //echo $value->name_code; ?>"><?php //echo $value->name; ?></a></li>
                                 <?php //} ?> -->
