@@ -237,7 +237,20 @@ class Events extends CI_Controller{
                  $vars['event'] = $event; 
                  $vars['institution'] = $institution; 
 
-
+                 $e = array(
+					'general' => true, //description
+					'og' => true,
+					'twitter'=> true,
+					'robot'=> true
+				);
+                if($event->logo){
+                	$imgURL = base_url().'assets/images/logo/'.$event->logo;
+                }else{
+                	$imgURL = base_url().'assets/img/logo.png';
+                }
+                
+				$metaTags = meta_tags($e, $title = 'icoots.com | '.$event->name.' | '.$locationInfo->country.', '.$locationInfo->state.', '.$locationInfo->city, $desc = '', $imgurl = $imgURL, $url = base_url().'events/createevent');
+		        $vars['metatags'] = $metaTags;
                 // $vars['sub_event'] = $sub_event;
                 $this->load->template('event',$vars);
             }else{

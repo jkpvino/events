@@ -73,8 +73,8 @@ if(! function_exists('meta_tags')){
         }
 
         $output .= '<meta name="keywords" content="College Events,Online Event,event management,Symposium,Conference,Alumini,Sports,Workshop,School Events,meet,music events,bangalore events, Entrepreneurship, Science exibition, annual day, cultural fest, online events">';
-        
-        $output .= '<title>icoots.com'.$title.'</title>';
+
+        $output .= '<title>'.$title.'</title>';
 
         return $output;
 
