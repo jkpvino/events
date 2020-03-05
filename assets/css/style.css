@@ -4935,19 +4935,21 @@ section.banner-cover-image .cover-image-content {
     top: 0;
     right: 0;
     z-index: 9999;
-    background: #7fbbf9;
-    width: 30%;
-    padding: 10px;
-    color: #000;
-    opacity: 0.9;
+    background: #fff;
+    width: 100%;
+    padding-top: 10px;
+    color: #052C52;
+    border-bottom: 4px solid #F40084;
+    /* line-height: 80px; */
+    padding-left: 10px;
 }
-.flashclose{
-  right: 10px;
-  text-align: right;
-  font-weight: bold;
-  color: #000;
-  line-height: 0;
-  font-size: 15px;
-  cursor: pointer;
-  position: absolute;
+.flashclose {
+    right: 10px;
+    text-align: right;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
 }

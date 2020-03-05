@@ -484,7 +484,18 @@ class Events extends CI_Controller{
         $vars['programTab'] = $programTab;
         $vars['institutionTab'] = $institutionTab;
         $vars['urlKey'] = $urlKey;
-        
+
+
+    	$e = array(
+			'general' => true, //description
+			'og' => true,
+			'twitter'=> true,
+			'robot'=> true
+		);
+		$metaTags = meta_tags($e, $title = ' | Online Event Registration Software', $desc = '', $imgurl =base_url().'assets/img/logo.png', $url = base_url().'events/createevent');
+        $vars['metatags'] = $metaTags;
+
+
         $userInfo = $this->data;
         if($userInfo['logged_in']['logid']){
             $vars['class'] = '';

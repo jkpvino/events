@@ -63,8 +63,6 @@ jQuery(document).ready(function() {
                 },
                 coordinator_phone: {
                     required: true,
-                    minlength:10,
-                    maxlength:10,
                     number: true
                 },
                 coordinator_email:{

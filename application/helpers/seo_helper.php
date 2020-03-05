@@ -72,7 +72,11 @@ if(! function_exists('meta_tags')){
                 .'<meta name="twitter:image" content="'.$imgurl.'"/>';
         }
 
-        echo $output;
+        $output .= '<meta name="keywords" content="College Events,Online Event,event management,Symposium,Conference,Alumini,Sports,Workshop,School Events,meet,music events,bangalore events, Entrepreneurship, Science exibition, annual day, cultural fest, online events">';
+        
+        $output .= '<title>icoots.com'.$title.'</title>';
+
+        return $output;
 
 
     }
