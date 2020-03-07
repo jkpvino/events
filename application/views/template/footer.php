@@ -289,7 +289,7 @@ myApp.factory('Reddit', function($http) {
   var searchtext = "false";
   var controller = '<?php echo $this->uri->segment(1); ?>';
   var method = '<?php echo $this->uri->segment(2); ?>';
-  if(controller == 'events' && (method == 'browse' || method == 'category')){
+  if(controller == 'events' && (method == 'browse' || method == 'category' || method == 'location')){
     searchtext = '<?php echo $this->uri->segment(3); ?>';    
   }
   if(searchtext == ''){

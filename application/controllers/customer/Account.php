@@ -223,6 +223,7 @@ class Account extends API_Controller {
          $this->load->template('register',$vars); 
       }else{
         $random = $this->getRandomPassword();
+        $email = $this->input->post('email');
         $user = array(
             'email' => $this->input->post('email'),
             'phone_no' => $this->input->post('phone_no'),
