@@ -8,6 +8,8 @@ jQuery(window).load(function () {
     }, 3000);
 });
 
+
+
 /* CONTACTUS */
 $("#contact-submit").bind("click", function(event){ 
     $("#contact_us_form").validate({
@@ -439,6 +441,11 @@ $("#subscribe_submit").bind("click", function(event){
             });
         }
     });   
+});
+
+
+$("#newsletter_subscribe_modal .modal-newsletter .close").bind("click", function(event){ 
+    localStorage.setItem('newsletter-homepage-popup','yes');
 });
 
 if(!localStorage.getItem('newsletter-homepage-popup')){    
