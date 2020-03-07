@@ -88,7 +88,82 @@
 </div>
 <!-- end Slider -->
 
-
+<style type="text/css">
+.content-block-container .mktg-shadow-secondary img {
+    width: 100%;
+}    
+.marketing-container-createevent-block {
+    padding: 30px 0;
+    background: #017AFE;
+    color: #fff;
+    text-align: center;
+}
+.content-block-heading p, .createeve_desc p {
+    color: #fff;
+}
+.content-block-heading{
+    margin-bottom: 30px;
+}
+.min-head {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+</style>
+<section>
+    <div class="marketing-container-createevent-block">
+        <div class="container">
+            <div class="mktg-top-p-100">
+                  <div class="content-block-heading">
+                     <h2 class="">How to create event in icoots.com ?</h2>
+                     <p style="font-size: 1.4em">We make online easy with our seamless event registration software that is designed to flow with your ideas, not work against them.</p>
+                 </div>
+                  <div class="content-block-container">
+                        <div class="col-sm-4">
+                            <div class="imgbox">
+                              <div class="mktg-shadow-secondary">                        
+                                <img src="<?php echo base_url().'assets/images/mobile/create_event_register.jpg' ?>">
+                              </div>
+                            </div>
+                            <div class="createeve_desc">
+                              <h2 class="steps"> Step 1</h2>
+                              <p class="min-head">Login & Enter your event details</p>
+                              <div class=""><p>Let your attendees know the five Ws: the who, what, when, where, and why of your event.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="imgbox">
+                              <div class="mktg-shadow-secondary">                        
+                                <img src="<?php echo base_url().'assets/images/mobile/create_event_agenda.jpg' ?>">
+                              </div>
+                            </div>
+                            <div class="createeve_desc">
+                              <h2 class="steps"> Step 2</h2>
+                              <p class="min-head">Create your Agenda/SubEvents</p>
+                              <div class=""><p>Set up your event Agenda, or create Sub Events for your event to maximize your visitors.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="imgbox">
+                              <div class="mktg-shadow-secondary">                        
+                                <img src="<?php echo base_url().'assets/images/mobile/create_event_publish.jpg' ?>">
+                              </div>
+                            </div>
+                            <div class="createeve_desc">
+                              <h2 class="steps"> Step 3</h2>
+                              <p class="min-head">Publish and share Events</p>
+                              <div class=""><p>Once your event is live, it's easy to share on Facebook and Instagram and reach attendees on their favorite platforms.</p></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="content-block-button">
+              <div class="text-center">
+                  <a href="<?php echo base_url().'events/createevent' ?>" target="_blank"> <button class="btn btn-framed white" type="button">Create Event</button></a>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
 <!-- <section class="cta section-padding border-bottom">
     <div class="container">
