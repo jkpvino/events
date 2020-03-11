@@ -29,8 +29,8 @@
                 <span class="eventDateClass ng-binding"><?php echo date('D, d M \'y',strtotime($event->event_to)); ?></span>
             </span>
         </div>
-        <!-- <br>
-        <div class="get_ticket"> 
+        <br>
+        <!-- <div class="get_ticket"> 
             <button class="btn btn-framed white"> Get Tickets </button>
         </div> -->
     </div>
@@ -68,9 +68,9 @@ span.onclick = function() {
                 <figure class="event-image">
                     <div class="image-wrapper"><img src="<?php echo base_url() ?>assets/images/logo/<?php echo $event->logo; ?>"></div>
                 </figure>
-                <!-- <div class="text-center">
+                <div class="text-center">
                   <a href="javascript:void(0)" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#eventsubscribe"> Book Events </a>
-                </div> -->
+                </div>
             </div>
             <!-- end Course Image -->
         	<div class="col-md-8 col-sm-9">
@@ -84,6 +84,8 @@ span.onclick = function() {
 		                        <div class="course-count-down" id="course-count-down">
 		                            <!-- /.course-start -->
 		                            <div class="count-down-wrapper">
+
+                                        <div class="sharethis-inline-share-buttons"></div>
 		                            	<div class="count-down-wrapper"><?php echo $event->name; ?></div>
 		                            	<p style="font-size: 2rem;"> <?php echo $institution->name; ?> </p>
 		                            </div><!-- /.count-down-wrapper -->
@@ -336,7 +338,38 @@ span.onclick = function() {
         </button>
       </div>
       <div class="modal-body  mx-3">
-        <div class="md-form mb-5">          
+        <style type="text/css">
+            .booking-slot td, .booking-slot th{
+                padding: 5px;
+            }
+            .event-subscribe-popup .booking-slot input{
+                margin: 0 auto;
+            }
+        </style>
+        <div class="col-md-12">
+            <table class="booking-slot">
+                <thead> 
+                    <tr>
+                        <th scope="#"> Id </th>
+                        <th scope="col" colspan="2"> Name </th>
+                        <th scope="col" colspan="1"> Seats </th>
+                        <th scope="col" colspan="1"> Total </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php $scount = 1; foreach ($subevents as $subeventKey => $subevent) { ?>
+                    <tr>                        
+                        <td scope="row"> <?php echo $scount++; ?> </td>
+                        <td colspan="2"> <?php echo $subevent->name; ?> <br> Rs.80 </td>
+                        <td colspan="1"> <input class="form-control has-dark-background" type="number" value="1"> </td>
+                        <td colspan="1">  10 Rs <!-- <a href="" class="btn-framed btn"> Book Now </a> --> </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>            
+
+        </div>
+        <!-- <div class="md-form mb-5">          
           <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label>
           <input type="text" id="name" placeholder="Enter Your Name" class="form-control validate">
         </div>
@@ -348,15 +381,29 @@ span.onclick = function() {
         <div class="md-form mb-4">          
           <label data-error="wrong" data-success="right" for="orangeForm-pass">Phone No</label>
           <input type="text" id="phoneno" placeholder="Enter Your Phone No"  class="form-control validate">
-        </div>
+        </div> -->
       </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-deep-orange">Subscribe</button>
+      <div class="modal-footer d-flex justify-content-center clearfix">
+        <div class="col-md-8 total-popblock"> <label> <i class="fa fa-user"></i> <br> Attendees </label> : <span> 2 </span>   <label> <i class="fa fa-clock-o"></i> <br> Total Fare </label> : <span> 400 Rs </span> </div>
+        <div class="col-md-4"><button class="btn btn-deep-orange">Subscribe</button> </div>
       </div>
     </div>
   </div>
 </div>
 <style type="text/css">
+/*.total-popblock span{
+    font-size: 2em;
+}*/
+.modal-footer{
+    margin-top:20px;
+}
+.total-popblock label{
+    text-align: center;
+}
+.total-popblock {
+    text-align: left;
+    font-size: 14px;
+}
 .event-subscribe-popup input{
     margin-bottom: 15px;
 }    

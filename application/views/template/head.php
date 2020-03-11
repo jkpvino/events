@@ -26,8 +26,9 @@
 
     <!-- Notification -->
     <link href="<?php echo base_url(); ?>assets/css/jquery.growl.css" rel="stylesheet" type="text/css" />
+    <!-- SHARE THIS BUTTON -->
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e6847ed27fd730012fdb532&product=inline-share-buttons&cms=website' async='async'></script>
 
-    
 
 </head>
   

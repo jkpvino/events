@@ -88,27 +88,6 @@
 </div>
 <!-- end Slider -->
 
-<style type="text/css">
-.content-block-container .mktg-shadow-secondary img {
-    width: 100%;
-}    
-.marketing-container-createevent-block {
-    padding: 30px 0;
-    background: #017AFE;
-    color: #fff;
-    text-align: center;
-}
-.content-block-heading p, .createeve_desc p {
-    color: #fff;
-}
-.content-block-heading{
-    margin-bottom: 30px;
-}
-.min-head {
-    font-size: 1.4em;
-    font-weight: 600;
-}
-</style>
 <section>
     <div class="marketing-container-createevent-block">
         <div class="container">
@@ -158,7 +137,7 @@
             </div>
             <div class="content-block-button">
               <div class="text-center">
-                  <a href="<?php echo base_url().'events/createevent' ?>" target="_blank"> <button class="btn btn-framed white" type="button">Create Event</button></a>
+                  <a href="<?php echo base_url().'events/createevent' ?>" target="_blank"> <button class="btn btn-framed" type="button">Create Event</button></a>
               </div>
             </div>
         </div>

@@ -4953,3 +4953,22 @@ section.banner-cover-image .cover-image-content {
     cursor: pointer;
     position: absolute;
 }
+.content-block-container .mktg-shadow-secondary img {
+    width: 100%;
+}    
+.marketing-container-createevent-block {
+    padding: 30px 0;
+    background: #f8f6f7;
+    color: #011C38;
+    text-align: center;
+}
+.content-block-heading p, .createeve_desc p {
+    color: #011C38;
+}
+.content-block-heading{
+    margin-bottom: 30px;
+}
+.min-head {
+    font-size: 1.4em;
+    font-weight: 600;
+}
