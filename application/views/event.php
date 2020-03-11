@@ -83,11 +83,10 @@ span.onclick = function() {
 		                    <section id="event-header">
 		                        <div class="course-count-down" id="course-count-down">
 		                            <!-- /.course-start -->
-		                            <div class="count-down-wrapper">
-
-                                        <div class="sharethis-inline-share-buttons"></div>
+		                            <div class="count-down-wrapper">                                        
 		                            	<div class="count-down-wrapper"><?php echo $event->name; ?></div>
 		                            	<p style="font-size: 2rem;"> <?php echo $institution->name; ?> </p>
+                                        <div class="sharethis-inline-share-buttons"></div>
 		                            </div><!-- /.count-down-wrapper -->
 
 		                        </div><!-- /.course-count-down -->
