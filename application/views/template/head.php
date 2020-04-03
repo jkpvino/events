@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Theme Starz">
     <?php if(isset($metatags)){ echo $metatags; }else{ meta_tags(); } ?>
-    
+    <link rel='icon' href='<?php echo base_url(); ?>assets/images/logo/favicon.png' type='image/x-icon'/ >
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="<?php echo base_url(); ?>assets/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css">
@@ -27,7 +27,7 @@
     <!-- Notification -->
     <link href="<?php echo base_url(); ?>assets/css/jquery.growl.css" rel="stylesheet" type="text/css" />
     <!-- SHARE THIS BUTTON -->
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e6847ed27fd730012fdb532&product=inline-share-buttons&cms=website' async='async'></script>
+    <!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e6847ed27fd730012fdb532&product=inline-share-buttons&cms=website' async='async'></script> -->
 
 
 </head>
@@ -38,6 +38,8 @@ if($is_home)
     $bodyClass = 'page-homepage-carousel';
 else
     $bodyClass = 'page-sub-page';
+
+$bodyClass = 'page-sub-page';
 ?>
 
 <body class=" <?php echo $bodyClass." ". $class; ?>  ">

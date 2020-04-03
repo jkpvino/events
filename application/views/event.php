@@ -86,7 +86,7 @@ span.onclick = function() {
 		                            <div class="count-down-wrapper">                                        
 		                            	<div class="count-down-wrapper"><?php echo $event->name; ?></div>
 		                            	<p style="font-size: 2rem;"> <?php echo $institution->name; ?> </p>
-                                        <div class="sharethis-inline-share-buttons"></div>
+                                        <div class="sharethis-inline-share-buttons" data-description="" data-url="<?php echo current_url();  ?>" data-title="<?php echo $event->name; ?>" data-image="<?php echo base_url()."assets/images/banner/".$event->banner ?>" ></div>
 		                            </div><!-- /.count-down-wrapper -->
 
 		                        </div><!-- /.course-count-down -->

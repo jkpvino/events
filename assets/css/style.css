@@ -2536,7 +2536,7 @@ th.header:before {
   -o-transition: 0.4s;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background-color: #fff;
+  /*background-color: #fff;*/
   content: "";
   height: 190px;
   width: 3000px;
@@ -2546,7 +2546,7 @@ th.header:before {
   z-index: 0;
 }
 .navigation-wrapper .primary-navigation-wrapper header .navbar-brand:after {
-  background-color: #f40084;
+  /*background-color: #f40084;*/
   background-image: url("../img/background-city.png");
   background-position: 0;
   content: "";
