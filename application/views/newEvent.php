@@ -434,7 +434,8 @@
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
                 <!-- <button class="btn btn-framed nextBtn btn-lg pull-right" type="button" >Next</button> -->
-                <button class="btn btn-framed btn-lg pull-right" id="slider-submit-institution" type="submit" >Save & Continue </button>
+                <button class="btn btn-framed btn-lg pull-right" id="slider-submit-institution" type="submit" > Submit </button>
+                <button class="btn btn-framed btn-lg pull-right" id="slider-submit-institution-createagenda" type="submit" style="margin-right: 10px;" >Submit & Create Agenda </button>
 
                 </form>
             </div>

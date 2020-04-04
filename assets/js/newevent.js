@@ -104,7 +104,7 @@ jQuery(document).ready(function() {
     });
 
     //INSTITUTION FORM
-    $("#slider-submit-institution").bind("click", function(event){        
+    $("#slider-submit-institution-createagenda").bind("click", function(event){        
         document.getElementById('wrapper').style.visibility="hidden";
         document.getElementById('load').style.visibility="visible";
         $("#inistitution-form").validate({
@@ -165,6 +165,75 @@ jQuery(document).ready(function() {
              document.getElementById('wrapper').style.visibility="visible";
         },1000);
     });
+
+
+
+    //INSTITUTION FORM
+    $("#slider-submit-institution").bind("click", function(event){        
+        document.getElementById('wrapper').style.visibility="hidden";
+        document.getElementById('load').style.visibility="visible";
+        $("#inistitution-form").validate({
+            rules: {
+                name: "required",
+                description: "required",
+                website_url: {
+                    required : true,
+                    url: true
+                },
+                institution_category: "required",
+                country: "required",
+                state: "required",
+                city: "required",
+                postal_code: {
+                    required : true,
+                    number : true
+                },  
+                address: "required",
+                facebook: {
+                    url: true
+                },
+                linkedin: {
+                    url: true
+                },
+                google: {
+                    url: true
+                },
+                twitter: {
+                    url: true
+                }
+            },
+            submitHandler: function() {
+                $.post(base_url+"events/save", $("#inistitution-form").serialize(),  function(response) {
+                    if(response){                        
+                        $('#institution_id').val(response);
+                        //tabNext("#slider-submit-institution");
+                        window.location.href = base_url+'customer/account/myaccount';
+                        //$('#slider-submit-institution').attr('disabled','true');
+                        setTimeout(function(){
+                            $.growl.notice({title: "Step2",  message: "Record has been successfully saved" });
+                        },2000);
+                        
+                    }else{
+                        setTimeout(function(){
+                            $.growl.error({ message: "Something went wrong..." });
+                        },2000);
+                    }
+                    setTimeout(function(){
+                         document.getElementById('load').style.visibility="hidden";
+                         document.getElementById('wrapper').style.visibility="visible";
+                    },1000);
+                });
+                return false;
+            }
+        });        
+        setTimeout(function(){
+             document.getElementById('load').style.visibility="hidden";
+             document.getElementById('wrapper').style.visibility="visible";
+        },1000);
+    });
+
+
+
 
      //SUB EVENTS FORM
     $("#sub-events-submit").bind("click", function(event){        

@@ -38,8 +38,6 @@ if($is_home)
     $bodyClass = 'page-homepage-carousel';
 else
     $bodyClass = 'page-sub-page';
-
-$bodyClass = 'page-sub-page';
 ?>
 
 <body class=" <?php echo $bodyClass." ". $class; ?>  ">
